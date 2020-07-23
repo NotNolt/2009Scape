@@ -30,7 +30,7 @@ public class Class201
 	try {
 	    if (Class126.aClass201_1689 != null) {
 		Class192.anInt2823 = 0;
-		Class131_Sub2_Sub31.HintHeadicoCID6 = arg0.getX();
+		Class131_Sub2_Sub31.anInt10997 = arg0.getX();
 		Class121_Sub1.anInt3982 = arg0.getY();
 	    }
 	    anInt2941++;
@@ -76,7 +76,7 @@ public class Class201
 	anInt2938++;
 	if (Class126.aClass201_1689 != null) {
 	    Class192.anInt2823 = 0;
-	    Class131_Sub2_Sub31.HintHeadicoCID6 = arg0.getX();
+	    Class131_Sub2_Sub31.anInt10997 = arg0.getX();
 	    Class121_Sub1.anInt3982 = arg0.getY();
 	}
     }
@@ -201,7 +201,7 @@ public class Class201
 	anInt2933++;
 	if (Class126.aClass201_1689 != null) {
 	    Class192.anInt2823 = 0;
-	    Class131_Sub2_Sub31.HintHeadicoCID6 = arg0.getX();
+	    Class131_Sub2_Sub31.anInt10997 = arg0.getX();
 	    Class121_Sub1.anInt3982 = arg0.getY();
 	}
     }
@@ -222,7 +222,7 @@ public class Class201
 	anInt2931++;
 	if (Class126.aClass201_1689 != null) {
 	    Class192.anInt2823 = 0;
-	    Class131_Sub2_Sub31.HintHeadicoCID6 = -1;
+	    Class131_Sub2_Sub31.anInt10997 = -1;
 	    Class121_Sub1.anInt3982 = -1;
 	}
     }

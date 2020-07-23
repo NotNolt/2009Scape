@@ -111,18 +111,18 @@ public class Class131_Sub41_Sub8 extends Class131_Sub41
 		    }
 		    Class176.anInt2523 = 1;
 		    Class131_Sub2_Sub21.anInt5854++;
-		    if (Class131_Sub2_Sub31.HintHeadicoCID == Class43.anInt590)
-			Class131_Sub2_Sub31.HintHeadicoCID
+		    if (Class131_Sub2_Sub31.ConnectionPort == Class43.anInt590)
+			Class131_Sub2_Sub31.ConnectionPort
 			    = Class131_Sub14.anInt4288;
 		    else
-			Class131_Sub2_Sub31.HintHeadicoCID = Class43.anInt590;
+			Class131_Sub2_Sub31.ConnectionPort = Class43.anInt590;
 		    Class35.anInt496 = 0;
 		}
 		if (Class176.anInt2523 == 1) {
 		    Class17.aClass139_183
 			= (Class23_Sub4.aSignLink_3734.method2703
 			   (Class191.aString2817, (byte) 120,
-			    Class131_Sub2_Sub31.HintHeadicoCID));
+			    Class131_Sub2_Sub31.ConnectionPort));
 		    Class176.anInt2523 = 2;
 		}
 		if (Class176.anInt2523 == 2) {
@@ -201,10 +201,10 @@ public class Class131_Sub41_Sub8 extends Class131_Sub41
 		    Class176.anInt2523 = 1;
 		    Class35.anInt496 = 0;
 		    Class131_Sub2_Sub21.anInt5854++;
-		    if (Class43.anInt590 != Class131_Sub2_Sub31.HintHeadicoCID)
-			Class131_Sub2_Sub31.HintHeadicoCID = Class43.anInt590;
+		    if (Class43.anInt590 != Class131_Sub2_Sub31.ConnectionPort)
+			Class131_Sub2_Sub31.ConnectionPort = Class43.anInt590;
 		    else
-			Class131_Sub2_Sub31.HintHeadicoCID
+			Class131_Sub2_Sub31.ConnectionPort
 			    = Class131_Sub14.anInt4288;
 		} else {
 		    Class131_Sub2_Sub20.anInt5838 = -4;

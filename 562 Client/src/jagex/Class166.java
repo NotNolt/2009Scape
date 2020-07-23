@@ -63,7 +63,7 @@ public class Class166 implements Runnable
              i++)
 		Class131_Sub41_Sub15.aClass152Array6363[i]
 		    = arg0.method1178(class124s[i], true);
-	    class124s = Class124.method1084(arg2, Class44.HintHeadicoCID, 0);
+	    class124s = Class124.method1084(arg2, Class44.ConnectionPort, 0);
 	    Class131_Sub35.aClass152Array4585 = new Class152[class124s.length];
 	    for (int i = 0; i < class124s.length;
              i++)

@@ -58,6 +58,7 @@ public final class LoginReadEvent extends IoReadEvent {
 	@Override
 	public void read(IoSession session, ByteBuffer buffer) {
 		int opcode = buffer.get() & 0xFF;
+		System.out.println("LoginReadEvent opcode: " + opcode);
 		switch (opcode) {
 			case 16:
 			case 18:
@@ -110,34 +111,33 @@ public final class LoginReadEvent extends IoReadEvent {
 		}
 		if (buffer.get() != 10)
 			buffer.get();
-		for (int index = 0; index < 4; index++)
-			buffer.getInt();
-		long playerLongName = buffer.getLong();
-		if ((31 & playerLongName >> 16) != nameHash) {
-			System.out.println("playerLongName: " + playerLongName + "  " + "namehash: " + nameHash);
-		}
-		String passwordString = ByteBufferUtils.getString(buffer);
 
 
-		final ByteBuffer z = buffer;
-		TaskExecutor.executeSQL(() -> {
-			try {
-				final String username = StringUtils.longToString(playerLongName);
-				final String password = passwordString;
-				Response response = PlayerSQLManager.getCredentialResponse(username, password);
-
-				if (response != Response.SUCCESSFUL) {
-					System.out.println(response);
-					System.out.println("Username :" + username);
-					System.out.println("Password :" + password);
-					session.write(response, true);
-					return;
+//		buffer = getRSABlock(buffer);
+//		int[] isaacSeed = getISAACSeed(buffer);
+//		ISAACCipher inCipher = new ISAACCipher(isaacSeed);
+//		for (int i = 0; i < 4; i++) {
+//			isaacSeed[i] += 50;
+//		}
+//		ISAACCipher outCipher = new ISAACCipher(isaacSeed);
+//		session.setIsaacPair(new ISAACPair(inCipher, outCipher));
+		session.setClientInfo(new ClientInfo(displayMode, screenWidth, screenHeight));
+		final ByteBuffer b = buffer;
+		TaskExecutor.executeSQL(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					final String username = StringUtils.longToString(b.getLong());
+					final String password = ByteBufferUtils.getString(b);
+					Response response = PlayerSQLManager.getCredentialResponse(username, password);
+					if (response != Response.SUCCESSFUL) {
+						session.write(response, true);
+						return;
+					}
+					login(new PlayerDetails(username, password), session, b, opcode);
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
-				System.out.println("jagex.Login sent successfully");
-				session.setClientInfo(new ClientInfo(displayMode, screenWidth, screenHeight));
-				login(new PlayerDetails(username, password), session, z, opcode);
-			} catch (SQLException e) {
-				e.printStackTrace();
 			}
 		});
 	}

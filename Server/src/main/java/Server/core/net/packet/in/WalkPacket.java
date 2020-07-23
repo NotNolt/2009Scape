@@ -17,6 +17,12 @@ import core.net.packet.out.ClearMinimapFlag;
  */
 public final class WalkPacket implements IncomingPacket {
 
+	/** 562 Walking Packet Info:
+	 * WALKING_PACKET = 119
+	 * MINI_WALKING_PACKET = 163;
+	 */
+
+
 	@Override
 	public void decode(Player player, int opcode, IoBuffer buffer) {
 		player = getPlayer(player);

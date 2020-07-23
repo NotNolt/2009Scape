@@ -165,8 +165,8 @@ public class PacketStream extends Stream
     
     public void createPacket(int packetId) {
 	try {
-		System.out.println("Packet " + packetId + " Sent");//TODO: REMOVE PACKET DEBUG TEXT
 		aByteArray4324[anInt4360++] = (byte) (packetId + aCryption_6122.method2107((byte) 81));
+		System.out.println("Packet " + packetId + " Created");//TODO: REMOVE PACKET DEBUG TEXT
 		anInt6129++;
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
@@ -318,9 +318,7 @@ public class PacketStream extends Stream
 	    if (arg0 != 5663)
 		anInt6130 = 119;
 	    anInt6133++;
-	    return ((aByteArray4324[anInt4360++]
-		     - aCryption_6122.method2107((byte) -107))
-		    & 0xff);
+	    return ((aByteArray4324[anInt4360++]- aCryption_6122.method2107((byte) -107)) & 0xff);
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
 						"vg.L(" + arg0 + ')');

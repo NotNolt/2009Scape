@@ -443,7 +443,7 @@ public class Class179
 		if (Class1_Sub7.anInt3581 != 0) {
 		    Class131_Sub14.anInt4288 = 50000 + Class110_Sub2.anInt3914;
 		    Class43.anInt590 = Class110_Sub2.anInt3914 + 40000;
-		    Class131_Sub2_Sub31.HintHeadicoCID = Class43.anInt590;
+		    Class131_Sub2_Sub31.ConnectionPort = Class43.anInt590;
 		}
 		return true;
 	    }

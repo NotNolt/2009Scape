@@ -577,13 +577,13 @@ public class Stream extends Class131 {
 		try {
 			anInt4321++;
 			if (arg0 > 112) {
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 1423295288);
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> -849956560);
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 1972133160);
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 1078688608);
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 613759896);
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 1784471184);
-				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 533841800);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 56);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 48);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 40);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 32);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 24);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 16);
+				aByteArray4324[anInt4360++] = (byte) (int) (arg1 >> 8);
 				aByteArray4324[anInt4360++] = (byte) (int) arg1;
 			}
 		} catch (RuntimeException runtimeexception) {

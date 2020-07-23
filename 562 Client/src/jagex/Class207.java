@@ -37,7 +37,7 @@ public class Class207
 		i++;
 	    if (arg1.method2343(-120, Class110_Sub1.HeadiconsPrayerCID))
 		i++;
-	    if (arg1.method2343(arg0 + -3276, Class44.HintHeadicoCID))
+	    if (arg1.method2343(arg0 + -3276, Class44.ConnectionPort))
 		i++;
 	    if (arg1.method2343(-117, Class131_Sub31.HintMapMarkerCID))
 		i++;

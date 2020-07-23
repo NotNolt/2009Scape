@@ -16,7 +16,7 @@ public abstract class Class44
     public static int anInt597;
     public static int anInt598;
     public GraphicsToolkit aClass130_599;
-    public static int HintHeadicoCID;
+    public static int ConnectionPort;
     public static int anInt601;
     public static int anInt602;
     public Class55 aClass55_603;
@@ -221,7 +221,7 @@ public abstract class Class44
 	try {
 	    anInt610++;
 	    if (arg1 != false)
-		HintHeadicoCID = -126;
+		ConnectionPort = -126;
 	    if (arg5 != null) {
 		method537(arg2, arg4, 0);
 		double d = 7.0 - (double) arg3 / 8.0;
@@ -713,7 +713,7 @@ public abstract class Class44
 		int i = arg6.length();
 		int[] is = new int[i];
 		if (arg5 != 237)
-		    HintHeadicoCID = -105;
+		    ConnectionPort = -105;
 		for (int i_34_ = 0; i_34_ < i; i_34_++)
 		    is[i_34_] = (int) (Math.sin((double) arg2 / 5.0
 						+ (double) i_34_ / 2.0)

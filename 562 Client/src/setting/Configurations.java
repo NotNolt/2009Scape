@@ -83,7 +83,7 @@ public final class Configurations {
     /**
      * IF we use ISAAC cipher.
      */
-    public static final boolean USE_ISAAC = false;
+    public static final boolean USE_ISAAC = true;
 
     /**
      * The cache path.

@@ -77,10 +77,10 @@ public class Client extends Applet_Sub1 {
 	public void method56(int arg0) {
 		anInt3473++;
 		if (Class121_Sub3.anInt3994 < Class46.aClass179_640.anInt2566) {
-			if (Class43.anInt590 == Class131_Sub2_Sub31.HintHeadicoCID)
-				Class131_Sub2_Sub31.HintHeadicoCID = Class131_Sub14.anInt4288;
+			if (Class43.anInt590 == Class131_Sub2_Sub31.ConnectionPort)
+				Class131_Sub2_Sub31.ConnectionPort = Class131_Sub14.anInt4288;
 			else
-				Class131_Sub2_Sub31.HintHeadicoCID = Class43.anInt590;
+				Class131_Sub2_Sub31.ConnectionPort = Class43.anInt590;
 			Class56.anInt743 = 5 * (Class46.aClass179_640.anInt2566 * 50 + -50);
 			if (Class56.anInt743 > 3000)
 				Class56.anInt743 = 3000;
@@ -119,7 +119,7 @@ public class Client extends Applet_Sub1 {
 					if (Class131_Sub2_Sub29.anInt5971 == 0) {
 						Class23_Sub2_Sub1.aClass139_4990 = (Class23_Sub4.aSignLink_3734
 								.method2703(Class191.aString2817, (byte) 125,
-										Class131_Sub2_Sub31.HintHeadicoCID));
+										Class131_Sub2_Sub31.ConnectionPort));
 						Class131_Sub2_Sub29.anInt5971++;
 					}
 					int i = 19 % ((-48 - arg0) / 44);
@@ -210,7 +210,7 @@ public class Client extends Applet_Sub1 {
 		Class147.anInt1960 = Class131_Sub41_Sub20.anInt6436;
 		Class43.anInt590 = Class131_Sub41_Sub20.anInt6436;
 		Class191.aString2817 = Class131_Sub2_Sub7.worldListHost;
-		Class131_Sub2_Sub31.HintHeadicoCID = Class147.anInt1960;
+		Class131_Sub2_Sub31.ConnectionPort = Class147.anInt1960;
 		if (Class126.anInt1696 == 1) {
 			Class131_Sub41_Sub5.aShortArrayArray6233 = RuntimeException_Sub1.aShortArrayArray3236;
 			Class131_Sub41_Sub8.defaultScreenColorRgb = 16777215;

@@ -513,7 +513,7 @@ public class IoBuffer {
 		long second = getIntB();
 		if (second < 0)
 			second = second & 0xffffffffL;
-		return (first << -41780448) + second;
+		return (first << 32) + second;
 	}
 
 	/**

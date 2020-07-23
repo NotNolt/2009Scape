@@ -3,6 +3,7 @@ package jagex;/* jagex.Login - Decompiled by JODE
  */
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Arrays;
 
 public class Login
 {
@@ -22,88 +23,172 @@ public class Login
 	if (arg0 == 7) {
 	    anInt1756++;
 	    if (Class75.anInt1024 != 0 && Class75.anInt1024 != 5) {
+			//System.out.println(Class75.anInt1024 + " !=0 || " + Class75.anInt1024 + " !=5"); //Cleared Move onto next
 		try {
-		    if (++Class110_Sub4.anInt3940 > 2000) {
+		    if (++Class110_Sub4.anInt3940 > 2000) {//Cleared Move onto Next
+				System.out.println(Class110_Sub4.anInt3940);//Skip
 			if (Class128_Sub1.aClass33_4013 != null) {
 			    Class128_Sub1.aClass33_4013.method452(-1);
 			    Class128_Sub1.aClass33_4013 = null;
 			}
-			if (PacketStream.anInt6130 >= 1) {
+			if (PacketStream.anInt6130 >= 1) {//When Full Cache this is Less Than 1
+				System.out.println(PacketStream.anInt6130);//SKIP
 			    Class75.anInt1024 = 0;
 			    Class4.anInt3281 = -5;
 			    return;
 			}
 			Class110_Sub4.anInt3940 = 0;
+			System.out.println("Class110_Sub4.anInt3940 = " + Class110_Sub4.anInt3940);
 			PacketStream.anInt6130++;
+			System.out.println("PacketStream.anInt6130++ = " + PacketStream.anInt6130);
 			Class75.anInt1024 = 1;
-			if (Class131_Sub2_Sub31.HintHeadicoCID == Class43.anInt590)
-			    Class131_Sub2_Sub31.HintHeadicoCID = Class131_Sub14.anInt4288;
+			if (Class131_Sub2_Sub31.ConnectionPort == Class43.anInt590)
+				Class131_Sub2_Sub31.ConnectionPort = Class131_Sub14.anInt4288;
 			else
-			    Class131_Sub2_Sub31.HintHeadicoCID = Class43.anInt590;
+			    Class131_Sub2_Sub31.ConnectionPort = Class43.anInt590;
+				System.out.println("Class131_Sub2_sub31 != Class43.anInt590:: FALSE");
 		    }
 		    if (Class75.anInt1024 == 1) {
-			Class17.aClass139_183 = (Class23_Sub4.aSignLink_3734.method2703(Class191.aString2817, (byte) 127, Class131_Sub2_Sub31.HintHeadicoCID));
+			System.out.println("Class75.anInt1024 is true");
+			Class17.aClass139_183 = (Class23_Sub4.aSignLink_3734.method2703(Class191.aString2817, (byte) 127, Class131_Sub2_Sub31.ConnectionPort));//Ip Address for, Byte 127, Port
+			System.out.println("Establishing Connections... :: String: " + Class191.aString2817 + " :: Byte 127 :: Int: " + Class131_Sub2_Sub31.ConnectionPort);
 			Class75.anInt1024 = 2;
 		    }
-		    if (Class75.anInt1024 == 2) {
-			if (Class17.aClass139_183.status == 2)
+		    if (Class75.anInt1024 == 2) {//If the Ip, byte and port are sent this is True
+			if (Class17.aClass139_183.status == 2)//Should never throw
 			    throw new IOException();
-			if (Class17.aClass139_183.status != 1)
+			if (Class17.aClass139_183.status != 1)//Should never throw
 			    return;
-			Class128_Sub1.aClass33_4013 = new Class33(((Socket)Class17.aClass139_183.anObject1866),Class23_Sub4.aSignLink_3734);
-			Class17.aClass139_183 = null;
+			Class128_Sub1.aClass33_4013 = new Class33(((Socket)Class17.aClass139_183.anObject1866),Class23_Sub4.aSignLink_3734);//This one opens the Socket for packet sending
+			Class17.aClass139_183 = null;//Defaulter for use elsewhere
+
+				/**
+				 *	Player Username Conversion
+ 				 */
 			long PlayerUsernameAsLong = (Class173.aLong2428 = Class173.method2454(Class64.PlayerUsernameString,65535));//Username is converted to long here, not sent
+			System.out.println("Class173.aLong2428:: " + Class173.aLong2428);
+			System.out.println("Class64.PlayerUsernameString:: " + Class64.PlayerUsernameString);
 			System.out.println("Client Login Debug <long>:: " + PlayerUsernameAsLong);
-			Class93.aClass131_Sub15_Sub2_1226.anInt4360 = 0;//Used to ping the server (Packet 0)
-			int nameHash = (int) (0x1fL & PlayerUsernameAsLong >> 708941584);//Login Packet 16 Constructor
-			Class93.aClass131_Sub15_Sub2_1226.writeByte(-109, 14);//HSReadEvent Opcode 14 Sent
-			Class93.aClass131_Sub15_Sub2_1226.writeByte(-118, nameHash);//Login Packet 16 Sent
+				 /**
+				  *
+				  */
+
+			//Packet 0 Used for pinging the server, has 0 data
+			Class93.aClass131_Sub15_Sub2_1226.anInt4360 = 0;
+
+			//Uses int @nameHash = <Byte math>
+			int nameHash = (int) (0x1fL & PlayerUsernameAsLong >> 16);//Login Packet 16 Constructor
+
+			//HSReadEvent Byte of -109, Opcode/Packet 14 JS5ReadEvent PACKET
+			Class93.aClass131_Sub15_Sub2_1226.writeByte(-109, 14);
+
+			//LoginReadEvent Byte of -118, Opcode/Packet 16 (from nameHash) LoginReadEvent PACKET
+			Class93.aClass131_Sub15_Sub2_1226.writeByte(-118, nameHash);
+
+			//Method that accepts arg0, arg1, arg2, byte arg3[] ** aByteArray4324 PacketStream
 			Class128_Sub1.aClass33_4013.method454(105, 2, 0, Class93.aClass131_Sub15_Sub2_1226.aByteArray4324);
+			System.out.println(Arrays.toString(Class93.aClass131_Sub15_Sub2_1226.aByteArray4324));
+
+			//Neither of these are null, arg0 stays same
 			if (Class131_Sub35.aClass215_4588 != null)
+				System.out.println("Class131_Sub35.aClass215_4588 is not null");
 			    Class131_Sub35.aClass215_4588.method2800(0);
 			if (Client.aClass215_3470 != null)
+				System.out.println("Client.aClass215_3470 is not null");
 			    Client.aClass215_3470.method2800(0);
+
+			//Client is requesting Input Stream from server
 			int i_0_ = Class128_Sub1.aClass33_4013.method444(-1707);
+			System.out.println("Response from server: " + i_0_);
+
+			//Neither of these are null, arg0 is 54, aBoolean3183 = true; anInt3158++; (Most of the time)
 			if (Class131_Sub35.aClass215_4588 != null)
+				System.out.println("Class131_Sub35.aClass215_4588 is not null");
 			    Class131_Sub35.aClass215_4588.method2800(0);
 			if (Client.aClass215_3470 != null)
+				System.out.println("Client.aClass215_3470 is not null");
 			    Client.aClass215_3470.method2800(arg0 + -7);
+
+			//Open stream from server as long as the server sends something back
 			if (i_0_ != 0) {
 			    Class4.anInt3281 = i_0_;
 			    Class75.anInt1024 = 0;
 			    Class128_Sub1.aClass33_4013.method452(-1);
-			    Class128_Sub1.aClass33_4013 = null;
+			    Class128_Sub1.aClass33_4013 = null;//Closes thread for listening
 			    return;
 			}
+
+			//Moves onto the next stage of login
 			Class75.anInt1024 = 3;
 		    }
-		    if (Class75.anInt1024 == 3) {
+		    if (Class75.anInt1024 == 3) {//Returns true
+		    	System.out.println(Class75.anInt1024 + " == x");
 			if (Class128_Sub1.aClass33_4013.method450((byte) 17) < 8)
-			    return;
+			    return;//Reopens input stream if certain values are met
+
+
+			//Arg1 <Used in method> || Arg2, Arg1, Arg3 Input stream read in that order
 			Class128_Sub1.aClass33_4013.method451(53, 0, (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.aByteArray4324), 8);
-			Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360 = 0;//First ping after "Decoded world login request opcode 16 (aka this is why 0 is showing up first)
-			Class1.aLong79 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readLong(-117);//Has to be related to client revision but idk how
+			System.out.println(Arrays.toString(Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.aByteArray4324));
+
+
+			//new Packet Stream of 5000, First ping after "Decoded world login request opcode 16 (aka this is why 0 is showing up first)
+			Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360 = 0;
+
+
+			Class1.aLong79 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readLong(-117);// client revision but idk how
+			System.out.println("LongClass1.aLong79 == " + Class1.aLong79);
+
+			//New int Array[4]
 			int[] DisplayInformation = new int[4];
+
+			//Gets and Sets values from aLong79 **SCREEN HEIGHT** as Short
 			DisplayInformation[3] = (int) Class1.aLong79;
+
+			//Gets and Sets values from aLong79 w/bitshift **SCREEN WIDTH** as Short
 			DisplayInformation[2] = (int) (Class1.aLong79 >> 32);
+
+			//Used as placeholder/unkown value
 			DisplayInformation[0] = (int) (Math.random() * 9.9999999E7);
+
+
 			Class93.aClass131_Sub15_Sub2_1226.anInt4360 = 0;//Used to ping the server (packet 0)
+
+			//Gets and Sets values from aLong79 w/ Math Random **DISPLAY MODE** as Byte
 			DisplayInformation[1] = (int) (Math.random() * 9.9999999E7);
+			System.out.println(Arrays.toString(DisplayInformation));
+
+			//Sends Packet 10 with a byte of -22
 			Class93.aClass131_Sub15_Sub2_1226.writeByte(-22, 10);//Packet 10 gets sent
-			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[0], (byte) 125);//Display Mode 1 Fixed, 2 Resize, 3 Fullscreen
-			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[1], (byte) 127);//Screen Width
-			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[2], (byte) 126);//Screen Height
-			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[3], (byte) 125);//
+
+			//Big ole Block of data being sent over to the server
+			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[0], (byte) 125);//? Read as Byte
+			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[1], (byte) 127);//Display Mode 1 Fixed, 2 Resize, 3 Fullscreen
+			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[2], (byte) 126);//Screen Width
+			Class93.aClass131_Sub15_Sub2_1226.writeInt(DisplayInformation[3], (byte) 125);//Screen Height
+
+
+			//Packet Stream of username to server Sets 4324Array to larger length Will be <long> followed by 65,535
 			Class93.aClass131_Sub15_Sub2_1226.method1747((byte) 115, Class173.method2454(Class64.PlayerUsernameString, arg0 + 65528));//arg0 = 7
+			System.out.println(Arrays.toString(Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.aByteArray4324));//Debug Check to check array that was changed
 			System.out.println("Writing Username Long: " + Class173.method2454(Class64.PlayerUsernameString, arg0 + 65528));
+
+			//Packet Stream of password to server as open string. Increases/Decreases length of 4324 followed by a byte of -104
 			Class93.aClass131_Sub15_Sub2_1226.writeString(Class131_Sub2_Sub11.PlayerPasswordString, (byte) -104);//Unencrypted Client Password String
 			System.out.println("Writing Password String... ");
+
+			//RSA Stuff
 			Class93.aClass131_Sub15_Sub2_1226.method1761(RuntimeException_Sub1.aBigInteger3246,(byte) -123, Class131_Sub2_Sub10.aBigInteger5699);
+
 			Class131_Sub3.aClass131_Sub15_Sub2_4123.anInt4360 = 0;
+			System.out.println(Arrays.toString(Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.aByteArray4324));
+
+			System.out.println("Am I 40? :: " + Class133.anInt1803);
 			if (Class133.anInt1803 != 40)
 			    Class131_Sub3.aClass131_Sub15_Sub2_4123.writeByte(arg0 ^ 0x35, 16);
 			else
 			    Class131_Sub3.aClass131_Sub15_Sub2_4123.writeByte(arg0 ^ ~0x12, 18);
+			System.out.println("Continuing... ");
 			Class131_Sub3.aClass131_Sub15_Sub2_4123.writeShort((Class93.aClass131_Sub15_Sub2_1226.anInt4360 + 161 + Class131_Sub30.method1856((byte) -112, (Class23_Sub2_Sub2.aString5186))), (byte) 56);
 			Class131_Sub3.aClass131_Sub15_Sub2_4123.writeInt(562, (byte) 126);
 			Class131_Sub3.aClass131_Sub15_Sub2_4123.writeByte(-29, Class90.anInt1175);
@@ -153,6 +238,7 @@ public class Login
 				DisplayInformation[i] += 50;
 			Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1790(DisplayInformation, arg0 ^ 0x4);
 			Class75.anInt1024 = 4;
+			System.out.println("Furthermore");
 		    }
 		    if (Class75.anInt1024 == 4) {
 			if (Class128_Sub1.aClass33_4013.method450((byte) 17) < 1)
@@ -172,6 +258,7 @@ public class Login
 						Class75.anInt1024 = 0;
 					} else {
 						if (i != 23 || (PacketStream.anInt6130) >= 1) {
+							System.out.println("Pakkit + " + PacketStream.anInt6130);
 							Class4.anInt3281 = i;
 							Class75.anInt1024 = 0;
 							Class128_Sub1.aClass33_4013.method452(-1);
@@ -355,15 +442,15 @@ public class Login
 		    } else {
 			Class110_Sub4.anInt3940 = 0;
 			Class75.anInt1024 = 1;
-			if (Class43.anInt590 == Class131_Sub2_Sub31.HintHeadicoCID)
-			    Class131_Sub2_Sub31.HintHeadicoCID
+			if (Class43.anInt590 == Class131_Sub2_Sub31.ConnectionPort)
+			    Class131_Sub2_Sub31.ConnectionPort
 				= Class131_Sub14.anInt4288;
 			else
-			    Class131_Sub2_Sub31.HintHeadicoCID = Class43.anInt590;
+			    Class131_Sub2_Sub31.ConnectionPort = Class43.anInt590;
 			PacketStream.anInt6130++;
 		    }
 		}
-	    }
+	    }//End up here if Server rejects login
 	}
     }
     

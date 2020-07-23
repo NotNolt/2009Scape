@@ -441,16 +441,14 @@ public class Class33 implements Runnable
 		if (aByteArray463 == null)
 		    aByteArray463 = new byte[5000];
 		synchronized (this) {
-		    for (int i = 0; arg1 > i;
-                 i++) {
+		    for (int i = 0; arg1 > i; i++) {
 			aByteArray463[anInt459] = arg3[i + arg2];
 			anInt459 = (1 + anInt459) % 5000;
 			if (anInt459 == (4900 + anInt478) % 5000)
 			    throw new IOException();
 		    }
 		    if (aClass139_483 == null)
-			aClass139_483
-			    = aSignLink_458.method2692((byte) 107, this, 3);
+			aClass139_483 = aSignLink_458.method2692((byte) 107, this, 3);
 		    this.notifyAll();
 		    if (arg0 <= 29)
 			aSignLink_458 = null;

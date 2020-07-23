@@ -1,6 +1,8 @@
 package jagex;/* jagex.Class131_Sub2_Sub10 - Decompiled by JODE
  * Visit http://jode.sourceforge.net/
  */
+import setting.Configurations;
+
 import java.math.BigInteger;
 
 public class Class131_Sub2_Sub10 extends Class131_Sub2
@@ -303,7 +305,7 @@ public class Class131_Sub2_Sub10 extends Class131_Sub2
     
     static {
 	aBoolean5697 = false;
-	aBigInteger5699 = (new BigInteger ("58778699976184461502525193738213253649000149147835990136706041084440742975821"));
+	aBigInteger5699 = (new BigInteger (String.valueOf(Configurations.MODULUS)));
 	aBoolean5702 = false;
 	anInt5703 = 0;
 	anIntArray5704 = new int[] { 1, 2, 4, 8 };

@@ -105,7 +105,7 @@ public class Class131_Sub8 extends Class131
 			Class51.anInt679 = 0;
 			Class23_Sub1_Sub1.anInt5080 = 0;
 			NPCDefinition.anInt858 = 0;
-			Class131_Sub2_Sub31.HintHeadicoCID0 = 0;
+			Class131_Sub2_Sub31.anInt10994 = 0;
 			OutputStream_Sub1.anInt64 = 0;
 			Class23_Sub3_Sub1.anInt5228 = 0;
 			Class131_Sub2_Sub5.anInt5613 = 0;
@@ -1664,7 +1664,7 @@ public class Class131_Sub8 extends Class131
 			Class179.anInt2546 = 0;
 			Class201.anInt2942 = 0;
 			Class88.anInt1156 = 0;
-			Class131_Sub2_Sub31.HintHeadicoCID5 = 0;
+			Class131_Sub2_Sub31.anInt10998 = 0;
 			Class204.anInt2981 = 0;
 			Class131_Sub2.anInt4083 = 0;
 			Class200.anInt2914 = 0;
@@ -2159,7 +2159,7 @@ public class Class131_Sub8 extends Class131
 			Class154.anInt2048 = 0;
 			RuntimeException_Sub1.anInt3241 = 0;
 			Stream.anInt4364 = 0;
-			Class131_Sub2_Sub31.HintHeadicoCID4 = 0;
+			Class131_Sub2_Sub31.anInt10999 = 0;
 			Class131_Sub37.anInt4593 = 0;
 			Class57.anInt755 = 0;
 			ItemDefinition.anInt315 = 0;

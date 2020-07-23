@@ -60,7 +60,7 @@ public class Class210
 		Class85.TimerbarDefCID = arg1.getContainerId(arg0 + 109, "timerbar_default");
 		Class55.HeadiconsPkCID = arg1.getContainerId(126, "headicons_pk");
 		Class110_Sub1.HeadiconsPrayerCID = arg1.getContainerId(108, "headicons_prayer");
-		Class44.HintHeadicoCID = arg1.getContainerId(95, "hint_headicons");
+		Class44.ConnectionPort = arg1.getContainerId(95, "hint_headicons");
 		Class131_Sub31.HintMapMarkerCID = arg1.getContainerId(120, "hint_mapmarkers");
 		Class93.MapFlagCID = arg1.getContainerId(124, "mapflag");
 		Class74.CrossCID = arg1.getContainerId(arg0 + 120, "cross");

@@ -81,7 +81,7 @@ public class Class110_Sub1 extends Class110
 	    synchronized (Class126.aClass201_1689) {
 		Class147.anInt1949 = Class131_Sub41_Sub4.anInt6212;
 		Class192.anInt2823++;
-		Class144.anInt1914 = Class131_Sub2_Sub31.HintHeadicoCID6;
+		Class144.anInt1914 = Class131_Sub2_Sub31.anInt10997;
 		int i = 27 / ((arg0 - -42) / 59);
 		Class23_Sub4_Sub3.anInt5005 = Class121_Sub1.anInt3982;
 		Class131_Sub23.anInt4458 = Client.anInt3467;
