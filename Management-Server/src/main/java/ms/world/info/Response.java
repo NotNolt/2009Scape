@@ -47,7 +47,7 @@ public enum Response {
 	FULL_WORLD(7),
 	
 	/**
-	 * Login server is offline.
+	 * jagex.Login server is offline.
 	 */
 	LOGIN_SERVER_OFFLINE(8),
 	

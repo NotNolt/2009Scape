@@ -2,7 +2,7 @@
 //
 //import org.crandor.game.content.global.SkillcapePerks;
 //import plugin.skill.Skills;
-//import org.crandor.game.node.entity.player.Player;
+//import org.crandor.game.node.entity.player.jagex.Player;
 //import org.crandor.game.node.entity.player.info.portal.Perks;
 //import org.crandor.game.node.entity.player.link.audio.Audio;
 //import org.crandor.game.node.item.Item;
@@ -156,7 +156,7 @@
 //	 * @param object the object.
 //	 * @return <code>True</code> if we we're succesfull.
 //	 */
-//	public boolean cook(final Food food, final Player player, final GameObject object) {
+//	public boolean cook(final Food food, final jagex.Player player, final GameObject object) {
 //		return cook(food, player, object, isBurned(player, object));
 //	}
 //
@@ -170,7 +170,7 @@
 //	 * @param if it's burned.
 //	 * @return <code>True</code> if we we're succesfull.
 //	 */
-//	public boolean cook(final Food food, final Player player, final GameObject object, final boolean burned) {
+//	public boolean cook(final Food food, final jagex.Player player, final GameObject object, final boolean burned) {
 //		if (player.getInventory().remove(food.getRaw())) {
 //			if (!burned) {
 //				Item item = food.getItem();
@@ -258,7 +258,7 @@
 //	 * @param object the object we check.
 //	 * @return the level at which the player stops burning.
 //	 */
-//	private final int getBurnLevel(final Player player, final GameObject object) {
+//	private final int getBurnLevel(final jagex.Player player, final GameObject object) {
 //		return player.getEquipment().containsItem(GAUNTLETS) ? gauntletsBurnLevel : object.getName().toLowerCase().equals("fire") ? fireBurnLevel : rangeBurnLevel;
 //	}
 //
@@ -268,7 +268,7 @@
 //	 * @param object the object.
 //	 * @return <code>True</code> if the food is burned or not.
 //	 */
-//	public boolean isBurned(final Player player, final GameObject object) {
+//	public boolean isBurned(final jagex.Player player, final GameObject object) {
 //		if (SkillcapePerks.hasSkillcapePerk(player, SkillcapePerks.COOKING)) {
 //			return false;
 //		}
@@ -298,7 +298,7 @@
 //	 * @param burned if the food is burned.
 //	 * @return the message to display.
 //	 */
-//	public String getMessage(final Food food, final Player player, final GameObject object, final boolean burned) {
+//	public String getMessage(final Food food, final jagex.Player player, final GameObject object, final boolean burned) {
 //		return messages != null && messages.length != 0 ? messages[burned ? 1 : 0].replace("@name", food.getItem().getName().toLowerCase()) : burned ? FAIL_MESSAGE.replace("@name", food.getItem().getName().toLowerCase()) + "." : "You successfully cook the " + food.getItem().getName().toLowerCase() + ".";
 //	}
 //}

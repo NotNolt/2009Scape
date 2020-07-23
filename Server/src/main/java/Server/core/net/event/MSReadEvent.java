@@ -31,6 +31,7 @@ public final class MSReadEvent extends IoReadEvent {
 		int last = -1;
 		while (buffer.hasRemaining()) {
 			int opcode = buffer.get() & 0xFF;
+			System.out.println("MSReadEvent opcode: " + opcode);
 			if (opcode >= PACKET_SIZE.length) {
 				break;
 			}

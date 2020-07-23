@@ -1,13 +1,13 @@
 /*
 package plugin.activity.pyramidplunder;
 
-import org.crandor.cache.def.impl.ObjectDefinition;
+import org.crandor.cache.def.impl.jagex.ObjectDefinition;
 import org.crandor.game.content.global.action.ClimbActionHandler;
 import plugin.skill.Skills;
 import org.crandor.game.interaction.OptionHandler;
 import org.crandor.game.node.Node;
 import org.crandor.game.node.entity.combat.ImpactHandler;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.item.Item;
 import org.crandor.game.node.object.ObjectBuilder;
 import org.crandor.game.world.GameWorld;
@@ -50,27 +50,27 @@ public final class PyramidPlunderOptions extends OptionHandler {
     Item[][] ARTIFACTS = { {new Item(9032),new Item(9036), new Item(9026)}, {new Item(9042), new Item(9030), new Item(9038)}, {new Item(9040), new Item(9028), new Item(9034)} };
     private static final Animation[] animations = new Animation[] { new Animation(2247), new Animation(2248), new Animation(1113), new Animation(2244) };
     int reqLevel;
-    //Player player;
+    //jagex.Player player;
     @Override
     public Plugin<Object> newInstance(Object arg) throws Throwable {
-        ObjectDefinition.forId(16517).getConfigurations().put("option:pass",this);
-        ObjectDefinition.forId(16503).getConfigurations().put("option:search",this);
-        ObjectDefinition.forId(16502).getConfigurations().put("option:search",this);
-        ObjectDefinition.forId(16501).getConfigurations().put("option:search",this);
-        ObjectDefinition.forId(16501).getConfigurations().put("option:check for snakes",this);
-        ObjectDefinition.forId(16502).getConfigurations().put("option:check for snakes",this);
-        ObjectDefinition.forId(16503).getConfigurations().put("option:check for snakes",this);
-        ObjectDefinition.forId(16473).getConfigurations().put("option:search",this);
-        ObjectDefinition.forId(16495).getConfigurations().put("option:open",this);
-        ObjectDefinition.forId(16475).getConfigurations().put("option:pick-lock",this);
-        ObjectDefinition.forId(16509).getConfigurations().put("option:search",this);
-        ObjectDefinition.forId(16510).getConfigurations().put("option:search",this);
-        ObjectDefinition.forId(16511).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16517).getConfigurations().put("option:pass",this);
+        jagex.ObjectDefinition.forId(16503).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16502).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16501).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16501).getConfigurations().put("option:check for snakes",this);
+        jagex.ObjectDefinition.forId(16502).getConfigurations().put("option:check for snakes",this);
+        jagex.ObjectDefinition.forId(16503).getConfigurations().put("option:check for snakes",this);
+        jagex.ObjectDefinition.forId(16473).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16495).getConfigurations().put("option:open",this);
+        jagex.ObjectDefinition.forId(16475).getConfigurations().put("option:pick-lock",this);
+        jagex.ObjectDefinition.forId(16509).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16510).getConfigurations().put("option:search",this);
+        jagex.ObjectDefinition.forId(16511).getConfigurations().put("option:search",this);
 
 
         return this;
     }
-    public void rollSceptre(Player player){
+    public void rollSceptre(jagex.Player player){
         if(RandomFunction.random(1000) == 451){
             if(!player.getInventory().isFull()) {
                 player.getInventory().add(new Item(9044));
@@ -81,7 +81,7 @@ public final class PyramidPlunderOptions extends OptionHandler {
             }
         }
     }
-    public final boolean success(final Player player, final int skill) {
+    public final boolean success(final jagex.Player player, final int skill) {
         double level = player.getSkills().getLevel(skill);
         double successChance = Math.ceil((level * 50 - reqLevel) / reqLevel / 3 * 4);
         int roll = RandomFunction.random(99);
@@ -91,7 +91,7 @@ public final class PyramidPlunderOptions extends OptionHandler {
         return false;
     }
     @Override
-    public boolean handle(Player player, Node node, String option) {
+    public boolean handle(jagex.Player player, Node node, String option) {
         PlunderObjectManager manager = player.getPlunderObjectManager();
         int NPCDeathTime = GameWorld.getTicks() + (1000 / 6);
         Location room_entrance[] = {new Location(1927,4477), new Location(1927,4453), new Location(1943,4421), new Location(1954,4477), new Location(1974,4420), new Location(1977,4471), new Location(1927, 4424), new Location(1965,4444)};

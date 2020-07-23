@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="clientlibs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Server/lib/clientlibs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/guava-18.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/joda-time-2.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/json-simple-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/laf-plugin-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/laf-widget-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/mysql-connector-java-5.1.30-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/reflections-0.9.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/substance-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/trident-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Server/lib/twitter4j-core-4.0.3-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -47,7 +47,7 @@ public final class ModeratorCommand extends CommandPlugin {
 				target.clear(true);
 				player.getPacketDispatch().sendMessage("Kicked player " + args[1] + " from this world.");
 			} else {
-				player.getPacketDispatch().sendMessage("Player " + args[1] + " was already inactive.");
+				player.getPacketDispatch().sendMessage("jagex.Player " + args[1] + " was already inactive.");
 			}
 			return true;
 		case "getinfo":

@@ -17,7 +17,7 @@ public enum ZoneType {
 	SAFE(1),
 
 	/**
-	 * Player-owner house type.
+	 * jagex.Player-owner house type.
 	 */
 	P_O_H(2),
 

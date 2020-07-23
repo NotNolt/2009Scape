@@ -58,7 +58,7 @@ public class ItemActionPacket implements IncomingPacket {
 			event = new NodeUsageEvent(player, interfaceId, item, npc);
 			UseWithHandler.run(event);
 			return;
-		case 248: // Item on Player
+		case 248: // Item on jagex.Player
 			int playerIndex = buffer.getLEShortA();
 			itemId = buffer.getShort();
 			slotId = buffer.getShort();

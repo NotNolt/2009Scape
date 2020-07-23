@@ -40,7 +40,7 @@ public final class TownCrierDialogue extends DialoguePlugin {
 	@Override
 	public boolean open(Object... args) {
 		npc = (NPC) args[0];
-		interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Hear ye! Hear ye! Player Moderators massive help to ", GameWorld.getName() + "!");
+		interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Hear ye! Hear ye! jagex.Player Moderators massive help to ", GameWorld.getName() + "!");
 		stage = 1;
 		return true;
 	}
@@ -50,17 +50,17 @@ public final class TownCrierDialogue extends DialoguePlugin {
 
 		switch (stage) {
 		case 1:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Oh, hello citizen. Are you here to find out about Player", "Moderators? Or perhaps would you like to know about the", "laws of the land?");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Oh, hello citizen. Are you here to find out about jagex.Player", "Moderators? Or perhaps would you like to know about the", "laws of the land?");
 			stage = 2;
 			break;
 		case 2:
-			interpreter.sendOptions("Select an Option", "Tell me about Player Moderators.", "Tell me about the Rules of " + GameWorld.getName() + ".", "Can you give me a handy tip please?", "Bye!");
+			interpreter.sendOptions("Select an Option", "Tell me about jagex.Player Moderators.", "Tell me about the Rules of " + GameWorld.getName() + ".", "Can you give me a handy tip please?", "Bye!");
 			stage = 3;
 			break;
 		case 3:
 			switch (buttonId) {
 			case 1:
-				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, "Tell me about Player Moderators.");
+				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, "Tell me about jagex.Player Moderators.");
 				stage = 50;
 				break;
 			case 2:
@@ -89,26 +89,26 @@ public final class TownCrierDialogue extends DialoguePlugin {
 			stage = 51;
 			break;
 		case 51:
-			interpreter.sendOptions("Select an Option", "What is a Player Moderator?", "What can Player Moderators do?", "How do I become a Player Moderator?", "What can Player Moderators not do?");
+			interpreter.sendOptions("Select an Option", "What is a jagex.Player Moderator?", "What can jagex.Player Moderators do?", "How do I become a jagex.Player Moderator?", "What can jagex.Player Moderators not do?");
 			stage = 52;
 			break;
 		case 52:
 
 			switch (buttonId) {
 			case 1:
-				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, " What is a Player Moderator?");
+				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, " What is a jagex.Player Moderator?");
 				stage = 150;
 				break;
 			case 2:
-				interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "What can Player Moderators do?");
+				interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "What can jagex.Player Moderators do?");
 				stage = 160;
 				break;
 			case 3:
-				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, "How do I become a Player Moderator?");
+				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, "How do I become a jagex.Player Moderator?");
 				stage = 170;
 				break;
 			case 4:
-				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, "What can Player Moderators not do?");
+				interpreter.sendDialogues(player, FacialExpression.HALF_GUILTY, "What can jagex.Player Moderators not do?");
 				stage = 180;
 				break;
 			}
@@ -157,15 +157,15 @@ public final class TownCrierDialogue extends DialoguePlugin {
 			stage = 2;
 			break;
 		case 150:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Player Moderators are normal players of the game, just", "like you. However, since they have shown themselves to be", "trustworthy and active reporters, they have been invited", "by Jagex to monitor the game and take appropriate");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "jagex.Player Moderators are normal players of the game, just", "like you. However, since they have shown themselves to be", "trustworthy and active reporters, they have been invited", "by Jagex to monitor the game and take appropriate");
 			stage = 151;
 			break;
 		case 151:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "reward when they see rule breaking. You can spot a Player", "Moderator in game by looking at the chat screen - when a", "Player Moderator speaks, a silver crown appears to the", "left of their name. Remember, if there's no silver crown");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "reward when they see rule breaking. You can spot a jagex.Player", "Moderator in game by looking at the chat screen - when a", "jagex.Player Moderator speaks, a silver crown appears to the", "left of their name. Remember, if there's no silver crown");
 			stage = 152;
 			break;
 		case 152:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "there, they are not a Player Moderator! You can check", "out the website if you'd like more information.");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "there, they are not a jagex.Player Moderator! You can check", "out the website if you'd like more information.");
 			stage = 153;
 			break;
 		case 153:
@@ -177,15 +177,15 @@ public final class TownCrierDialogue extends DialoguePlugin {
 			stage = 51;
 			break;
 		case 160:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Player Moderators, or 'P-mods', have the ability to mute", "rule breakers and " + GameWorld.getName() + " view their reports as a priority so", "that reward is taken as quickly as possible. P-Mods also", "have acces to the Player Moderator Centre. Within the");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "jagex.Player Moderators, or 'P-mods', have the ability to mute", "rule breakers and " + GameWorld.getName() + " view their reports as a priority so", "that reward is taken as quickly as possible. P-Mods also", "have acces to the jagex.Player Moderator Centre. Within the");
 			stage = 161;
 			break;
 		case 161:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Centre are tools to help them Moderate " + GameWorld.getName() + ".", "These tools include dedicated forums, the Player", "Moderator Guidelines and the Player Moderator Code of", "Conduct.");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "Centre are tools to help them Moderate " + GameWorld.getName() + ".", "These tools include dedicated forums, the jagex.Player", "Moderator Guidelines and the jagex.Player Moderator Code of", "Conduct.");
 			stage = 153;
 			break;
 		case 170:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "" + GameWorld.getName() + " picks players who spend their time and effort to", "help better the " + GameWorld.getName() + " community. To increase your", "chances of becoming a Player Moderator:");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "" + GameWorld.getName() + " picks players who spend their time and effort to", "help better the " + GameWorld.getName() + " community. To increase your", "chances of becoming a jagex.Player Moderator:");
 			stage = 171;
 			break;
 		case 171:
@@ -209,7 +209,7 @@ public final class TownCrierDialogue extends DialoguePlugin {
 			stage = 181;
 			break;
 		case 181:
-			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "back. All they can do is recommend you to go to Player", "Support. They cannot retrieve any items you may have", "lost and they certainly do not recieve any free items", "from " + GameWorld.getName() + " for moderating the game. They are players");
+			interpreter.sendDialogues(npc, FacialExpression.HALF_GUILTY, "back. All they can do is recommend you to go to jagex.Player", "Support. They cannot retrieve any items you may have", "lost and they certainly do not recieve any free items", "from " + GameWorld.getName() + " for moderating the game. They are players");
 			stage = 182;
 			break;
 		case 182:

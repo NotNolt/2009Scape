@@ -175,7 +175,7 @@ public final class LumbridgeCookDialogue extends DialoguePlugin {
 				}
 				break;
 
-			//If the Player does not want to help the Chef
+			//If the jagex.Player does not want to help the Chef
 			case 14:
 				interpreter.sendDialogues(npc, FacialExpression.SAD, "Fine. I always knew you Adventurer types were callous", "beasts. Go on your merry way!");
 				stage++;
@@ -184,7 +184,7 @@ public final class LumbridgeCookDialogue extends DialoguePlugin {
 				end();
 				break;
 
-			//If the Player does help the Chef
+			//If the jagex.Player does help the Chef
 			case 100:
 				player.getQuestRepository().getQuest("Cook's Assistant").start(player);
 				interpreter.sendDialogues(npc, FacialExpression.HAPPY, "Oh thank you, thank you. I need milk, an egg and", "flour. I'd be very grateful if you can get them for me.");

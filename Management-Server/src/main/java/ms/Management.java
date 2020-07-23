@@ -63,10 +63,10 @@ public final class Management {
 				String name = args[1];
 				PlayerSession player = WorldDatabase.getPlayer(name);
 				if (player == null) {
-					System.out.println("Player " + name + " was not registered!");
+					System.out.println("jagex.Player " + name + " was not registered!");
 					return;
 				}
-				System.out.println("Player [name=" + name + ", world=" + player.getWorldId() + ", active=" + player.isActive() + "].");
+				System.out.println("jagex.Player [name=" + name + ", world=" + player.getWorldId() + ", active=" + player.isActive() + "].");
 			}
 		},
 		new Command("-update", "Calls an update on all the game servers (-update -1 to cancel).") {
@@ -107,7 +107,7 @@ public final class Management {
 				String name = args[1];
 				PlayerSession player = WorldDatabase.getPlayer(name);
 				if (player == null) {
-					System.out.println("Player " + name + " was not registered!");
+					System.out.println("jagex.Player " + name + " was not registered!");
 					return;
 				}
 				player.getWorld().getPlayers().remove(name);

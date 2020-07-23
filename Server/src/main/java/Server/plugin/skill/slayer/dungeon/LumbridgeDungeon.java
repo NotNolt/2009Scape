@@ -52,7 +52,7 @@ public final class LumbridgeDungeon extends MapZone implements Plugin<Object> {
 
 	/*
 	 * @Override public boolean move(Entity e, Location loc, Location dest) { if
-	 * (!e.getLocks().isMovementLocked() && e instanceof Player) { final
+	 * (!e.getLocks().isMovementLocked() && e instanceof jagex.Player) { final
 	 * WallBeastNPC npc = BEASTS.get(e.getLocation()); if (npc != null) {
 	 * e.setDirection(Direction.getLogicalDirection(loc, dest)); return false; }
 	 * } return super.move(e, loc, dest); }

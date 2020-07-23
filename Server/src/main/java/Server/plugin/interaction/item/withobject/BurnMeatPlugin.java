@@ -5,7 +5,7 @@ import org.crandor.game.content.global.consumable.Consumables;
 import org.crandor.game.content.global.consumable.Food;
 import org.crandor.game.interaction.NodeUsageEvent;
 import org.crandor.game.interaction.UseWithHandler;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.item.Item;
 import org.crandor.game.node.object.GameObject;
 import org.crandor.game.world.update.flag.context.Animation;
@@ -66,7 +66,7 @@ public final class BurnMeatPlugin extends UseWithHandler {
 
 	@Override
 	public boolean handle(NodeUsageEvent event) {
-		final Player player = event.getPlayer();
+		final jagex.Player player = event.getPlayer();
 		final Food food = Consumables.forFood(event.getUsedItem());
 		final GameObject object = (GameObject) event.getUsedWith();
 		final Item usedItem = event.getUsedItem();

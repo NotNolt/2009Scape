@@ -3,7 +3,7 @@ package plugin.skill.fletching.items.crossbow;
 
 import plugin.skill.SkillPulse;
 import plugin.skill.Skills;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.item.Item;
 
 */
@@ -42,7 +42,7 @@ public class CrossbowPulse extends SkillPulse<Item> {
 	 * @param node the node.
 	 *//*
 
-	public CrossbowPulse(Player player, Item node, final StringCross bow, int amount) {
+	public CrossbowPulse(jagex.Player player, Item node, final StringCross bow, int amount) {
 		super(player, node);
 		this.bow = bow;
 		this.amount = amount;

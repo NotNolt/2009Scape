@@ -204,35 +204,35 @@ public class PortalChamberPlugin extends OptionHandler {
 		new Page( 
 			new PageAction("Varrock Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "VARROCK");
 					return true;
 				}
 			},
 			new PageAction("Lumbridge Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "LUMBRIDGE");
 					return true;
 				}
 			}, 
 			new PageAction("Falador Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "FALADOR");
 					return true;
 				}
 			},
 			new PageAction("Camelot Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "CAMELOT");
 					return true;
 				}
 			},
 			new PageAction("Ardougne Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "ARDOUGNE");
 					return true;
 				}
@@ -240,14 +240,14 @@ public class PortalChamberPlugin extends OptionHandler {
 		), new Page(
 			new PageAction("Yanille Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "YANILLE");
 					return true;
 				}
 			},
 			new PageAction("Kharyrll Portal") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					PortalChamberPlugin.direct(player, "KHARYRLL");
 					return true;
 				}

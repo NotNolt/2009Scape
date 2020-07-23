@@ -144,7 +144,7 @@ public class PlayerTab extends ConsoleTab {
         model.clear();
         File f = new File("./data/players/");
         if (f.listFiles() == null) {
-            System.out.println("Player directory was null!");
+            System.out.println("jagex.Player directory was null!");
             return;
         }
         for (File file : Objects.requireNonNull(f.listFiles())) {

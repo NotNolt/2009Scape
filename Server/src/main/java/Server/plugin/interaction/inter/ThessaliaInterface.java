@@ -234,7 +234,7 @@ public final class ThessaliaInterface extends ComponentPlugin {
 				player.getAppearance().getLegs().changeColor((Integer) player.getAttribute("newLegsColour"));
 			}
 
-			//Updates the Player Look, Closes the interface, and farewell from Thessalia
+			//Updates the jagex.Player Look, Closes the interface, and farewell from Thessalia
 			player.getAppearance().sync();
 			player.getInterfaceManager().close();
 			//TODO: Remove Changing Booth graphic and switch to Changing Booth disappearing animation. Needs to also work if player clicks away

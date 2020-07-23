@@ -115,7 +115,7 @@ public class ReadSignPostPlugin extends OptionHandler {
 		ObjectDefinition.forId(31298).getConfigurations().put("option:read", this);
 		ObjectDefinition.forId(31299).getConfigurations().put("option:read", this);
 		ObjectDefinition.forId(31300).getConfigurations().put("option:read", this);
-//		ObjectDefinition.forId(31301).getConfigurations().put("option:read", this);//goblin village
+//		jagex.ObjectDefinition.forId(31301).getConfigurations().put("option:read", this);//goblin village
 		return this;
 	}
 }

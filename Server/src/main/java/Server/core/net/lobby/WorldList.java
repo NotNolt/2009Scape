@@ -113,13 +113,13 @@ public final class WorldList {
 	/**
 	 * The last update time stamp (in server ticks).
 	 */
-	private static int updateStamp = 0;
+	private static int updateStamp = 0x94DA4A87;
 
 	/**
 	 * Populates the world list.
 	 */
 	static {
-		addWorld(new WorldDefinition(1, 0, FLAG_MEMBERS | FLAG_LOOTSHARE, "2009Scape Classic", "127.0.0.1", "Anywhere, USA", COUNTRY_USA));
+		addWorld(new WorldDefinition(3, 0, FLAG_MEMBERS | FLAG_LOOTSHARE, "2009Scape Classic", "127.0.0.1", "USA", COUNTRY_USA));
 	}
 
 	/**
@@ -144,11 +144,11 @@ public final class WorldList {
 		buf.putShort((short) 0);
 		buf.put((byte) 1);
 		IoBuffer buffer = new IoBuffer();
-		if (updateStamp != WorldList.updateStamp) {
+		if (updateStamp == WorldList.updateStamp) {
+			buf.put((byte) 0);
+		} else {
 			buf.put((byte) 1); // Indicates an update occured.
 			putWorldListinfo(buffer);
-		} else {
-			buf.put((byte) 0);
 		}
 		putPlayerInfo(buffer);
 		if (buffer.toByteBuffer().position() > 0) {
@@ -166,7 +166,7 @@ public final class WorldList {
 		buffer.putSmart(WORLD_LIST.size());
 		putCountryInfo(buffer);
 		buffer.putSmart(0);
-		buffer.putSmart(WORLD_LIST.size());
+		buffer.putSmart(WORLD_LIST.size() + 1);
 		buffer.putSmart(WORLD_LIST.size());
 		for (WorldDefinition w : WORLD_LIST) {
 			buffer.putSmart(w.getWorldId());

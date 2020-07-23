@@ -61,6 +61,7 @@ public final class LoginParser implements Runnable {
 	@Override
 	public void run() {
 		try {
+			System.out.println("jagex.Login Parser 1");
 			LOCK.tryLock(1000L, TimeUnit.MILLISECONDS);
 		} catch (Exception e){
 			System.out.println(e);
@@ -69,6 +70,7 @@ public final class LoginParser implements Runnable {
 		}
 		try {
 			if (validateRequest()) {
+				System.out.println("Handling jagex.Login");
 				handleLogin();
 			}
 		} catch (Throwable t) {
@@ -86,6 +88,7 @@ public final class LoginParser implements Runnable {
 	 * Handles the actual login.
 	 */
 	private void handleLogin() {
+		System.out.println("jagex.Login Parser Handle jagex.Login ()");
 		Player p = getWorldInstance();
 		if (!details.parse()) {
 			flag(Response.INVALID_LOGIN_SERVER);
@@ -107,6 +110,7 @@ public final class LoginParser implements Runnable {
 	 * @param reconnect If the player data should be parsed.
 	 */
 	public void initialize(final Player player, boolean reconnect) {
+		System.out.println("Initializing player");
 		if (reconnect) {
 			reconnect(player, type);
 			return;
@@ -146,6 +150,7 @@ public final class LoginParser implements Runnable {
 	 * @return The player instance, if found.
 	 */
 	private Player getWorldInstance() {
+		System.out.println("Getting world Instance");
 		Player player = Repository.getDisconnectionQueue().get(details.getUsername());
 		if (player == null) {
 			player = gamePlayer;
@@ -159,6 +164,7 @@ public final class LoginParser implements Runnable {
 	 * @param type The login type.
 	 */
 	private void reconnect(final Player player, LoginType type) {
+		System.out.println("Attempting to reconnect player");
 		Repository.getDisconnectionQueue().remove(details.getUsername());
 		player.initReconnect();
 		player.setActive(true);
@@ -183,19 +189,23 @@ public final class LoginParser implements Runnable {
 	 * @return {@code True} if the request is valid.
 	 */
 	private boolean validateRequest() {
+		System.out.println("Validating jagex.Login Request");
 		if (WorldCommunicator.getState() == ManagementServerState.CONNECTING) {
 			return flag(Response.LOGIN_SERVER_OFFLINE);
 		}
 		if (!details.getSession().isActive()) {
+			System.out.println("Valid jagex.Login Request FALSE");
 			return false;
 		}
 		if (SystemManager.isUpdating()) {
-			return flag(Response.UPDATING);
+			//return flag(Response.UPDATING);
 		}
 		if ((gamePlayer = Repository.getPlayer(details.getUsername())) != null && gamePlayer.getSession().isActive()) {
+			System.out.println("jagex.Player already online");
 			return flag(Response.ALREADY_ONLINE);
 		}
 		if (details.isBanned()) {
+			System.out.println("jagex.Player is banned");
 			return flag(Response.ACCOUNT_DISABLED);
 		}
 		return true;
@@ -207,6 +217,7 @@ public final class LoginParser implements Runnable {
 	 * @return {@code True} if successfully logged in.
 	 */
 	public boolean flag(Response response) {
+		System.out.println("Successful response");
 		details.getSession().write(response, true);
 		return response == Response.SUCCESSFUL;
 	}

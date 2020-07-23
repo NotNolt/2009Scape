@@ -10,7 +10,7 @@ import plugin.skill.cooking.CookingPulse;
 import org.crandor.game.interaction.NodeUsageEvent;
 import org.crandor.game.interaction.UseWithHandler;
 import org.crandor.game.node.Node;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.entity.player.link.RunScript;
 import org.crandor.game.node.item.Item;
 import org.crandor.game.node.object.GameObject;
@@ -73,7 +73,7 @@ public class CookingPlugin extends UseWithHandler {
 	}
 
 	@Override
-	public Location getDestination(final Player player, final Node node) {
+	public Location getDestination(final jagex.Player player, final Node node) {
 		if (node.getName().toLowerCase().equals("fire")) {
 			return player.getLocation().getY() > node.getLocation().getY() ? node.getLocation().transform(0, 1, 0) : player.getLocation().getX() < node.getLocation().getX() ? node.getLocation().transform(-1, 0, 0) : player.getLocation().getX() > node.getLocation().getX() ? node.getLocation().transform(1, 0, 0) : node.getLocation().transform(0, -1, 0);
 		} else {
@@ -140,12 +140,12 @@ public class CookingPlugin extends UseWithHandler {
 		 * @param player the player.
 		 *//*
 
-		public CookingDialoguePlugin(Player player) {
+		public CookingDialoguePlugin(jagex.Player player) {
 			super(player);
 		}
 
 		@Override
-		public DialoguePlugin newInstance(Player player) {
+		public DialoguePlugin newInstance(jagex.Player player) {
 			return new CookingDialoguePlugin(player);
 		}
 
@@ -229,11 +229,11 @@ public class CookingPlugin extends UseWithHandler {
 			stage = 0;
 		}
 
-		public void cookNonFood(Player player, int food, int product, int amount){
+		public void cookNonFood(jagex.Player player, int food, int product, int amount){
 			player.getPulseManager().run(new CookingPulse(player,food,amount,product,false));
 		}
 
-		public void cook(Player player, GameObject object, int food, int amount){
+		public void cook(jagex.Player player, GameObject object, int food, int amount){
 			player.getPulseManager().run(new CookingPulse(player,object,food,amount));
 		}
 

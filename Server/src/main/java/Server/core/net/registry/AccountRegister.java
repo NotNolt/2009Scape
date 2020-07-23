@@ -59,14 +59,7 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 	public static void read(final IoSession session, int opcode, ByteBuffer buffer) {
 		int day,month,year,country;
 		switch (opcode) {
-			case 147://details
-				day = buffer.get();
-				month = buffer.get();
-				year = buffer.getShort();
-				country = buffer.getShort();
-				response(session, RegistryResponse.SUCCESS);
-				break;
-			case 186://username
+			case 21://username
 				final String username = ByteBufferUtils.getString(buffer).replace(" ", "_").toLowerCase().replace("|", "");
 				if (username.length() <= 0 || username.length() > 12) {
 					response(session, RegistryResponse.INVALID_USERNAME);
@@ -82,9 +75,11 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 					public void run() {
 						try {
 							if (PlayerSQLManager.hasSqlAccount(username, "username")) {
+								System.out.println("Non avail user");
 								response(session, RegistryResponse.NOT_AVAILBLE_USER);
 								return;
 							}
+							System.out.println("User success");
 							response(session, RegistryResponse.SUCCESS);
 						} catch (SQLException e) {
 							e.printStackTrace();
@@ -92,12 +87,21 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 					}
 				});
 				break;
+			case 147://details
+				day = buffer.get();
+				month = buffer.get();
+				year = buffer.getShort();
+				country = buffer.getShort();
+				response(session, RegistryResponse.SUCCESS);
+				break;
 			case 36://Register details
 				buffer.get();
+				System.out.println("Registering details");
 				buffer = LoginReadEvent.getRSABlock(buffer);
 				buffer.getShort();
 				int revision = buffer.getShort();//revision?
 				if (revision != Constants.REVISION) {
+					System.out.println("Revision mistmatch");
 					response(session, RegistryResponse.CANNOT_CREATE);
 					break;
 				}

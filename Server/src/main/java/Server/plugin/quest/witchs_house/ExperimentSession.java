@@ -1,7 +1,7 @@
 /*
 package plugin.quest.witchs_house;
 
-import core.game.node.entity.player.Player;
+import core.game.node.entity.player.jagex.Player;
 import core.game.system.task.Pulse;
 import core.game.world.GameWorld;
 import core.game.world.map.Location;
@@ -13,7 +13,7 @@ public final class ExperimentSession {
 	 * The player.
 	 *//*
 
-	private final Player player;
+	private final jagex.Player player;
 
 	*/
 /**
@@ -29,7 +29,7 @@ public final class ExperimentSession {
 	 * @param player the player.
 	 *//*
 
-	public ExperimentSession(final Player player) {
+	public ExperimentSession(final jagex.Player player) {
 		this.player = player;
 		this.npc = new WitchsExperimentNPC(WitchsExperimentNPC.ExperimentType.values()[0].getId(), Location.create(2936, 3463, 0), this);
 		if (player.getExtension(ExperimentSession.class) != null) {
@@ -46,7 +46,7 @@ public final class ExperimentSession {
 	 * @return the session.
 	 *//*
 
-	public static ExperimentSession create(Player player) {
+	public static ExperimentSession create(jagex.Player player) {
 		return new ExperimentSession(player);
 	}
 
@@ -94,7 +94,7 @@ public final class ExperimentSession {
 	 * @return the session.
 	 *//*
 
-	public static ExperimentSession getSession(Player player) {
+	public static ExperimentSession getSession(jagex.Player player) {
 		return player.getExtension(ExperimentSession.class);
 	}
 
@@ -105,7 +105,7 @@ public final class ExperimentSession {
 	 * @return The player.
 	 *//*
 
-	public Player getPlayer() {
+	public jagex.Player getPlayer() {
 		return player;
 	}
 }*/

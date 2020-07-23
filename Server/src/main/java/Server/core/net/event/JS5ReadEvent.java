@@ -25,6 +25,7 @@ public final class JS5ReadEvent extends IoReadEvent {
 	public void read(IoSession session, ByteBuffer buffer) {
 		while (buffer.hasRemaining()) {
 			int opcode = buffer.get() & 0xFF;
+			System.out.println("JS5ReadEvent opcode: " + opcode);
 			if (buffer.remaining() < 3) {
 				queueBuffer(opcode);
 				return;

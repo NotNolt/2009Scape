@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Client" type="Application" factoryName="Application" singleton="false">
-    <option name="MAIN_CLASS_NAME" value="org.runite.Client" />
+    <option name="MAIN_CLASS_NAME" value="jagex.Client" />
     <module name="RS-2009" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Client" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/562 Client/src" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

@@ -8,12 +8,12 @@ package core.game.node.entity.player.info.login;
 public enum LoginType {
 
 	/**
-	 * Represents the <strong>Login</strong> type of a default connection.
+	 * Represents the <strong>jagex.Login</strong> type of a default connection.
 	 */
 	NORMAL_LOGIN(16),
 
 	/**
-	 * Represents the <strong>Login</strong> type of a reconnection.
+	 * Represents the <strong>jagex.Login</strong> type of a reconnection.
 	 */
 	RECONNECT_TYPE(18);
 

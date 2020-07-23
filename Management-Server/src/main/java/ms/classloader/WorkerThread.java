@@ -57,7 +57,7 @@ public class WorkerThread extends Thread {
     }
 
    /**
-    * Input Stream handler
+    * Input jagex.Stream handler
     */
     @SuppressWarnings("unused") //saving resource type for later
 	public void run() {
@@ -98,7 +98,7 @@ public class WorkerThread extends Thread {
                 }  
             }
         } catch(Exception e) {
-        	//System.out.println("Client force disconnect.");
+        	//System.out.println("jagex.Client force disconnect.");
 		} finally {
             try {
                 is.close();

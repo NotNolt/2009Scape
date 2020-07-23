@@ -112,62 +112,68 @@ public final class AnimationDefinition {
 				anIntArray2139[i] = ((buffer.getShort() & 0xFFFF << 16) + anIntArray2139[i]);
 			}
 		} else if (opcode != 2) {
-			if (opcode != 3) {
-				if (opcode == 4)
-					aBoolean2152 = true;
-				else if (opcode == 5)
-					anInt2142 = buffer.get() & 0xFF;
-				else if (opcode != 6) {
-					if (opcode == 7)
-						emoteItem = buffer.getShort() & 0xFFFF;
-					else if ((opcode ^ 0xffffffff) != -9) {
-						if (opcode != 9) {
-							if (opcode != 10) {
-								if (opcode == 11)
-									anInt2155 = buffer.get() & 0xFF;
-								else if (opcode == 12) {
-									int i = buffer.get() & 0xFF;
-									anIntArray2151 = new int[i];
-									for (int i_19_ = 0; ((i_19_ ^ 0xffffffff) > (i ^ 0xffffffff)); i_19_++)
-										anIntArray2151[i_19_] = buffer.getShort() & 0xFFFF;
-									for (int i_20_ = 0; i > i_20_; i_20_++)
-										anIntArray2151[i_20_] = ((buffer.getShort() & 0xFFFF << 16) + anIntArray2151[i_20_]);
-								} else if (opcode == 13) {
-									// opcode 13
-									int i = buffer.getShort() & 0xFFFF;
-									handledSounds = new int[i][];
-									for (int i_21_ = 0; i_21_ < i; i_21_++) {
-										int i_22_ = buffer.get() & 0xFF;
-										if ((i_22_ ^ 0xffffffff) < -1) {
-											handledSounds[i_21_] = new int[i_22_];
-											handledSounds[i_21_][0] = ByteBufferUtils.getTriByte(buffer);
-											for (int i_23_ = 1; ((i_22_ ^ 0xffffffff) < (i_23_ ^ 0xffffffff)); i_23_++) {
-												handledSounds[i_21_][i_23_] = buffer.getShort() & 0xFFFF;
-											}
-										}
-									}
-								} else if (opcode == 14) {
-									aBoolean2141 = true;
-								} else {
-									System.out.println("Unhandled animation opcode " + opcode);
-								}
-							} else
-								anInt2162 = buffer.get() & 0xFF;
-						} else
-							anInt2140 = buffer.get() & 0xFF;
-					} else
-						anInt2136 = buffer.get() & 0xFF;
-				} else
-					anInt2144 = buffer.getShort() & 0xFFFF;
-			} else {
+			if (opcode == 3) {
 				aBooleanArray2149 = new boolean[256];
 				int length = buffer.get() & 0xFF;
 				for (int i = 0; i < length; i++) {
 					aBooleanArray2149[buffer.get() & 0xFF] = true;
 				}
+			} else if (opcode == 4)
+				aBoolean2152 = true;
+			else if (opcode == 5)
+				anInt2142 = buffer.get() & 0xFF;
+			else if (opcode != 6) {
+				if (opcode == 7)
+					emoteItem = buffer.getShort() & 0xFFFF;
+				else if (opcode != 8) {
+					if (opcode != 9) {
+						if (opcode != 10) {
+							if (opcode == 11)
+								anInt2155 = buffer.get() & 0xFF;
+							else if (opcode == 12) {
+								int i = buffer.get() & 0xFF;
+								anIntArray2151 = new int[i];
+								for (int i_19_ = 0; (i > i_19_); i_19_++)
+									anIntArray2151[i_19_] = buffer.getShort() & 0xFFFF;
+								for (int i_20_ = 0; i > i_20_; i_20_++)
+									anIntArray2151[i_20_] = ((buffer.getShort() & 0xFFFF << 16) + anIntArray2151[i_20_]);
+							} else if (opcode == 13) {
+								// opcode 13
+								int i = buffer.getShort() & 0xFFFF;
+								handledSounds = new int[i][];
+								for (int i_21_ = 0; i_21_ < i; i_21_++) {
+									int i_22_ = buffer.get() & 0xFF;
+									if (i_22_ > 0) {
+										handledSounds[i_21_] = new int[i_22_];
+										handledSounds[i_21_][0] = ByteBufferUtils.getTriByte(buffer);
+										for (int i_23_ = 1; (i_23_ < i_22_); i_23_++) {
+											handledSounds[i_21_][i_23_] = buffer.getShort() & 0xFFFF;
+										}
+									}
+								}
+							} else if (opcode != 14) {
+								if (opcode != 15) {
+									if (opcode == 16) {
+										aBoolean2158 = true;
+									}
+									if (opcode >= 17) {
+										System.out.println("Unhandled opcode: " + opcode);
+									}
+									aBoolean2159 = true;
+								}
+								aBoolean2141 = true;
+							}
+							aBoolean2141 = true;
+						}
+						anInt2162 = buffer.get() & 0xFF;
+					}
+					anInt2140 = buffer.get() & 0xFF;
+				}
+				anInt2136 = buffer.get() & 0xFF;
 			}
-		} else
-			anInt2163 = buffer.getShort() & 0xFFFF;
+			anInt2144 = buffer.getShort() & 0xFFFF;
+		}
+		anInt2163 = buffer.getShort() & 0xFFFF;
 	}
 
 	public void method2394() {

@@ -15,12 +15,12 @@ Git clone this repository, or download the latest source with the clone or downl
 In a terminal, enter both the Management-Server and Server folders and run `gradle build`
 
 #### Optional: setting the server ip address for non-local servers
-In Client/src/main/java/org/runite/Configurations.java set LOCAL_MS and LOCAL_SERVER to false
+In jagex.Client/src/main/java/org/runite/Configurations.java set LOCAL_MS and LOCAL_SERVER to false
 
-In Client/src/main/java/org/runite/Client.java set PUBLIC_IP_ADDRESS to your server's ip address
+In jagex.Client/src/main/java/org/runite/jagex.Client.java set PUBLIC_IP_ADDRESS to your server's ip address
 
 ## Building the client:
-In a terminal, enter the Client folder and run `gradle build`
+In a terminal, enter the jagex.Client folder and run `gradle build`
 
 ## Installing the databases:
 
@@ -34,7 +34,7 @@ In a terminal, enter the Client folder and run `gradle build`
 
 ### Linux Command Line
 - Get and install mariadb or some other sql compatible database from your repository
-- Login and create global & server databases:
+- jagex.Login and create global & server databases:
 Create:
 ```
 CREATE DATABASE server;
@@ -51,4 +51,4 @@ In a terminal, navigate to the Management-Server folder and run `gradle run`
 
 Then navigate to the Server folder and run `gradle run`
 
-The client can also be run with `gradle run`. Gradle also generates jars that you can distribute inside Client/build/distributions/Client.zip
+The client can also be run with `gradle run`. Gradle also generates jars that you can distribute inside jagex.Client/build/distributions/jagex.Client.zip

@@ -224,7 +224,7 @@ public class SplashScreen extends JPanel implements MouseMotionListener, MouseLi
 							System.exit(0);
 							break;
 						case "settingsButton":
-							JOptionPane.showMessageDialog(new JFrame("Info"), "Client Settings will be implemented shortly.");
+							JOptionPane.showMessageDialog(new JFrame("Info"), "jagex.Client Settings will be implemented shortly.");
 							break;
 						default:
 							System.out.println("No actions for mouseclick on overlay: " + io.getName());

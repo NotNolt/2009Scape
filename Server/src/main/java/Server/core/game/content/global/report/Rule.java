@@ -24,7 +24,7 @@ public enum Rule {
 
 	/**
 	 * Represents if the rule is relative to the sequences that has happend.
-	 * @param player the <b>Player</b>.
+	 * @param player the <b>jagex.Player</b>.
 	 * @return {@code True} if so.
 	 */
 	public boolean canRequest(Player target) {

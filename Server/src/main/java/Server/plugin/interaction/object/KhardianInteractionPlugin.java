@@ -88,7 +88,7 @@ public final class KhardianInteractionPlugin extends OptionHandler {
 
 	/**
 	 * Method used to get a waterskin <code>Item</code>.
-	 * @param player the <code>Player</code>.
+	 * @param player the <code>jagex.Player</code>.
 	 * @return the <code>Item</code> or <code>Null</code>.
 	 */
 	public final Item getWaterSkin(final Player player) {

@@ -681,64 +681,64 @@ Thanks. (confused)
 ______________________________________________________________________
 Town crier
 
-Hear ye!Hear ye! Player Moderators massive help to
+Hear ye!Hear ye! jagex.Player Moderators massive help to
 		RuneSc
 
 >
-	Oh, hello citizen. Are you here to find out about Player
+	Oh, hello citizen. Are you here to find out about jagex.Player
       Moderators? Or perhaps would you like to know about the 
 			laws of the land?
 
 ---
 
-Tell me about Player Moderators. (confused) {
+Tell me about jagex.Player Moderators. (confused) {
 	Of course. What would you like to know?(happy)
 
 	--- (confused questions)
-	What is a Player Moderator? {
+	What is a jagex.Player Moderator? {
 
-	Player Moderators are the normal players of the game, just
+	jagex.Player Moderators are the normal players of the game, just
 	like you. However, since they have shown themselves to be
 	trustworthy and active reporters, they have been invited
 	by Jagex to monitor the game and take appropriate
 	
 	>
 	
-	action when they see rule breaking. You can spot a Player
+	action when they see rule breaking. You can spot a jagex.Player
 	Moderator in game by looking at the chat screen - when a
-	Player Moderator speaks, a silver crown appears to the
+	jagex.Player Moderator speaks, a silver crown appears to the
 	left of their name. Remember, if there's no silver crown
 
 	>
 
-	there, they are not a Player Moderator! You can check
+	there, they are not a jagex.Player Moderator! You can check
 	out the website if you'd like more information.
 
 	--- 
 	Thanks!(happy)
 	}//fuck
 	
-	What can Player Moderators do? {
-	Player Moderators, or 'P-mods', have the ability to mute
+	What can jagex.Player Moderators do? {
+	jagex.Player Moderators, or 'P-mods', have the ability to mute
        rule breakers and Jagex view their reports as a priority so
 	that action is taken as quickly as possible. P-Mods also
-	have access to the Player Moderator Centre. Within the	
+	have access to the jagex.Player Moderator Centre. Within the
 
 	>
 	
 	Centre are tools to help them Moderate RuneScape.
-		These tools include dedicated forums, the Player
-	Moderator Guidelines and the Player Moderator Code of
+		These tools include dedicated forums, the jagex.Player
+	Moderator Guidelines and the jagex.Player Moderator Code of
 			Conduct.
 	--- 
 	Thanks!(happy)
 	
 	} //not bad
 		
-	How do I become a Player Moderator? {
+	How do I become a jagex.Player Moderator? {
 	Jagex picks players who spend their time and effort to
 	help better the RuneScape community. To increase your
-		chances of becomming a Player Moderator:
+		chances of becomming a jagex.Player Moderator:
 	>
 
 	Keep your account secure! This is very important, as a
@@ -769,7 +769,7 @@ Tell me about Player Moderators. (confused) {
 	Thanks!(happy)
 	}//jesus christ
 
-	What can Player Moderators not do? { 
+	What can jagex.Player Moderators not do? {
 	
 	P-Mods cannot ban your account - they can only report
 	offences. Jagex then take action based on the evidence
@@ -778,7 +778,7 @@ Tell me about Player Moderators. (confused) {
 
 	>
 
-	back. All they can do is recommend you to go to Player
+	back. All they can do is recommend you to go to jagex.Player
 	Support. They cannot retrieve any items you may have lost
 	and they certainly do not recieve any free items
 	from Jagex for moderating the game. They are players
@@ -802,7 +802,7 @@ Tell me about Player Moderators. (confused) {
 
 	Is there anything else you'd like to know? (confused)
 
-		Tell me about Player Moderators.
+		Tell me about jagex.Player Moderators.
 		
 		Tell me about something else.
 

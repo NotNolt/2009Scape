@@ -99,7 +99,7 @@ public class GrandExchangeTab extends ConsoleTab {
         panel.add(scrollPane);
         scrollPane.setViewportView(list);
 
-        JButton btnDisplayDatabase = new JButton("Display Database");
+        JButton btnDisplayDatabase = new JButton("jagex.Display Database");
         btnDisplayDatabase.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 displayDatabase();

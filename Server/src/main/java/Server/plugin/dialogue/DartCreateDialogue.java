@@ -4,7 +4,7 @@ package plugin.dialogue;
 import plugin.dialogue.DialoguePlugin;
 import plugin.skill.fletching.items.darts.Dart;
 import plugin.skill.fletching.items.darts.DartPulse;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.plugin.InitializablePlugin;
 import org.crandor.game.node.item.Item;
 
@@ -58,12 +58,12 @@ public final class DartCreateDialogue extends DialoguePlugin {
 	 * @param player the player.
 	 *//*
 
-	public DartCreateDialogue(Player player) {
+	public DartCreateDialogue(jagex.Player player) {
 		super(player);
 	}
 
 	@Override
-	public DialoguePlugin newInstance(Player player) {
+	public DialoguePlugin newInstance(jagex.Player player) {
 		return new DartCreateDialogue(player);
 	}
 

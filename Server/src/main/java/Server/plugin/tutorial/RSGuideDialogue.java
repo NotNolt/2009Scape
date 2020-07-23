@@ -205,7 +205,7 @@ public class RSGuideDialogue extends DialoguePlugin {
 				stage = 29;
 				break;
 			case 29:
-				interpreter.sendDialogue("Minigame content continued:", "The Stronghold of Player Safety, the Warrior's Guild,", "Sorceress' Garden, and the Fight Pits.");
+				interpreter.sendDialogue("Minigame content continued:", "The Stronghold of jagex.Player Safety, the Warrior's Guild,", "Sorceress' Garden, and the Fight Pits.");
 				stage = 30;
 				break;
 			case 30:

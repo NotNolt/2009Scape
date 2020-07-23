@@ -150,26 +150,33 @@ public final class PlayerSQLManager {
 	 */
 	public static Response getCredentialResponse(String name, String pass) throws SQLException {
 		if (!SQLManager.isInitialized()) {
+			System.out.println("SQL Manager is not initialized");
 			return Response.INVALID_CREDENTIALS;
 		}
 		Connection connection = SQLManager.getConnection();
 		if (connection == null) {
+			System.out.println("Connection is null");
 			return Response.INVALID_LOGIN_SERVER;
 		}
 		ResultSet result = null;
 		PreparedStatement statement;
 		statement = connection.prepareStatement("SELECT * FROM " + "members" + " WHERE " + "" + "username" + "='" + name.toLowerCase() + "' LIMIT 1");
+		System.out.println("SQL Queried Name: " + name);
 		result = statement.executeQuery();
 		if (result == null || !result.next()) {
 			SQLManager.close(connection);
+			System.out.println("SQL Doin something fucky wucky");
 			return Response.INVALID_CREDENTIALS;
 		}
 		String realPass = result.getString("password");
+		System.out.println("realPass: " + realPass);
 		if (SystemManager.getEncryption().checkPassword(pass, realPass)) {
 			SQLManager.close(connection);
+			System.out.println("Yay we did it!");
 			return Response.SUCCESSFUL;
 		}
 		SQLManager.close(connection);
+		System.out.println("SQL Just doesn't want to deal with your shit atm.");
 		return Response.INVALID_CREDENTIALS;
 	}
 

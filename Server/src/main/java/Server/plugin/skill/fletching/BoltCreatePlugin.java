@@ -7,7 +7,7 @@ import plugin.skill.fletching.items.bolts.Bolt;
 import plugin.skill.fletching.items.bolts.BoltPulse;
 import org.crandor.game.interaction.NodeUsageEvent;
 import org.crandor.game.interaction.UseWithHandler;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.net.packet.PacketRepository;
 import org.crandor.net.packet.context.ChildPositionContext;
 import org.crandor.net.packet.out.RepositionChild;
@@ -43,7 +43,7 @@ public final class BoltCreatePlugin extends UseWithHandler {
 
 	@Override
 	public boolean handle(final NodeUsageEvent event) {
-		final Player player = event.getPlayer();
+		final jagex.Player player = event.getPlayer();
 
 	}
 

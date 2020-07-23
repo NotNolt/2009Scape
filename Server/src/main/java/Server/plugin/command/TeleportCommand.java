@@ -50,7 +50,7 @@ public final class TeleportCommand extends CommandPlugin {
 			}
 			player.getProperties().setTeleportLocation(Location.create(Integer.parseInt(args[1]), Integer.parseInt(args[2]), args.length > 3 ? Integer.parseInt(args[3]) : 0));
 			return true;
-		case "telecs": // Client ctrl+shift teleport
+		case "telecs": // jagex.Client ctrl+shift teleport
 			try {
 				Location loc = player.getPlayerFlags().getLastSceneGraph();
 				int x = ((loc.getRegionX() - 6) << 3) + toInteger(args[1]);

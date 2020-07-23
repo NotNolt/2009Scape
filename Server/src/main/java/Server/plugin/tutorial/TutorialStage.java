@@ -47,7 +47,7 @@ public enum TutorialStage {
 			} else {
 				removeHintIcon(player);
 			}
-			Component.setUnclosable(player, player.getDialogueInterpreter().sendPlaneMessageWithBlueTitle("", "Player controls", "Please click on the flashing spanner icon found at the bottom", "right of your screen. This will display your player controls.", ""));
+			Component.setUnclosable(player, player.getDialogueInterpreter().sendPlaneMessageWithBlueTitle("", "jagex.Player controls", "Please click on the flashing spanner icon found at the bottom", "right of your screen. This will display your player controls.", ""));
 		}
 	},
 	STAGE_2(2) {
@@ -59,7 +59,7 @@ public enum TutorialStage {
 				player.getConfigManager().set(1021, 0);
 			}
 			player.setAttribute("tut-island:hi_slot", HintIconManager.registerHintIcon(player, Repository.findNPC(945)));
-			Component.setUnclosable(player, player.getDialogueInterpreter().sendScrollMessageWithBlueTitle("Player controls", "On the side panel you can now see a variety of options from", "changing the brightness of the screen and the volume of", "music, to selecting whether your player should accept help", "from other players. Don't worry about these too much for now,", "they will become clearer as you explore the game. Talk to the", GameWorld.getName() + " Guide to continue."));
+			Component.setUnclosable(player, player.getDialogueInterpreter().sendScrollMessageWithBlueTitle("jagex.Player controls", "On the side panel you can now see a variety of options from", "changing the brightness of the screen and the volume of", "music, to selecting whether your player should accept help", "from other players. Don't worry about these too much for now,", "they will become clearer as you explore the game. Talk to the", GameWorld.getName() + " Guide to continue."));
 		}
 	},
 	STAGE_3(3) {
@@ -294,7 +294,7 @@ public enum TutorialStage {
 				player.getInterfaceManager().openTab(new Component(187));
 			}
 			player.getConfigManager().set(1021, 14);
-			Component.setUnclosable(player, player.getDialogueInterpreter().sendPlaneMessageWithBlueTitle("Cooking dough", "Well done! Your first loaf of bread. As you gain experience in", "Cooking, you will be able to make other things like pies, cakes and even ", "kebabs. Now you've got the hang of cooking, lets move on. Click on", "the flashing icon in the bottom right to see the Music Player."));
+			Component.setUnclosable(player, player.getDialogueInterpreter().sendPlaneMessageWithBlueTitle("Cooking dough", "Well done! Your first loaf of bread. As you gain experience in", "Cooking, you will be able to make other things like pies, cakes and even ", "kebabs. Now you've got the hang of cooking, lets move on. Click on", "the flashing icon in the bottom right to see the Music jagex.Player."));
 		}
 	},
 	STAGE_22(22) {
@@ -307,7 +307,7 @@ public enum TutorialStage {
 				player.getConfigManager().set(1021, 0);
 			}
 			player.setAttribute("tut-island:hi_slot", HintIconManager.registerHintIcon(player, Location.create(3072, 3090, 0), 1, -1, player.getHintIconManager().freeSlot(), 125, 4));
-			Component.setUnclosable(player, player.getDialogueInterpreter().sendPlaneMessageWithBlueTitle("The Music Player", "From this interface you can control the music that is played. As you", "explore the world and complete quests, more of the tunes will become", "unlocked. Once you've examined this menu use the next door to", "continue."));
+			Component.setUnclosable(player, player.getDialogueInterpreter().sendPlaneMessageWithBlueTitle("The Music jagex.Player", "From this interface you can control the music that is played. As you", "explore the world and complete quests, more of the tunes will become", "unlocked. Once you've examined this menu use the next door to", "continue."));
 		}
 	},
 	STAGE_23(23) {

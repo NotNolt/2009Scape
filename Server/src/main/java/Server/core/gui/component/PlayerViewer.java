@@ -107,7 +107,7 @@ public class PlayerViewer extends JPanel {
         lblRights.setBounds(6, 68, 176, 16);
         panel.add(lblRights);
 
-//		JLabel lblDisplayName = new JLabel("Display name: " + details.getUsername());
+//		JLabel lblDisplayName = new JLabel("jagex.Display name: " + details.getUsername());
 //		lblDisplayName.setBounds(6, 40, 213, 16);
 //		panel.add(lblDisplayName);
 

@@ -105,7 +105,7 @@ public final class PortalOptionPlugin extends OptionHandler {
 						player.getPacketDispatch().sendMessage("<col=FF0000>You don't have a house, talk to an estate agent to purchase a house.");
 						break;
 					}
-					//If the Player has a house, but does not have their house moved to the portal they are interacting with
+					//If the jagex.Player has a house, but does not have their house moved to the portal they are interacting with
 					if (player.getHouseManager().getLocation().getPortalId() != player.getAttribute("con:portal", -1)) {
 						player.getPacketDispatch().sendMessage("<col=FF0000>Your house is in " + player.getHouseManager().getLocation().getName() + ".");
 						player.sendMessage("<col=FF0000>Speak with an estate agent to change your house location.");

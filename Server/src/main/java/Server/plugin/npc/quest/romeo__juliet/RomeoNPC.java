@@ -54,7 +54,7 @@ public class RomeoNPC extends AbstractNPC {
 		super.tick();
 		/*if (speakDelay < GameWorld.getTicks()) {
 			speakDelay = GameWorld.getTicks() + 30;
-			for (Player p : RegionManager.getLocalPlayers(this, 2)) {
+			for (jagex.Player p : RegionManager.getLocalPlayers(this, 2)) {
 				if (!p.getInterfaceManager().isOpened() && RandomFunction.random(0, 8) == 2 && p.getQuestRepository().getQuest("Romeo & Juliet").getStage(p) == 0) {
 					if (p.getDialogueInterpreter().getDialogue() != null || p.getDialogueInterpreter().getDialogueStage() != null) {
 						continue;

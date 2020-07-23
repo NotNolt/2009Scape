@@ -29,6 +29,7 @@ public final class MSHSReadEvent extends IoReadEvent {
 
 	@Override
 	public void read(IoSession session, ByteBuffer buffer) {
+		System.out.println("MSHS Read Event initiated...");
 		int opcode = buffer.get() & 0xFF;
 		if (opcode == 14) {
 			session.setProducer(REGISTRY_PRODUCER);

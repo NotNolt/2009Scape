@@ -77,7 +77,7 @@ public final class QuizMasterEvent extends AntiMacroEvent {
 	public boolean enter(Entity entity) {
 		/*
 		 * if (player.getName().equals("vexia")) { return false; } if (entity
-		 * instanceof Player) { ((Player)
+		 * instanceof jagex.Player) { ((jagex.Player)
 		 * entity).getInterfaceManager().removeTabs(0, 1, 2, 3, 4, 5, 6, 7, 11,
 		 * 12); } return super.enter(entity);
 		 */

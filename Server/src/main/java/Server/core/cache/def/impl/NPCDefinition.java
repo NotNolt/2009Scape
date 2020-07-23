@@ -71,7 +71,7 @@ public final class NPCDefinition extends Definition<NPC> {
 	 * Unidentified variables.
 	 */
 	public int anInt833;
-	public int anInt836;
+	public int NPCWalkAnimation;
 	public int anInt837;
 	public boolean aBoolean841;
 	public int anInt842;
@@ -85,13 +85,13 @@ public final class NPCDefinition extends Definition<NPC> {
 	public byte aByte854;
 	public boolean aBoolean856;
 	public boolean aBoolean857;
-	public short[] aShortArray859;
-	public byte[] aByteArray861;
+	public short[] aShortArray859;//c
+	public byte[] aByteArray861;//c
 	public short aShort862;
 	public boolean aBoolean863;
 	public int anInt864;
-	public short[] aShortArray866;
-	public int[] anIntArray868;
+	public short[] aShortArray866;//c
+	public int[] anIntArray868;//c
 	public int anInt869;
 	public int anInt870;
 	public int anInt871;
@@ -104,14 +104,16 @@ public final class NPCDefinition extends Definition<NPC> {
 	public int anInt884;
 	public int configId;
 	public int anInt889;
-	public int[] anIntArray892;
+	public int[] anIntArray892;//c
 	public short aShort894;
-	public short[] aShortArray896;
+	public short[] aShortArray896;//c
 	public int anInt897;
 	public int anInt899;
 	public int anInt901;
 	public int standAnimation;
 	public int walkAnimation;
+	public boolean aBoolean849;
+	public int[] anIntArray885;
 	
 	private int renderAnimationId;
 
@@ -159,7 +161,7 @@ public final class NPCDefinition extends Definition<NPC> {
 		standAnimation = -1;
 		walkAnimation = -1;
 		combatLevel = 0;
-		anInt836 = -1;
+		NPCWalkAnimation = -1;
 		name = "null";
 		anInt869 = 0;
 		anInt850 = 255;
@@ -191,6 +193,7 @@ public final class NPCDefinition extends Definition<NPC> {
 		anInt897 = 0;
 		anInt901 = -1;
 		anIntArray868 = new int[0];
+		aBoolean849 = false;
 	}
 
 	/**
@@ -205,7 +208,7 @@ public final class NPCDefinition extends Definition<NPC> {
 			byte[] data = Cache.getIndexes()[18].getFileData(id >>> 134238215, id & 0x7f);
 			if (data == null) {
 				if (id != -1) {
-					// System.out.println("Failed loading NPC " + id + ".");
+					//System.out.println("Failed loading NPC " + id + ".");
 				}
 			} else {
 				def.parse(ByteBuffer.wrap(data));
@@ -283,7 +286,7 @@ public final class NPCDefinition extends Definition<NPC> {
 			anIntArray868 = new int[length];
 			for (int i_66_ = 0; i_66_ < length; i_66_++) {
 				anIntArray868[i_66_] = buffer.getShort() & 0xFFFF;
-				if ((anIntArray868[i_66_] ^ 0xffffffff) == -65536)
+				if (anIntArray868[i_66_] == 65535)
 					anIntArray868[i_66_] = -1;
 			}
 			break;
@@ -322,7 +325,7 @@ public final class NPCDefinition extends Definition<NPC> {
 			length = buffer.get() & 0xFF;
 			aShortArray859 = new short[length];
 			aShortArray896 = new short[length];
-			for (int i_65_ = 0; (length ^ 0xffffffff) < (i_65_ ^ 0xffffffff); i_65_++) {
+			for (int i_65_ = 0; i_65_ < length; i_65_++) {
 				aShortArray896[i_65_] = (short) (buffer.getShort() & 0xFFFF);
 				aShortArray859[i_65_] = (short) (buffer.getShort() & 0xFFFF);
 			}
@@ -331,7 +334,7 @@ public final class NPCDefinition extends Definition<NPC> {
 			length = buffer.get() & 0xFF;
 			aShortArray880 = new short[length];
 			aShortArray866 = new short[length];
-			for (int i_54_ = 0; (i_54_ ^ 0xffffffff) > (length ^ 0xffffffff); i_54_++) {
+			for (int i_54_ = 0; length > i_54_; i_54_++) {
 				aShortArray880[i_54_] = (short) (buffer.getShort() & 0xFFFF);
 				aShortArray866[i_54_] = (short) (buffer.getShort() & 0xFFFF);
 			}
@@ -346,7 +349,7 @@ public final class NPCDefinition extends Definition<NPC> {
 		case 60:
 			length = buffer.get() & 0xFF;
 			anIntArray892 = new int[length];
-			for (int i_64_ = 0; (i_64_ ^ 0xffffffff) > (length ^ 0xffffffff); i_64_++) {
+			for (int i_64_ = 0; length > i_64_; i_64_++) {
 				anIntArray892[i_64_] = buffer.getShort() & 0xFFFF;
 			}
 			break;
@@ -388,7 +391,7 @@ public final class NPCDefinition extends Definition<NPC> {
 				configId = -1;
 			}
 			int defaultValue = -1;
-			if ((opcode ^ 0xffffffff) == -119) {
+			if (opcode == 118) {
 				defaultValue = buffer.getShort() & 0xFFFF;
 				if (defaultValue == 65535) {
 					defaultValue = -1;
@@ -438,10 +441,10 @@ public final class NPCDefinition extends Definition<NPC> {
 			}
 			break;
 		case 122:
-			buffer.getShort();
+			NPCWalkAnimation = buffer.getShort();
 			break;
 		case 123:
-			buffer.getShort();
+			anInt846 = buffer.getShort();
 			break;
 		case 125:
 			buffer.get();
@@ -455,22 +458,55 @@ public final class NPCDefinition extends Definition<NPC> {
 			buffer.get();
 			break;
 		case 134:
-			buffer.getShort();
-			buffer.getShort();
-			buffer.getShort();
-			buffer.getShort();
-			buffer.get();
+			anInt876 = buffer.getShort();
+			anInt842 = buffer.getShort();
+			anInt884 = buffer.getShort();
+			anInt871 = buffer.getShort();
+			anInt875 = buffer.get();
 			break;
 		case 135:
-			buffer.get();
-			buffer.getShort();
+			anInt833 = buffer.get();
+			anInt874 = buffer.getShort();
 			break;
 		case 136:
-			buffer.get();
-			buffer.getShort();
+			anInt837 = buffer.get();
+			anInt889 = buffer.getShort();
 			break;
 		case 137:
-			buffer.getShort();
+			anInt872 = buffer.getShort();
+			break;
+		case 138:
+			anInt901 = (short) (buffer.getShort() & 0xFFFF);
+			break;
+		case 139:
+			anInt879 = (short) (buffer.getShort() & 0xFFFF);
+			break;
+		case 140:
+			anInt850 = buffer.get() & 0xFF;
+			break;
+		case 141:
+			aBoolean849 = true;
+			break;
+		case 142:
+			anInt870 = (short) (buffer.getShort() & 0xFFFF);
+			break;
+		case 143:
+			aBoolean856 = true;
+			break;
+		case 150:
+		case 151:
+		case 152:
+		case 153:
+		case 154:
+			options[opcode - 150] = ByteBufferUtils.getString(buffer);
+			if (options[opcode - 150].equalsIgnoreCase("Hidden"))
+				options[opcode + -150] = null;
+			break;
+		case 160:
+			length = buffer.get() & 0xFF;
+			anIntArray885 = new int[length];
+			for (int x = 0; length > x; x++)
+				anIntArray885[x] = (short) (buffer.getShort() & 0xFFFF);
 			break;
 		case 249:
 			length = buffer.get() & 0xFF;
@@ -485,7 +521,7 @@ public final class NPCDefinition extends Definition<NPC> {
 			}
 			break;
 		default:
-			//System.err.println("Unhandled NPC definition opcode: " + opcode);
+			System.err.println("Unhandled NPC definition opcode: " + opcode);
 		}
 		if (id == 3074) {
 			setName("Monk");
@@ -678,6 +714,12 @@ public final class NPCDefinition extends Definition<NPC> {
 	}
 
 	/**
+	 * Gets the isVisibleOnMap.
+	 * @return The isVisibleOnMap.
+	 */
+	public boolean aBoolean849() { return aBoolean849; }
+
+	/**
 	 * Gets the anInt833.
 	 * @return The anInt833.
 	 */
@@ -686,11 +728,11 @@ public final class NPCDefinition extends Definition<NPC> {
 	}
 
 	/**
-	 * Gets the anInt836.
-	 * @return The anInt836.
+	 * Gets the NPCWalkAnimation.
+	 * @return The NPCWalkAnimation.
 	 */
 	public int getAnInt836() {
-		return anInt836;
+		return NPCWalkAnimation;
 	}
 
 	/**
@@ -955,6 +997,14 @@ public final class NPCDefinition extends Definition<NPC> {
 	 */
 	public int[] getAnIntArray892() {
 		return anIntArray892;
+	}
+
+	/**
+	 * Gets the anIntArray892.
+	 * @return The anIntArray892.
+	 */
+	public int[] getanIntArray885() {
+		return anIntArray885;
 	}
 
 	/**

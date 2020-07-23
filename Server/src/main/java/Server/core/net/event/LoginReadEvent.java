@@ -11,6 +11,7 @@ import core.game.node.entity.player.info.login.LoginParser;
 import core.game.node.entity.player.info.login.LoginType;
 import core.game.node.entity.player.info.login.Response;
 import core.game.node.entity.player.info.portal.PlayerSQLManager;
+import core.game.system.SystemLogger;
 import core.game.system.task.TaskExecutor;
 import core.net.Constants;
 import core.net.IoReadEvent;
@@ -20,7 +21,9 @@ import core.tools.StringUtils;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
+import java.nio.channels.DatagramChannel;
 import java.sql.SQLException;
+import java.util.Base64;
 
 /**
  * Handles login reading events.
@@ -38,6 +41,11 @@ public final class LoginReadEvent extends IoReadEvent {
 	 */
 	public static final BigInteger MODULUS = new BigInteger("119365899446067315932975991898363325061579719991294025359328021960040125142258621067848949689980866028232491082585431814345859060363748342297790362002830405818586025541018815563000741957417375211440504983329981059065255756529758598479962175681326119784430342275130902058984323109363665114655494006708620299283");
 
+
+	private int nameHash;
+
+
+
 	/**
 	 * Constructs a new {@code LoginReadEvent}.
 	 * @param session The session.
@@ -50,91 +58,146 @@ public final class LoginReadEvent extends IoReadEvent {
 	@Override
 	public void read(IoSession session, ByteBuffer buffer) {
 		int opcode = buffer.get() & 0xFF;
-		if ((buffer.getShort() & 0xFFFF) != buffer.remaining()) {
-			session.write(Response.BAD_SESSION_ID);
-			return;
-		}
-		if (buffer.getInt() != Constants.REVISION) {// || buffer.getInt() != Constants.CLIENT_BUILD) {
-			session.write(Response.UPDATED);
-			return;
-		}
 		switch (opcode) {
-		case 16: // Reconnect world login
-		case 18: // World login
-			decodeWorld(opcode, session, buffer);
-			break;
-		default:
-			System.err.println("[Login] Unhandled login type [opcode=" + opcode + "]!");
-			session.disconnect();
-			break;
+			case 16:
+			case 18:
+				System.out.println("Decoding World...");
+				decodeWorld(opcode, session, buffer);
+				break;
+			default:
+				System.err.println("[jagex.Login] Unhandled login type [opcode=" + opcode + "]!");
+				session.disconnect();
+				break;
 		}
 	}
+
+	//buffer.get() & 0xFF;
+	//buffer.getShort() & 0xFFFF;
 
 	/**
 	 * Decodes a world login request.
 	 * @param session The session.
 	 * @param buffer The buffer to read from.
 	 */
-	private static void decodeWorld(final int opcode, final IoSession session, ByteBuffer buffer) {
-		buffer.get(); // Memory?
-		buffer.get();// no advertisement = 1
-		buffer.get();// 1
-		int windowMode = buffer.get();// Screen size mode
-		int screenWidth = buffer.getShort(); // Screen size Width
-		int screenHeight = buffer.getShort(); // Screen size Height
-		int displayMode = buffer.get(); // Display mode
-		byte[] data = new byte[24]; // random.dat data.
-		buffer.get(data);
+	private void decodeWorld(final int opcode, final IoSession session, ByteBuffer buffer) {
+		int packetSize = buffer.getShort();
+		if(packetSize != buffer.remaining()) {
+			session.disconnect();
+			return;
+		}
+		if(buffer.getInt() != Constants.REVISION) {
+			session.write(Response.UPDATED);
+			return;
+		}
+		buffer.get();
+		int displayMode = buffer.get();
+		int screenWidth = buffer.getShort();
+		int screenHeight = buffer.getShort();
+		for (int i = 0; i < 24; i++)
+			buffer.get();
 		ByteBufferUtils.getString(buffer);
-		buffer.getInt();// Affiliate id
-		buffer.getInt(); // Hash containing a bunch of settings
-		buffer.getShort();//Current interface packet counter.
+		for (int it = 0; it < 2; it++)
+			buffer.getInt();
+		buffer.getShort();
+
 		for (int i = 0; i < Cache.getIndexes().length; i++) {
 			int crc = Cache.getIndexes()[i] == null ? 0 : Cache.getIndexes()[i].getInformation().getInformationContainer().getCrc();
 			if (crc != buffer.getInt() && crc != 0) {
-				session.write(Response.UPDATED);
-				return;
+				//System.out.println("Invalid CRC at index: "+ crc);
+				//session.write(Response.UPDATED);
+				//return;
 			}
 		}
-		buffer = getRSABlock(buffer);
+		if (buffer.get() != 10)
+			buffer.get();
+		for (int index = 0; index < 4; index++)
+			buffer.getInt();
+		long playerLongName = buffer.getLong();
+		if ((31 & playerLongName >> 16) != nameHash) {
+			System.out.println("playerLongName: " + playerLongName + "  " + "namehash: " + nameHash);
+		}
+		String passwordString = ByteBufferUtils.getString(buffer);
+
+
+		final ByteBuffer z = buffer;
+		TaskExecutor.executeSQL(() -> {
+			try {
+				final String username = StringUtils.longToString(playerLongName);
+				final String password = passwordString;
+				Response response = PlayerSQLManager.getCredentialResponse(username, password);
+
+				if (response != Response.SUCCESSFUL) {
+					System.out.println(response);
+					System.out.println("Username :" + username);
+					System.out.println("Password :" + password);
+					session.write(response, true);
+					return;
+				}
+				System.out.println("jagex.Login sent successfully");
+				session.setClientInfo(new ClientInfo(displayMode, screenWidth, screenHeight));
+				login(new PlayerDetails(username, password), session, z, opcode);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		});
+	}
+
+
+
+
+
+//		byte uno = buffer.get(); // Memory?
+//		System.out.println("Passed Byte 1: " + uno);
+//		byte dos = buffer.get();// no advertisement = 1
+//		System.out.println("Passed Byte 2: " + dos);
+//		byte tris = buffer.get();// 1
+//		System.out.println("Passed Byte 3: " + tris);
+//		int windowMode = buffer.get();// Screen size mode
+//		System.out.println("Retrieved windowMode " + windowMode);
+//
+//		System.out.println("Retrieved screenWidth " + screenWidth);
+//
+//		System.out.println("Retrieved screenHeight " + screenHeight);
+//		int displayMode = buffer.get(); // jagex.Display mode
+//		System.out.println("Retrieved displayMode " + displayMode);
+//
+//
+//		byte[] data = new byte[24]; // random.dat data.
+//		System.out.println("Reading Random.dat data" + opcode);
+//		buffer.get(data);
+//		System.out.println("Buffer retrieved data" + opcode);
+//
+//
+//		String astring =ByteBufferUtils.getString(buffer);
+//		System.out.println("Getting data as string" + astring);
+//
+//
+//		int affliliate = buffer.getInt();// Affiliate id
+//		System.out.println("Found Affiliate ID" + affliliate);
+//		buffer.getInt(); // Hash containing a bunch of settings
+//		System.out.println("Found Settings Hash");
+//		buffer.getShort();//Current interface packet counter.
+//		System.out.println("Found Interface packets");
+		/*buffer = getRSABlock(buffer);
 		int[] isaacSeed = getISAACSeed(buffer);
 		ISAACCipher inCipher = new ISAACCipher(isaacSeed);
 		for (int i = 0; i < 4; i++) {
 			isaacSeed[i] += 50;
 		}
 		ISAACCipher outCipher = new ISAACCipher(isaacSeed);
-		session.setIsaacPair(new ISAACPair(inCipher, outCipher));
-		session.setClientInfo(new ClientInfo(displayMode, windowMode, screenWidth, screenHeight));
-		final ByteBuffer b = buffer;
-		TaskExecutor.executeSQL(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					final String username = StringUtils.longToString(b.getLong());
-					final String password = ByteBufferUtils.getString(b);
-					Response response = PlayerSQLManager.getCredentialResponse(username, password);
-					if (response != Response.SUCCESSFUL) {
-						session.write(response, true);
-						return;
-					}
-					login(new PlayerDetails(username, password), session, b, opcode);
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+		session.setIsaacPair(new ISAACPair(inCipher, outCipher));*/
+
 
 	/**
 	 * Handles the login procedure after we check an acc is registered & certified.
-	 * @param username the username.
-	 * @param password the password.
+	 * @param details the password.
 	 * @param session the session.
 	 * @param buffer the byte buffer.
 	 * @param opcode the opcode.
 	 */
 	private static void login(final PlayerDetails details, IoSession session, ByteBuffer buffer, int opcode) {
 		final LoginParser parser = new LoginParser(details, LoginType.fromType(opcode));
+		System.out.println("Login Procedures Checked");
 		details.setSession(session);
 		details.getInfo().translate(new UIDInfo(details.getIpAddress(), ByteBufferUtils.getString(buffer), ByteBufferUtils.getString(buffer),ByteBufferUtils.getString(buffer)));
 		if (WorldCommunicator.isEnabled()) {
@@ -171,6 +234,14 @@ public final class LoginReadEvent extends IoReadEvent {
 			throw new IllegalArgumentException("Invalid RSA header " + num + "!");
 		}
 		return block;
+	}
+
+	public void setNameHash(int nameHash) {
+		this.nameHash = nameHash;
+	}
+
+	public int getNameHash() {
+		return nameHash;
 	}
 
 }

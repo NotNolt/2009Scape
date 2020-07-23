@@ -21,13 +21,13 @@ build_client() {
   if [ "$changeIP" = "y" ]; then
     echo "Enter desired IP address:"
     read -r newIP
-    echo "target_ip_addr:$newIP" > Client/src/main/resources/client.conf
+    echo "target_ip_addr:$newIP" > jagex.Client/src/main/resources/client.conf
   fi
-  cd Client/ || exit
+  cd jagex.Client/ || exit
   gradle build || exit
   cd "$origDir" || exit
-  tar xvf Client/build/distributions/Client.tar || exit
-  cp Client/build/libs/client-1.0.0.jar Client/bin/2009scape.jar || exit
+  tar xvf jagex.Client/build/distributions/jagex.Client.tar || exit
+  cp jagex.Client/build/libs/client-1.0.0.jar jagex.Client/bin/2009scape.jar || exit
   echo "Client jarfile can be found at Client/bin/2009scape.jar"
 }
 build_ms() {

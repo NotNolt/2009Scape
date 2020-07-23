@@ -72,7 +72,7 @@ public enum HouseLocation {
 			}
 			pageActions[index++] = new PageAction(hl.name() + " - " + hl.cost + "gp") {
 				@Override
-				public boolean run(Player player) {
+				public boolean run(jagex.Player player) {
 					if (player.getHouseManager().getLocation() == hl) {
 						player.sendMessage("<col=FF0000>Your house already resides in " + hl.name() + "!");
 						return true;

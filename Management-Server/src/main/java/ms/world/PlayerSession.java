@@ -170,6 +170,7 @@ public final class PlayerSession {
 	 * @return the player session.
 	 */
 	public static PlayerSession get(String username) {
+		System.out.println("Getting player session...");
 		PlayerSession session = new PlayerSession(username, "", new UIDInfo());
 		if (!session.parse()) {
 			return null;

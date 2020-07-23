@@ -4,7 +4,7 @@ package plugin.consumable.food;
 import org.crandor.game.content.global.consumable.ConsumableProperties;
 import org.crandor.game.content.global.consumable.CookingProperties;
 import org.crandor.game.content.global.consumable.Food;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.item.GroundItemManager;
 import org.crandor.game.node.item.Item;
 import org.crandor.plugin.InitializablePlugin;
@@ -63,7 +63,7 @@ public final class CakePlugin extends Food {
 		}
 
 		@Override
-		public boolean cook(final Food food, final Player player, final GameObject object) {
+		public boolean cook(final Food food, final jagex.Player player, final GameObject object) {
 			if (!player.getInventory().add(CAKE_TIN)) {
 				GroundItemManager.create(CAKE_TIN, player);
 			}

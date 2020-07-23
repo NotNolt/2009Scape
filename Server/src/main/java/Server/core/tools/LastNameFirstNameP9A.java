@@ -16,7 +16,7 @@ public class LastNameFirstNameP9A {
         String menuChoice;
         int[] origList = new int[PHYSICAL_SIZE];
         int[] list = new int[PHYSICAL_SIZE];
-        //---------------------------Display My Information---------------------------
+        //---------------------------jagex.Display My Information---------------------------
         System.out.println("Main Menu for Sorts and Searches\n\n");
         System.out.println("1. Generate Random Numbers For the Original Array");
         System.out.println("2. Copy the original Array");

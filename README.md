@@ -44,7 +44,7 @@ Since this portion of the guide is operating-system specific, you will either ne
 - Instructions for various Linux distros can be found [here](https://github.com/dginovker/2009Scape/tree/b7bffda1c787f0ad8e9da83f9de7616990927878/CompiledServer/Guides)
 
 
-## Step 4: Running the Server & Client
+## Step 4: Running the Server & jagex.Client
 - Run the management-server
   - In IntelliJ, select the Management Server configuration, click Run
 - Run the server
@@ -61,8 +61,8 @@ Errors could not find library:
   - Now click `Dependencies`
   - Click the `+` on the right-hand side > `JARs or directories`
   - Add the following things:
-    - `Client/lib` directory
-    - `Client/clientlibs.jar` file
+    - `jagex.Client/lib` directory
+    - `jagex.Client/clientlibs.jar` file
     - `Management-server/lib` directory
 
 Errors regarding java.nio.BufferUnderflowException in server:

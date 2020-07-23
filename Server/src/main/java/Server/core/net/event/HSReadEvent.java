@@ -37,18 +37,23 @@ public final class HSReadEvent extends IoReadEvent {
 		}
 		count.put(session.getAddress(), amount + 1);
 		int opcode = buffer.get() & 0xFF;
+		System.out.println("HSReadEvent opcode - " + opcode);
 		switch (opcode) {
 		case 14:
 			session.setNameHash(buffer.get() & 0xFF);
+			System.out.println("Setting name Hash - HSReadEvent");
 			session.setServerKey(RandomFunction.RANDOM.nextLong());
+			System.out.println("Setting Server Key - HSReadEvent");
 			session.write(true);
 			break;
 		case 15:
 			int revision = buffer.getInt();
-			int sub_revision = buffer.getInt();
+			System.out.println("Revision " + revision);
+			//int sub_revision = buffer.getInt();
 			buffer.flip();
 			System.out.println(buffer.limit());
-			if (revision != Constants.REVISION || sub_revision != Constants.CLIENT_BUILD) {
+			if (revision != Constants.REVISION) { //|| sub_revision != Constants.CLIENT_BUILD) {
+				System.out.println("Revision disconnect!");
 				session.disconnect();
 				break;
 			}
@@ -57,13 +62,19 @@ public final class HSReadEvent extends IoReadEvent {
 		case 147:
 		case 186:
 		case 36:
+		case 21:
+			System.out.println("Reading Account Register...");
 			AccountRegister.read(session, opcode, buffer);
 			break;
-		case 255: // World list
+		case 255:
+		case 23:	// World list
+			System.out.println("Updating world list information");
 			int updateStamp = buffer.getInt();
 			WorldList.sendUpdate(session, updateStamp);
 			break;
+
 		default:
+			System.out.println("Disconnecting because fuck you - HSReadEvent");
 			session.disconnect();
 			break;
 		}

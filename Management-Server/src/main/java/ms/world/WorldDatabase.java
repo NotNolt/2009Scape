@@ -47,11 +47,11 @@ public class WorldDatabase {
 		buf.putShort((short) 0);
 		buf.put((byte) 1);
 		IoBuffer buffer = new IoBuffer();
-		if (updateStamp != (int) WorldDatabase.updateStamp) {
+		if (updateStamp == (int) WorldDatabase.updateStamp) {
+			buf.put((byte) 0);
+		} else {
 			buf.put((byte) 1); // Indicates an update occured.
 			putWorldListinfo(buffer);
-		} else {
-			buf.put((byte) 0);
 		}
 		putPlayerInfo(buffer);
 		if (buffer.toByteBuffer().position() > 0) {

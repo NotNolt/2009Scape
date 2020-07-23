@@ -83,13 +83,6 @@ public final class WalkPacket implements IncomingPacket {
 		if (player == null) {
 			return null;
 		}
-		AIPlayer aip = player.getAttribute("aip_select");
-		if (aip != null && aip.getLocation().withinDistance(player.getLocation())) {
-			if (!player.getAttribute("aip_perm_select", true)) {
-				player.removeAttribute("aip_select");
-			}
-			return aip;
-		}
 		return player;
 	}
 

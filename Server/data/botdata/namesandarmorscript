@@ -9,7 +9,7 @@ name:cblevel:helmet:cape:neck:weapon:chest:shield:unknown:legs:unknown:gloves:bo
 
 
 import org.osbot.rs07.api.def.ItemDefinition;
-import org.osbot.rs07.api.model.Player;
+import org.osbot.rs07.api.model.jagex.Player;
 import org.osbot.rs07.script.Script;
 import org.osbot.rs07.script.ScriptManifest;
 
@@ -23,7 +23,7 @@ public class Reader extends Script {
 
     @Override
     public int onLoop() {
-        Player p = getPlayers().closest(o -> !names.contains(o.getName()));
+        jagex.Player p = getPlayers().closest(o -> !names.contains(o.getName()));
         if (p != null)
         {
             names.add(p.getName());
@@ -62,7 +62,7 @@ public class Reader extends Script {
         }
     }
 
-    private String getOthersEquipment(Player p) {
+    private String getOthersEquipment(jagex.Player p) {
         String equipmentList = "";
         if(p != null) {
             int[] equipment = p.getDefinition().getAppearance();

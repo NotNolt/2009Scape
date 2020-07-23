@@ -182,7 +182,7 @@ public final class HairInterfacePlugin extends ComponentPlugin {
 				player.getAppearance().getBeard().changeLook((Integer) player.getAttribute("newBeard"));
 			}
 
-			//Updates the Player Look, Closes the interface, and farewell from the Hairdresser
+			//Updates the jagex.Player Look, Closes the interface, and farewell from the Hairdresser
 			player.getAppearance().sync();
 			player.getInterfaceManager().close();
 			//TODO: Remove Changing Booth graphic and switch to Changing Booth disappearing animation. Needs to also work if player clicks away

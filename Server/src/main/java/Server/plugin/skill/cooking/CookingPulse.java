@@ -7,7 +7,7 @@ import plugin.tutorial.TutorialStage;
 import plugin.skill.SkillPulse;
 import plugin.skill.Skills;
 import org.crandor.game.node.entity.impl.Animator;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.entity.player.link.audio.Audio;
 import org.crandor.game.node.entity.player.link.diary.DiaryType;
 import org.crandor.game.node.item.Item;
@@ -24,7 +24,7 @@ import static org.crandor.tools.RandomFunction.RANDOM;
  *//*
 
 public final class CookingPulse extends Pulse {
-	private static Player player;
+	private static jagex.Player player;
 
 	private static GameObject node;
 
@@ -57,7 +57,7 @@ public final class CookingPulse extends Pulse {
 	 * @param amount the amount to cook
 	 *//*
 
-	public CookingPulse(Player player, GameObject node, final int food, final int amount) {
+	public CookingPulse(jagex.Player player, GameObject node, final int food, final int amount) {
 		this.player = player;
 		this.node = node;
 		this.food = food;
@@ -73,7 +73,7 @@ public final class CookingPulse extends Pulse {
 	 * @param intentionalBurn whether or not it's an intentional burn
 	 *//*
 
-	public CookingPulse(Player player, GameObject node, final int food, final boolean intentionalBurn) {
+	public CookingPulse(jagex.Player player, GameObject node, final int food, final boolean intentionalBurn) {
 		this.player = player;
 		this.food = food;
 		this.amount = 1;
@@ -89,7 +89,7 @@ public final class CookingPulse extends Pulse {
 	 * @param isFood whether we are cooking food
 	 *//*
 
-	public CookingPulse(Player player, final int item, int amount, int product, final boolean isFood){
+	public CookingPulse(jagex.Player player, final int item, int amount, int product, final boolean isFood){
 		this.player = player;
 		this.food = item;
 		this.amount = amount;
@@ -158,7 +158,7 @@ public final class CookingPulse extends Pulse {
 		return amount < 1;
 	}
 
-	public boolean cook(final Player player, final GameObject object, final boolean burned, final int food) {
+	public boolean cook(final jagex.Player player, final GameObject object, final boolean burned, final int food) {
 		Item item = CookableItems.getRaw(food);
 		if(intentionalBurn){ //stops the cook function from being ran if we burning on purpose
 			return false;
@@ -199,7 +199,7 @@ public final class CookingPulse extends Pulse {
 		}
 	}
 
-	public boolean isBurned(final Player player, final GameObject object, int food) {
+	public boolean isBurned(final jagex.Player player, final GameObject object, int food) {
 		double burn_stop = (double)CookableItems.getBurnLevel(food);
 		if (SkillcapePerks.hasSkillcapePerk(player, SkillcapePerks.COOKING)) {
 			return false;
@@ -218,7 +218,7 @@ public final class CookingPulse extends Pulse {
 		return !(burn_chance <= randNum);
 	}
 
-	public boolean updateTutorial(Player player){
+	public boolean updateTutorial(jagex.Player player){
 		if (TutorialSession.getExtension(player).getStage() == 14) {
 			TutorialStage.load(player, 15, false);
 			return cook(player, node,true, food);

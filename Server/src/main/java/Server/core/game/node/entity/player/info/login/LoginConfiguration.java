@@ -123,18 +123,18 @@ public final class LoginConfiguration {
             TutorialStage.load(player, TutorialSession.getExtension(player).getStage(), true);
         }*/
         if(player.getLocation().equals(Location.create(3094, 3107, 0))) {
-            //Removing Tutorial Island properties on the account (?) and sending the Player to Lumbridge
+            //Removing Tutorial Island properties on the account (?) and sending the jagex.Player to Lumbridge
             player.removeAttribute("tut-island");
             player.getConfigManager().set(1021, 0);
             player.getProperties().setTeleportLocation(new Location(3233, 3230));
             TutorialSession.getExtension(player).setStage(72);
             player.getInterfaceManager().closeOverlay();
 
-            //Clears and Resets the Player's account and focuses the default interface to their Inventory
+            //Clears and Resets the jagex.Player's account and focuses the default interface to their Inventory
             player.getInventory().clear();
             player.getEquipment().clear();
             player.getBank().clear();
-            player.getInterfaceManager().restoreTabs(); //This still hides the Attack (double swords) in the player menu until Player wields a weapon.
+            player.getInterfaceManager().restoreTabs(); //This still hides the Attack (double swords) in the player menu until jagex.Player wields a weapon.
             player.getInterfaceManager().setViewedTab(3);
             player.getInventory().add(STARTER_PACK);
             player.getBank().add(STARTER_BANK);

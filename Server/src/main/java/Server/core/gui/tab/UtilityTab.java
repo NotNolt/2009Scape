@@ -146,7 +146,7 @@ public final class UtilityTab extends ConsoleTab {
 
         JPanel panel_2 = new JPanel();
         panel_2.setLayout(null);
-        panel_2.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Player Utils", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel_2.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "jagex.Player Utils", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         panel_2.setBackground(UIManager.getColor("Button.background"));
         panel_2.setBounds(345, 98, 145, 219);
         add(panel_2);
@@ -348,7 +348,7 @@ public final class UtilityTab extends ConsoleTab {
         }
         List<String> formats = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            formats.add("Player name=" + entry.getKey() + ", contained a total of " + entry.getValue() + " " + item.getName() + ".");
+            formats.add("jagex.Player name=" + entry.getKey() + ", contained a total of " + entry.getValue() + " " + item.getName() + ".");
         }
         if (formats.size() == 0) {
             formats.add("There were no occurrences of " + item + ".");

@@ -38,7 +38,7 @@ public enum InterfaceType {
 	WINDOW_PANE(548, 746, 0, 0), 
 
 	/**
-	 * Client script chatbox interface.
+	 * jagex.Client script chatbox interface.
 	 */
 	CS_CHATBOX(752, 752, 6, 6),
 

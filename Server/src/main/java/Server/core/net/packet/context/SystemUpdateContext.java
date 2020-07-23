@@ -10,7 +10,7 @@ import core.net.packet.Context;
 public class SystemUpdateContext implements Context {
 
 	/**
-	 * The <b>Player</b> instance.
+	 * The <b>jagex.Player</b> instance.
 	 */
 	private Player player;
 
@@ -21,7 +21,7 @@ public class SystemUpdateContext implements Context {
 
 	/**
 	 * Constructs a new {@code SystemUpdateContext.java} {@code Object}.
-	 * @param player the <b>Player</b>.
+	 * @param player the <b>jagex.Player</b>.
 	 * @param time the time.
 	 */
 	public SystemUpdateContext(Player player, int time) {

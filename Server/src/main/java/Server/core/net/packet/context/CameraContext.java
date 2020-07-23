@@ -42,7 +42,7 @@ public final class CameraContext implements Context {
 	}
 
 	/*
-	 * rotateCamera(Player p, int x, int y, int z, int angle) { MessageBuilder
+	 * rotateCamera(jagex.Player p, int x, int y, int z, int angle) { MessageBuilder
 	 * bldr = new MessageBuilder(26); bldr.writeByte(y); //idk
 	 * bldr.writeByte(x); //idk bldr.writeLEShortA(z >>> 2); //idk
 	 * bldr.writeByte(0); // speed :S bldr.writeByteS(100);

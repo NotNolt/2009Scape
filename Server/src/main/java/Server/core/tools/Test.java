@@ -32,7 +32,7 @@ public class Test {
 		}
 		System.out.println("---Objects----");
 		for (int i = 0; i < Cache.getObjectDefinitionsSize(); i++) {
-			ObjectDefinition def = ObjectDefinition.forId(i);
+			jagex.ObjectDefinition def = jagex.ObjectDefinition.forId(i);
 			if (def.getName().toLowerCase().contains("snow")) {
 				//System.out.println(i + ", " + def.getName() + ", " + Arrays.toString(def.getOptions()));
 			}

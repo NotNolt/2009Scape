@@ -133,7 +133,7 @@ public enum Emotes {
 	},
 	SNOWMAN_DANCE(40, Animation.create(7531), "This emote can be unlocked by playing a Christmas holiday event."),
 	AIR_GUITAR(41, Animation.create(2414), Graphics.create(1537), "This emote can be accessed by unlocking 200 pieces of music."),
-	SAFETY_FIRST(42, Animation.create(8770), Graphics.create(1553), "You can't use this emote yet. Visit the Stronghold of Player safety to<br>unlock it."),
+	SAFETY_FIRST(42, Animation.create(8770), Graphics.create(1553), "You can't use this emote yet. Visit the Stronghold of jagex.Player safety to<br>unlock it."),
 	EXPLORE(43, Animation.create(9990), Graphics.create(1734), "You can't use this emote yet. You must complete all the Lumbridge <br>and Draynor beginner tasks to unlock it."),
 	TRICK(44, Animation.create(10530), Graphics.create(1863), "This emote can be unlocked by playing a Halloween holiday event."),
 	FREEZE(45, Animation.create(11044), Graphics.create(1973), "This emote can be unlocked by playing a Christmas holiday event."),

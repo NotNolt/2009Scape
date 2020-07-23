@@ -159,7 +159,7 @@ public final class PlayerParser {
 						player.getBrawlingGlovesManager().parse(buffer);
 						break;
 					default:
-						System.err.println("[Player parsing] Unhandled opcode: " + opcode + " for " + player.getName() + " - [log=" + Arrays.toString(opcodeLog) + "].");
+						System.err.println("[jagex.Player parsing] Unhandled opcode: " + opcode + " for " + player.getName() + " - [log=" + Arrays.toString(opcodeLog) + "].");
 						break;
 				}
 				for (int i = opcodeLog.length - 2; i >= 0; i--) {
@@ -259,7 +259,7 @@ public final class PlayerParser {
 		// Warning messages
 		player.getWarningMessages().save(buffer.put((byte) 32));
 
-		// Player monitor data
+		// jagex.Player monitor data
 		player.getMonitor().checkNetworth(player, networth);
 		player.getMonitor().save(buffer.put((byte) 33));
 

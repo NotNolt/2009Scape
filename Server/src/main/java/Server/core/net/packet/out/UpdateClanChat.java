@@ -18,7 +18,9 @@ public final class UpdateClanChat implements OutgoingPacket<ClanContext> {
 	public void send(ClanContext context) {
 		IoBuffer buffer = new IoBuffer(55, PacketHeader.SHORT);
 		ClanRepository clan = context.getClan();
-		if (!context.isLeave()) {
+		if (context.isLeave()) {
+			buffer.putLong(0);
+		} else {
 			buffer.putLong(StringUtils.stringToLong(clan.getOwner()));
 			buffer.putLong(StringUtils.stringToLong(clan.getName()));
 			buffer.put(clan.getKickRequirement().getValue());
@@ -34,8 +36,6 @@ public final class UpdateClanChat implements OutgoingPacket<ClanContext> {
 				buffer.put(clan.getRank(entry).getValue());
 				buffer.putString("World " + entry.getWorldId());
 			}
-		} else {
-			buffer.putLong(0);
 		}
 		context.getPlayer().getSession().write(buffer);
 	}

@@ -22,12 +22,12 @@ public enum PluginType {
 	ACTIVITY,
 
 	/**
-	 * Player login plugin type.
+	 * jagex.Player login plugin type.
 	 */
 	LOGIN,
 
 	/**
-	 * Player logout plugin type.
+	 * jagex.Player logout plugin type.
 	 */
 	LOGOUT,
 	

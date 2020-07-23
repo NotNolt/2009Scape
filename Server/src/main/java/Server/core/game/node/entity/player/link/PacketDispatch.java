@@ -25,7 +25,7 @@ import core.net.packet.out.*;
 public final class PacketDispatch {
 
 	/**
-	 * The instance of the {@code Player}.
+	 * The instance of the {@code jagex.Player}.
 	 */
 	private final Player player;
 

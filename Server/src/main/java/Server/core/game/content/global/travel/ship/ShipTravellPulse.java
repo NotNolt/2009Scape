@@ -31,7 +31,7 @@ public final class ShipTravellPulse extends Pulse {
 
 	/**
 	 * Constructs a new {@code ShipTravellPulse.java} {@code Object}.
-	 * @param player the <b>Player</b>.
+	 * @param player the <b>jagex.Player</b>.
 	 */
 	public ShipTravellPulse(Player player, Ships ship) {
 		super(1);

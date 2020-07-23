@@ -139,7 +139,7 @@ public final class RottenPotatoPlugin extends OptionHandler {
 								}
 								Player p = Repository.getPlayer(name);
 								if (p == null) {
-									player.getPacketDispatch().sendMessage("Player unavailable - " + name + ".");
+									player.getPacketDispatch().sendMessage("jagex.Player unavailable - " + name + ".");
 								} else {
 									if (!p.getAntiMacroHandler().fireEvent(event.getName())) {
 										player.getPacketDispatch().sendMessage("Unable to fire event for " + name + " at this time.");

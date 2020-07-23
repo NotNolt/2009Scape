@@ -94,11 +94,11 @@ public final class PacketRepository {
 		INCOMING_PACKETS.put(27, packet);//item on item
 		INCOMING_PACKETS.put(248, packet);//on player	
 		INCOMING_PACKETS.put(3, packet = new InteractionPacket());
-		INCOMING_PACKETS.put(180, packet);//Player interact options v
+		INCOMING_PACKETS.put(180, packet);//jagex.Player interact options v
 		INCOMING_PACKETS.put(68, packet);
 		INCOMING_PACKETS.put(71, packet);
 		INCOMING_PACKETS.put(114, packet);
-		INCOMING_PACKETS.put(175, packet);//Player interact options ^
+		INCOMING_PACKETS.put(175, packet);//jagex.Player interact options ^
 		INCOMING_PACKETS.put(30, packet);
 		INCOMING_PACKETS.put(78, packet);
 		INCOMING_PACKETS.put(148, packet);

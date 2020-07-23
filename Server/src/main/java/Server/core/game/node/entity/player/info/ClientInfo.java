@@ -30,13 +30,11 @@ public final class ClientInfo {
 	/**
 	 * Constructs a new {@Code ClientInfo} {@Code Object}
 	 * @param displayMode The display mode.
-	 * @param windowMode The window mode.
 	 * @param screenWidth The screen width.
 	 * @param screenHeight The screen height.
 	 */
-	public ClientInfo(int displayMode, int windowMode, int screenWidth, int screenHeight) {
+	public ClientInfo(int displayMode, int screenWidth, int screenHeight) {
 		this.displayMode = displayMode;
-		this.windowMode = windowMode;
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
 	}

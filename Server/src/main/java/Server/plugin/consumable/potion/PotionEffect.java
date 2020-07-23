@@ -12,7 +12,7 @@ package plugin.consumable;
 
 import plugin.skill.SkillBonus;
 import plugin.skill.Skills;
-import core.game.node.entity.player.Player;
+import core.game.node.entity.player.jagex.Player;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -91,7 +91,7 @@ public enum PotionEffect {
 	 * @return the bonus.
 	 *//*
 
-	public SkillBonus getSkillBonus(final Player player) {
+	public SkillBonus getSkillBonus(final jagex.Player player) {
 		return effect.getSkillBonus(player);
 	}
 
@@ -194,7 +194,7 @@ public enum PotionEffect {
 		 * @return the bonus.
 		 *//*
 
-		public SkillBonus getSkillBonus(final Player player) {
+		public SkillBonus getSkillBonus(final jagex.Player player) {
 			return skillBonus;
 		}
 

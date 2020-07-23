@@ -29,6 +29,7 @@ public final class WorldPacketRepository {
 	 * @param response The registry response.
 	 */
 	public static void sendRegistryResponse(GameServer server, PlayerSession player, Response response) {
+		System.out.println("Sending Registry Response");
 		IoBuffer buffer = new IoBuffer(0, PacketHeader.BYTE);
 		buffer.putString(player.getUsername());
 		buffer.put((byte) response.opcode());
@@ -241,46 +242,60 @@ public final class WorldPacketRepository {
 		GameServer server = session.getGameServer();
 		switch (opcode) {
 		case 0:
+			System.out.println("INCOMING PLAYER REG");
 			handlePlayerRegistration(server, buffer);
 			break;
 		case 1:
+			System.out.println("INCOMING PLAYER REMOVE");
 			handlePlayerRemoval(server, buffer);
 			break;
 		case 2:
+			System.out.println("INCOMING HANDLE PUNISHMENT");
 			handlePunishment(server, buffer);
 			break;
 		case 3:
+			System.out.println("INCOMING HANDLE COMMUNCATION REQUEST");
 			handleCommunicationRequest(server, buffer);
 			break;
 		case 4:
 		case 5:
+			System.out.println("INCOMING HANDLE CONTACT UPDATE");
 			handleContactUpdate(server, buffer, opcode == 5);
 			break;
 		case 6:
+			System.out.println("INCOMING HANDLE JOIN CLAN");
 			handleJoinClan(server, buffer);
 			break;
 		case 7:
+			System.out.println("INCOMING HANDLE CLAN RENAME");
 			handleClanRename(server, buffer);
 			break;
 		case 8:
+			System.out.println("INCOMING HANDLE CLAN SETTING");
 			handleClanSetting(server, buffer);
 			break;
 		case 9:
+			System.out.println("INCOMING HANDLE CLAN KICK");
 			handleClanKick(server, buffer);
 			break;
 		case 10:
+			System.out.println("INCOMING HANDLE CLAN MESS");
 			handleClanMessage(server, buffer);
 			break;
 		case 11:
+			System.out.println("INCOMING HANDLE PRIVATE MESS");
 			handlePrivateMessage(server, buffer);
 			break;
 		case 12:
+			System.out.println("INCOMING HANDLE CLAN INFO REQ");
 			handleClanInfoRequest(server, buffer);
 			break;
 		case 13:
+			System.out.println("INCOMING HANDLE CHAT SETTING");
 			handleChatSetting(server, buffer);
 			break;
 		case 14:
+			System.out.println("INCOMING HANDLE INFO UPDATE");
 			handleInfoUpdate(server, buffer);
 			break;
 		default:
@@ -294,6 +309,7 @@ public final class WorldPacketRepository {
 	 * @param buffer the buffer.
 	 */
 	private static void handleInfoUpdate(GameServer server, IoBuffer buffer) {
+		System.out.println("INCOMING HANDLE PLAYER UPDATE");
 		String username = buffer.getString();
 		PlayerSession player = server.getPlayers().get(username);
 		if (player != null) {
@@ -307,6 +323,7 @@ public final class WorldPacketRepository {
 	 * @param buffer The buffer.
 	 */
 	private static void handlePlayerRegistration(GameServer server, IoBuffer buffer) {
+		System.out.println("INCOMING HANDLE PLAYER REG");
 		String username = buffer.getString();
 		String password = buffer.getString();
 		String ipAddress = buffer.getString();
@@ -318,6 +335,7 @@ public final class WorldPacketRepository {
 		UIDInfo uid = new UIDInfo(ipAddress, compName, macAddress, serial);
 		PlayerSession player = new PlayerSession(username, password, new UIDInfo(ipAddress, compName, macAddress, serial));
 		if (WorldDatabase.isActivePlayer(username)) {
+			System.out.println("WORLD DATABASE IS ACTIVE FOR PLAYER");
 			sendRegistryResponse(server, player, Response.ALREADY_ONLINE);
 			return;
 		}
@@ -337,6 +355,7 @@ public final class WorldPacketRepository {
 			sendRegistryResponse(server, player, Response.MOVING_WORLD);
 			return;
 		}
+		System.out.println("SERVER REG PLAYER");
 		server.register(player);
 	}
 
@@ -346,6 +365,7 @@ public final class WorldPacketRepository {
 	 * @param buffer The buffer.
 	 */
 	private static void handlePlayerRemoval(GameServer server, IoBuffer buffer) {
+		System.out.println("INCOMING HANDLE PLAYER REMOVAL");
 		String username = buffer.getString();
 		PlayerSession session = server.getPlayers().get(username);
 		if (session != null) {
@@ -377,6 +397,7 @@ public final class WorldPacketRepository {
 	 * @param buffer The buffer.
 	 */
 	private static void handleCommunicationRequest(GameServer server, IoBuffer buffer) {
+		System.out.println("INCOMING HANDLE COMMUNICATION REQ");
 		String username = buffer.getString();
 		PlayerSession player = server.getPlayers().get(username);
 		if (player == null) {
@@ -392,6 +413,7 @@ public final class WorldPacketRepository {
 	 * @param block If the list is for blocked players.
 	 */
 	private static void handleContactUpdate(GameServer server, IoBuffer buffer, boolean block) {
+		System.out.println("INCOMING HANDLE CONTACT UPDATE PACKET");
 		String username = buffer.getString();
 		PlayerSession player = server.getPlayers().get(username);
 		if (player == null) {

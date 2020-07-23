@@ -302,6 +302,7 @@ public final class MSPacketRepository {
 	 * @param buffer The buffer.
 	 */
 	private static void handleRegistryResponse(IoBuffer buffer) {
+		System.out.println("Handling Registry Response...");
 		String username = buffer.getString();
 		int opcode = buffer.get() & 0xFF;
 		LoginParser parser = WorldCommunicator.finishLoginAttempt(username);

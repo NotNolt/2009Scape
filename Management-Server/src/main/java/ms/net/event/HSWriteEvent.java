@@ -28,6 +28,7 @@ public final class HSWriteEvent extends IoWriteEvent {
 
 	@Override
 	public void write(IoSession session, Object context) {
+		System.out.println("Write HSWrite Event <Management>...");
 		ByteBuffer buffer = ByteBuffer.allocate(9);
 		buffer.put((byte) 14);
 		session.setProducer( REGISTRY_PRODUCER);

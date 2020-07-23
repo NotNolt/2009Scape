@@ -6,7 +6,7 @@
 //import plugin.tutorial.TutorialSession;
 //import plugin.tutorial.TutorialStage;
 //import org.crandor.game.node.Node;
-//import org.crandor.game.node.entity.player.Player;
+//import org.crandor.game.node.entity.player.jagex.Player;
 //import org.crandor.plugin.InitializablePlugin;
 //import org.crandor.game.node.object.GameObject;
 //
@@ -34,7 +34,7 @@
 //	}
 //
 //	@Override
-//	public boolean interact(final Player player, final Node node) {
+//	public boolean interact(final jagex.Player player, final Node node) {
 //		int stage = TutorialSession.getExtension(player).getStage();
 //		if (stage < TutorialSession.MAX_STAGE) {
 //			cook(player, (GameObject) node, 1);
@@ -58,7 +58,7 @@
 //		}
 //
 //		@Override
-//		public boolean cook(final Food food, final Player player, final GameObject object) {
+//		public boolean cook(final Food food, final jagex.Player player, final GameObject object) {
 //			if (TutorialSession.getExtension(player).getStage() == 14) {
 //				TutorialStage.load(player, 15, false);
 //				return super.cook(food, player, object, true);

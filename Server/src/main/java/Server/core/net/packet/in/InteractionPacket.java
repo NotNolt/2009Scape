@@ -99,35 +99,35 @@ public final class InteractionPacket implements IncomingPacket {
 			y = buffer.getLEShortA();
 			handleObjectInteraction(player, 4, x, y, objectId);
 			break;
-		case 68: // Player reward 1 - Challenge
+		case 68: // jagex.Player reward 1 - Challenge
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 0, index);
 			break;
-		/*case : // Player reward 2 TODO
+		/*case : // jagex.Player reward 2 TODO
 			index = buffer.getLEShort();
 			handlePlayerInteraction(player, 1, index);
 			break;*/
-		case 71: // Player reward 3 - follow
+		case 71: // jagex.Player reward 3 - follow
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 2, index);
 			break;
-		case 180: // Player reward 4 - trade
+		case 180: // jagex.Player reward 4 - trade
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 3, index);
 			break;
-		/*case : // Player reward 5 TODO
+		/*case : // jagex.Player reward 5 TODO
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 4, index);
 			break;*/
-		/*case : // Player reward 6 TODO
+		/*case : // jagex.Player reward 6 TODO
 			index = buffer.getShort();
 			handlePlayerInteraction(player, 5, index);
 			break;*/
-		case 114: // Player reward 7 - req assistance
+		case 114: // jagex.Player reward 7 - req assistance
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 6, index);
 			break;
-		case 175: // Player reward 8 - "whack" (also "control" for AIPs)
+		case 175: // jagex.Player reward 8 - "whack" (also "control" for AIPs)
 			index = buffer.getShortA();
 			handlePlayerInteraction(player, 7, index);
 			break;

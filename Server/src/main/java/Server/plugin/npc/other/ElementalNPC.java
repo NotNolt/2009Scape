@@ -196,8 +196,8 @@ public final class ElementalNPC extends AbstractNPC {
 	}
 
 	/**
-	 * Sends a teleport to the Player
-	 * @param player the Player
+	 * Sends a teleport to the jagex.Player
+	 * @param player the jagex.Player
 	 */
 	public void sendTeleport(final Player player) {
 		player.lock();

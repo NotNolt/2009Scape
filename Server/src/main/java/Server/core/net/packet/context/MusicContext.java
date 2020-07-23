@@ -11,7 +11,7 @@ import core.net.packet.Context;
 public class MusicContext implements Context {
 
 	/**
-	 * The Player
+	 * The jagex.Player
 	 */
 	private Player player;
 

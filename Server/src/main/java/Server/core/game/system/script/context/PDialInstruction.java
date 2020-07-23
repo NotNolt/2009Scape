@@ -9,7 +9,7 @@ import core.game.system.script.ScriptContext;
 import java.util.Arrays;
 
 /**
- * Player dialogue instruction.
+ * jagex.Player dialogue instruction.
  * @author Emperor
  */
 public class PDialInstruction extends ScriptContext {

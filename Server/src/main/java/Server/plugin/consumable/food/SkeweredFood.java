@@ -5,7 +5,7 @@ import org.crandor.game.content.global.consumable.ConsumableProperties;
 import org.crandor.game.content.global.consumable.Consumables;
 import org.crandor.game.content.global.consumable.CookingProperties;
 import org.crandor.game.content.global.consumable.Food;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.item.GroundItemManager;
 import org.crandor.game.node.item.Item;
 import org.crandor.game.node.object.GameObject;
@@ -92,7 +92,7 @@ public class SkeweredFood extends Food {
 		}
 
 		@Override
-		public boolean cook(final Food food, final Player player, final GameObject object) {
+		public boolean cook(final Food food, final jagex.Player player, final GameObject object) {
 			if (!super.cook(food, player, object)) {
 				if (!player.getInventory().add(IRON_SPIT)) {
 					GroundItemManager.create(IRON_SPIT, player.getLocation(), player);

@@ -64,7 +64,7 @@ public final class FurClothingInterface extends ComponentPlugin {
 	 * Method used to open the fur clothing interface.
 	 * @param player the player.
 	 */
-	//public static void open(final Player player) {
+	//public static void open(final jagex.Player player) {
 	//	player.getInterfaceManager().open(new Component(477));
 	//	PacketRepository.send(ContainerPacket.class, new ContainerContext(player, 477, 75, 91, new Container(21, ITEMS), true));
 	//}

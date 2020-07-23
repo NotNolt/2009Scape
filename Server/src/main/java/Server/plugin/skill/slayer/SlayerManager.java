@@ -336,7 +336,7 @@ public final class SlayerManager implements SavingModule {
 	}
 
 	/**
-	 * Checks if a <b>Player</b> contains a task.
+	 * Checks if a <b>jagex.Player</b> contains a task.
 	 * @return {@code True} if so.
 	 */
 	public boolean hasTask() {

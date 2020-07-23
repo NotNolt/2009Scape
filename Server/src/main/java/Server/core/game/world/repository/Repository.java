@@ -183,7 +183,7 @@ public final class Repository {
 		return player;
 	}
 	
-	/*Verinia Player Grabbing*/
+	/*Verinia jagex.Player Grabbing*/
 	
 	/**
 	 * Get a player by its username.
@@ -220,7 +220,7 @@ public final class Repository {
 		return null;
 	}
 	
-	/*End of Verinia Player Grabbing*/
+	/*End of Verinia jagex.Player Grabbing*/
 
 	/**
 	 * Get the players repository.

@@ -363,7 +363,7 @@ public class Player extends Entity {
 	private int archeryTotal = 0;
 
 	/**
-	 * Constructs a new {@code Player} {@code Object}.
+	 * Constructs a new {@code jagex.Player} {@code Object}.
 	 * @param details The player's details.
 	 */
 	public Player(PlayerDetails details) {
@@ -1291,7 +1291,7 @@ public class Player extends Entity {
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", getRights()=" + getRights() + "]";
+		return "jagex.Player [name=" + name + ", getRights()=" + getRights() + "]";
 	}
 
 

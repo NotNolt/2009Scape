@@ -106,7 +106,7 @@ public final class AssistSession extends Pulse implements RequestModule {
 	}
 
 	/**
-	 * Method used to add the extension of this class to the {@literal Player}.
+	 * Method used to add the extension of this class to the {@literal jagex.Player}.
 	 * @param player the player.
 	 * @param partener the partener.
 	 */
@@ -146,7 +146,7 @@ public final class AssistSession extends Pulse implements RequestModule {
 		player.getPacketDispatch().sendMessage("Sending assistance response.");
 		player.getPacketDispatch().sendMessage("You are assisting " + partener.getUsername() + ".");
 		partener.getPacketDispatch().sendMessage("You are being assisted by " + player.getUsername() + ".");
-		player.getPacketDispatch().sendString("Assist System XP Display - You are assisting " + partener.getUsername() + "", 301, 101);
+		player.getPacketDispatch().sendString("Assist System XP jagex.Display - You are assisting " + partener.getUsername() + "", 301, 101);
 		player.getPacketDispatch().sendString("", 301, 10);
 		player.animate(ANIMATION);
 		player.graphics(GRAPHIC);
@@ -341,7 +341,7 @@ public final class AssistSession extends Pulse implements RequestModule {
 
 	/**
 	 * Method used to return the {@link Player}.
-	 * @return the <code>Player</code>.
+	 * @return the <code>jagex.Player</code>.
 	 */
 	public final Player getPlayer() {
 		return player;

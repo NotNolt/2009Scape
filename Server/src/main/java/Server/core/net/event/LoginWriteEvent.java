@@ -31,17 +31,21 @@ public final class LoginWriteEvent extends IoWriteEvent {
 
 	@Override
 	public void write(IoSession session, Object context) {
+		System.out.println("jagex.Login Write Event...");
 		Response response = (Response) context;
 		ByteBuffer buffer = ByteBuffer.allocate(500);
 		buffer.put((byte) response.opcode());
+		System.out.println("Sending opcode: " + response.opcode() + " to client");
 		switch (response.opcode()) {
 			case 2: //successful login
+				System.out.println("jagex.Login Successful");
 				buffer.put(getWorldResponse(session));
 				session.setProducer(GAME_PRODUCER);
 				break;
 			//Could add a case here to auto-restart the server in case the login server goes offline (case 8)
 			//Possibly a risk for malicious attacks though
 			case 21: //Moving world
+				System.out.println("User Moving Worlds");
 				buffer.put((byte) session.getServerKey());
 				break;
 		}
@@ -55,7 +59,9 @@ public final class LoginWriteEvent extends IoWriteEvent {
 	 * @return The buffer.
 	 */
 	private static ByteBuffer getWorldResponse(IoSession session) {
-		ByteBuffer buffer = ByteBuffer.allocate(150);
+		System.out.println("Retrieving World Response");
+		ByteBuffer buffer = ByteBuffer.allocate(150);//150?
+		buffer.put((byte) 2);
 		Player player = session.getPlayer();
 		buffer.put((byte) player.getDetails().getRights().ordinal());
 		buffer.put((byte) 0);
@@ -65,7 +71,7 @@ public final class LoginWriteEvent extends IoWriteEvent {
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
 		buffer.putShort((short) player.getIndex());
-		buffer.put((byte) (1)); // Enable all G.E boxes
+		buffer.put((byte) 1); // Enable all G.E boxes
 		buffer.put((byte) 1);
 		buffer.flip();
 		return buffer;

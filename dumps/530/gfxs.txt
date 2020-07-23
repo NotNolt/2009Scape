@@ -449,7 +449,7 @@
 566: Roasting Pig Same As 563
 567: Smoke Cloud
 568: Flowers above head
-569: Flowers Around Player
+569: Flowers Around jagex.Player
 570: Rolling Rock
 571: Buncha Smoke Brown Colored
 572: Hole opens In Ground
@@ -1187,7 +1187,7 @@
 1552: Fairy rings teleport
 1554: safety first emote
 1566: Chocatrice cape easter egg emote
-1567: Player transforms into a rabbit/bunny
+1567: jagex.Player transforms into a rabbit/bunny
 1576: Normal teleport, upwards
 1577: Normal teleport, downwards
 1578: King (yeti guy) growing
@@ -1626,8 +1626,8 @@
 2442: Dungeoneering skillcape
 2451: lighting around you
 2400+: dungeoneering
-2517: To Player Return (Dungoneernig teleport)
-2516: To Player(Dungeoneering teleport)
+2517: To jagex.Player Return (Dungoneernig teleport)
+2516: To jagex.Player(Dungeoneering teleport)
 2584: dungeoneering poison dropping
 2602: Home (Dungeoneering teleport)
 2603: Home Return (Dungoneering teleport)

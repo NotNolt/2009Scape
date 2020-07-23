@@ -181,7 +181,7 @@ public final class DisconnectionQueue {
 		private final Player player;
 
 		/**
-		 * If the {@code Player#clear()} method should be called.
+		 * If the {@code jagex.Player#clear()} method should be called.
 		 */
 		private boolean clear;
 

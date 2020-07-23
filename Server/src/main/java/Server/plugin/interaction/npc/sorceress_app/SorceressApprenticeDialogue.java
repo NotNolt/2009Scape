@@ -25,7 +25,7 @@ public class SorceressApprenticeDialogue extends DialoguePlugin {
 
 	/**
 	 * Constructs a new {@code SorceressApprenticeDialogue.java} {@code Object}.
-	 * @param player the Player
+	 * @param player the jagex.Player
 	 */
 	public SorceressApprenticeDialogue(Player player) {
 		super(player);

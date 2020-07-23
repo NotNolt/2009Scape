@@ -150,7 +150,7 @@ public class StrongHoldOfPlayerSafetyPlugin implements Plugin<Object> {
 
 		/**
 		 * Sends the jail-plague interface.
-		 * @param player The {@code Player} instance.
+		 * @param player The {@code jagex.Player} instance.
 		 */
 		public void read(Player player, GameObject object) {
 			int x = object.getLocation().getX();

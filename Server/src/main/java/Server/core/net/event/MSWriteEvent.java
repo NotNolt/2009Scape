@@ -23,6 +23,7 @@ public final class MSWriteEvent extends IoWriteEvent {
 
 	@Override
 	public void write(IoSession session, Object context) {
+		System.out.println("MSWrite Event Initiated...");
 		IoBuffer b = (IoBuffer) context;
 		int size = b.toByteBuffer().position();
 		ByteBuffer buffer = ByteBuffer.allocate(1 + size + b.getHeader().ordinal());

@@ -101,7 +101,7 @@ public class TutorialCompletionDialogue extends DialoguePlugin {
 			}
 		}
 
-		//Skippy Dialogue used whenever the Player talks to Skippy during the tutorial
+		//Skippy Dialogue used whenever the jagex.Player talks to Skippy during the tutorial
 		else {
 			interpreter.sendDialogues(npc, FacialExpression.SUSPICIOUS, "*psst.* Hey, do you want to skip the tutorial?", "I can send you straight to the mainland, easy.");
 			stage = 1;
@@ -214,7 +214,7 @@ public class TutorialCompletionDialogue extends DialoguePlugin {
 					player.getIronmanManager().setMode(player.getAttribute("ironMode"));
 					MSPacketRepository.sendInfoUpdate(player);
 
-					//Split Dialogue depending on if the Player is talking to the Magic Instructor or Skippy.
+					//Split Dialogue depending on if the jagex.Player is talking to the Magic Instructor or Skippy.
 					if (npc.getId() == 946) {
 						interpreter.sendDialogues(npc, FacialExpression.HAPPY,"Congratulations, you have setup your Ironman account.", "Let's continue.");
 						stage = 1199;
@@ -245,7 +245,7 @@ public class TutorialCompletionDialogue extends DialoguePlugin {
 
 				case 534:
 					// From saying no thanks to being an ironman.
-					//Split Dialogue depending on if the Player is talking to the Magic Instructor or Skippy.
+					//Split Dialogue depending on if the jagex.Player is talking to the Magic Instructor or Skippy.
 					if (npc.getId() == 946) {
 						interpreter.sendDialogues(npc, FacialExpression.NEUTRAL,"Very well.", "Let's continue.");
 						stage = 1199;
@@ -288,18 +288,18 @@ public class TutorialCompletionDialogue extends DialoguePlugin {
 				case 1205:
 					stage = 7; //Next Stage force ends any conversations?
 
-					//Removing Tutorial Island properties on the account (?) and sending the Player to Lumbridge
+					//Removing Tutorial Island properties on the account (?) and sending the jagex.Player to Lumbridge
 					player.removeAttribute("tut-island");
 					player.getConfigManager().set(1021, 0);
 					player.getProperties().setTeleportLocation(new Location(3233, 3230));
 					TutorialSession.getExtension(player).setStage(72);
 					player.getInterfaceManager().closeOverlay();
 
-					//Clears and Resets the Player's account and focuses the default interface to their Inventory
+					//Clears and Resets the jagex.Player's account and focuses the default interface to their Inventory
 					player.getInventory().clear();
 					player.getEquipment().clear();
 					player.getBank().clear();
-					player.getInterfaceManager().restoreTabs(); //This still hides the Attack (double swords) in the player menu until Player wields a weapon.
+					player.getInterfaceManager().restoreTabs(); //This still hides the Attack (double swords) in the player menu until jagex.Player wields a weapon.
 					player.getInterfaceManager().setViewedTab(3);
 					player.getInventory().add(STARTER_PACK);
 					player.getBank().add(STARTER_BANK);

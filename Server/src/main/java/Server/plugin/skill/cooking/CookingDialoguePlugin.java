@@ -6,7 +6,7 @@ import org.crandor.game.content.global.consumable.Consumables;
 import org.crandor.game.content.global.consumable.Food;
 import plugin.skill.cooking.CookableItems;
 import plugin.skill.cooking.CookingPulse;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.entity.player.link.RunScript;
 import org.crandor.game.node.item.Item;
 import org.crandor.game.node.object.GameObject;
@@ -79,12 +79,12 @@ public final class CookingDialoguePlugin extends DialoguePlugin {
 	 * @param player the player.
 	 *//*
 
-	public CookingDialoguePlugin(Player player) {
+	public CookingDialoguePlugin(jagex.Player player) {
 		super(player);
 	}
 
 	@Override
-	public DialoguePlugin newInstance(Player player) {
+	public DialoguePlugin newInstance(jagex.Player player) {
 		return new CookingDialoguePlugin(player);
 	}
 
@@ -170,7 +170,7 @@ public final class CookingDialoguePlugin extends DialoguePlugin {
 		stage = 0;
 	}
 
-	public void cook(Player player, GameObject object, int food, int amount){
+	public void cook(jagex.Player player, GameObject object, int food, int amount){
 		player.getPulseManager().run(new CookingPulse(player,object,food,amount));
 	}
 

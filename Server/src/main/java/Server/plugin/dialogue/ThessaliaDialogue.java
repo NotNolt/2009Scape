@@ -159,7 +159,7 @@ public final class ThessaliaDialogue extends DialoguePlugin {
 					stage = 52;
 					break;
 				}
-			case 31://Player has money and is not wearing armour/weapons
+			case 31://jagex.Player has money and is not wearing armour/weapons
 				if (player.getInventory().contains(995, 1000) && player.getEquipment().isEmpty()) {
 					if (!player.getAchievementDiaryManager().getDiary(DiaryType.VARROCK).isComplete(0, 0)) {
 						player.getAchievementDiaryManager().getDiary(DiaryType.VARROCK).updateTask(player, 0, 0, true);

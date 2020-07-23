@@ -661,7 +661,7 @@ public final class GardenObjectsPlugin extends OptionHandler {
 
 		/**
 		 * Constructs a new {@code OsmanDialogue} {@code Object}.
-		 * @param player the Player
+		 * @param player the jagex.Player
 		 */
 		public OsmanDialogue(Player player) {
 			super(player);
@@ -1226,8 +1226,8 @@ public final class GardenObjectsPlugin extends OptionHandler {
 		}
 
 		/**
-		 * Checks wether the <b>Player</b> has sq'irk.
-		 * @return {@code True}: Player has sq'irk.
+		 * Checks wether the <b>jagex.Player</b> has sq'irk.
+		 * @return {@code True}: jagex.Player has sq'irk.
 		 */
 		public boolean hasSqirkFruit() {
 			for (int i : FRUITS) {
@@ -1239,8 +1239,8 @@ public final class GardenObjectsPlugin extends OptionHandler {
 		}
 
 		/**
-		 * Checks wether the <b>Player</b> has sq'irk juice
-		 * @return {@code True}: Player has sq'irk juice.
+		 * Checks wether the <b>jagex.Player</b> has sq'irk juice
+		 * @return {@code True}: jagex.Player has sq'irk juice.
 		 */
 		public boolean hasSqirkJuice() {
 			for (int i : JUICES) {
@@ -1252,8 +1252,8 @@ public final class GardenObjectsPlugin extends OptionHandler {
 		}
 
 		/**
-		 * Checks wether the <b>Player</b> has sq'irks (fruit/juice).
-		 * @return {@code True}: Player has either a fruit or squeezed juice.
+		 * Checks wether the <b>jagex.Player</b> has sq'irks (fruit/juice).
+		 * @return {@code True}: jagex.Player has either a fruit or squeezed juice.
 		 */
 		public boolean hasSqirks() {
 			return hasSqirkFruit() || hasSqirkJuice();
@@ -1284,7 +1284,7 @@ public final class GardenObjectsPlugin extends OptionHandler {
 
 		/**
 		 * Constructs a new {@code SqirkMakingDialogue.java} {@code Object}.
-		 * @param player the Player
+		 * @param player the jagex.Player
 		 */
 		public SqirkMakingDialogue(Player player) {
 			super(player);

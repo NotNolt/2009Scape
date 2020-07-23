@@ -670,7 +670,7 @@ public class Model {
 		return anInt614++;
 	}
 
-	public int method748(int i, int i_100_, int i_101_, byte i_102_, short i_103_, short i_104_, byte i_105_, short i_106_) {
+	public int ParseRenderAnimation(int i, int i_100_, int i_101_, byte i_102_, short i_103_, short i_104_, byte i_105_, short i_106_) {
 		aShortArray644[anInt621] = (short) i;
 		aShortArray646[anInt621] = (short) i_100_;
 		aShortArray624[anInt621] = (short) i_101_;

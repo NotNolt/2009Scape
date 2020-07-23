@@ -282,18 +282,18 @@ public final class Skills {
 		//Keywords for people ctrl + Fing the project
 		//xprate xp rate xp multiplier skilling rate
 		return experienceMutiplier;
-		/*if (!(entity instanceof Player)) {
+		/*if (!(entity instanceof jagex.Player)) {
 			return 1.0;
 		}
 		double mod = multiplyer ? (EXPERIENCE_MULTIPLIER) : 1;
-		Player p = (Player) entity;
+		jagex.Player p = (jagex.Player) entity;
 		if (p.getIronmanManager().getMode() == IronmanMode.ULTIMATE) {
 			mod /= 4;
 		} else if (p.getIronmanManager().getMode() == IronmanMode.STANDARD) {
 			mod /= 2;
 		}
 		//A boost for combat skills that are under level 65.
-		if(entity instanceof Player && !this.hasLevel(slot, 65) && isCombat(slot)){
+		if(entity instanceof jagex.Player && !this.hasLevel(slot, 65) && isCombat(slot)){
 			mod *= 1.5;
 		}
 		//Grand Exchange region XP boost.

@@ -67,8 +67,8 @@ public final class DesertZone extends MapZone implements Plugin<Object> {
 	};
 
 	/**
-	 * Method used to handle the desert effect on the <code>Player</code>.
-	 * @param p the <code>Player</code>.
+	 * Method used to handle the desert effect on the <code>jagex.Player</code>.
+	 * @param p the <code>jagex.Player</code>.
 	 */
 	private static void effect(Player p) {
 		p.setAttribute("desert-delay", GameWorld.getTicks() + getDelay(p));
@@ -82,7 +82,7 @@ public final class DesertZone extends MapZone implements Plugin<Object> {
 
 	/**
 	 * Method used to evaporate the water vessils in the inventory.
-	 * @param player the <code>Player</code>
+	 * @param player the <code>jagex.Player</code>
 	 */
 	public static void evaporate(Player p) {
 		for (int i = 0; i < VESSILS.length; i++) {

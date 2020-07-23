@@ -3,14 +3,14 @@
     name="2009scape"
     beta="false"
     dev="false"
-    startGui="true"
-    worldID="1"
+    startGui="false"
+    worldID="3"
     countryID="0"
     activity="Accurate 2009 Remake"
     pvpWorld="false"
     msip="127.0.0.1"
     />
-
+    <!--192.168.1.180-->
     <!--Plugin configuration goes down here-->
     <PluginSetting name="Trivia" enabled="false"/>
     <PluginSetting name="RPS" enabled="false"/>

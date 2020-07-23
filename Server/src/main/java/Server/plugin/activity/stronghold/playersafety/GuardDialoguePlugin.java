@@ -15,7 +15,7 @@ public class GuardDialoguePlugin extends DialoguePlugin {
 
 	/**
 	 * Constructs a new {@code GuardDialogue} instance.
-	 * @param player The {@code Player} instance.
+	 * @param player The {@code jagex.Player} instance.
 	 */
 	public GuardDialoguePlugin(Player player) {
 		super(player);

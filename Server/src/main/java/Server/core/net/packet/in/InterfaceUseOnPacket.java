@@ -79,7 +79,7 @@ public class InterfaceUseOnPacket implements IncomingPacket {
 				}, "movement");
 			}
 			break;
-		case 195: // Interface On Player
+		case 195: // Interface On jagex.Player
 			payload = buffer.getShortA();
 			componentId = buffer.getLEShort();
 			interfaceId = buffer.getLEShort();

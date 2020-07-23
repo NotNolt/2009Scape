@@ -4,7 +4,7 @@ package plugin.dialogue;
 import plugin.dialogue.DialoguePlugin;
 import plugin.skill.fletching.items.crossbow.Limb;
 import plugin.skill.fletching.items.crossbow.LimbPulse;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.entity.player.link.RunScript;
 import org.crandor.plugin.InitializablePlugin;
 import org.crandor.game.node.item.Item;
@@ -38,12 +38,12 @@ public final class LimbDialogue extends DialoguePlugin {
 	 * @param player the player.
 	 *//*
 
-	public LimbDialogue(Player player) {
+	public LimbDialogue(jagex.Player player) {
 		super(player);
 	}
 
 	@Override
-	public DialoguePlugin newInstance(Player player) {
+	public DialoguePlugin newInstance(jagex.Player player) {
 		return new LimbDialogue(player);
 	}
 

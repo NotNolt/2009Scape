@@ -103,152 +103,150 @@ public class RenderAnimationDefinition {
 			anIntArrayArray1217[i_12_] = new int[3];
 			for (int i_13_ = 0; i_13_ < 3; i_13_++)
 				anIntArrayArray1217[i_12_][i_13_] = buffer.getShort();
-		} else if ((opcode ^ 0xffffffff) != -2) {
-			if ((opcode ^ 0xffffffff) != -3) {
-				if (opcode != 3) {
-					if ((opcode ^ 0xffffffff) != -5) {
-						if (opcode == 5)
-							anInt977 = buffer.getShort() & 0xFFFF;
-						else if ((opcode ^ 0xffffffff) != -7) {
-							if (opcode == 7)
-								anInt960 = buffer.getShort() & 0xFFFF;
-							else if ((opcode ^ 0xffffffff) == -9)
-								anInt985 = buffer.getShort() & 0xFFFF;
-							else if (opcode == 9)
-								anInt957 = buffer.getShort() & 0xFFFF;
-							else if (opcode == 26) {
-								anInt973 = (short) (4 * buffer
-										.get() & 0xFF);
-								anInt975 = (short) (buffer.get() & 0xFF * 4);
-							} else if ((opcode ^ 0xffffffff) == -28) {
-								if (anIntArrayArray979 == null)
-									anIntArrayArray979 = new int[12][];
-								int i = buffer.get() & 0xFF;
-								anIntArrayArray979[i] = new int[6];
-								for (int i_1_ = 0; (i_1_ ^ 0xffffffff) > -7; i_1_++)
-									anIntArrayArray979[i][i_1_] = buffer
-											.getShort();
-							} else if ((opcode ^ 0xffffffff) == -29) {
-								anIntArray971 = new int[12];
-								for (int i = 0; i < 12; i++) {
-									anIntArray971[i] = buffer
-											.get() & 0xFF;
-									if (anIntArray971[i] == 255)
-										anIntArray971[i] = -1;
-								}
-							} else if (opcode != 29) {
-								if (opcode != 30) {
-									if ((opcode ^ 0xffffffff) != -32) {
-										if (opcode != 32) {
-											if ((opcode ^ 0xffffffff) != -34) {
-												if (opcode != 34) {
-													if (opcode != 35) {
-														if ((opcode ^ 0xffffffff) != -37) {
-															if ((opcode ^ 0xffffffff) != -38) {
-																if (opcode != 38) {
-																	if ((opcode ^ 0xffffffff) != -40) {
-																		if ((opcode ^ 0xffffffff) != -41) {
-																			if ((opcode ^ 0xffffffff) == -42)
-																				turnCWAnimation = buffer
-																						.getShort() & 0xFFFF;
-																			else if (opcode != 42) {
-																				if ((opcode ^ 0xffffffff) == -44)
-																					buffer.getShort();
-																				else if ((opcode ^ 0xffffffff) != -45) {
-																					if ((opcode ^ 0xffffffff) == -46)
-																						anInt964 = buffer
-																								.getShort() & 0xFFFF;
-																					else if ((opcode ^ 0xffffffff) != -47) {
-																						if (opcode == 47)
-																							anInt966 = buffer
-																									.getShort() & 0xFFFF;
-																						else if (opcode == 48)
-																							anInt989 = buffer
-																									.getShort() & 0xFFFF;
-																						else if (opcode != 49) {
-																							if ((opcode ^ 0xffffffff) != -51) {
-																								if (opcode != 51) {
-																									if (opcode == 52) {
-																										int i = buffer
-																												.get() & 0xFF;
-																										anIntArray959 = new int[i];
-																										standAnimationIds = new int[i];
-																										for (int i_2_ = 0; i_2_ < i; i_2_++) {
-																											standAnimationIds[i_2_] = buffer
-																													.getShort() & 0xFFFF;
-																											int i_3_ = buffer
-																													.get() & 0xFF;
-																											anIntArray959[i_2_] = i_3_;
-																											anInt994 += i_3_;
-																										}
-																									} else if (opcode == 53)
-																										aBoolean978 = false;
-																								} else
-																									anInt962 = buffer
-																											.getShort() & 0xFFFF;
-																							} else
-																								anInt990 = buffer
-																										.getShort() & 0xFFFF;
-																						} else
-																							anInt952 = buffer
-																									.getShort() & 0xFFFF;
-																					} else
-																						anInt983 = buffer
-																								.getShort() & 0xFFFF;
-																				} else
-																					anInt955 = buffer
-																							.getShort() & 0xFFFF;
-																			} else
-																				turnCCWAnimation = buffer
-																						.getShort() & 0xFFFF;
-																		} else
-																			turn180Animation = buffer
-																					.getShort() & 0xFFFF;
-																	} else
-																		anInt954 = buffer
-																				.getShort() & 0xFFFF;
-																} else
-																	anInt958 = (buffer
-																			.getShort() & 0xFFFF);
-															} else
-																anInt951 = (buffer
-																		.get() & 0xFF);
-														} else
-															anInt965 = (buffer
-																	.getShort());
-													} else
-														anInt969 = (buffer
-																.getShort() & 0xFFFF);
-												} else
-													anInt993 = buffer
-															.get() & 0xFF;
-											} else
-												anInt956 = (buffer.getShort());
-										} else
-											anInt961 = buffer
-													.getShort() & 0xFFFF;
-									} else
-										anInt988 = buffer.get() & 0xFF;
-								} else
-									anInt980 = buffer.getShort() & 0xFFFF;
-							} else
-								anInt992 = buffer.get() & 0xFF;
-						} else
-							runAnimationId = buffer.getShort() & 0xFFFF;
-					} else
-						anInt986 = buffer.getShort() & 0xFFFF;
-				} else
-					anInt987 = buffer.getShort() & 0xFFFF;
-			} else
-				anInt974 = buffer.getShort() & 0xFFFF;
-		} else {
+		} else if (opcode == 1) {
 			standAnimationId = buffer.getShort() & 0xFFFF;
 			walkAnimationId = buffer.getShort() & 0xFFFF;
-			if ((standAnimationId ^ 0xffffffff) == -65536)
+			if (standAnimationId == 65535)
 				standAnimationId = -1;
-			if ((walkAnimationId ^ 0xffffffff) == -65536)
+			if (walkAnimationId == 65535)
 				walkAnimationId = -1;
-		}
+		} else if (opcode != 2) {
+			if (opcode != 3) {
+				if (opcode != 4) {
+					if (opcode == 5)
+						anInt977 = buffer.getShort() & 0xFFFF;
+					else if (opcode != 6) {
+						if (opcode == 7)
+							anInt960 = buffer.getShort() & 0xFFFF;
+						else if (opcode == 8)
+							anInt985 = buffer.getShort() & 0xFFFF;
+						else if (opcode == 9)
+							anInt957 = buffer.getShort() & 0xFFFF;
+						else if (opcode == 26) {
+							anInt973 = (short) (4 * buffer
+									.get() & 0xFF);
+							anInt975 = (short) (buffer.get() & 0xFF * 4);
+						} else if (opcode == 27) {
+							if (anIntArrayArray979 == null)
+								anIntArrayArray979 = new int[12][];
+							int i = buffer.get() & 0xFF;
+							anIntArrayArray979[i] = new int[6];
+							for (int i_1_ = 0; i_1_ < 6; i_1_++)
+								anIntArrayArray979[i][i_1_] = buffer
+										.getShort();
+						} else if (opcode == 28) {
+							anIntArray971 = new int[12];
+							for (int i = 0; i < 12; i++) {
+								anIntArray971[i] = buffer
+										.get() & 0xFF;
+								if (anIntArray971[i] == 255)
+									anIntArray971[i] = -1;
+							}
+						} else if (opcode != 29) {
+							if (opcode != 30) {
+								if (opcode != 31) {
+									if (opcode != 32) {
+										if (opcode != 33) {
+											if (opcode != 34) {
+												if (opcode != 35) {
+													if (opcode != 36) {
+														if (opcode != 37) {
+															if (opcode != 38) {
+																if (opcode != 39) {
+																	if (opcode != 40) {
+																		if (opcode == 41)
+																			turnCWAnimation = buffer
+																					.getShort() & 0xFFFF;
+																		else if (opcode != 42) {
+																			if (opcode == 43)
+																				buffer.getShort();
+																			else if (opcode != 44) {
+																				if (opcode == 45)
+																					anInt964 = buffer
+																							.getShort() & 0xFFFF;
+																				else if (opcode != 46) {
+																					if (opcode == 47)
+																						anInt966 = buffer
+																								.getShort() & 0xFFFF;
+																					else if (opcode == 48)
+																						anInt989 = buffer
+																								.getShort() & 0xFFFF;
+																					else if (opcode != 49) {
+																						if (opcode != 50) {
+																							if (opcode != 51) {
+																								if (opcode == 52) {
+																									int i = buffer
+																											.get() & 0xFF;
+																									anIntArray959 = new int[i];
+																									standAnimationIds = new int[i];
+																									for (int i_2_ = 0; i_2_ < i; i_2_++) {
+																										standAnimationIds[i_2_] = buffer
+																												.getShort() & 0xFFFF;
+																										int i_3_ = buffer
+																												.get() & 0xFF;
+																										anIntArray959[i_2_] = i_3_;
+																										anInt994 += i_3_;
+																									}
+																								} else if (opcode == 53)
+																									aBoolean978 = false;
+																							} else
+																								anInt962 = buffer
+																										.getShort() & 0xFFFF;
+																						} else
+																							anInt990 = buffer
+																									.getShort() & 0xFFFF;
+																					} else
+																						anInt952 = buffer
+																								.getShort() & 0xFFFF;
+																				} else
+																					anInt983 = buffer
+																							.getShort() & 0xFFFF;
+																			} else
+																				anInt955 = buffer
+																						.getShort() & 0xFFFF;
+																		} else
+																			turnCCWAnimation = buffer
+																					.getShort() & 0xFFFF;
+																	} else
+																		turn180Animation = buffer
+																				.getShort() & 0xFFFF;
+																} else
+																	anInt954 = buffer
+																			.getShort() & 0xFFFF;
+															} else
+																anInt958 = (buffer
+																		.getShort() & 0xFFFF);
+														} else
+															anInt951 = (buffer
+																	.get() & 0xFF);
+													} else
+														anInt965 = (buffer
+																.getShort());
+												} else
+													anInt969 = (buffer
+															.getShort() & 0xFFFF);
+											} else
+												anInt993 = buffer
+														.get() & 0xFF;
+										} else
+											anInt956 = (buffer.getShort());
+									} else
+										anInt961 = buffer
+												.getShort() & 0xFFFF;
+								} else
+									anInt988 = buffer.get() & 0xFF;
+							} else
+								anInt980 = buffer.getShort() & 0xFFFF;
+						} else
+							anInt992 = buffer.get() & 0xFF;
+					} else
+						runAnimationId = buffer.getShort() & 0xFFFF;
+				} else
+					anInt986 = buffer.getShort() & 0xFFFF;
+			} else
+				anInt987 = buffer.getShort() & 0xFFFF;
+		} else
+			anInt974 = buffer.getShort() & 0xFFFF;
 	}
 
 	public RenderAnimationDefinition() {

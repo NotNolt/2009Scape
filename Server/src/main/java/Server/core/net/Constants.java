@@ -7,14 +7,14 @@ package core.net;
 public final class Constants {
 
 	/**
-	 * Represents the post the server is hosted on.
+	 * Represents the port the server is hosted on.
 	 */
 	public static final int PORT = 43594;
 
 	/**
 	 * The revision of the game server.
 	 */
-	public static final int REVISION = 530;
+	public static final int REVISION = 562;
 
 	/**
 	 * The client build of the client, used for notifying players of a client

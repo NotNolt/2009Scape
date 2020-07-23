@@ -11,7 +11,7 @@ import org.crandor.game.node.entity.Entity;
 import org.crandor.game.node.entity.combat.CombatStyle;
 import org.crandor.game.node.entity.impl.ForceMovement;
 import org.crandor.game.node.entity.npc.NPC;
-import org.crandor.game.node.entity.player.Player;
+import org.crandor.game.node.entity.player.jagex.Player;
 import org.crandor.game.node.object.GameObject;
 import org.crandor.game.node.object.ObjectBuilder;
 import org.crandor.game.system.task.Pulse;
@@ -66,7 +66,7 @@ public class StrongholdSlayerCave extends MapZone implements Plugin<Object> {
 	@Override
 	public boolean interact(Entity e, final Node node, Option option) {
 		int id = node.getId();
-		final Player player = e.asPlayer();
+		final jagex.Player player = e.asPlayer();
 		switch (option.getName().toLowerCase()) {
 		case "attack":
 			if (player.isAdmin()) {
@@ -201,7 +201,7 @@ public class StrongholdSlayerCave extends MapZone implements Plugin<Object> {
 		if (!e.isPlayer() || !(target instanceof NPC)) {
 			return super.continueAttack(e, target, style, message);
 		}
-		Player player = e.asPlayer();
+		jagex.Player player = e.asPlayer();
 		if (player.isAdmin()) {
 			return super.continueAttack(player, target, style, message);
 		}
@@ -226,7 +226,7 @@ public class StrongholdSlayerCave extends MapZone implements Plugin<Object> {
 	 * @param object The object.
 	 *//*
 
-	private Location getRootLocation(Player player, GameObject object) {
+	private Location getRootLocation(jagex.Player player, GameObject object) {
 		Location obj = object.getLocation();
 		Location play = player.getLocation();
 		if (obj.getY() == play.getY()) {

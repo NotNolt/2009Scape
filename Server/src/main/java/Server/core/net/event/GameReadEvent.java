@@ -62,6 +62,7 @@ public final class GameReadEvent extends IoReadEvent {
 		int last = -1;
 		while (buffer.hasRemaining()) {
 			int opcode = buffer.get() & 0xFF;
+			System.out.println("GameReadEvent opcode: " + opcode);
 			if (session == null || session.getPlayer() == null) {
 				continue;
 			}
@@ -104,7 +105,7 @@ public final class GameReadEvent extends IoReadEvent {
 			last = opcode;
 			try {
 				packet.decode(session.getPlayer(), opcode, buf);
-				//System.out.println("Handled packed " + opcode + "!");
+				System.out.println("Handled packed " + opcode + "!");
 			} catch (Throwable t) {
 				t.printStackTrace();
 			}

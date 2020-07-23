@@ -40,7 +40,7 @@ public final class CommunicationMessage implements OutgoingPacket<MessageContext
 		case MessageContext.CLAN_MESSAGE:
 			ClanRepository clan = player.getCommunication().getClan();
 			if (clan == null) {
-				System.out.println("Player " + player.getUsername() + " was no longer in clan!");
+				System.out.println("jagex.Player " + player.getUsername() + " was no longer in clan!");
 				return;
 			}
 			bytes = new byte[256];

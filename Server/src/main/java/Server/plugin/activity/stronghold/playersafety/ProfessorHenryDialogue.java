@@ -14,7 +14,7 @@ public class ProfessorHenryDialogue extends DialoguePlugin {
 
 	/**
 	 * Constructs a new {@code ProfessorHenryDialogue} instance.
-	 * @param player The {@code Player} instance.
+	 * @param player The {@code jagex.Player} instance.
 	 */
 	public ProfessorHenryDialogue(Player player) {
 		super(player);
@@ -133,7 +133,7 @@ public class ProfessorHenryDialogue extends DialoguePlugin {
 			increment();
 			break;
 		case 10:
-			sendNormalDialogue(npc, FacialExpression.HALF_GUILTY, "Here you can take part in the Player Safety test: a set", "of valuable lessons to learn about staying safe in ", "RuneScape.");
+			sendNormalDialogue(npc, FacialExpression.HALF_GUILTY, "Here you can take part in the jagex.Player Safety test: a set", "of valuable lessons to learn about staying safe in ", "RuneScape.");
 			increment();
 			break;
 		case 11:
@@ -189,10 +189,10 @@ public class ProfessorHenryDialogue extends DialoguePlugin {
 		for (int i = 9; i < 18; i++) {
 			player.getPacketDispatch().sendString("", 277, i);
 		}
-		player.getPacketDispatch().sendString("You have completed the Player Safety test!", 277, 4);
+		player.getPacketDispatch().sendString("You have completed the jagex.Player Safety test!", 277, 4);
 		player.getPacketDispatch().sendString("2 Experience lamps", 277, 9);
 		player.getPacketDispatch().sendString("Access to the Stronghold of", 277, 10);
-		player.getPacketDispatch().sendString("Player Safety Dungeon", 277, 11);
+		player.getPacketDispatch().sendString("jagex.Player Safety Dungeon", 277, 11);
 		player.getPacketDispatch().sendString("The Safety First' emote", 277, 12);
 		player.getPacketDispatch().sendString(player.getQuestRepository().getPoints() + "", 277, 7);
 		player.getPacketDispatch().sendItemZoomOnInterface(12626, 240, 277, 5);

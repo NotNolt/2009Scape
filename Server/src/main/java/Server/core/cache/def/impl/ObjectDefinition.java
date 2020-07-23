@@ -444,23 +444,28 @@ public class ObjectDefinition extends Definition<GameObject> {
 	private short mapIcon;
 
 	/**
-	 * Construct a new {@code ObjectDefinition} {@code Object}.
+	 * The third int
+	 */
+	public int thirdInt;
+
+	/**
+	 * Construct a new {@code jagex.ObjectDefinition} {@code Object}.
 	 */
 	public ObjectDefinition() {
-		anInt3835 = -1;
-		anInt3860 = -1;
-		configFileId = -1;
+		anInt3835 = -1;//c
+		anInt3860 = -1;//c
+		configFileId = -1;//c
 		aBoolean3866 = false;
-		anInt3851 = -1;
+		anInt3851 = -1;//c
 		anInt3865 = 255;
 		aBoolean3845 = false;
 		aBoolean3867 = false;
 		anInt3850 = 0;
-		anInt3844 = -1;
+		anInt3844 = -1;//c
 		anInt3881 = 0;
-		anInt3857 = -1;
+		anInt3857 = -1;//c
 		aBoolean3872 = true;
-		anInt3882 = -1;
+		anInt3882 = -1;//c
 		anInt3834 = 0;
 		options = new String[5];
 		anInt3875 = 0;
@@ -477,7 +482,7 @@ public class ObjectDefinition extends Definition<GameObject> {
 		aBoolean3853 = true;
 		secondBool = false;
 		clipType = 2;
-		anInt3855 = -1;
+		anInt3855 = -1;//c
 		anInt3878 = 0;
 		anInt3904 = 0;
 		sizeX = 1;
@@ -486,18 +491,19 @@ public class ObjectDefinition extends Definition<GameObject> {
 		aBoolean3891 = false;
 		anInt3905 = 0;
 		name = "null";
-		anInt3913 = -1;
+		anInt3913 = -1;//c
 		aBoolean3906 = false;
 		membersOnly = false;
 		aByte3914 = (byte) 0;
 		anInt3915 = 0;
 		anInt3900 = 0;
-		secondInt = -1;
+		secondInt = -1;//c
+		thirdInt = -1;
 		aBoolean3894 = false;
 		aByte3912 = (byte) 0;
 		anInt3921 = 0;
 		anInt3902 = 128;
-		configId = -1;
+		configId = -1;//c
 		anInt3877 = 0;
 		walkingFlag = 0;
 		anInt3892 = 64;
@@ -517,7 +523,7 @@ public class ObjectDefinition extends Definition<GameObject> {
 		GameWorld.prompt(false);
 		// if (true) {
 		// for (int id = 0; id <= 27325; id++) {
-		// ObjectDefinition def = ObjectDefinition.forId(id);
+		// jagex.ObjectDefinition def = jagex.ObjectDefinition.forId(id);
 		// if (def.mapIcon > 69) {
 		// System.out.println(id + " - " + def.getName() + " has map icon " +
 		// def.mapIcon);
@@ -525,7 +531,7 @@ public class ObjectDefinition extends Definition<GameObject> {
 		// }
 		// return; 2105
 		// }
-		/*ObjectDefinition def = ObjectDefinition.forId(2105);
+		/*jagex.ObjectDefinition def = jagex.ObjectDefinition.forId(2105);
 		System.out.println("size: " + def.getClass().getDeclaredFields().length);
 		for (Field f : def.getClass().getDeclaredFields()) {
 			if (!Modifier.isStatic(f.getModifiers())) {
@@ -614,7 +620,7 @@ public class ObjectDefinition extends Definition<GameObject> {
 //		System.err.println("----------------------------------------------------\n\n\n");
 		while (true) {
 			if (!buffer.hasRemaining()) {
-				System.err.println("[ObjectDefinition] Buffer empty for " + objectId);
+				System.err.println("[jagex.ObjectDefinition] Buffer empty for " + objectId);
 				break;
 			}
 			int opcode = buffer.get() & 0xFF;
@@ -778,15 +784,78 @@ public class ObjectDefinition extends Definition<GameObject> {
 				def.aByte3912 = (byte) 4;
 			} else if (opcode == 95) {
 				def.aByte3912 = (byte) 5;
-			} else if (opcode == 96 || opcode == 97) {
-				//
+			} else if (opcode == 96) {
+				def.aBoolean3924 = true;
+			} else if (opcode == 97) {
+				def.aBoolean3866 = true;
+			} else if (opcode == 98) {
+				def.aBoolean3923 = true;
+			} else if (opcode == 99) {
+				def.anInt3857 = buffer.get() & 0xFF;
+				def.anInt3835 = buffer.getShort() & 0xFFFF;
 			} else if (opcode == 100) {
-				buffer.get();
-				buffer.getShort();
+				def.anInt3844 = buffer.get();
+				def.anInt3913 = buffer.getShort();
 			} else if (opcode == 101) {
-				buffer.get();
+				def.anInt3850 = buffer.get() & 0xFF;
 			} else if (opcode == 102) {
-				buffer.getShort();
+				def.anInt3838 = buffer.getShort();
+			} else if (opcode == 103) {
+				def.thirdInt = 0;
+			} else if (opcode == 104) {
+				def.anInt3865 = buffer.get() & 0xFF;
+			} else if (opcode == 105) {
+				def.aBoolean3906 = true;
+			} else if (opcode == 106) {
+				int i_55_ = buffer.get() & 0xFF;
+				def.anIntArray3869 = new int[i_55_];
+				def.anIntArray3833 = new int[i_55_];
+				for (int i_56_ = 0; i_56_ < i_55_; i_56_++) {
+					def.anIntArray3833[i_56_] = buffer.getShort() & 0xFFFF;
+					int i_57_ = buffer.get() & 0xFF;
+					def.anIntArray3869[i_56_] = i_57_;
+					def.anInt3881 += i_57_;
+				}
+			} else if (opcode == 107) {
+				def.anInt3851 = buffer.getShort() & 0xFFFF;
+			} else if (opcode >= 150 && opcode < 155) {
+				def.options[opcode + -150] = ByteBufferUtils.getString(buffer);
+			} else if (opcode == 160) {
+				int i_62_ = buffer.get() & 0xFF;
+				def.anIntArray3908 = new int[i_62_];
+				for (int i_63_ = 0; i_62_ > i_63_; i_63_++)
+					def.anIntArray3908[i_63_] = buffer.getShort() & 0xFFFF;
+			} else if (opcode == 162) {
+				def.aByte3912 = (byte) 3;
+				def.anInt3882 = buffer.getInt();
+			} else if (opcode == 163) {
+				def.aByte3847 = buffer.get();
+				def.aByte3849 = buffer.get();
+				def.aByte3837 = buffer.get();
+				def.aByte3914 = buffer.get();
+			} else if (opcode == 164) {
+				def.anInt3834 = buffer.getShort();
+			} else if (opcode == 165) {
+				def.anInt3875 = buffer.getShort();
+			} else if (opcode == 166) {
+				def.anInt3877 = buffer.getShort();
+			} else if (opcode == 167) {
+				def.anInt3921 = buffer.getShort() & 0xFFFF;
+			} else if (opcode == 168) {
+				def.aBoolean3894 = true;
+			} else if (opcode == 169) {
+				def.aBoolean3845 = true;
+			} else if (opcode == 170) {
+				int anInt3383 = buffer.getShort() & 0xFFFF;
+			} else if (opcode == 171) {
+				int anInt3362 = buffer.getShort() & 0xFFFF;
+			} else if (opcode == 173) {
+				int anInt3302 = buffer.getShort() & 0xFFFF;
+				int anInt3336 = buffer.getShort() & 0xFFFF;
+			} else if (opcode == 177) {
+				boolean ub = true;
+			} else if (opcode == 178) {
+				int db = buffer.get() & 0xFF;
 			} else if (opcode == 249) { // cs2 scripts
 				int length = buffer.get() & 0xFF;
 				for (int i = 0; i < length; i++) {

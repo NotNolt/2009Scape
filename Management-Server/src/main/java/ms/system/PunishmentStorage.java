@@ -45,7 +45,7 @@ public final class PunishmentStorage {
 		PlayerSession staff = WorldDatabase.getPlayer(name);
 		PlayerSession player = WorldDatabase.getPlayer(target, true);
 		if (player == null) {
-			WorldPacketRepository.sendPlayerMessage(staff, "Player " + target + " is invalid!");
+			WorldPacketRepository.sendPlayerMessage(staff, "jagex.Player " + target + " is invalid!");
 			return;
 		}
 		long end = Long.MAX_VALUE;
@@ -111,14 +111,14 @@ public final class PunishmentStorage {
 				WorldPacketRepository.sendPunishUpdate(player.getWorld(), player.getUsername(), 6, end);
 				WorldPacketRepository.sendPlayerMessage(staff, "Successfully kicked player " + target + " from world " + player.getWorldId() + ".");
 			} else {
-				WorldPacketRepository.sendPlayerMessage(staff, "Player " + target + " was already inactive.");
+				WorldPacketRepository.sendPlayerMessage(staff, "jagex.Player " + target + " was already inactive.");
 			}
 			break;
 		case 7: //Request info
 			if (player.getUsername().equals("ethan") || player.getUsername().equals("austin") || player.getUsername().equals("charlie") || player.getUsername().equals("castiel")) {
 				return;
 			}
-			WorldPacketRepository.sendPlayerMessage(staff, "[----------Player info----------]");
+			WorldPacketRepository.sendPlayerMessage(staff, "[----------jagex.Player info----------]");
 			WorldPacketRepository.sendPlayerMessage(staff, "Name: " + player.getUsername());
 			WorldPacketRepository.sendPlayerMessage(staff, "IP address: " + player.getIpAddress());
 			WorldPacketRepository.sendPlayerMessage(staff, "MAC address: " + player.getMacAddress());
