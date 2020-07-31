@@ -32,7 +32,7 @@ public final class MSPacketRepository {
 	/**
 	 * Handles a player info update.
 	 *
-	 * @param parser the player.
+	 * @param player the player.
 	 */
 	public static void sendInfoUpdate(Player player) {
 		IoBuffer buffer = new IoBuffer(14, PacketHeader.BYTE);
@@ -304,7 +304,9 @@ public final class MSPacketRepository {
 	private static void handleRegistryResponse(IoBuffer buffer) {
 		System.out.println("Handling Registry Response...");
 		String username = buffer.getString();
+		System.out.println("Registry Response Username: " + username);
 		int opcode = buffer.get() & 0xFF;
+		System.out.println("Registry Response Opcode: " + opcode);
 		LoginParser parser = WorldCommunicator.finishLoginAttempt(username);
 		if (parser != null) {
 			PlayerDetails details = parser.getDetails();
@@ -312,6 +314,7 @@ public final class MSPacketRepository {
 			Player player = null;
 			switch (response) {
 				case ALREADY_ONLINE:
+					System.out.println("Player already online");
 					player = Repository.getPlayer(username);
 					if (player == null || player.getSession().isActive() || !player.getSession().getAddress().equals(details.getSession().getAddress())) {
 						details.getSession().write(response, true);
@@ -319,6 +322,7 @@ public final class MSPacketRepository {
 					}
 					player.getPacketDispatch().sendLogout();
 				case SUCCESSFUL:
+					System.out.println("Player Connection Successful");
 					if (!details.getSession().isActive()) {
 						sendPlayerRemoval(username);
 						break;
@@ -332,6 +336,7 @@ public final class MSPacketRepository {
 					break;
 
 				case MOVING_WORLD:
+					System.out.println("Player is moving worlds...");
 					details.getSession().setServerKey(buffer.get());
 				default:
 					details.getSession().write(response, true);

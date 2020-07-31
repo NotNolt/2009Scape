@@ -9,6 +9,8 @@ import java.nio.ByteBuffer;
  */
 public final class ByteBufferUtils {
 
+	private int readOffset = 0;
+
 	/**
 	 * Gets a string from the byte buffer.
 	 * @param buffer The byte buffer.

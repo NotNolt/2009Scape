@@ -44,10 +44,10 @@ public final class LoginWriteEvent extends IoWriteEvent {
 				break;
 			//Could add a case here to auto-restart the server in case the login server goes offline (case 8)
 			//Possibly a risk for malicious attacks though
-			case 21: //Moving world
-				System.out.println("User Moving Worlds");
-				buffer.put((byte) session.getServerKey());
-				break;
+//			case 21: //Moving world
+//				System.out.println("User Moving Worlds");
+//				buffer.put((byte) session.getServerKey());
+//				break;
 		}
 		buffer.flip();
 		session.queue(buffer);
@@ -61,7 +61,6 @@ public final class LoginWriteEvent extends IoWriteEvent {
 	private static ByteBuffer getWorldResponse(IoSession session) {
 		System.out.println("Retrieving World Response");
 		ByteBuffer buffer = ByteBuffer.allocate(150);//150?
-		buffer.put((byte) 2);
 		Player player = session.getPlayer();
 		buffer.put((byte) player.getDetails().getRights().ordinal());
 		buffer.put((byte) 0);

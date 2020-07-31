@@ -1,6 +1,9 @@
 package jagex;/* jagex.RuntimeException_Sub1 - Decompiled by JODE
  * Visit http://jode.sourceforge.net/
  */
+import core.game.node.entity.player.link.ConfigurationManager;
+import setting.Configurations;
+
 import java.math.BigInteger;
 
 public class RuntimeException_Sub1 extends RuntimeException
@@ -148,7 +151,7 @@ public class RuntimeException_Sub1 extends RuntimeException
     public static int anInt3243 = 0;
     public static int anInt3244;
     public String aString3245;
-    public static BigInteger aBigInteger3246;
+    public static BigInteger Modulus;
     public static volatile long aLong3247;
     
     public static void method2831(int arg0) {
@@ -252,7 +255,7 @@ public class RuntimeException_Sub1 extends RuntimeException
     
     public static void method2835(byte arg0) {
 	try {
-	    aBigInteger3246 = null;
+	    Modulus = null;
 	    aShortArrayArray3236 = null;
 	    aClass214_3238 = null;
 	    if (arg0 != -66)
@@ -270,7 +273,7 @@ public class RuntimeException_Sub1 extends RuntimeException
 	    Class74.aClass119_1011.method1012(0);
 	    if (!Class135.aBoolean1816) {
 		if (arg0 != true)
-		    aBigInteger3246 = null;
+		    Modulus = null;
 		for (Class131_Sub20 class131_sub20
 			 = (Class131_Sub20) arg3.method1007(0);
 		     class131_sub20 != null;
@@ -351,9 +354,7 @@ public class RuntimeException_Sub1 extends RuntimeException
     
     static {
 	aClass214_3238 = new Class214(10);
-	aBigInteger3246
-	    = (new BigInteger
-	       ("7162900525229798032761816791230527296329313291232324290237849263501208207972894053929065636522363163621000728841182238772712427862772219676577293600221789"));
+	Modulus = Configurations.MODULUS;
 	aLong3247 = 0L;
     }
 }

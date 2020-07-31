@@ -9,6 +9,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.file.Files;
+import java.text.NumberFormat;
 import java.util.HashMap;
 
 /**
@@ -52,12 +53,12 @@ public class ClassLoadServer extends Thread {
     @Override
     public void run() {
     	resetResourceCache();
-       // System.out.println("Listening on port " + PORT + "...");
+        System.out.println("Listening on port " + PORT + "...");
 		while (Management.active) {
             Socket clientSocket = null;
             try {
                 clientSocket = serverSocket.accept();
-                //System.out.println("New Connection from : " + clientSocket.getInetAddress());
+                System.out.println("New Connection from : " + clientSocket.getInetAddress());
                 WorkerThread wcs  = new WorkerThread(clientSocket);
                 wcs.start();
             } catch (Exception e) {}
@@ -84,8 +85,7 @@ public class ClassLoadServer extends Thread {
 	    				if (!f.getName().startsWith(".")) {
 	    					byte[] bytes = Files.readAllBytes(f.toPath());
 	    					String name = ServerConstants.fixPath(null, f.getAbsolutePath().substring(f.getAbsolutePath().lastIndexOf(pathRoot)));
-	    					//System.out.println("[ClassLoadServer] Loaded resource '" + f.getName() + 
-	    						//	"' Size: " + NumberFormat.getInstance().format(bytes.length) + " bytes");
+	    					System.out.println("[ClassLoadServer] Loaded resource '" + f.getName() + "' Size: " + NumberFormat.getInstance().format(bytes.length) + " bytes");
 	    					resourceCache.put(name, bytes); 			
 	    				}
     				}

@@ -41,6 +41,11 @@ public class PlayerDetails {
 	private String password;
 
 	/**
+	 * Represents the ip address.
+	 */
+	private String ip;
+
+	/**
 	 * The unique id of the account.
 	 */
 	private int uid;
@@ -103,7 +108,20 @@ public class PlayerDetails {
 	public PlayerDetails(String username) {
 		this(username, null);
 	}
-	
+
+	/**
+	 * Constructs a new {@code PlayerDetails}.
+	 * @param username the useranme to set.
+	 * @param password the password to set.
+	 * @param session the session.
+	 */
+	public PlayerDetails(String username, String password, IoSession session) {
+		this.username = username;
+		this.password = password;
+		this.session = session;
+		this.setIp();
+	}
+
 	/**
 	 * Parses the details from the database for this object.
 	 * @return {@code True} if parsed.
@@ -283,6 +301,13 @@ public class PlayerDetails {
 			return info.getIp();
 		}
 		return session.getAddress();
+	}
+
+	/**
+	 * Method used to set the ip.
+	 */
+	public void setIp() {
+		this.ip = session == null ? "127.0.0.1" : session.getRemoteAddress().replaceAll("/", "").split(":")[0];
 	}
 
 	/**

@@ -18,7 +18,7 @@ public class Class1
     public static int anInt76;
     public static int anInt77;
     public Class1 aClass1_78;
-    public static long aLong79 = 0L;
+    public static long IsaacServerKey = 0L;
     public Class1 aClass1_80;
     
     public void method95(byte arg0) {

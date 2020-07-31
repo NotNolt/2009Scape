@@ -4,18 +4,18 @@
     beta="false"
     dev="false"
     startGui="false"
-    worldID="3"
+    worldID="1"
     countryID="0"
-    activity="Accurate 2009 Remake"
+    activity=""
     pvpWorld="false"
-    msip="192.168.1.180"
+    msip="127.0.0.1"
     />
     <!--192.168.1.180-->
     <!--Plugin configuration goes down here-->
     <PluginSetting name="Trivia" enabled="false"/>
     <PluginSetting name="RPS" enabled="false"/>
     <PluginSetting name="Boredom" enabled="false"/>
-    <PluginSetting name="ShootingStars" enabled="true"/>
+    <PluginSetting name="ShootingStars" enabled="false"/>
     <PluginSetting name="MysteryBox" enabled="false"/>
     <PluginSetting name="PKZone" enabled="false"/>
 

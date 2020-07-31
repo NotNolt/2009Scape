@@ -87,17 +87,17 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 					}
 				});
 				break;
-			case 147://details
+			case 20://details
 				day = buffer.get();
 				month = buffer.get();
 				year = buffer.getShort();
 				country = buffer.getShort();
 				response(session, RegistryResponse.SUCCESS);
 				break;
-			case 36://Register details
+			case 22://Register details
 				buffer.get();
 				System.out.println("Registering details");
-				buffer = LoginReadEvent.getRSABlock(buffer);
+				buffer = LoginReadEvent.encryptUsingRSA(buffer);
 				buffer.getShort();
 				int revision = buffer.getShort();//revision?
 				if (revision != Constants.REVISION) {

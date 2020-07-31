@@ -37,10 +37,10 @@ public final class HSWriteEvent extends IoWriteEvent {
 		ByteBuffer buffer = ByteBuffer.allocate(9);
 		buffer.put((byte) 0);
 		if ((Boolean) context) {
-		    buffer.putLong(session.getServerKey());
-		    session.setProducer(LOGIN_PRODUCER);
+			buffer.putLong(session.getServerKey());
+			session.setProducer(LOGIN_PRODUCER);
 		} else {
-		    session.setProducer(JS5_PRODUCER);
+			session.setProducer(JS5_PRODUCER);
 		}
 		buffer.flip();
 		session.queue(buffer);

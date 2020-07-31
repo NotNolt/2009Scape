@@ -33,15 +33,14 @@ public final class JS5ReadEvent extends IoReadEvent {
 			switch (opcode) {
 			case 0:
 			case 1:
-				int request = ByteBufferUtils.getTriByte(buffer);
-				int container = request >> 16 & 0xFF;
-				int archive = request & 0xFFFF;
-				session.getJs5Queue().queue(container, archive, opcode == 1);
+//				int request = ByteBufferUtils.getTriByte(buffer);
+				int container = buffer.get() & 0xFF;
+				int archive = buffer.getShort() & 0xFFFF;
+				session.write(new int[] { container, archive, opcode });
 				break;
 			case 2: // music
 			case 3: // Music
-				buffer.get();
-				buffer.getShort();
+				ByteBufferUtils.getTriByte(buffer);
 				break;
 			case 4:
 				session.setJs5Encryption(buffer.get());
@@ -50,21 +49,19 @@ public final class JS5ReadEvent extends IoReadEvent {
 					return;
 				}
 				break;
-			case 5:
-			case 9:
-				if (buffer.remaining() < 4) {
-					queueBuffer(opcode);
-					return;
-				}
-				buffer.getInt();
-				break;
+//			case 5:
+//			case 9:
+//				if (buffer.remaining() < 4) {
+//					queueBuffer(opcode);
+//					return;
+//				}
+//				buffer.getInt();
+//				break;
 			case 6:
 				ByteBufferUtils.getTriByte(buffer); // Value should be 3
-				// buffer.getShort(); // Value should be 0
 				break;
 			case 7:
-				buffer.get();
-				buffer.getShort();
+				ByteBufferUtils.getTriByte(buffer);
 				session.disconnect();
 				return;
 			default:

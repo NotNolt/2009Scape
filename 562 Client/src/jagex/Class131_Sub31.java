@@ -84,7 +84,7 @@ public class Class131_Sub31 extends Class131
 						     * 9.9999999E7),
 					      (byte) 125);
 		    stream.method1761((RuntimeException_Sub1
-					       .aBigInteger3246),
+					       .Modulus),
 					      (byte) -114,
 					      (Class131_Sub2_Sub10
 					       .aBigInteger5699));

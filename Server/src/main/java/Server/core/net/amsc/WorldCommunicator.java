@@ -70,10 +70,11 @@ public final class WorldCommunicator {
 	 * @param parser The login attempt.
 	 */
 	public static void register(final LoginParser parser) {
+		System.out.println("Registering Login Attempt...");
 		LoginParser p = loginAttempts.get(parser.getDetails().getUsername());
-		if (p != null && GameWorld.getTicks() - p.getTimeStamp() < 50 && p.getDetails().getRights() == Rights.REGULAR_PLAYER) {
-			parser.getDetails().getSession().write(Response.ALREADY_ONLINE, true);
-			return;
+		if (p != null && p.getDetails().getRights() == Rights.REGULAR_PLAYER) {
+//			parser.getDetails().getSession().write(Response.ALREADY_ONLINE, true);
+//			return;
 		}
 		loginAttempts.put(parser.getDetails().getUsername(), parser);
 		TaskExecutor.executeSQL(new Runnable() {

@@ -21,7 +21,7 @@ public class GameLaunch {
     /**
      * The game settings.
      */
-    public static GameSetting SETTINGS = new GameSetting("2009Scape 562", "127.0.0.1", 3, "wip", "english", "game0", false);
+    public static GameSetting SETTINGS = new GameSetting("2009Scape 562", "127.0.0.1", 1, "wip", "english", "game0", false);
 
     /**
      * The main method.

@@ -219,7 +219,7 @@ public class Class137
 	    stream.writeShort(arg1, (byte) 104);
 	    stream.writeShort(arg5, (byte) 118);
 	    stream.writeInt(is[3], (byte) 125);
-	    stream.method1761(RuntimeException_Sub1.aBigInteger3246,
+	    stream.method1761(RuntimeException_Sub1.Modulus,
 				      (byte) -120,
 				      Class131_Sub2_Sub10.aBigInteger5699);
 	    Stream stream_6_ = new Stream(350);

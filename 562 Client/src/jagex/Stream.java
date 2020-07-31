@@ -827,20 +827,20 @@ public class Stream extends Class131 {
 	public void method1761(BigInteger arg0, byte arg1, BigInteger arg2) {
 		try {
 			anInt4307++;
-			if (Configurations.USE_RSA) {
-				if (arg1 <= -113) {
-					int i = anInt4360;
-					anInt4360 = 0;
-					byte[] is = new byte[i];
-					method1768(0, i, (byte) -113, is);
-					BigInteger biginteger = new BigInteger(is);
-					BigInteger biginteger_34_ = biginteger.modPow(arg2, arg0);
-					byte[] is_35_ = biginteger_34_.toByteArray();
-					anInt4360 = 0;
-					writeByte(-110, is_35_.length);
-					method1734(0, -111, is_35_, is_35_.length);
-				}
-			}
+//			if (Configurations.USE_RSA) {
+//				if (arg1 <= -113) {
+//					int i = anInt4360;
+//					anInt4360 = 0;
+//					byte[] is = new byte[i];
+//					method1768(0, i, (byte) -113, is);
+//					BigInteger biginteger = new BigInteger(is);
+//					BigInteger biginteger_34_ = biginteger.modPow(arg2, arg0);
+//					byte[] is_35_ = biginteger_34_.toByteArray();
+//					anInt4360 = 0;
+//					writeByte(-110, is_35_.length);
+//					method1734(0, -111, is_35_, is_35_.length);
+//				}
+//			}
 		} catch (RuntimeException runtimeexception) {
 			throw Class131_Sub2_Sub6.method1495(runtimeexception, ("il.JA("
 					+ (arg0 != null ? "{...}" : "null") + ',' + arg1 + ','
@@ -1275,7 +1275,7 @@ public class Stream extends Class131 {
 			int i = -93 % ((arg0 - 41) / 50);
 			long l = (long) readUnsignedInt(-2) & 0xffffffffL;
 			long l_47_ = 0xffffffffL & (long) readUnsignedInt(-2);
-			return (l << 295408672) + l_47_;
+			return (l << 32) + l_47_;
 		} catch (RuntimeException runtimeexception) {
 			throw Class131_Sub2_Sub6.method1495(runtimeexception, "il.P("
 					+ arg0 + ')');

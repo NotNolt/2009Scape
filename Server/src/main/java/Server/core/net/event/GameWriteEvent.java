@@ -6,6 +6,7 @@ import core.net.packet.IoBuffer;
 
 import java.nio.ByteBuffer;
 
+
 /**
  * Handles game packet writing events.
  * @author Emperor
@@ -37,14 +38,14 @@ public final class GameWriteEvent extends IoWriteEvent {
 			ByteBuffer response = ByteBuffer.allocate(packetLength);
 			response.put((byte) buffer.opcode());
 			switch (buffer.getHeader()) {
-			case BYTE:
-				response.put((byte) buf.remaining());
-				break;
-			case SHORT:
-				response.putShort((short) buf.remaining());
-				break;
-			default:
-				break;
+				case BYTE:
+					response.put((byte) buf.remaining());
+					break;
+				case SHORT:
+					response.putShort((short) buf.remaining());
+					break;
+				default:
+					break;
 			}
 			buf = (ByteBuffer) response.put(buf).flip();
 		}

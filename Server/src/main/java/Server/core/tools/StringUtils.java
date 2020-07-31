@@ -590,4 +590,24 @@ public final class StringUtils {
 		}
 		return "";
 	}
+
+	public static String decodeBase37(long value) {
+		char[] chars = new char[12];
+		int pos = 0;
+		while (value != 0) {
+			int remainder = (int) (value % 37);
+			value /= 37;
+
+			char c;
+			if (remainder >= 1 && remainder <= 26)
+				c = (char) ('a' + remainder - 1);
+			else if (remainder >= 27 && remainder <= 36)
+				c = (char) ('0' + remainder - 27);
+			else
+				c = '_';
+
+			chars[chars.length - pos++ - 1] = c;
+		}
+		return new String(chars, chars.length - pos, pos);
+	}
 }

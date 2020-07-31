@@ -623,7 +623,7 @@ public class Client extends Applet_Sub1 {
 				} else if (Class133.anInt1803 == 30)
 					PacketParser.method1581(false);
 				else if (Class133.anInt1803 == 40) {
-					Login.method1149((byte) 7);
+					Login.method1149((byte) 7);//Brings us to (partial) login method
 					if (Class4.anInt3281 != -3) {
 						if (Class4.anInt3281 == 15)
 							Class41.method513((byte) 53);
@@ -731,7 +731,7 @@ public class Client extends Applet_Sub1 {
 		try {
 			try {
 					//Class89.method837("argument count", false);
-				Class93.worldId = 3;//Integer.parseInt(arg0[0]); //World Id
+				Class93.worldId = 1;//Integer.parseInt(arg0[0]); //World Id
 				Class1_Sub7.anInt3581 = 2;//live, wip, rc
 				Class214.anInt3138 = 2;//??
 				Class1_Sub7_Sub1.anInt5208 = 0;//english, german

@@ -31,27 +31,18 @@ public final class HSReadEvent extends IoReadEvent {
 
 	@Override
 	public void read(IoSession session, ByteBuffer buffer) {
-		Integer amount = count.get(session.getAddress());
-		if (amount == null) {
-			amount = 0;
-		}
-		count.put(session.getAddress(), amount + 1);
 		int opcode = buffer.get() & 0xFF;
 		System.out.println("HSReadEvent opcode - " + opcode);
 		switch (opcode) {
 		case 14:
 			session.setNameHash(buffer.get() & 0xFF);
-			System.out.println("Setting name Hash - HSReadEvent");
 			session.setServerKey(RandomFunction.RANDOM.nextLong());
-			System.out.println("Setting Server Key - HSReadEvent");
 			session.write(true);
 			break;
 		case 15:
 			int revision = buffer.getInt();
 			System.out.println("Revision " + revision);
 			//int sub_revision = buffer.getInt();
-			buffer.flip();
-			System.out.println(buffer.limit());
 			if (revision != Constants.REVISION) { //|| sub_revision != Constants.CLIENT_BUILD) {
 				System.out.println("Revision disconnect!");
 				session.disconnect();
@@ -59,14 +50,15 @@ public final class HSReadEvent extends IoReadEvent {
 			}
 			session.write(false);
 			break;
-		case 147:
-		case 186:
-		case 36:
-		case 21:
-			System.out.println("Reading Account Register...");
-			AccountRegister.read(session, opcode, buffer);
-			break;
-		case 255:
+
+//		case 147:
+//		case 186:
+//		case 36:
+//		case 21:
+//			System.out.println("Reading Account Register...");
+//			AccountRegister.read(session, opcode, buffer);
+//			break;
+
 		case 23:	// World list
 			System.out.println("Updating world list information");
 			int updateStamp = buffer.getInt();

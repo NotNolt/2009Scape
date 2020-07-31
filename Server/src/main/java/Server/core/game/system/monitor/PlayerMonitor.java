@@ -53,6 +53,11 @@ public final class PlayerMonitor implements SavingModule {
 	public static final int DUEL_LOG = 7;
 
 	/**
+	 * The IP/MAC-address log.
+	 */
+	public static final int ADDRESS_HISTORY_LOG = 8;
+
+	/**
 	 * The macro flag for a click when the client was out of focus.
 	 */
 	public static final int MF_NO_FOCUS_CLICK = 0x1;

@@ -86,10 +86,10 @@ public class WorkerThread extends Thread {
                 		String resourceType = is.readUTF();             		
                 		if (ClassLoadServer.resourceCache.containsKey(resourceName)) {
                 			sendResource(ClassLoadServer.resourceCache.get(resourceName));
-                			//System.out.println("Sent Resource: " + resourceName);
+                			System.out.println("Sent Resource: " + resourceName);
                 		} else {
                 			sendOpcode(-1);
-                			//System.out.println("Could not send resource '" + resourceName + "'");
+                			System.out.println("Could not send resource '" + resourceName + "'");
                 		}	                	
                 		break;
                 	default:
@@ -98,7 +98,7 @@ public class WorkerThread extends Thread {
                 }  
             }
         } catch(Exception e) {
-        	//System.out.println("jagex.Client force disconnect.");
+        	System.out.println("jagex.Client force disconnect.");
 		} finally {
             try {
                 is.close();

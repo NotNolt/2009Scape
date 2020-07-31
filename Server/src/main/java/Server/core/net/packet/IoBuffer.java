@@ -20,6 +20,8 @@ public class IoBuffer {
 	 */
 	private int packetSize;
 
+
+	private int readOffset = 0;
 	/**
 	 * The opcode.
 	 */
@@ -551,6 +553,12 @@ public class IoBuffer {
 	public String getString() {
 		return ByteBufferUtils.getString(buf);
 	}
+
+	public IoBuffer readSkip(int length) {
+		readOffset += length;
+		return this;
+	}
+	
 
 	/**
 	 * @return

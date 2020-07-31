@@ -11,6 +11,7 @@ import core.game.container.Container;
 import core.game.container.impl.BankContainer;
 import core.game.container.impl.EquipmentContainer;
 import core.game.container.impl.InventoryListener;
+import core.game.node.entity.player.link.*;
 import plugin.ame.AntiMacroHandler;
 import plugin.dialogue.DialogueInterpreter;
 import plugin.ge.GrandExchange;
@@ -40,20 +41,6 @@ import core.game.node.entity.player.info.RenderInfo;
 import core.game.node.entity.player.info.Rights;
 import core.game.node.entity.player.info.UIDInfo;
 import core.game.node.entity.player.info.login.LoginConfiguration;
-import core.game.node.entity.player.link.BankPinManager;
-import core.game.node.entity.player.link.BarcrawlManager;
-import core.game.node.entity.player.link.ConfigurationManager;
-import core.game.node.entity.player.link.GlobalData;
-import core.game.node.entity.player.link.HintIconManager;
-import core.game.node.entity.player.link.InterfaceManager;
-import core.game.node.entity.player.link.IronmanManager;
-import core.game.node.entity.player.link.IronmanMode;
-import core.game.node.entity.player.link.PacketDispatch;
-import core.game.node.entity.player.link.SavedData;
-import core.game.node.entity.player.link.Settings;
-import core.game.node.entity.player.link.SkullManager;
-import core.game.node.entity.player.link.SpellBookManager;
-import core.game.node.entity.player.link.WarningMessages;
 import core.game.node.entity.player.link.appearance.Appearance;
 import core.game.node.entity.player.link.audio.AudioManager;
 import core.game.node.entity.player.link.diary.AchievementDiaryManager;
@@ -251,6 +238,7 @@ public class Player extends Entity {
 	 */
 	private final PlayerMonitor monitor = new PlayerMonitor();
 
+
 	/**
 	 * Represents the players warning messages.
 	 */
@@ -329,6 +317,8 @@ public class Player extends Entity {
 	 * The crest of a player.
 	 */
 	private CrestCities crest = CrestCities.MISTHALIN;
+
+	private String ip;
 
 	/**
 	 * The boolean for the player playing.
@@ -1260,6 +1250,7 @@ public class Player extends Entity {
 		return emoteManager;
 	}
 
+
 	/**
 	 * Gets the invisible.
 	 * @return the invisible
@@ -1267,6 +1258,7 @@ public class Player extends Entity {
 	public boolean isInvisible() {
 		return invisible;
 	}
+
 
 	/**
 	 * Sets the invisible.
@@ -1340,5 +1332,13 @@ public class Player extends Entity {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * Gets the ip.
+	 * @return The ip.
+	 */
+	public String getIp() {
+		return ip;
 	}
 }
