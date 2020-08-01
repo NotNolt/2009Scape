@@ -30,7 +30,7 @@ public final class PacketRepository {
 		OUTGOING_PACKETS.put(LoginPacket.class, new LoginPacket());
 		OUTGOING_PACKETS.put(UpdateSceneGraph.class, new UpdateSceneGraph());
 		OUTGOING_PACKETS.put(WindowsPane.class, new WindowsPane());
-//		OUTGOING_PACKETS.put(Interface.class, new Interface());
+		OUTGOING_PACKETS.put(Interface.class, new Interface());
 //		OUTGOING_PACKETS.put(SkillLevel.class, new SkillLevel());
 //		OUTGOING_PACKETS.put(Config.class, new Config());
 //		OUTGOING_PACKETS.put(AccessMask.class, new AccessMask());
@@ -38,12 +38,12 @@ public final class PacketRepository {
 //		OUTGOING_PACKETS.put(RunScriptPacket.class, new RunScriptPacket());
 //		OUTGOING_PACKETS.put(RunEnergy.class, new RunEnergy());
 //		OUTGOING_PACKETS.put(ContainerPacket.class, new ContainerPacket());
-//		OUTGOING_PACKETS.put(StringPacket.class, new StringPacket());
+		OUTGOING_PACKETS.put(StringPacket.class, new StringPacket());
 //		OUTGOING_PACKETS.put(Logout.class, new Logout());
-//		OUTGOING_PACKETS.put(CloseInterface.class, new CloseInterface());
-//		OUTGOING_PACKETS.put(AnimateInterface.class, new AnimateInterface());
+		OUTGOING_PACKETS.put(CloseInterface.class, new CloseInterface());
+		OUTGOING_PACKETS.put(AnimateInterface.class, new AnimateInterface());
 //		OUTGOING_PACKETS.put(DisplayModel.class, new DisplayModel());
-//		OUTGOING_PACKETS.put(InterfaceConfig.class, new InterfaceConfig());
+		OUTGOING_PACKETS.put(InterfaceConfig.class, new InterfaceConfig());
 //		OUTGOING_PACKETS.put(PingPacket.class, new PingPacket());
 //		OUTGOING_PACKETS.put(UpdateAreaPosition.class, new UpdateAreaPosition());
 //		OUTGOING_PACKETS.put(ConstructObject.class, new ConstructObject());
@@ -59,14 +59,14 @@ public final class PacketRepository {
 //		OUTGOING_PACKETS.put(PositionedGraphic.class, new PositionedGraphic());
 //		OUTGOING_PACKETS.put(SystemUpdatePacket.class, new SystemUpdatePacket());
 //		OUTGOING_PACKETS.put(CameraViewPacket.class, new CameraViewPacket());
-//		OUTGOING_PACKETS.put(MusicPacket.class, new MusicPacket());
+		OUTGOING_PACKETS.put(MusicPacket.class, new MusicPacket());
 //		OUTGOING_PACKETS.put(AudioPacket.class, new AudioPacket());
 //		OUTGOING_PACKETS.put(GrandExchangePacket.class, new GrandExchangePacket());
 //		OUTGOING_PACKETS.put(BuildDynamicScene.class, new BuildDynamicScene());
 //		OUTGOING_PACKETS.put(AnimateObjectPacket.class, new AnimateObjectPacket());
 //		OUTGOING_PACKETS.put(ClearRegionChunk.class, new ClearRegionChunk());
 //		OUTGOING_PACKETS.put(ContactPackets.class, new ContactPackets());
-//		OUTGOING_PACKETS.put(CommunicationMessage.class, new CommunicationMessage());
+		OUTGOING_PACKETS.put(CommunicationMessage.class, new CommunicationMessage());
 //		OUTGOING_PACKETS.put(UpdateClanChat.class, new UpdateClanChat());
 //		OUTGOING_PACKETS.put(UpdateGroundItemAmount.class, new UpdateGroundItemAmount());
 //		OUTGOING_PACKETS.put(WeightUpdate.class, new WeightUpdate());
@@ -89,19 +89,19 @@ public final class PacketRepository {
 //		INCOMING_PACKETS.put(77, packet);
 //		INCOMING_PACKETS.put(215, packet);
 		packet = new ItemActionPacket();
-		INCOMING_PACKETS.put(134, packet);//item on object
+//		INCOMING_PACKETS.put(134, packet);//item on object
 		//INCOMING_PACKETS.put(115, packet);//on npc OLD 530
-		INCOMING_PACKETS.put(27, packet);//item on item
+//		INCOMING_PACKETS.put(27, packet);//item on item
 		//INCOMING_PACKETS.put(248, packet);//on player	OLD 530
 		//INCOMING_PACKETS.put(3, packet = new InteractionPacket()); //530 Client
-		INCOMING_PACKETS.put(180, packet);//jagex.Player interact options v
+//		INCOMING_PACKETS.put(180, packet);//jagex.Player interact options v
 		//INCOMING_PACKETS.put(68, packet); //OLD 530
-		INCOMING_PACKETS.put(71, packet);
+//		INCOMING_PACKETS.put(71, packet);
 		//INCOMING_PACKETS.put(114, packet); //OLD 530
-		INCOMING_PACKETS.put(175, packet);//jagex.Player interact options ^
-		INCOMING_PACKETS.put(30, packet);
+//		INCOMING_PACKETS.put(175, packet);//jagex.Player interact options ^
+//		INCOMING_PACKETS.put(30, packet);
 		//INCOMING_PACKETS.put(78, packet);//OLD 530
-		INCOMING_PACKETS.put(218, packet);
+//		INCOMING_PACKETS.put(218, packet);
 		//INCOMING_PACKETS.put(84, packet); //OLD 530
 		//INCOMING_PACKETS.put(170, packet); //OLD 530
 		//INCOMING_PACKETS.put(254, packet); //OLD 530
@@ -115,11 +115,11 @@ public final class PacketRepository {
 //		INCOMING_PACKETS.put(161, packet);
 //		INCOMING_PACKETS.put(135, packet); //^
 //		INCOMING_PACKETS.put(81, packet);
-		INCOMING_PACKETS.put(184, packet);//close interface
+//		INCOMING_PACKETS.put(184, packet);//close interface
 		//INCOMING_PACKETS.put(155, packet); //Interface V OLD 530
-		INCOMING_PACKETS.put(196, packet);
+//		INCOMING_PACKETS.put(196, packet);
 		//INCOMING_PACKETS.put(124, packet); //OLD 530
-		INCOMING_PACKETS.put(199, packet);
+//		INCOMING_PACKETS.put(199, packet);
 		//INCOMING_PACKETS.put(234, packet); //OLD 530
 //		INCOMING_PACKETS.put(168, packet);
 //		INCOMING_PACKETS.put(166, packet);
@@ -261,6 +261,7 @@ public final class PacketRepository {
 			System.err.println("Invalid outgoing packet [handler=" + clazz + ", context=" + context + "].");
 			return;
 		}
+		System.out.println("Sending packet " + p + " to the client");
 		p.send(context);
 	}
 

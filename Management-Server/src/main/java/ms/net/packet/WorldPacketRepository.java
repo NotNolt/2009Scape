@@ -327,13 +327,13 @@ public final class WorldPacketRepository {
 		String username = buffer.getString();
 		String password = buffer.getString();
 		String ipAddress = buffer.getString();
-		String macAddress = buffer.getString();
-		String compName = buffer.getString();
-		String serial = buffer.getString();
+//		String macAddress = buffer.getString();
+//		String compName = buffer.getString();
+//		String serial = buffer.getString();
 		int rights = server.getInfo().getRevision() == 498 ? 0 : buffer.getInt();
 		int chatIcon = server.getInfo().getRevision() == 498 ? 0 : buffer.get();
-		UIDInfo uid = new UIDInfo(ipAddress, compName, macAddress, serial);
-		PlayerSession player = new PlayerSession(username, password, new UIDInfo(ipAddress, compName, macAddress, serial));
+		UIDInfo uid = new UIDInfo(ipAddress);
+		PlayerSession player = new PlayerSession(username, password, new UIDInfo(ipAddress));
 		if (WorldDatabase.isActivePlayer(username)) {
 			System.out.println("WORLD DATABASE IS ACTIVE FOR PLAYER");
 			sendRegistryResponse(server, player, Response.ALREADY_ONLINE);

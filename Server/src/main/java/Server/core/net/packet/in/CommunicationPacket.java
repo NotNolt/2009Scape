@@ -16,13 +16,13 @@ public final class CommunicationPacket implements IncomingPacket {
 	@Override
 	public void decode(Player player, int opcode, IoBuffer buffer) {
 		switch (buffer.opcode()) {
-		case 120:
+		case 226:
 			CommunicationInfo.add(player, StringUtils.longToString(buffer.getLong()));
 			break;
-		case 57:
+		case 92:
 			CommunicationInfo.remove(player, StringUtils.longToString(buffer.getLong()), false);
 			break;
-		case 34:
+		case 61:
 			CommunicationInfo.block(player, StringUtils.longToString(buffer.getLong()));
 			break;
 		case 213:

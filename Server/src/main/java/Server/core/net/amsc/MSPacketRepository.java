@@ -48,16 +48,22 @@ public final class MSPacketRepository {
 	 * @param parser The login.
 	 */
 	public static void sendPlayerRegistry(LoginParser parser) {
+		System.out.println("sendPlayerRegistry Initiated");
 		IoBuffer buffer = new IoBuffer(0, PacketHeader.BYTE);
+		System.out.println("Management packet created");
 		PlayerDetails d = parser.getDetails();
+		System.out.println("Receiving player details");
 		buffer.putString(d.getUsername());
 		buffer.putString(d.getPassword());
+		System.out.println("Received account username and password");
 		buffer.putString(d.getIpAddress());
-		buffer.putString(d.getMacAddress());
-		buffer.putString(d.getCompName());
-		buffer.putString(d.getSerial());
+//		buffer.putString(d.getMacAddress());
+//		buffer.putString(d.getCompName());
+//		buffer.putString(d.getSerial());
 		buffer.putInt(d.getRights().toInteger());
+		System.out.println("Setting rights...");
 		buffer.put((byte) getIcon(d));
+		System.out.println("Writing session to buffer");
 		WorldCommunicator.getSession().write(buffer);
 	}
 

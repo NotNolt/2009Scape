@@ -227,8 +227,7 @@ public class PacketParser extends Class131_Sub2 {
 							Class93.aClass131_Sub15_Sub2_1226.createPacket(158);
 							System.out.println("Packet 158 Sent");//TODO: REMOVE PACKET DEBUG TEXT
 							Class14.anInt160++;
-							Class93.aClass131_Sub15_Sub2_1226
-									.writeByte(-116, 0);
+							Class93.aClass131_Sub15_Sub2_1226.writeByte(-116, 0);
 							int i = Class93.aClass131_Sub15_Sub2_1226.anInt4360;
 							int i_9_ = 0;
 							for (int i_10_ = 0; (Class6.aClass56_96.anInt744 > i_10_); i_10_++) {
@@ -302,7 +301,7 @@ public class PacketParser extends Class131_Sub2 {
 											Class93.aClass131_Sub15_Sub2_1226
 													.writeInt(
 															i_12_
-																	| i_11_ << -1706082032,
+																	| i_11_ << 16,
 															(byte) 126);
 										else
 											Class93.aClass131_Sub15_Sub2_1226
@@ -322,7 +321,7 @@ public class PacketParser extends Class131_Sub2 {
 											Class93.aClass131_Sub15_Sub2_1226
 													.writeInt(
 															i_12_
-																	| i_11_ << -1019057648,
+																	| i_11_ << 16,
 															(byte) 127);
 										Class58.anInt763 = 0;
 									}
@@ -1896,22 +1895,15 @@ public class PacketParser extends Class131_Sub2 {
 				return true;
 			}
 			if (Class131_Sub35.anInt4583 == 56) {
-				int i_164_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShort(8104);
-				int i_165_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByteS(14684);
-				int i_166_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShort(8104);
-				int i_167_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedLEInt(-16777216);
+				int i_164_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+				int i_165_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteS(14684);
+				int i_166_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+				int i_167_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEInt(-16777216);
 				if (Class23_Sub1_Sub1.method299(-25976, i_166_)) {
-					Class131_Sub33 class131_sub33 = ((Class131_Sub33) Class83.aClass180_1096
-							.method2521(-62, (long) i_167_));
+					Class131_Sub33 class131_sub33 = ((Class131_Sub33) Class83.aClass180_1096.method2521(-62, (long) i_167_));
 					if (class131_sub33 != null)
-						Class204.method2730(i_164_ != class131_sub33.anInt4556,
-								25697, class131_sub33, false);
-					Class131_Sub7.method1669(i_164_, i_165_, false, false,
-							i_167_);
+						Class204.method2730(i_164_ != class131_sub33.anInt4556,	25697, class131_sub33, false);
+					Class131_Sub7.method1669(i_164_, i_165_, false, false, i_167_);
 				}
 				Class131_Sub35.anInt4583 = -1;
 				return true;
@@ -2216,12 +2208,9 @@ public class PacketParser extends Class131_Sub2 {
 				return true;
 			}
 			if (Class131_Sub35.anInt4583 == 106) {
-				int i_210_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedLEShortA(-1);
-				String string = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readString(false);
-				int i_211_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedInt2(0);
+				int i_210_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShortA(-1);
+				String string = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readString(false);
+				int i_211_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt2(0);
 				if (Class23_Sub1_Sub1.method299(-25976, i_210_))
 					Class23_Sub1_Sub2.method302(string, 17889, i_211_);
 				Class131_Sub35.anInt4583 = -1;

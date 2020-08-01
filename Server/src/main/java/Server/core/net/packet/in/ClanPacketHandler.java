@@ -20,7 +20,7 @@ public class ClanPacketHandler implements IncomingPacket {
 	@Override
 	public void decode(Player player, int opcode, IoBuffer buffer) {
 		switch (buffer.opcode()) {
-		case 104:
+		case 36:
 			long nameLong = buffer.getLong();
 			String name = StringUtils.longToString(nameLong);
 			if (nameLong != 0l) {
@@ -44,7 +44,7 @@ public class ClanPacketHandler implements IncomingPacket {
 				player.getCommunication().setClan(clan);
 			}
 			break;
-		case 188:
+		case 47:
 			int rank = buffer.getA();
 			name = StringUtils.longToString(buffer.getLong());
 			if (WorldCommunicator.isEnabled()) {

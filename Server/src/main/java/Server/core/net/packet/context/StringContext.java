@@ -29,6 +29,20 @@ public class StringContext implements Context {
 	 */
 	private int lineId;
 
+//	/**
+//	 * Constructs a new {@code StringContext} {@code Object}.
+//	 * @param player The player.
+//	 * @param string The string to send.
+//	 * @param interfaceId The interface id.
+//	 * @param lineId The child id.
+//	 */
+//	public StringContext(Player player, String string, int interfaceId, int lineId) {
+//		this.player = player;
+//		this.string = string;
+//		this.interfaceId = interfaceId;
+//		this.lineId = lineId;
+//	}
+
 	/**
 	 * Constructs a new {@code StringContext} {@code Object}.
 	 * @param player The player.

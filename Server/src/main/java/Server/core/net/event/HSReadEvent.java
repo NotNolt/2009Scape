@@ -42,8 +42,7 @@ public final class HSReadEvent extends IoReadEvent {
 		case 15:
 			int revision = buffer.getInt();
 			System.out.println("Revision " + revision);
-			//int sub_revision = buffer.getInt();
-			if (revision != Constants.REVISION) { //|| sub_revision != Constants.CLIENT_BUILD) {
+			if (revision != Constants.REVISION) {
 				System.out.println("Revision disconnect!");
 				session.disconnect();
 				break;

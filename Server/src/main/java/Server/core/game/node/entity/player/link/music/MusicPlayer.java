@@ -197,6 +197,7 @@ public final class MusicPlayer implements SavingModule {
 	 */
 	public void play(MusicEntry entry) {
 		PacketRepository.send(MusicPacket.class, new MusicContext(player, entry.getId()));
+		System.out.println("Sending String Packet || MusicPlayer.java - 201");
 		PacketRepository.send(StringPacket.class, new StringContext(player, entry.getName(), 187, 14));
 		currentMusicId = entry.getId();
 		playing = true;

@@ -14,11 +14,11 @@ public class MusicPacket implements OutgoingPacket<MusicContext> {
 	public void send(MusicContext context) {
 		IoBuffer buffer = null;
 		if (context.isSecondary()) {
-			buffer = new IoBuffer(208);
+			buffer = new IoBuffer(30);
 			buffer.putTri(255);
 			buffer.putLEShort(context.getMusicId());
 		} else {
-			buffer = new IoBuffer(4);
+			buffer = new IoBuffer(188);
 			buffer.putLEShortA(context.getMusicId());
 		}
 		context.getPlayer().getDetails().getSession().write(buffer);

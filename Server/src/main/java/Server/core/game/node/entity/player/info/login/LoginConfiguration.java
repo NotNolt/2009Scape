@@ -86,15 +86,23 @@ public final class LoginConfiguration {
      * @param player The player.
      */
     public static void sendLobbyScreen(Player player) {
+        System.out.println("Sending Lobby Screen");
         Repository.getLobbyPlayers().add(player);
         player.getPacketDispatch().sendString(getLastLogin(player), 378, 116);
+        System.out.println("Sending Last Login Info with Interfaces 378, line 116");
         player.getPacketDispatch().sendString("Welcome to " + GameWorld.getName(), 378, 115);
+        System.out.println("Sending Welcome to Game String");
         player.getPacketDispatch().sendString(SystemManager.getSystemConfig().getConfig("weeklyMessage", "Welcome to RuneScape!"), SystemManager.getSystemConfig().getConfig("messageInterface", 18), getMessageChild(SystemManager.getSystemConfig().getConfig("messageInterface", 18)));
+        System.out.println("Sending string gain more vote credits");
         player.getPacketDispatch().sendString("You can gain more credits by voting, reporting bugs and various other methods of contribution.", 378, 93);
+        System.out.println("Trying to open Lobby Pane...");
         player.getInterfaceManager().openWindowsPane(LOBBY_PANE);
+        System.out.println("Trying to open Lobby Interface...");
         player.getInterfaceManager().setOpened(LOBBY_INTERFACE);
         PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, true));
+        System.out.println("Sending Interfaces || LoginConfiguration...");
         PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, SystemManager.getSystemConfig().getConfig("messageInterface", 18), true));//UPDATE `configs` SET `value`=FLOOR(RAND()*(25-10)+10) WHERE key_="messageInterface"
+        System.out.println("Sending Interfaces Message Interface || LoginConfiguration...");
     }
 
     /**
@@ -103,18 +111,30 @@ public final class LoginConfiguration {
      * @param player The player.
      */
     public static void configureGameWorld(final Player player) {
+        System.out.println("Configuring Game World...");
         player.getConfigManager().reset();
         sendGameConfiguration(player);
+        System.out.println("Sending game Configuration to player...");
         Repository.getLobbyPlayers().remove(player);
+        System.out.println("Removing Player From Lobby");
         Repository.getPlayerNames().putIfAbsent(player.getUsername().toLowerCase(),player);
+        System.out.println("Getting player names, setting to lowercase");
         player.setPlaying(true);
+        System.out.println("Setting player playing to true");
         UpdateSequence.getRenderablePlayers().add(player);
+        System.out.println("Getting Renderable players");
         RegionManager.move(player);
+        System.out.println("Passed Region Manager, Move player");
         player.getMusicPlayer().init();
+        System.out.println("Initiating Music Player || LoginConfiguration");
         player.getUpdateMasks().register(new AppearanceFlag(player));
+        System.out.println("Initiating Appearance Update Mask for Player || LoginConfiguration");
         player.getPlayerFlags().setUpdateSceneGraph(true);
+        System.out.println("Initiating Setting Update Scene Graph || LoginConfiguration");
         player.getStateManager().init();
+        System.out.println("Initiating State Manager || LoginConfiguration");
         player.getPacketDispatch().sendInterfaceConfig(226, 1, true);
+        System.out.println("Sending Interface Configuration to Player || LoginConfiguration");
 		/*if (GameWorld.getSettings().isPvp()) {
 			player.getPacketDispatch().sendString("", 226, 1);
 		}*/

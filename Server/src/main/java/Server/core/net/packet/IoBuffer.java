@@ -37,6 +37,9 @@ public class IoBuffer {
 	 */
 	private ByteBuffer buf;
 
+	private int writeOffset;
+	private int opcodeStart;
+
 	/**
 	 * The bit position.
 	 */

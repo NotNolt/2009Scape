@@ -41,7 +41,7 @@ public class ItemActionPacket implements IncomingPacket {
 		NodeUsageEvent event = null;
 		Item used = null;
 		switch (buffer.opcode()) {
-		case 115: // Item on NPC
+		case 12: // Item on NPC
 			int interfaceId = buffer.getIntA() >> 16;
 			int slotId = buffer.getLEShort();
 			int npcIndex = buffer.getLEShort();
@@ -58,7 +58,7 @@ public class ItemActionPacket implements IncomingPacket {
 			event = new NodeUsageEvent(player, interfaceId, item, npc);
 			UseWithHandler.run(event);
 			return;
-		case 248: // Item on jagex.Player
+		case 131: // Item on jagex.Player
 			int playerIndex = buffer.getLEShortA();
 			itemId = buffer.getShort();
 			slotId = buffer.getShort();
@@ -75,7 +75,7 @@ public class ItemActionPacket implements IncomingPacket {
 			event = new NodeUsageEvent(player, interfaceId, item, target);
 			UseWithHandler.run(event);
 			return;
-		case 27://Item on Item
+		case 117://Item on Item
 			usedSlot = buffer.getShort();
 			interfaceHash1 = buffer.getLEInt();
 			usedWithSlot = buffer.getLEShort();
@@ -103,7 +103,7 @@ public class ItemActionPacket implements IncomingPacket {
 			event = new NodeUsageEvent(player, interfaceId1, used, with);
 			UseWithHandler.run(event);
 			break;
-		case 134://Item on Object
+		case 202://Item on Object
 			int x = buffer.getShortA();
 			int id = buffer.getShort();
 			int y = buffer.getLEShort();

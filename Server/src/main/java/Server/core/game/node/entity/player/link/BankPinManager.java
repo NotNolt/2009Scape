@@ -183,6 +183,7 @@ public class BankPinManager implements SavingModule {
 			if (message == null) {
 				continue;
 			}
+			System.out.println("Sending String Packet || BankPinManager.java - 187");
 			PacketRepository.send(StringPacket.class, new StringContext(player, message, 14, 42 + i));
 		}
 		status.draw(this, player);

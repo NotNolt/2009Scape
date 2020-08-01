@@ -12,9 +12,9 @@ public class InterfaceConfig implements OutgoingPacket<InterfaceConfigContext> {
 
 	@Override
 	public void send(InterfaceConfigContext context) {
-		IoBuffer buffer = new IoBuffer(21);
-		buffer.putC(context.isHidden() ? 1 : 0);
+		IoBuffer buffer = new IoBuffer(3);
 		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putC(context.isHidden() ? 1 : 0);
 		buffer.putLEInt(context.getInterfaceId() << 16 | context.getChildId());
 		context.getPlayer().getSession().write(buffer);
 	}

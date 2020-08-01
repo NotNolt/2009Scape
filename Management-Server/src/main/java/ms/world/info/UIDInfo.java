@@ -51,11 +51,8 @@ public class UIDInfo {
 	 * @param mac the mac.
 	 * @param serial the serial.
 	 */
-	public UIDInfo(String ip, String compName, String mac, String serial) {
+	public UIDInfo(String ip) {
 		this.ip = ip;
-		this.compName = compName;
-		this.mac = mac;
-		this.serial = serial;
 	}
 	
 	/**
@@ -65,9 +62,9 @@ public class UIDInfo {
 	 */
 	public void parse(ResultSet set) throws SQLException {
 		setIp(parseFormat(set.getString("ip")));
-		setCompName(parseFormat(set.getString("computerName")));
-		setMac(parseFormat(set.getString("mac")));
-		setSerial(parseFormat(set.getString("serial")));
+//		setCompName(parseFormat(set.getString("computerName")));
+//		setMac(parseFormat(set.getString("mac")));
+//		setSerial(parseFormat(set.getString("serial")));
 	}
 	
 	/**
@@ -76,9 +73,9 @@ public class UIDInfo {
 	 */
 	public void save(ByteBuffer buffer) {
 		save(buffer, ip, 1);
-		save(buffer, compName, 2);
-		save(buffer, mac, 3);
-		save(buffer, serial, 4);
+//		save(buffer, compName, 2);
+//		save(buffer, mac, 3);
+//		save(buffer, serial, 4);
 		buffer.put((byte) 0);
 	}
 
@@ -93,15 +90,15 @@ public class UIDInfo {
 			case 1:
 				ip = ByteBufferUtils.getString(buffer);
 				break;
-			case 2:
-				compName = ByteBufferUtils.getString(buffer);
-				break;
-			case 3:
-				mac = ByteBufferUtils.getString(buffer);
-				break;
-			case 4:
-				serial = ByteBufferUtils.getString(buffer);
-				break;
+//			case 2:
+//				compName = ByteBufferUtils.getString(buffer);
+//				break;
+//			case 3:
+//				mac = ByteBufferUtils.getString(buffer);
+//				break;
+//			case 4:
+//				serial = ByteBufferUtils.getString(buffer);
+//				break;
 			}
 		}
 	}

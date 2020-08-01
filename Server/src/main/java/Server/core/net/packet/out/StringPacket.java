@@ -13,10 +13,10 @@ public class StringPacket implements OutgoingPacket<StringContext> {
 
 	@Override
 	public void send(StringContext context) {
-		IoBuffer buffer = new IoBuffer(171, PacketHeader.SHORT);
-		buffer.putIntB((context.getInterfaceId() << 16) | context.getLineId());
+		IoBuffer buffer = new IoBuffer(106, PacketHeader.SHORT);
+		buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		buffer.putString(context.getString());
-		buffer.putShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putIntB((context.getInterfaceId() << 16) & context.getLineId());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 }

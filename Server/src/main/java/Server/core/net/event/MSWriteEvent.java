@@ -25,20 +25,29 @@ public final class MSWriteEvent extends IoWriteEvent {
 	public void write(IoSession session, Object context) {
 		System.out.println("MSWrite Event Initiated...");
 		IoBuffer b = (IoBuffer) context;
+		System.out.println("IoBuffer initialized... - MSWriteEvent");
 		int size = b.toByteBuffer().position();
+		System.out.println("Buffer to position... - MSWriteEvent");
 		ByteBuffer buffer = ByteBuffer.allocate(1 + size + b.getHeader().ordinal());
+		System.out.println("Buffer size Allocation... - MSWriteEvent");
 		buffer.put((byte) b.opcode());
+		System.out.println("buffer putting opcode " + b.opcode());
 		switch (b.getHeader()) {
 		case NORMAL:
+			System.out.println("Using Normal... - MSWriteEvent");
 			break;
 		case BYTE:
+			System.out.println("Using Byte... - MSWriteEvent");
 			buffer.put((byte) size);
 			break;
 		case SHORT:
+			System.out.println("Using Short... - MSWriteEvent");
 			buffer.putShort((short) size);
 			break;
 		}
+		System.out.println("Putting info in ByteBuffer... - MSWriteEvent");
 		buffer.put((ByteBuffer) b.toByteBuffer().flip());
+		System.out.println("Buffer flipped and queued... - MSWriteEvent");
 		session.queue((ByteBuffer) buffer.flip());
 	}
 

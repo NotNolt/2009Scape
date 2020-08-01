@@ -31,38 +31,16 @@ public class Class81
 	try {
 	    anInt1079++;
 	    if (arg1 != Class131_Sub2_Sub20.anInt5839) {
-		Class131_Sub41_Sub11_Sub1.anInt6546
-		    = Class131_Sub2_Sub26.anInt5931
-		    = Class182.anIntArray2602[arg1];
-		Class183_Sub1.aClass130_4960.method1230
-		    (50, (int) ((double) Class131_Sub41_Sub11_Sub1.anInt6546
-				* 34.46));
-		Class151.anIntArrayArray2025
-		    = (new int[Class131_Sub41_Sub11_Sub1.anInt6546]
-		       [Class131_Sub2_Sub26.anInt5931]);
-		Class141.anIntArrayArrayArray1882
-		    = (new int[4]
-		       [Class131_Sub41_Sub11_Sub1.anInt6546 >> 1974316483]
-		       [Class131_Sub2_Sub26.anInt5931 >> 1517515555]);
-		Class131_Sub41_Sub19.anIntArrayArray6407
-		    = (new int[Class131_Sub41_Sub11_Sub1.anInt6546]
-		       [Class131_Sub2_Sub26.anInt5931]);
+		Class131_Sub41_Sub11_Sub1.anInt6546 = Class131_Sub2_Sub26.anInt5931 = Class182.anIntArray2602[arg1];
+		Class183_Sub1.aClass130_4960.method1230(50, (int) ((double) Class131_Sub41_Sub11_Sub1.anInt6546 * 34.46));
+		Class151.anIntArrayArray2025 = (new int[Class131_Sub41_Sub11_Sub1.anInt6546]  [Class131_Sub2_Sub26.anInt5931]);
+		Class141.anIntArrayArrayArray1882 = (new int[4] [Class131_Sub41_Sub11_Sub1.anInt6546 >> 3] [Class131_Sub2_Sub26.anInt5931 >> 3]);
+		Class131_Sub41_Sub19.anIntArrayArray6407 = (new int[Class131_Sub41_Sub11_Sub1.anInt6546] [Class131_Sub2_Sub26.anInt5931]);
 		for (int i = 0; i < 4; i++)
-		    Class131_Sub2_Sub9.aClass19Array5682[i]
-			= (RuntimeException_Sub1.method2834
-			   (false, Class131_Sub41_Sub11_Sub1.anInt6546,
-			    Class131_Sub2_Sub26.anInt5931));
-		Class146.aByteArrayArrayArray1942
-		    = (new byte[4][Class131_Sub41_Sub11_Sub1.anInt6546]
-		       [Class131_Sub2_Sub26.anInt5931]);
-		Class183_Sub1.method2544(Class131_Sub2_Sub26.anInt5931,
-					 Class131_Sub41_Sub11_Sub1.anInt6546,
-					 arg0, (byte) 106);
-		Class23_Sub2_Sub2.method313((Class131_Sub2_Sub26.anInt5931
-					     >> 2144237635),
-					    (Class131_Sub41_Sub11_Sub1
-					     .anInt6546) >> -1635147709,
-					    123, Class183_Sub1.aClass130_4960);
+		    Class131_Sub2_Sub9.aClass19Array5682[i] = (RuntimeException_Sub1.method2834(false, Class131_Sub41_Sub11_Sub1.anInt6546,Class131_Sub2_Sub26.anInt5931));
+		Class146.aByteArrayArrayArray1942 = (new byte[4][Class131_Sub41_Sub11_Sub1.anInt6546] [Class131_Sub2_Sub26.anInt5931]);
+		Class183_Sub1.method2544(Class131_Sub2_Sub26.anInt5931, Class131_Sub41_Sub11_Sub1.anInt6546, arg0, (byte) 106);
+		Class23_Sub2_Sub2.method313((Class131_Sub2_Sub26.anInt5931 >> 3), (Class131_Sub41_Sub11_Sub1.anInt6546) >> 3, 123, Class183_Sub1.aClass130_4960);
 		Class131_Sub2_Sub20.anInt5839 = arg1;
 	    }
 	} catch (RuntimeException runtimeexception) {

@@ -20,7 +20,7 @@ public final class ExaminePacket implements IncomingPacket {
 	public void decode(Player player, int opcode, IoBuffer buffer) {
 		String name;
 		switch (buffer.opcode()) {
-		case 94: // Object examine
+		case 84: // Object examine
 			int id = buffer.getLEShortA();
 			if (id < 0 || id > Cache.getObjectDefinitionsSize()) {
 				break;
@@ -34,15 +34,14 @@ public final class ExaminePacket implements IncomingPacket {
 				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection("LandscapeParser.removeGameObject(new GameObject("+coords+"));//"+ d.getName() ), null);
 			}*/
 			break;
-		case 235:
-		case 92: // Item examine
+		case 38: // Item examine
 			id = buffer.getLEShortA();
 			if (id < 0 || id > Cache.getItemDefinitionsSize()) {
 				break;
 			}
 			player.getPacketDispatch().sendMessage(getItemExamine(id));
 			break;
-		case 72: // NPC examine
+		case 88: // NPC examine
 			id = buffer.getShort();
 			if (id < 0 || id > Cache.getNPCDefinitionsSize()) {
 				break;

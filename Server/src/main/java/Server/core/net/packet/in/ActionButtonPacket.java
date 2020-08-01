@@ -272,7 +272,7 @@ public class ActionButtonPacket implements IncomingPacket {
 			player.getInterfaceManager().close();
 			if (player.getAttribute("worldMap:viewing") != null) {
 				player.removeAttribute("worldMap:viewing");
-				player.getPacketDispatch().sendWindowsPane(player.getInterfaceManager().isResizable() ? 746 : 548, 2);
+				player.getPacketDispatch().sendWindowsPane(player.getInterfaceManager().isResizable() ? 746 : 548, 0);//2
 				player.unlock();
 			}
 			break;

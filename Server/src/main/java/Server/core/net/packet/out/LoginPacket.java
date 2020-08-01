@@ -15,20 +15,20 @@ public final class LoginPacket implements OutgoingPacket<PlayerContext> {
 
 	@Override
 	public void send(PlayerContext context) {
-		System.out.println("Sending jagex.Login Packet...");
-		ByteBuffer buffer = ByteBuffer.allocate(12);
+		System.out.println("Sending Outgoing LoginPacket");
 		Player p = context.getPlayer();
-		int right = context.getPlayer().getDetails().getRights() == Rights.PLAYER_MODERATOR ? 1 : context.getPlayer().getDetails().getRights() == Rights.ADMINISTRATOR ? 2 : 0;
+		ByteBuffer buffer = ByteBuffer.allocate(11);
+		int right = context.getPlayer().getDetails().getRights() == Rights.PLAYER_MODERATOR ? 1: context.getPlayer().getDetails().getRights() == Rights.ADMINISTRATOR ? 2: 0;
 		buffer.put((byte) (right));
-		buffer.put((byte) 0); // Something with client scripts, maybe login// screen?
+		buffer.put((byte) 0); // Something with client scripts, maybe login							// screen?
 		buffer.put((byte) 0); // No idea.
 		buffer.put((byte) 0); // No idea.
 		buffer.put((byte) 1); // Boolean, possibly members.
-		buffer.put((byte) 0);
-		buffer.put((byte) 0);
+		buffer.put((byte) 0); // No idea.
+		buffer.put((byte) 0); // No idea.
 		buffer.putShort((short) p.getIndex());
 		buffer.put((byte) 1); // No idea. (something with client scripts, again)
-		buffer.put((byte) 1);
+		buffer.put((byte) 1); // No idea.
 		p.getDetails().getSession().write(buffer);
 	}
 

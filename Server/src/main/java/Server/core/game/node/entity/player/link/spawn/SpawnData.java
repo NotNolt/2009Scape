@@ -464,7 +464,7 @@ public class SpawnData implements SavingModule {
 		if (GameWorld.isEconomyWorld()) {
 			return;
 		}
-		if (killer.isArtificial() || killed.isArtificial() || killer.getDetails().getInfo().getIp().equals(killed.getDetails().getInfo().getIp()) || killed.getDetails().getInfo().getMac().equals(killer.getDetails().getInfo().getMac())) {
+		if (killer.isArtificial() || killed.isArtificial() || killer.getDetails().getInfo().getIp().equals(killed.getDetails().getInfo().getIp())) {
 			killer.sendMessage("You can't kill someone from your own computer address.");
 			return;
 		}

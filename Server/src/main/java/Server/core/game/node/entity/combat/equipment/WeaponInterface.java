@@ -260,6 +260,7 @@ public final class WeaponInterface extends Component {
 			}
 			selectAutoSpell(-1, true);
 		}
+		System.out.println("Sending String Packet || WeaponInterface.java - 264");
 		PacketRepository.send(StringPacket.class, new StringContext(player, name, id, 0));
 		if (player.getSettings().isSpecialToggled()) {
 			player.getSettings().toggleSpecialBar();

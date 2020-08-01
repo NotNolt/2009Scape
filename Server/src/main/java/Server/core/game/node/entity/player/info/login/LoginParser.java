@@ -125,8 +125,8 @@ public final class LoginParser implements Runnable {
 						flag(Response.SUCCESSFUL);
 						player.init();
 						player.getMonitor().log(player.getDetails().getIpAddress(), PlayerMonitor.ADDRESS_LOG);
-						player.getMonitor().log(player.getDetails().getSerial(), PlayerMonitor.ADDRESS_LOG);
-						player.getMonitor().log(player.getDetails().getMacAddress(), PlayerMonitor.ADDRESS_LOG);
+//						player.getMonitor().log(player.getDetails().getSerial(), PlayerMonitor.ADDRESS_LOG);
+//						player.getMonitor().log(player.getDetails().getMacAddress(), PlayerMonitor.ADDRESS_LOG);
 					} else {
 						Repository.getPlayerNames().remove(player.getName());
 						MSPacketRepository.sendPlayerRemoval(player.getName());

@@ -12,8 +12,8 @@ public class AnimateInterface implements OutgoingPacket<AnimateInterfaceContext>
 
 	@Override
 	public void send(AnimateInterfaceContext context) {
-		IoBuffer buffer = new IoBuffer(36);
-		buffer.putIntB((context.getInterfaceId() << 16) + context.getChildId());
+		IoBuffer buffer = new IoBuffer(61);
+		buffer.putIntB((context.getInterfaceId() << 16) | context.getChildId());
 		buffer.putLEShort(context.getAnimationId());
 		buffer.putShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		context.getPlayer().getDetails().getSession().write(buffer);

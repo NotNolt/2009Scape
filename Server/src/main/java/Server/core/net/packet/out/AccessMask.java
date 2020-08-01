@@ -12,7 +12,7 @@ public class AccessMask implements OutgoingPacket<AccessMaskContext> {
 
 	@Override
 	public void send(AccessMaskContext context) {
-		IoBuffer buffer = new IoBuffer(165);
+		IoBuffer buffer = new IoBuffer(113);
 		buffer.putLEShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		buffer.putLEShort(context.getLength());
 		buffer.putInt(context.getInterfaceId() << 16 | context.getChildId());

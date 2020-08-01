@@ -83,13 +83,13 @@ public class PlayerViewer extends JPanel {
         lblIp.setBounds(6, 96, 190, 16);
         panel.add(lblIp);
 
-        JLabel lblMac = new JLabel("Mac: " + details.getInfo().getMac());
-        lblMac.setBounds(6, 124, 224, 16);
-        panel.add(lblMac);
+//        JLabel lblMac = new JLabel("Mac: " + details.getInfo().getMac());
+//        lblMac.setBounds(6, 124, 224, 16);
+//        panel.add(lblMac);
 
-        JLabel lblCompName = new JLabel("Comp name: " + details.getInfo().getCompName());
-        lblCompName.setBounds(6, 208, 236, 16);
-        panel.add(lblCompName);
+//        JLabel lblCompName = new JLabel("Comp name: " + details.getInfo().getCompName());
+//        lblCompName.setBounds(6, 208, 236, 16);
+//        panel.add(lblCompName);
 
         JLabel lblLastLogin = new JLabel("Last login: " + new Date(details.getLastLogin()));
         lblLastLogin.setBounds(6, 152, 274, 16);

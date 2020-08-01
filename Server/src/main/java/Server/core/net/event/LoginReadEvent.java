@@ -151,12 +151,20 @@ public final class LoginReadEvent extends IoReadEvent {
 	 * @param opcode the opcode.
 	 */
 	private static void login(final PlayerDetails details, IoSession session, ByteBuffer buffer, int opcode) {
+		System.out.println("Handling Login...");
 		final LoginParser parser = new LoginParser(details, LoginType.fromType(opcode));
+		System.out.println("Login Parsed from opcode: " + opcode);
 		details.setSession(session);
-		details.getInfo().translate(new UIDInfo(details.getIpAddress(), ByteBufferUtils.getString(buffer), ByteBufferUtils.getString(buffer),ByteBufferUtils.getString(buffer)));
+//		System.out.println("ip Conx: " + details.getIpAddress());
+//		System.out.println("Comp name: " + buffer.getInt());
+//		System.out.println("Mac: " + ByteBufferUtils.getString(buffer));
+//		System.out.println("Serial: " + ByteBufferUtils.getString(buffer));
+		new UIDInfo(details.getIpAddress());
 		if (WorldCommunicator.isEnabled()) {
+			System.out.println("WorldCommunicator registered");
 			WorldCommunicator.register(parser);
 		} else {
+			System.out.println("Executing SQL");
 			TaskExecutor.executeSQL(parser);
 		}
 	}

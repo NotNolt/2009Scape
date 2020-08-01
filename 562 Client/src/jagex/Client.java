@@ -431,11 +431,11 @@ public class Client extends Applet_Sub1 {
 				Class20.method258(-2511);
 			else
 				Class69.method737((byte) 115);
-			if (Class2.anInt84 >> -1717176537 < 14
-					|| (Class2.anInt84 >> -701224089 >= Class131_Sub41_Sub11_Sub1.anInt6546
+			if (Class2.anInt84 >> 7 < 14
+					|| (Class2.anInt84 >> 7 >= Class131_Sub41_Sub11_Sub1.anInt6546
 							+ -14)
-					|| Class57.anInt753 >> 1903167751 < 14
-					|| (Class57.anInt753 >> 2032086727 >= Class131_Sub2_Sub26.anInt5931 + -14))
+					|| Class57.anInt753 >> 7 < 14
+					|| (Class57.anInt753 >> 7 >= Class131_Sub2_Sub26.anInt5931 + -14))
 				Class115.method984(false);
 		}
 		for (;;) {

@@ -72,18 +72,23 @@ public final class WorldCommunicator {
 	public static void register(final LoginParser parser) {
 		System.out.println("Registering Login Attempt...");
 		LoginParser p = loginAttempts.get(parser.getDetails().getUsername());
+		System.out.println("Received username");
 		if (p != null && p.getDetails().getRights() == Rights.REGULAR_PLAYER) {
-//			parser.getDetails().getSession().write(Response.ALREADY_ONLINE, true);
-//			return;
+			System.out.println("Already online!");
+			parser.getDetails().getSession().write(Response.ALREADY_ONLINE, true);
+			return;
 		}
+		System.out.println("Checking Login Attempts");
 		loginAttempts.put(parser.getDetails().getUsername(), parser);
 		TaskExecutor.executeSQL(new Runnable() {
 			@Override
 			public void run() {
+				System.out.println("Executing SQL - WorldCommunicator");
 				if (!parser.getDetails().parse()) {
 					parser.getDetails().getSession().write(Response.INVALID_LOGIN_SERVER, true);
 					return;
 				}
+				System.out.println("Sending Player Registry");
 				MSPacketRepository.sendPlayerRegistry(parser);
 			}
 		});

@@ -46,11 +46,8 @@ public class UIDInfo {
 	 * @param mac the mac.
 	 * @param serial the serial.
 	 */
-	public UIDInfo(String ip, String compName, String mac, String serial) {
+	public UIDInfo(String ip) {
 		this.ip = ip;
-		this.compName = compName;
-		this.mac = mac.replace(":", "-");
-		this.serial = serial;
 	}
 
 	/**

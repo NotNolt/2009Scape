@@ -308,117 +308,53 @@ public class Login
 			}
 		    } else {
 			if (Class75.anInt1024 == 8) {
-			    if (Class128_Sub1.aClass33_4013
-				    .method450((byte) 17)
-				< 14)
+				System.out.println("Moved to 8");
+			    if (Class128_Sub1.aClass33_4013.method450((byte) 17) < 14)
 				return;
-			    Class128_Sub1.aClass33_4013.method451
-				(82, 0,
-				 (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				  .aByteArray4324),
-				 14);
-			    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.anInt4360
-				= 0;
-			    Class56.anInt745
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedByte(arg0 + -64);
-			    Class105.anInt1377
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedByte(-53);
-			    Class103.aBoolean1353
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedByte(-65) == 1;
-			    Class60.aBoolean786
-				= Class23_Sub3_Sub1
-                        .aClass131_Sub15_Sub2_5231
-                        .readUnsignedByte(55) == 1;
-			    Class131_Sub1_Sub4.aBoolean5532
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedByte(-116) == 1;
-			    Class183_Sub1.aBoolean4956
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedByte(arg0 + -17) == 1;
-			    Class155.aBoolean2063
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedByte(arg0 ^ 0x41) == 1;
-			    Class110.anInt1433
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedShort(8104);
-			    Class131_Sub2_Sub1.aBoolean5570
-				= Class23_Sub3_Sub1
-                        .aClass131_Sub15_Sub2_5231
-                        .readUnsignedByte(-69) == 1;
-			    Class131_Sub9.aBoolean4218
-				= Class23_Sub3_Sub1
-                        .aClass131_Sub15_Sub2_5231
-                        .readUnsignedByte(-115) == 1;
-			    Class215.method2802(77,
-						Class131_Sub9.aBoolean4218);
-			    Class131_Sub2_Sub34
-				.method1631(Class131_Sub9.aBoolean4218, 66);
-			    Class160.method2384(3037,
-						Class131_Sub9.aBoolean4218);
-			    if ((Class103.aBoolean1353
-				 && !Class131_Sub1_Sub4.aBoolean5532)
-				|| Class131_Sub2_Sub1.aBoolean5570) {
+			    Class128_Sub1.aClass33_4013.method451(82, 0, (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.aByteArray4324), 14);
+			    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360 = 0;
+			    Class56.anInt745 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(arg0 + -64);
+			    Class105.anInt1377 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-53);
+			    Class103.aBoolean1353 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-65) == 1;
+			    Class60.aBoolean786 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(55) == 1;
+			    Class131_Sub1_Sub4.aBoolean5532 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-116) == 1;
+			    Class183_Sub1.aBoolean4956= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(arg0 + -17) == 1;
+			    Class155.aBoolean2063= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(arg0 ^ 0x41) == 1;
+			    Class110.anInt1433= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+			    Class131_Sub2_Sub1.aBoolean5570= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-69) == 1;
+			    Class131_Sub9.aBoolean4218= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-115) == 1;
+			    Class215.method2802(77,Class131_Sub9.aBoolean4218);
+			    Class131_Sub2_Sub34.method1631(Class131_Sub9.aBoolean4218, 66);
+			    Class160.method2384(3037,Class131_Sub9.aBoolean4218);
+			    if ((Class103.aBoolean1353&& !Class131_Sub1_Sub4.aBoolean5532)|| Class131_Sub2_Sub1.aBoolean5570) {
 				try {
-				    Class30.method432((Class23_Sub4
-						       .aSignLink_3734
-						       .BrowserGameFrame),
-						      (byte) -100, "zap");
+				    Class30.method432((Class23_Sub4.aSignLink_3734.BrowserGameFrame),(byte) -100, "zap");
 				} catch (Throwable throwable) {
 				    /* empty */
 				}
 			    } else {
 				try {
-				    Class30.method432((Class23_Sub4
-						       .aSignLink_3734
-						       .BrowserGameFrame),
-						      (byte) -100, "unzap");
+				    Class30.method432((Class23_Sub4.aSignLink_3734.BrowserGameFrame),(byte) -100, "unzap");
 				} catch (Throwable throwable) {
 				    /* empty */
 				}
 			    }
 			    if (Class1_Sub7.anInt3581 == 0) {
 				try {
-				    Class30.method432((Class23_Sub4
-						       .aSignLink_3734
-						       .BrowserGameFrame),
-						      (byte) -100, "loggedin");
+				    Class30.method432((Class23_Sub4.aSignLink_3734.BrowserGameFrame),(byte) -100, "loggedin");
 				} catch (Throwable throwable) {
 				    /* empty */
 				}
 			    }
-			    Class131_Sub35.anInt4583
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .method1793(5663);
-			    Class131_Sub8_Sub1.anInt6100
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readUnsignedShort(8104);
+			    Class131_Sub35.anInt4583= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1793(5663);
+			    Class131_Sub8_Sub1.anInt6100= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
 			    Class75.anInt1024 = 9;
 			}
 			if (Class75.anInt1024 == 9) {
-			    if (Class131_Sub8_Sub1.anInt6100 <= Class128_Sub1.aClass33_4013
-                        .method450((byte) 17)) {
-				Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				    .anInt4360
-				    = 0;
-				Class128_Sub1.aClass33_4013.method451
-				    (arg0 + 113, 0,
-				     (Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .aByteArray4324),
-				     Class131_Sub8_Sub1.anInt6100);
+				System.out.println("Moved to 9");
+			    if (Class131_Sub8_Sub1.anInt6100 <= Class128_Sub1.aClass33_4013.method450((byte) 17)) {
+				Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360 = 0;
+				Class128_Sub1.aClass33_4013.method451(arg0 + 113, 0,(Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.aByteArray4324),Class131_Sub8_Sub1.anInt6100);
 				Class4.anInt3281 = 2;
 				Class75.anInt1024 = 0;
 				Class131_Sub8.method1675(0);
@@ -470,7 +406,7 @@ public class Login
 	    anInt1759++;
 	    if (arg0 < 97)
 		method1152(-93, 89, 1, (byte) 94, 36);
-	    int i = -1 + (anIntArray1761.length >> 1207513921);
+	    int i = -1 + (anIntArray1761.length >> 1);
 	    int i_1_ = arg1 & i;
 	    for (;;) {
 		int i_2_ = anIntArray1761[1 + i_1_ + i_1_];
