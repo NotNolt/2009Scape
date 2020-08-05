@@ -28,7 +28,7 @@ public final class GraphicUpdateFlag extends UpdateFlag<Graphics> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.put((byte) 17); // opcode
+		buffer.put((byte) 109); // opcode
 		buffer.put((location.getChunkOffsetX() << 4) | (location.getChunkOffsetY() & 0x7));
 		buffer.putShort(context.getId());
 		buffer.put(context.getHeight());

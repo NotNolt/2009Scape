@@ -16,7 +16,7 @@ public final class PositionedGraphic implements OutgoingPacket<PositionedGraphic
 	public void send(PositionedGraphicContext context) {
 		Location l = context.getLocation();
 		Graphics g = context.getGraphic();
-		IoBuffer buffer = UpdateAreaPosition.getBuffer(context.getPlayer(), l).put(17).put((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7)).putShort(g.getId()).put(g.getHeight()).putShort(g.getDelay());
+		IoBuffer buffer = UpdateAreaPosition.getBuffer(context.getPlayer(), l).put(109).put((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7)).putShort(g.getId()).put(g.getHeight()).putShort(g.getDelay());
 		context.getPlayer().getSession().write(buffer);
 	}
 

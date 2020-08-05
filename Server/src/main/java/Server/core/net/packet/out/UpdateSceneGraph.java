@@ -9,7 +9,7 @@ import core.net.packet.context.SceneGraphContext;
 
 /**
  * The update scene graph outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class UpdateSceneGraph implements OutgoingPacket<SceneGraphContext> {
 
@@ -17,21 +17,33 @@ public final class UpdateSceneGraph implements OutgoingPacket<SceneGraphContext>
 	public void send(SceneGraphContext context) {
 		IoBuffer buffer = new IoBuffer(76, PacketHeader.SHORT);
 		Player player = context.getPlayer();
+		boolean forceSend = true;
 		player.getPlayerFlags().setLastSceneGraph(player.getLocation());
-		buffer.putShortA(player.getLocation().getSceneX());
+		buffer.putLEShortA(player.getLocation().getRegionX());
+		buffer.putShort(player.getLocation().getSceneY());
+		buffer.put((byte) 0);
+		buffer.putA(0);
+		if (((player.getLocation().getRegionX() / 8) == 48) || ((player.getLocation().getRegionX() / 8) == 49) && ((player.getLocation().getRegionY() / 8) == 48)) {
+			forceSend = false;
+		}
+		if (((player.getLocation().getRegionX() / 8) == 48) && ((player.getLocation().getRegionY() / 8) == 148)) {
+			forceSend = false;
+		}
 		for (int regionX = (player.getLocation().getRegionX() - 6) / 8; regionX <= ((player.getLocation().getRegionX() + 6) / 8); regionX++) {
 			for (int regionY = (player.getLocation().getRegionY() - 6) / 8; regionY <= ((player.getLocation().getRegionY() + 6) / 8); regionY++) {
-				int[] keys = RegionSQLHandler.getRegionXTEA(regionX << 8 | regionY);
-				for (int i = 0; i < keys.length; i++) {
-					buffer.putIntB(keys[i]);
+				int region = regionY + (regionX << 8);
+				if (forceSend || ((regionY != 49) && (regionY != 149) && (regionY != 147) && (regionX != 50) && ((regionX != 49) || (regionY != 47)))) {
+					int[] keys = RegionSQLHandler.getRegionXTEA(region);
+					for (int i = 0; i < keys.length; i++) {
+						buffer.putInt(keys[i]);
+					}
 				}
 			}
 		}
 
-		buffer.putS(player.getLocation().getZ());
-		buffer.putShort(player.getLocation().getRegionX());
-		buffer.putShortA(player.getLocation().getRegionY());
-		buffer.putShortA(player.getLocation().getSceneY());
+		buffer.putA(player.getLocation().getZ());
+		buffer.putShort(player.getLocation().getSceneX());
+		buffer.putShort(player.getLocation().getRegionY());
 		player.getDetails().getSession().write(buffer);
 	}
 

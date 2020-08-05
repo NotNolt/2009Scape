@@ -21,7 +21,8 @@ public final class NPCGraphic extends UpdateFlag<Graphics> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putShortA(context.getId()).putLEInt(context.getHeight() << 16 | context.getDelay());
+		buffer.putLEShort(context.getId());
+		buffer.putLEInt(context.getDelay());
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public final class NPCGraphic extends UpdateFlag<Graphics> {
 	 * @return The mask data.
 	 */
 	public static int maskData() {
-		return 0x80;
+		return 0x10;
 	}
 
 }

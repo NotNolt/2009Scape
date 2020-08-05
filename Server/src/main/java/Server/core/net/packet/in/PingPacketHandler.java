@@ -6,7 +6,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles an incoming ping packet.
- * @author Emperor
+ * @author Woah
  */
 public final class PingPacketHandler implements IncomingPacket {
 

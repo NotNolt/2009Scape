@@ -32,7 +32,9 @@ public final class NPCHitFlag extends UpdateFlag<HitMark> {
 				ratio = e.getSkills().getLifepoints() * 255 / max;
 			}
 		}
-		buffer.put(context.getDamage()).putC(context.getType()).putS(ratio);
+		buffer.putSmart(context.getDamage());
+		buffer.put((byte) context.getType());
+		buffer.put((byte) ratio);
 	}
 
 	@Override
@@ -50,7 +52,7 @@ public final class NPCHitFlag extends UpdateFlag<HitMark> {
 	 * @return The mask data.
 	 */
 	public static int maskData() {
-		return 0x40;
+		return 0x8;
 	}
 
 }

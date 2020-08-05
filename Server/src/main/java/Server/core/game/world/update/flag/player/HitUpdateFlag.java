@@ -28,7 +28,9 @@ public final class HitUpdateFlag extends UpdateFlag<HitMark> {
 		if (max > e.getSkills().getLifepoints()) {
 			ratio = e.getSkills().getLifepoints() * 255 / max;
 		}
-		buffer.putSmart(context.getDamage()).putA(context.getType()).putS(ratio);
+		buffer.putSmart(context.getDamage());
+		buffer.putA(context.getType());
+		buffer.putC(ratio);
 	}
 
 	@Override
@@ -46,7 +48,7 @@ public final class HitUpdateFlag extends UpdateFlag<HitMark> {
 	 * @return The mask data.
 	 */
 	public static int maskData() {
-		return 0x1;
+		return 0x4;
 	}
 
 }

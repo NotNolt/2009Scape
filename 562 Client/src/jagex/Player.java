@@ -157,8 +157,8 @@ public class Player extends Class23_Sub4_Sub1 {
 		boolean bool = (0x2 & i) != 0;
 		boolean bool_7_ = (0x4 & i) != 0;
 		int i_8_ = super.method335((byte) -75);
-		this.method340(true, (i >> -1549427869 & 0x7) - -1);
-		aByte6507 = (byte) ((i & 0xeb) >> 888773382);
+		this.method340(true, (i >> 3 & 0x7) - -1);
+		aByte6507 = (byte) ((i & 0xeb) >> 6);
 		anInt3733 += (method335((byte) -87) - i_8_) * 64;
 		anInt3747 += (-i_8_ + method335((byte) -56)) * 64;
 		if (arg1 >= -27)
@@ -175,7 +175,7 @@ public class Player extends Class23_Sub4_Sub1 {
 				is[i_10_] = 0;
 			else {
 				int i_12_ = arg0.readUnsignedByte(98);
-				int i_13_ = (i_11_ << 979933224) + i_12_;
+				int i_13_ = (i_11_ << 8) + i_12_;
 				if (i_10_ == 0 && i_13_ == 65535) {
 					i_9_ = arg0.readUnsignedShort(8104);
 					anInt6530 = arg0.readUnsignedByte(79);

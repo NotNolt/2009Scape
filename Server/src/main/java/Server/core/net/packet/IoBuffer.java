@@ -151,6 +151,13 @@ public class IoBuffer {
 		return this;
 	}
 
+	public IoBuffer putLE3(int val) {
+		buf.put((byte) (val >> 8));
+		buf.put((byte) (val >> 16));
+		buf.put((byte) val);
+		return this;
+	}
+
 	/**
 	 * @param val
 	 * @return

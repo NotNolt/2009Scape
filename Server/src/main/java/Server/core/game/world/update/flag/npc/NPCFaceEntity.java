@@ -21,12 +21,12 @@ public final class NPCFaceEntity extends UpdateFlag<Entity> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putShortA(context == null ? -1 : context.getClientIndex());
+		buffer.putLEShort(context == null ? -1 : context.getClientIndex());
 	}
 
 	@Override
 	public int data() {
-		return 0x4;
+		return 0x1;
 	}
 
 	@Override

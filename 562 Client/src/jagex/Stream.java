@@ -331,9 +331,9 @@ public class Stream extends Class131 {
 			if (arg0 != -16777216)
 				readSmart(83);
 			return ((0xff & aByteArray4324[anInt4360 - 4])
-					+ (aByteArray4324[anInt4360 + -3] << 1853884680 & 0xff00) + (((aByteArray4324[anInt4360
-					+ -2] & 0xff) << -66500496) + (~0xffffff & aByteArray4324[-1
-					+ anInt4360] << 595053592)));
+					+ (aByteArray4324[anInt4360 + -3] << 8 & 0xff00) + (((aByteArray4324[anInt4360
+					+ -2] & 0xff) << 16) + (~0xffffff & aByteArray4324[-1
+					+ anInt4360] << 24)));
 		} catch (RuntimeException runtimeexception) {
 			throw Class131_Sub2_Sub6.method1495(runtimeexception, "il.FC("
 					+ arg0 + ')');
@@ -423,7 +423,7 @@ public class Stream extends Class131 {
 				anInt4299 = -92;
 			for (int i_17_ = 0; i > i_17_; i_17_++)
 				i_16_ = -i_16_
-						+ ((i_16_ << 474338629) - -Class44.method542(
+						+ ((i_16_ << 5) - -Class44.method542(
 								arg1.charAt(i_17_), true));
 			return i_16_;
 		} catch (RuntimeException runtimeexception) {

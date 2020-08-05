@@ -361,7 +361,7 @@ public class PacketStream extends Stream
     public int readBits(int arg0, boolean arg1) {
 	try {
 	    anInt6131++;
-	    int i = anInt6121 >> 1779819011;
+	    int i = anInt6121 >> 3;
 	    if (arg1 != false)
 		anInt6135 = 36;
 	    int i_8_ = -(0x7 & anInt6121) + 8;

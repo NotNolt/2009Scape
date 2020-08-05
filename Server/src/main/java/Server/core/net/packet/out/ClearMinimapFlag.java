@@ -12,7 +12,7 @@ public final class ClearMinimapFlag implements OutgoingPacket<PlayerContext> {
 
 	@Override
 	public void send(PlayerContext context) {
-		context.getPlayer().getDetails().getSession().write(new IoBuffer(153));
+		context.getPlayer().getDetails().getSession().write(new IoBuffer(5));
 	}
 
 }

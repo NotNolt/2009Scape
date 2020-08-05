@@ -16,11 +16,14 @@ public final class ConstructObject implements OutgoingPacket<BuildObjectContext>
 	/**
 	 * Writes the packet.
 	 * @param buffer The buffer.
-	 * @param objects The objects.
+	 * @param object The objects.
 	 */
 	public static IoBuffer write(IoBuffer buffer, GameObject object) {
 		Location l = object.getLocation();
-		buffer.put(179).putA((object.getType() << 2) | (object.getRotation() & 0x3)).put((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7)).putShortA(object.getId());
+		buffer.put(115);
+		buffer.putC(0);
+		buffer.putLEShortA(object.getId());
+		buffer.putC((object.getType() << 2) + (object.getRotation() & 0x3));
 		return buffer;
 	}
 

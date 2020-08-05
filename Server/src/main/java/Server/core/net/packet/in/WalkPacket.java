@@ -3,7 +3,6 @@ package core.net.packet.in;
 import core.game.interaction.MovementPulse;
 import core.game.node.entity.Entity;
 import core.game.node.entity.player.Player;
-import plugin.ai.AIPlayer;
 import core.game.world.map.Location;
 import core.net.packet.IncomingPacket;
 import core.net.packet.IoBuffer;
@@ -13,7 +12,7 @@ import core.net.packet.out.ClearMinimapFlag;
 
 /**
  * Handles an incoming walk packet.
- * @author Emperor
+ * @author Woah
  */
 public final class WalkPacket implements IncomingPacket {
 

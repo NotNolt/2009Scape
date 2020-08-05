@@ -6,7 +6,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles the display update packet.
- * @author Emperor
+ * @author Woah
  *
  */
 public class DisplayUpdatePacket implements IncomingPacket {
@@ -17,10 +17,10 @@ public class DisplayUpdatePacket implements IncomingPacket {
 		int screenWidth = buffer.getShort();
 		int screenHeight = buffer.getShort();
 		int displayMode = buffer.get(); //jagex.Display mode
+		player.getInterfaceManager().switchWindowMode(windowMode);
 		player.getSession().getClientInfo().setScreenWidth(screenWidth);
 		player.getSession().getClientInfo().setScreenHeight(screenHeight);
 		player.getSession().getClientInfo().setDisplayMode(displayMode);
-		player.getInterfaceManager().switchWindowMode(windowMode);
 	}
 
 }

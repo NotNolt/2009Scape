@@ -70,7 +70,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable,
 			Class166.aLongArray2212[Class39.anInt516] = l;
 			if (l_0_ != 0L && l_0_ < l) {
 				int i = (int) (-l_0_ + l);
-				Class131_Sub43.anInt4700 = (32000 + (i >> -2006790399)) / i;
+				Class131_Sub43.anInt4700 = (32000 + (i >> 1)) / i;
 			}
 			Class39.anInt516 = 0x1f & Class39.anInt516 + 1;
 			if (Class148.anInt1984++ > 50) {

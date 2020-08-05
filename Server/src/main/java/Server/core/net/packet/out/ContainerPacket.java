@@ -9,7 +9,7 @@ import core.net.packet.context.ContainerContext;
 
 /**
  * Represents the outgoing container packet.
- * @author Emperor
+ * @author Woah
  */
 public final class ContainerPacket implements OutgoingPacket<ContainerContext> {
 
@@ -17,7 +17,7 @@ public final class ContainerPacket implements OutgoingPacket<ContainerContext> {
 	public void send(ContainerContext context) {
 		IoBuffer buffer = null;
 		if (context.isClear()) {
-			buffer = new IoBuffer(144);
+			buffer = new IoBuffer(58);
 			buffer.putIntB(context.getInterfaceId() << 16 | context.getChildId());
 		} else {
 			boolean slotBased = context.getSlots() != null;

@@ -369,35 +369,29 @@ public class PacketParser extends Class131_Sub2 {
 					System.out.println("Packet 87 Sent");//TODO: REMOVE PACKET DEBUG TEXT
 					Class45.anInt627++;
 					Class93.aClass131_Sub15_Sub2_1226.writeLEShort(
-							i_17_ << -1186835345 | i_18_, (byte) -115);
+							i_17_ << 15 | i_18_, (byte) -115);
 					Class93.aClass131_Sub15_Sub2_1226.writeInt2(113414280,
-							i_16_ | i << 884715376);
+							i_16_ | i << 16);
 				}
 				if (Login.anInt1763 > 0)
 					Login.anInt1763--;
-				if (Class209.aBoolean3053
-						&& Login.anInt1763 <= 0) {
+				if (Class209.aBoolean3053 && Login.anInt1763 <= 0) {
 					Class75.anInt1029++;
 					Login.anInt1763 = 20;
 					Class209.aBoolean3053 = false;
 					Class93.aClass131_Sub15_Sub2_1226.createPacket(235);
 					System.out.println("Packet 235 Sent");//TODO: REMOVE PACKET DEBUG TEXT
-					Class93.aClass131_Sub15_Sub2_1226.writeShort(
-							(int) Class120.aFloat1578 >> 1574258115, (byte) 70);
-					Class93.aClass131_Sub15_Sub2_1226.writeLEShort(
-							(int) Class23_Sub1_Sub1.aFloat5082 >> -1322207389,
-							(byte) -115);
+					Class93.aClass131_Sub15_Sub2_1226.writeShort((int) Class120.aFloat1578 >> 3, (byte) 70);
+					Class93.aClass131_Sub15_Sub2_1226.writeLEShort((int) Class23_Sub1_Sub1.aFloat5082 >> 3,(byte) -115);
 				}
-				if (arg0 != Class77.aBoolean1046
-						&& !Class131_Sub41_Sub17.aBoolean6387 != false) {
+				if (arg0 != Class77.aBoolean1046 && !Class131_Sub41_Sub17.aBoolean6387) {
 					Class131_Sub41_Sub17.aBoolean6387 = true;
 					Class131_Sub31.anInt4544++;
 					Class93.aClass131_Sub15_Sub2_1226.createPacket(4);
 					System.out.println("Packet 4 Sent");//TODO: REMOVE PACKET DEBUG TEXT
 					Class93.aClass131_Sub15_Sub2_1226.writeByte(9, 1);
 				}
-				if (Class77.aBoolean1046 != true
-						&& Class131_Sub41_Sub17.aBoolean6387 == true) {
+				if (!Class77.aBoolean1046 && Class131_Sub41_Sub17.aBoolean6387) {
 					Class131_Sub41_Sub17.aBoolean6387 = false;
 					Class131_Sub31.anInt4544++;
 					Class93.aClass131_Sub15_Sub2_1226.createPacket(4);
@@ -896,7 +890,7 @@ public class PacketParser extends Class131_Sub2 {
 							Class186.anInt2645 = -1;
 						if (Class131_Sub2_Sub34.anInt6032 > 50) {
 							Class220.anInt3220++;
-							System.out.println("Packet 255 Sent");//TODO: REMOVE PACKET DEBUG TEXT
+							System.out.println("Packet 255 Sent - Packet Parser");//TODO: REMOVE PACKET DEBUG TEXT
 							Class93.aClass131_Sub15_Sub2_1226.createPacket(255);
 						}
 						if (Class183.aBoolean2612) {
@@ -1229,12 +1223,9 @@ public class PacketParser extends Class131_Sub2 {
 				return true;
 			}
 			if (Class131_Sub35.anInt4583 == 50) {
-				int i_71_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShortA(false);
-				int i_72_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShort(8104);
-				int i_73_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByteS(14684);
+				int i_71_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShortA(false);
+				int i_72_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+				int i_73_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteS(14684);
 				if (Class23_Sub1_Sub1.method299(-25976, i_72_)) {
 					if (i_73_ == 2)
 						Class131_Sub41_Sub20.method2068((byte) -21);
@@ -2793,23 +2784,16 @@ public class PacketParser extends Class131_Sub2 {
 				return true;
 			}
 			if (Class131_Sub35.anInt4583 == 70) {
-				int i_298_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShort(8104);
-				String string = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readString(false);
+				int i_298_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+				String string = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readString(false);
 				Object[] objects = new Object[1 + string.length()];
 				for (int i_299_ = -1 + string.length(); i_299_ >= 0; i_299_--) {
-					if (string.charAt(i_299_) != 's')
-						objects[1 + i_299_] = new Integer(
-								Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-										.readUnsignedInt(-2));
+					if (string.charAt(i_299_) != 's')objects[1 + i_299_] = new Integer(
+							Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2));
 					else
-						objects[i_299_ + 1] = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-								.readString(false);
+						objects[i_299_ + 1] = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readString(false);
 				}
-				objects[0] = new Integer(
-						Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-								.readUnsignedInt(-2));
+				objects[0] = new Integer(Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2));
 				if (Class23_Sub1_Sub1.method299(-25976, i_298_)) {
 					Class131_Sub14 class131_sub14 = new Class131_Sub14();
 					class131_sub14.anObjectArray4281 = objects;
@@ -2926,18 +2910,12 @@ public class PacketParser extends Class131_Sub2 {
 				return false;
 			}
 			if (Class131_Sub35.anInt4583 == 121) {
-				int i_316_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShort(8104);
-				int i_317_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByte(-95);
-				int i_318_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByte(-111);
-				int i_319_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedShort(8104);
-				int i_320_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByte(-53);
-				int i_321_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByte(-118);
+				int i_316_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+				int i_317_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-95);
+				int i_318_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-111);
+				int i_319_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+				int i_320_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-53);
+				int i_321_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-118);
 				if (Class23_Sub1_Sub1.method299(-25976, i_316_))
 					Class204.method2731(true, (byte) 90, i_320_, i_319_,
 							i_317_, i_321_, i_318_);
@@ -2945,49 +2923,38 @@ public class PacketParser extends Class131_Sub2 {
 				return true;
 			}
 			if (Class131_Sub35.anInt4583 == 113) {
-				int i_322_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedInt(-2);
-				int i_323_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedLEShort((byte) 79);
+				int i_322_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2);
+				int i_323_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShort((byte) 79);
 				if (i_323_ == 65535)
 					i_323_ = -1;
-				int i_324_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedLEShort((byte) 79);
+				int i_324_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShort((byte) 79);
 				if (i_324_ == 65535)
 					i_324_ = -1;
-				int i_325_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedLEShortA(-1);
-				int i_326_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedLEInt(-16777216);
+				int i_325_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShortA(-1);
+				int i_326_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEInt(-16777216);
 				if (Class23_Sub1_Sub1.method299(-25976, i_325_)) {
 					for (int i_327_ = i_324_; i_323_ >= i_327_; i_327_++) {
-						long l = (long) i_327_ + ((long) i_326_ << 1435713952);
+						long l = (long) i_327_ + ((long) i_326_ << 32);
 						Class131_Sub37 class131_sub37 = ((Class131_Sub37) Class172.aClass180_2290
 								.method2521(57, l));
 						Class131_Sub37 class131_sub37_328_;
 						if (class131_sub37 == null) {
 							if (i_327_ == -1)
-								class131_sub37_328_ = new Class131_Sub37(
-										i_322_,
-										(Class190.method2615(i_326_, -87).aClass131_Sub37_2398.anInt4602));
+								class131_sub37_328_ = new Class131_Sub37(i_322_, (Class190.method2615(i_326_, -87).aClass131_Sub37_2398.anInt4602));
 							else
-								class131_sub37_328_ = new Class131_Sub37(
-										i_322_, -1);
+								class131_sub37_328_ = new Class131_Sub37(i_322_, -1);
 						} else {
-							class131_sub37_328_ = new Class131_Sub37(i_322_,
-									class131_sub37.anInt4602);
+							class131_sub37_328_ = new Class131_Sub37(i_322_, class131_sub37.anInt4602);
 							class131_sub37.method1355((byte) 119);
 						}
-						Class172.aClass180_2290.method2523(false, l,
-								class131_sub37_328_);
+						Class172.aClass180_2290.method2523(false, l, class131_sub37_328_);
 					}
 				}
 				Class131_Sub35.anInt4583 = -1;
 				return true;
 			}
 			if (Class131_Sub35.anInt4583 == 5) {
-				Applet_Sub1.anInt18 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readUnsignedByte(61);
+				Applet_Sub1.anInt18 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(61);
 				Class131_Sub35.anInt4587 = Class23_Sub5.anInt3758;
 				Class131_Sub35.anInt4583 = -1;
 				return true;
@@ -2995,8 +2962,7 @@ public class PacketParser extends Class131_Sub2 {
 			int i_329_ = -41 % ((arg0 - 61) / 37);
 			if (Class131_Sub35.anInt4583 == 0) {
 				Class131_Sub2_Sub38.method1645((byte) -67);
-				Class131_Sub2_Sub10.anInt5703 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-						.readSignedShort(1625554944);
+				Class131_Sub2_Sub10.anInt5703 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readSignedShort(1625554944);
 				Class131_Sub2_Sub39.anInt6079 = Class23_Sub5.anInt3758;
 				Class131_Sub35.anInt4583 = -1;
 				return true;

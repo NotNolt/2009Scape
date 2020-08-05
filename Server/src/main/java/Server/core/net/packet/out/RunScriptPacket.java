@@ -7,7 +7,7 @@ import core.net.packet.context.RunScriptContext;
 
 /**
  * The run script outgoing packet.
- * @author Snickerize
+ * @author Woah
  */
 public class RunScriptPacket implements OutgoingPacket<RunScriptContext> {
 
@@ -34,9 +34,8 @@ public class RunScriptPacket implements OutgoingPacket<RunScriptContext> {
 	public void send(RunScriptContext context) {
 		String types = context.getString();
 		Object[] objects = context.getObjects();
-		IoBuffer buffer = new IoBuffer(115, PacketHeader.SHORT);
+		IoBuffer buffer = new IoBuffer(70, PacketHeader.SHORT);
 		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
-
 		buffer.putString(types);
 		int j = 0;
 		for (int i = (types.length() - 1); i >= 0; i--) {

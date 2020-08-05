@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 
 /**
  * Handles the login outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class LoginPacket implements OutgoingPacket<PlayerContext> {
 

@@ -326,7 +326,7 @@ public class Login
 			    Class215.method2802(77,Class131_Sub9.aBoolean4218);
 			    Class131_Sub2_Sub34.method1631(Class131_Sub9.aBoolean4218, 66);
 			    Class160.method2384(3037,Class131_Sub9.aBoolean4218);
-			    if ((Class103.aBoolean1353&& !Class131_Sub1_Sub4.aBoolean5532)|| Class131_Sub2_Sub1.aBoolean5570) {
+			    if ((Class103.aBoolean1353 && !Class131_Sub1_Sub4.aBoolean5532) || Class131_Sub2_Sub1.aBoolean5570) {
 				try {
 				    Class30.method432((Class23_Sub4.aSignLink_3734.BrowserGameFrame),(byte) -100, "zap");
 				} catch (Throwable throwable) {

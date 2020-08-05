@@ -33,8 +33,9 @@ public final class ClientInfo {
 	 * @param screenWidth The screen width.
 	 * @param screenHeight The screen height.
 	 */
-	public ClientInfo(int displayMode, int screenWidth, int screenHeight) {
+	public ClientInfo(int displayMode, int windowMode, int screenWidth, int screenHeight) {
 		this.displayMode = displayMode;
+		this.windowMode = windowMode;
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
 	}

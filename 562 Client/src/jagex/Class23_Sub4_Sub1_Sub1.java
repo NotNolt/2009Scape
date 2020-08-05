@@ -444,14 +444,9 @@ public class Class23_Sub4_Sub1_Sub1 extends Class23_Sub4_Sub1
 		System.out.println("Packet 163 Sent");//TODO: REMOVE PACKET DEBUG TEXT
 		Class93.aClass131_Sub15_Sub2_1226.createPacket(163);
 	    }
-	    Class93.aClass131_Sub15_Sub2_1226
-		.writeLEShort(arg0 + Class64.anInt818, (byte) -115);
-	    Class93.aClass131_Sub15_Sub2_1226.writeByteS(!(Class131_Sub2_Sub39
-							   .aBooleanArray6080
-							   [82]) ? 0 : 1,
-							 arg2 ^ 0x5c56c378);
-	    Class93.aClass131_Sub15_Sub2_1226
-		.writeShort(Class92.anInt1191 + arg3, (byte) 59);
+	    Class93.aClass131_Sub15_Sub2_1226.writeLEShort(arg0 + Class64.anInt818, (byte) -115);
+	    Class93.aClass131_Sub15_Sub2_1226.writeByteS(!(Class131_Sub2_Sub39.aBooleanArray6080[82]) ? 0 : 1, arg2 ^ 0x5c56c378);
+	    Class93.aClass131_Sub15_Sub2_1226.writeShort(Class92.anInt1191 + arg3, (byte) 59);
 	    Class131_Sub2_Sub6.anInt5622 = arg3;
 	    Class169.anInt2268 = arg0;
 	    Class78.aBoolean1051 = false;

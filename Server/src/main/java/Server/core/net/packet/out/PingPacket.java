@@ -5,7 +5,7 @@ import core.net.packet.context.PlayerContext;
 
 /**
  * Handles the ping packet sending.
- * @author Emperor
+ * @author Woah
  */
 public final class PingPacket implements OutgoingPacket<PlayerContext> {
 

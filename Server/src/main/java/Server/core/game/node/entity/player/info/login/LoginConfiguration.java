@@ -191,6 +191,7 @@ public final class LoginConfiguration {
      * @param player The player to send to.
      */
     public static void sendGameConfiguration(final Player player) {
+        System.out.println("Sending Game Configuration... || LoginConfiguration");
         player.getInterfaceManager().openWindowsPane(new Component(player.getInterfaceManager().isResizable() ? 746 : 548));
         player.getInterfaceManager().openChatbox(137);
         player.getInterfaceManager().openDefaultTabs();
@@ -238,6 +239,7 @@ public final class LoginConfiguration {
      * @param player the player.
      */
     public static final void config(final Player player) {
+        System.out.println("Configuring player for login || LoginConfiguration");
         player.getInventory().refresh();
         player.getEquipment().refresh();
         player.getSkills().refresh();

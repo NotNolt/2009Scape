@@ -6,16 +6,16 @@ import core.net.packet.context.InterfaceConfigContext;
 
 /**
  * The outgoing interface configuration packet.
- * @author Emperor
+ * @author Woah
  */
 public class InterfaceConfig implements OutgoingPacket<InterfaceConfigContext> {
 
 	@Override
 	public void send(InterfaceConfigContext context) {
 		IoBuffer buffer = new IoBuffer(3);
-		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
-		buffer.putC(context.isHidden() ? 1 : 0);
-		buffer.putLEInt(context.getInterfaceId() << 16 | context.getChildId());
+		buffer.putShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putS(context.isHidden() ? 1 : 0);
+		buffer.putIntB(context.getInterfaceId() << 16 | context.getChildId());
 		context.getPlayer().getSession().write(buffer);
 	}
 }

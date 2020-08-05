@@ -4,6 +4,7 @@ import core.cache.Cache;
 import core.cache.crypto.ISAACCipher;
 import core.cache.crypto.ISAACPair;
 import core.cache.misc.buffer.ByteBufferUtils;
+import core.game.node.entity.player.Player;
 import core.game.node.entity.player.info.ClientInfo;
 import core.game.node.entity.player.info.PlayerDetails;
 import core.game.node.entity.player.info.UIDInfo;
@@ -11,6 +12,7 @@ import core.game.node.entity.player.info.login.LoginParser;
 import core.game.node.entity.player.info.login.LoginType;
 import core.game.node.entity.player.info.login.Response;
 import core.game.node.entity.player.info.portal.PlayerSQLManager;
+import core.game.node.entity.player.link.InterfaceManager;
 import core.game.system.SystemLogger;
 import core.game.system.task.TaskExecutor;
 import core.net.Constants;
@@ -86,11 +88,11 @@ public final class LoginReadEvent extends IoReadEvent {
 	 * @param buffer The buffer to read from.
 	 */
 	private static void decodeWorld(int opcode, IoSession session, ByteBuffer buffer) {
-		int conxByte = buffer.get() & 0xFF;// Connection Byte
+		int windowMode = buffer.get() & 0xFF;// Connection Byte
 		int displayMode = buffer.get() & 0xFF;// display mode <Byte is 2
-		int clientWidth = buffer.getShort() & 0xFFFF;// width <Short is 765
-		int clientheight = buffer.getShort() & 0xFFFF;// height <Short is 503 Combined makes up 765x503 game frame
-		System.out.println("Initial Connection: " + conxByte + " || Display: " + displayMode + " || Client Width x Height: " + clientWidth + "x" + clientheight);
+		int screenWidth = buffer.getShort() & 0xFFFF;// width <Short is 765
+		int screenHeight = buffer.getShort() & 0xFFFF;// height <Short is 503 Combined makes up 765x503 game frame
+		System.out.println("Initial Connection: " + windowMode + " || Display: " + displayMode + " || Client Width x Height: " + screenWidth + "x" + screenHeight);
 		buffer.get();//0 Byte Spacer
 		byte[] data = new byte[24]; // random.dat data.
 		buffer.get(data);
@@ -124,7 +126,7 @@ public final class LoginReadEvent extends IoReadEvent {
 		final String password = ByteBufferUtils.getString(buffer).trim();
 		final String username = StringUtils.decodeBase37(Lusername).trim();
 //		IsaacGroup group = IsaacGroup.get(seeds);
-
+		session.setClientInfo(new ClientInfo(displayMode, windowMode, screenWidth, screenHeight));
 		final ByteBuffer b = buffer;
 		TaskExecutor.executeSQL(new Runnable() {
 			@Override

@@ -6,13 +6,13 @@ import core.net.packet.context.PlayerContext;
 
 /**
  * The outgoing logout packet.
- * @author Emperor
+ * @author Woah
  */
 public class Logout implements OutgoingPacket<PlayerContext> {
 
 	@Override
 	public void send(PlayerContext context) {
-		IoBuffer buffer = new IoBuffer(86);
+		IoBuffer buffer = new IoBuffer(236);
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 }

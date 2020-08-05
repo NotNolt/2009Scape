@@ -7,16 +7,16 @@ import core.net.packet.context.CSConfigContext;
 /**
  * The outgoing packet for client script configs.
  * 
- * @author Snickerize
+ * @author Woah
  */
 public class CSConfigPacket implements OutgoingPacket<CSConfigContext> {
 
 	@Override
 	public void send(CSConfigContext context) {
-		IoBuffer buffer = new IoBuffer(65);
-		buffer.putLEShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
-		buffer.putC((byte) context.getValue());
-		buffer.putLEShortA(context.getId());
+		IoBuffer buffer = new IoBuffer(70);
+		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putString(context.toString());
+		buffer.putInt(context.getId());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 

@@ -6,16 +6,15 @@ import core.net.packet.context.InterfaceContext;
 
 /**
  * Represents the outgoing packet used for closing an interface.
- * @author Emperor
+ * @author Woah
  */
 public final class CloseInterface implements OutgoingPacket<InterfaceContext> {
 
 	@Override
 	public void send(InterfaceContext context) {
-		IoBuffer buffer = new IoBuffer(91);
+		IoBuffer buffer = new IoBuffer(203);
 		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
-		buffer.putShort(context.getWindowId());
-		buffer.putShort(context.getComponentId());
+		buffer.putInt(context.getWindowId() << 16 | context.getComponentId());
 		context.getPlayer().getSession().write(buffer);
 	}
 

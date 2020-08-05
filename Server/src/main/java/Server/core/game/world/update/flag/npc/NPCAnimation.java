@@ -21,7 +21,8 @@ public final class NPCAnimation extends UpdateFlag<Animation> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putShort(context.getId()).put(context.getDelay());
+		buffer.putLEShortA(context.getId());
+		buffer.putA(context.getDelay());
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public final class NPCAnimation extends UpdateFlag<Animation> {
 	 * @return The mask data.
 	 */
 	public static int maskData() {
-		return 0x10;
+		return 0x80;
 	}
 
 }

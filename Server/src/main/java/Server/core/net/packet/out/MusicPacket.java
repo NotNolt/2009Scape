@@ -6,7 +6,7 @@ import core.net.packet.context.MusicContext;
 
 /**
  * Outgoing Music packet
- * @author SonicForce41
+ * @author Woah
  */
 public class MusicPacket implements OutgoingPacket<MusicContext> {
 
@@ -15,11 +15,13 @@ public class MusicPacket implements OutgoingPacket<MusicContext> {
 		IoBuffer buffer = null;
 		if (context.isSecondary()) {
 			buffer = new IoBuffer(30);
-			buffer.putTri(255);
-			buffer.putLEShort(context.getMusicId());
+			buffer.put(context.getLength());
+			buffer.putLE3(context.getMusicId());
+			buffer.putLEShortA(context.getcategoryId());
 		} else {
 			buffer = new IoBuffer(188);
 			buffer.putLEShortA(context.getMusicId());
+			buffer.putS(context.getLength());
 		}
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}

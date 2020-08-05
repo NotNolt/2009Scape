@@ -7,13 +7,16 @@ import core.net.packet.context.GameMessageContext;
 
 /**
  * The game message outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public class GameMessage implements OutgoingPacket<GameMessageContext> {
 
 	@Override
 	public void send(GameMessageContext context) {
-		IoBuffer buffer = new IoBuffer(70, PacketHeader.BYTE);
+		IoBuffer buffer = new IoBuffer(193, PacketHeader.BYTE);
+		buffer.putSmart(0);
+		buffer.putInt(0);
+		buffer.put((byte) 0);
 		buffer.putString(context.getMessage());
 		context.getPlayer().getSession().write(buffer);
 	}

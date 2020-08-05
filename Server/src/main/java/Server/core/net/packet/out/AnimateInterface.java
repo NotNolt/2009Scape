@@ -6,7 +6,7 @@ import core.net.packet.context.AnimateInterfaceContext;
 
 /**
  * The animate interface outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public class AnimateInterface implements OutgoingPacket<AnimateInterfaceContext> {
 
@@ -15,7 +15,7 @@ public class AnimateInterface implements OutgoingPacket<AnimateInterfaceContext>
 		IoBuffer buffer = new IoBuffer(61);
 		buffer.putIntB((context.getInterfaceId() << 16) | context.getChildId());
 		buffer.putLEShort(context.getAnimationId());
-		buffer.putShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 }

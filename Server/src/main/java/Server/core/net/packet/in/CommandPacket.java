@@ -9,8 +9,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles an incoming command packet.
- * @author Emperor
- * @author 'Vexia
+ * @author Woah
  */
 public final class CommandPacket implements IncomingPacket {
 

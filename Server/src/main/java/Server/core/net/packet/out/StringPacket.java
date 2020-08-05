@@ -7,7 +7,7 @@ import core.net.packet.context.StringContext;
 
 /**
  * The outgoing set component string packet.
- * @author Emperor
+ * @author Woah
  */
 public class StringPacket implements OutgoingPacket<StringContext> {
 
@@ -16,7 +16,7 @@ public class StringPacket implements OutgoingPacket<StringContext> {
 		IoBuffer buffer = new IoBuffer(106, PacketHeader.SHORT);
 		buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		buffer.putString(context.getString());
-		buffer.putIntB((context.getInterfaceId() << 16) & context.getLineId());
+		buffer.putIntB((context.getInterfaceId() << 16) | context.getLineId());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 }

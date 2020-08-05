@@ -73,7 +73,7 @@ public class ActionButtonPacket implements IncomingPacket {
 	 */
 	private Container getContainer(Player player, int componentId) {
 		switch (componentId) {
-		case 149:
+		case 182:
 			return player.getInventory();
 		}
 		return null;

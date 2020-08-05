@@ -45,10 +45,8 @@ public class Class131_Sub2_Sub5 extends Class131_Sub2
 			Class154.anInt2054++;
 			Class93.aClass131_Sub15_Sub2_1226.createPacket(114);
 			System.out.println("Packet 114 Sent");//TODO: REMOVE PACKET DEBUG TEXT
-			Class93.aClass131_Sub15_Sub2_1226
-			    .writeShort(Class148.anIntArray1983[i], (byte) 39);
-			Class93.aClass131_Sub15_Sub2_1226.writeByteC(-29012,
-								     0);
+			Class93.aClass131_Sub15_Sub2_1226.writeShort(Class148.anIntArray1983[i], (byte) 39);
+			Class93.aClass131_Sub15_Sub2_1226.writeByteC(-29012, 0);
 		    } else if (arg0 == 5) {
 			Client.anInt3476++;
 			Class93.aClass131_Sub15_Sub2_1226.createPacket(94);

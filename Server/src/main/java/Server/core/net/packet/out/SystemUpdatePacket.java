@@ -6,13 +6,13 @@ import core.net.packet.context.SystemUpdateContext;
 
 /**
  * Handles the system update packet.
- * @author 'Vexia
+ * @author Woah
  */
 public class SystemUpdatePacket implements OutgoingPacket<SystemUpdateContext> {
 
 	@Override
 	public void send(final SystemUpdateContext context) {
-		IoBuffer buffer = new IoBuffer(85).putShort(context.getTime());
+		IoBuffer buffer = new IoBuffer(231).putLEShort(context.getTime());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 

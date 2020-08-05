@@ -22,7 +22,7 @@ public class ChatPacket implements IncomingPacket {
 	public void decode(final Player player, int opcode, IoBuffer buffer) {
 		try {
 			final int effects = buffer.getShort();
-			final int numChars = buffer.getSmart();
+			final int numChars = buffer.getShort();
 			final String message = StringUtils.decryptPlayerChat(buffer, numChars);
 			if (player.getDetails().isMuted()) {
 				player.getPacketDispatch().sendMessage("You have been " + (player.getDetails().isPermMute() ? "permanently" : "temporarily") + " muted due to breaking a rule.");

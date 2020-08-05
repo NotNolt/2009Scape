@@ -21,7 +21,8 @@ public final class HitUpdateFlag1 extends UpdateFlag<HitMark> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putSmart(context.getDamage()).putS(context.getType());
+		buffer.putSmart(context.getDamage());
+		buffer.put((byte) context.getType());
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public final class HitUpdateFlag1 extends UpdateFlag<HitMark> {
 	 * @return The mask data.
 	 */
 	public static int maskData() {
-		return 0x200;
+		return 0x400;
 	}
 
 }

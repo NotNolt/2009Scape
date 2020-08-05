@@ -27,12 +27,10 @@ public class Class159
 	    if (Class166.aClass23_Sub4_Sub1_Sub2_2216 != null
 		&& ((Class166.aClass23_Sub4_Sub1_Sub2_2216.anInt3733
 		     - 64 * (-1 + Class166.aClass23_Sub4_Sub1_Sub2_2216
-				      .method335((byte) -60))) >> 1800180871
+				      .method335((byte) -60))) >> 7
 		    == Class131_Sub2_Sub6.anInt5622)
 		&& (Class166.aClass23_Sub4_Sub1_Sub2_2216.anInt3747
-		    + -(64 * Class166.aClass23_Sub4_Sub1_Sub2_2216
-				 .method335((byte) -56))
-		    - -64) >> 1384514887 == Class169.anInt2268) {
+		    + -(64 * Class166.aClass23_Sub4_Sub1_Sub2_2216.method335((byte) -56))- -64) >> 7 == Class169.anInt2268) {
 		Class131_Sub2_Sub6.anInt5622 = -1;
 		Class169.anInt2268 = -1;
 		Class149.method2181((byte) -117);

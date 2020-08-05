@@ -11,16 +11,14 @@ import core.net.packet.context.DefaultContext;
  */
 public class AudioPacket implements OutgoingPacket<DefaultContext> {
 
-	//208 music effect
-	//4 music
-	//172 sound effect
 	@Override
 	public void send(DefaultContext context) {
 		final Audio audio = (Audio) context.getObjects()[0];
-		IoBuffer buffer = new IoBuffer(172);
+		IoBuffer buffer = new IoBuffer(136);
 		buffer.putShort(audio.getId());
 		buffer.put((byte) audio.getVolume());
 		buffer.putShort(audio.getDelay());
+		buffer.put((byte) 0);
 		context.getPlayer().getSession().write(buffer);
 	}
 

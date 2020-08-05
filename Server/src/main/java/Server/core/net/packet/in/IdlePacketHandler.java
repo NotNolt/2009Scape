@@ -7,7 +7,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles the idle packet handler.
- * @author Emperor
+ * @author Woah
  */
 public final class IdlePacketHandler implements IncomingPacket {
 

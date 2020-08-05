@@ -20,8 +20,10 @@ public final class ConstructGroundItem implements OutgoingPacket<BuildItemContex
 	 */
 	public static IoBuffer write(IoBuffer buffer, Item item) {
 		Location l = item.getLocation();
-		buffer.put(33);
-		buffer.putLEShort(item.getId()).put((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7)).putShortA(item.getAmount());
+		buffer.put(22);
+		buffer.putLEShortA(item.getAmount());
+		buffer.putShort(item.getId());
+		buffer.putC(0);
 		return buffer;
 	}
 

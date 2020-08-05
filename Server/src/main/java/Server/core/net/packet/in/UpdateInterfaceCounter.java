@@ -6,7 +6,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles the update interface packet counter packet.
- * @author Emperor
+ * @author Woah
  *
  */
 public final class UpdateInterfaceCounter implements IncomingPacket {

@@ -21,8 +21,8 @@ public final class AnimationFlag extends UpdateFlag<Animation> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putShort(context.getId());
-		buffer.put(context.getDelay());
+		buffer.putShortA(context.getId());
+		buffer.putS(context.getDelay());
 	}
 
 	@Override

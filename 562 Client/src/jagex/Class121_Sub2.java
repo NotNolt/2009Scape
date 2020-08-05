@@ -103,8 +103,7 @@ public class Class121_Sub2 extends Class121
              i_11_ > i_12_; i_12_++) {
 		    for (int i_13_ = 0; i_13_ < 4; i_13_++)
 			Class131_Sub2_Sub14.anIntArrayArray5746[i_12_][i_13_]
-			    = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				  .readUnsignedInt(-2);
+			    = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2);
 		}
 		Class131_Sub2_Sub16.anIntArray5777 = new int[i_11_];
 		Class74.anIntArray1003 = new int[i_11_];
@@ -130,8 +129,7 @@ public class Class121_Sub2 extends Class121
 			    if (i_17_ != -1) {
 				int i_18_ = (0xffdb81 & i_17_) >> 14;
 				int i_19_ = 0x7ff & i_17_ >> 3;
-				int i_20_
-				    = (i_18_ / 8 << 8) + i_19_ / 8;
+				int i_20_ = (i_18_ / 8 << 8) + i_19_ / 8;
 				for (int i_21_ = 0;
 				     (i_11_ > i_21_);
 				     i_21_++) {

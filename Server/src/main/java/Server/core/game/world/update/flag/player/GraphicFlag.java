@@ -21,8 +21,8 @@ public final class GraphicFlag extends UpdateFlag<Graphics> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putLEShort(context.getId());
-		buffer.putIntB(context.getHeight() << 16 | context.getDelay());
+		buffer.putShort(context.getId());
+		buffer.putIntA(context.getDelay());
 	}
 
 	@Override

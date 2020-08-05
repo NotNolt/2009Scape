@@ -27,7 +27,7 @@ public final class ProjectileUpdateFlag extends UpdateFlag<Projectile> {
 		Location start = p.getSourceLocation();
 		Entity target = p.getVictim();
 		Location end = p.isLocationBased() ? p.getEndLocation() : target.getLocation();
-		buffer.put((byte) 16) //opcode
+		buffer.put((byte) 223) //opcode
 		.put((start.getChunkOffsetX() << 4) | (start.getChunkOffsetY() & 0x7))
 		.put(end.getX() - start.getX())
 		.put(end.getY() - start.getY())

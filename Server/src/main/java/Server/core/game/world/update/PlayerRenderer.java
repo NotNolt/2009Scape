@@ -24,8 +24,9 @@ public final class PlayerRenderer {
 	 * Handles the player rendering for a player.
 	 * @param player The player.
 	 */
-	public static void render(Player player) {
-		IoBuffer buffer = new IoBuffer(225, PacketHeader.SHORT);
+	public static void
+	render(Player player) {
+		IoBuffer buffer = new IoBuffer(107, PacketHeader.SHORT);
 		IoBuffer flags = new IoBuffer(-1, PacketHeader.NORMAL);
 		RenderInfo info = player.getRenderInfo();
 		updateLocalPosition(player, buffer, flags);

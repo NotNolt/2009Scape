@@ -6,7 +6,7 @@ import core.net.packet.context.WindowsPaneContext;
 
 /**
  * Handles the windows pane outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class WindowsPane implements OutgoingPacket<WindowsPaneContext> {
 
@@ -14,9 +14,8 @@ public final class WindowsPane implements OutgoingPacket<WindowsPaneContext> {
 	public void send(WindowsPaneContext context) {
 		IoBuffer buffer = new IoBuffer(50);
 		buffer.putShortA(context.getWindowId());
-		buffer.putShort(0);
+		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		buffer.putS(context.getType());
-//		buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 

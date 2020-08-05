@@ -1035,20 +1035,9 @@ public class Class2
 			    Class23_Sub4_Sub4.anInt5400 = 0;
 			    Class93.aClass131_Sub15_Sub2_1226.createPacket(114);
 				System.out.println("Packet 114 Sent");//TODO: REMOVE PACKET DEBUG TEXT
-			    Class93.aClass131_Sub15_Sub2_1226
-				.writeShort(i_5_, (byte) 54);
-			    Class93.aClass131_Sub15_Sub2_1226.writeByteC
-				(-29012,
-				 (Class131_Sub2_Sub39.aBooleanArray6080[82] ? 1
-				  : 0));
-			    Class210.method2759
-				(-2, class23_sub4_sub1_sub2.anIntArray5328[0],
-				 0, -62,
-				 class23_sub4_sub1_sub2.anIntArray5331[0],
-				 class23_sub4_sub1_sub2.method335((byte) -45),
-				 (Class166.aClass23_Sub4_Sub1_Sub2_2216
-				  .anIntArray5328[0]),
-				 (Class166.aClass23_Sub4_Sub1_Sub2_2216
+			    Class93.aClass131_Sub15_Sub2_1226.writeShort(i_5_, (byte) 54);
+			    Class93.aClass131_Sub15_Sub2_1226.writeByteC(-29012,(Class131_Sub2_Sub39.aBooleanArray6080[82] ? 1 : 0));
+			    Class210.method2759(-2, class23_sub4_sub1_sub2.anIntArray5328[0], 0, -62, class23_sub4_sub1_sub2.anIntArray5331[0], class23_sub4_sub1_sub2.method335((byte) -45), (Class166.aClass23_Sub4_Sub1_Sub2_2216.anIntArray5328[0]),(Class166.aClass23_Sub4_Sub1_Sub2_2216
 				  .anIntArray5331[0]),
 				 0,
 				 class23_sub4_sub1_sub2.method335((byte) -67),

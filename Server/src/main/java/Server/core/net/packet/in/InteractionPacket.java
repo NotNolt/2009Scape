@@ -43,19 +43,19 @@ public final class InteractionPacket implements IncomingPacket {
 		}
 		player.getInterfaceManager().closeChatbox();
 		switch (buffer.opcode()) {
-		case 78: // NPC reward 1
+		case 217: // NPC reward 1
 			int index = buffer.getLEShort();
 			handleNPCInteraction(player, 0, index);
 			break;
-		case 3: // NPC reward 2
+		case 254: // NPC reward 2
 			index = buffer.getLEShortA();
 			handleNPCInteraction(player, 1, index);
 			break;
-		case 148: // NPC reward 3
+		case 38: // NPC reward 3
 			index = buffer.getShortA();
 			handleNPCInteraction(player, 2, index);
 			break;
-		case 30: // NPC reward 4
+		case 95: // NPC reward 4
 			index = buffer.getShort();
 			handleNPCInteraction(player, 3, index);
 			break;
@@ -63,43 +63,43 @@ public final class InteractionPacket implements IncomingPacket {
 			index = buffer.getLEShort();
 			handleNPCInteraction(player, 4, index);
 			break;
-		case 254: // Object reward 1
+		case 45: // Object reward 1
 			int x = buffer.getLEShort();
 			int objectId = buffer.getShortA() & 0xFFFF;
 			int y = buffer.getShort();
 			handleObjectInteraction(player, 0, x, y, objectId);
 			break;
-		case 194: // Object reward 2
+		case 190: // Object reward 2
 			y = buffer.getLEShortA();
 			x = buffer.getLEShort();
 			objectId = buffer.getShort() & 0xFFFF;
 			handleObjectInteraction(player, 1, x, y, objectId);
 			break;
-		case 84: // Object reward 3
+		case 26: // Object reward 3
 			objectId = buffer.getLEShortA() & 0xFFFF;
 			y = buffer.getLEShortA();
 			x = buffer.getLEShort();
 			handleObjectInteraction(player, 2, x, y, objectId);
 			break;
-		case 152: // Object reward 4 TODO
+		case 143: // Object reward 4 TODO
 			objectId = buffer.getLEShortA() & 0xFFFF;
 			x = buffer.getLEShort();
 			y = buffer.getLEShortA();
 			handleObjectInteraction(player, 3, x, y, objectId);
 			break;
-		case 247://Object reward 4
-			y = buffer.getLEShort() & 0xFFFF;
-			x = buffer.getLEShortA();
-			objectId = buffer.getShort() & 0xFFFF;
-			handleObjectInteraction(player, 3, x, y, objectId);
-			break;
-		case 170: // Object reward 5
+//		case 247://Object reward 4
+//			y = buffer.getLEShort() & 0xFFFF;
+//			x = buffer.getLEShortA();
+//			objectId = buffer.getShort() & 0xFFFF;
+//			handleObjectInteraction(player, 3, x, y, objectId);
+//			break;
+		case 181: // Object reward 5
 			objectId = buffer.getLEShortA() & 0xFFFF;
 			x = buffer.getLEShortA();
 			y = buffer.getLEShortA();
 			handleObjectInteraction(player, 4, x, y, objectId);
 			break;
-		case 68: // jagex.Player reward 1 - Challenge
+		case 140: // jagex.Player reward 1 - Challenge
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 0, index);
 			break;
@@ -107,7 +107,7 @@ public final class InteractionPacket implements IncomingPacket {
 			index = buffer.getLEShort();
 			handlePlayerInteraction(player, 1, index);
 			break;*/
-		case 71: // jagex.Player reward 3 - follow
+		case 0: // jagex.Player reward 3 - follow
 			index = buffer.getLEShortA();
 			handlePlayerInteraction(player, 2, index);
 			break;
@@ -149,7 +149,7 @@ public final class InteractionPacket implements IncomingPacket {
 	/**
 	 * Handles the NPC interaction.
 	 * @param player the player.
-	 * @param optionIndexthe option index.
+	 * @param optionIndex the option index.
 	 * @param index the index.
 	 */
 	public static void handleNPCInteraction(Player player, int optionIndex, final int index) {

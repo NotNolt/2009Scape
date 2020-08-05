@@ -130,8 +130,7 @@ public abstract class Class128
 	System.out.println("Packet 5 Sent");//TODO: REMOVE PACKET DEBUG TEXT
 	anInt1738++;
 	Class67.anInt911++;
-	Class93.aClass131_Sub15_Sub2_1226.writeShort(Class131_Sub11.anInt4233,
-						     (byte) 84);
+	Class93.aClass131_Sub15_Sub2_1226.writeShort(Class131_Sub11.anInt4233,(byte) 84);
 	if (arg0 != -11983)
 	    method1137((byte) -121);
     }

@@ -331,30 +331,27 @@ public class Class202
 		    Class131_Sub2_Sub10_Sub1.method1517(8110);
 		    Class153_Sub2.aBoolean4774 = false;
 		    FileSystem.method2346((byte) -67);
-		    if (FileSystem.GameFrame != null
-			&& Class128_Sub1.aClass33_4013 != null
-			&& Class133.anInt1803 == 25) {
+		    if (FileSystem.GameFrame != null && Class128_Sub1.aClass33_4013 != null	&& Class133.anInt1803 == 25) {
 			Class93.aClass131_Sub15_Sub2_1226.createPacket(155);
 			System.out.println("Packet 155 Sent");//TODO: REMOVE PACKET DEBUG TEXT
 			Class128.anInt1740++;
-			Class93.aClass131_Sub15_Sub2_1226
-			    .writeInt(1057001181, (byte) 125);
+			Class93.aClass131_Sub15_Sub2_1226.writeInt(1057001181, (byte) 125);
 		    }
 		    if (!Class131_Sub4.aBoolean4134) {
 			int i_11_ = ((-(Class131_Sub41_Sub11_Sub1.anInt6546
-					>> 1658147972)
+					>> 4)
 				      + Class131_Sub41_Sub13.anInt6326)
 				     / 8);
 			int i_12_ = ((Class131_Sub41_Sub13.anInt6326
 				      - -(Class131_Sub41_Sub11_Sub1.anInt6546
-					  >> -681990972))
+					  >> 4))
 				     / 8);
 			int i_13_
-			    = ((-(Class131_Sub2_Sub26.anInt5931 >> 840537732)
+			    = ((-(Class131_Sub2_Sub26.anInt5931 >> 4)
 				+ Class173.anInt2372)
 			       / 8);
 			int i_14_
-			    = (((Class131_Sub2_Sub26.anInt5931 >> -1135122140)
+			    = (((Class131_Sub2_Sub26.anInt5931 >> 4)
 				+ Class173.anInt2372)
 			       / 8);
 			for (int i_15_ = i_11_ - 1;

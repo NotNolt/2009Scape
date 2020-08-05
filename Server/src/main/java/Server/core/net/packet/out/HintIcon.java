@@ -12,7 +12,7 @@ public final class HintIcon implements OutgoingPacket<HintIconContext> {
 
 	@Override
 	public void send(HintIconContext context) {
-		IoBuffer buffer = new IoBuffer(217);
+		IoBuffer buffer = new IoBuffer(122);
 		buffer.put(context.getSlot() << 6 | context.getTargetType()).put(context.getArrowId());
 		if (context.getArrowId() > 0) {
 			if (context.getTargetType() == 1 || context.getTargetType() == 10) {

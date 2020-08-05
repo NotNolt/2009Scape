@@ -236,15 +236,11 @@ public class Class131_Sub1_Sub4 extends Class131_Sub1
 				.readString(false);
 	    ObjectDefinition.method2584(i_6_, i_7_, 6, i_8_, i_9_, i_5_, string);
 	} else if (Class131_Sub35.anInt4583 == 115) {
-	    int i
-		= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteC(4095);
-	    int i_10_
-		= Class131_Sub41_Sub19.anInt6418 - -(0x7 & i >> 343874180);
+	    int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteC(4095);
+	    int i_10_ = Class131_Sub41_Sub19.anInt6418 - -(0x7 & i >> 4);
 	    int i_11_ = (0x7 & i) + Class131_Sub37.anInt4609;
-	    int i_12_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			    .readUnsignedLEShortA(arg0 + 92);
-	    int i_13_
-		= Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteC(4095);
+	    int i_12_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShortA(arg0 + 92);
+	    int i_13_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteC(4095);
 	    int i_14_ = i_13_ >> 1295095778;
 	    int i_15_ = 0x3 & i_13_;
 	    int i_16_ = Class23_Sub4_Sub1.anIntArray5244[i_14_];

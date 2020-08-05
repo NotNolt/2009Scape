@@ -9,7 +9,7 @@ import core.net.packet.context.AreaPositionContext;
 
 /**
  * Handles the update area position packet.
- * @author Emperor
+ * @author Woah
  */
 public final class UpdateAreaPosition implements OutgoingPacket<AreaPositionContext> {
 

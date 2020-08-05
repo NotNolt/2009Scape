@@ -20,6 +20,8 @@ public class Audio {
 	 */
 	private final int id;
 
+	private int length;
+
 	/**
 	 * The volume.
 	 */
@@ -40,6 +42,13 @@ public class Audio {
 		this.id = id;
 		this.volume = volume;
 		this.delay = delay;
+	}
+
+	public Audio(int id, int volume, int delay, int length) {
+		this.id = id;
+		this.volume = volume;
+		this.delay = delay;
+		this.length = length;
 	}
 
 	/**

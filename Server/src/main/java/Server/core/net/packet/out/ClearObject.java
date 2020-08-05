@@ -20,7 +20,7 @@ public final class ClearObject implements OutgoingPacket<BuildObjectContext> {
 	 */
 	public static IoBuffer write(IoBuffer buffer, GameObject object) {
 		Location l = object.getLocation();
-		buffer.put(195) // Opcode
+		buffer.put(27) // Opcode
 				.putC((object.getType() << 2) + (object.getRotation() & 3)).put((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7));
 		return buffer;
 	}

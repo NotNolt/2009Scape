@@ -6,7 +6,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles incoming mouse click packets.
- * @author Emperor
+ * @author Woah
  */
 public final class MouseClickPacket implements IncomingPacket {
 

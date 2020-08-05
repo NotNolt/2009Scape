@@ -6,18 +6,18 @@ import core.net.packet.context.AccessMaskContext;
 
 /**
  * The access mask outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public class AccessMask implements OutgoingPacket<AccessMaskContext> {
 
 	@Override
 	public void send(AccessMaskContext context) {
 		IoBuffer buffer = new IoBuffer(113);
-		buffer.putLEShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putInt(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		buffer.putLEShort(context.getLength());
-		buffer.putInt(context.getInterfaceId() << 16 | context.getChildId());
-		buffer.putShortA(context.getOffset());
-		buffer.putIntA(context.getId());
+		buffer.putLEShort(context.getOffset());
+		buffer.putLEShortA(context.getId());
+		buffer.putLEInt(context.getInterfaceId() << 16 | context.getChildId());
 		context.getPlayer().getSession().write(buffer);
 	}
 }

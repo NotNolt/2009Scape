@@ -347,23 +347,16 @@ public class Class79
 	try {
 	    Class43.method522(123);
 	    anInt1059++;
-	    if (Class133.anInt1803 == 30
-		|| Class133.anInt1803 == 25) {
+	    if (Class133.anInt1803 == 30 || Class133.anInt1803 == 25) {
 		Class131_Sub2_Sub34.anInt6032++;
 		if (Class131_Sub2_Sub34.anInt6032 >= 50 || arg1) {
 		    Class131_Sub2_Sub34.anInt6032 = 0;
-		    if (!Class143.aBoolean1903
-			&& Class128_Sub1.aClass33_4013 != null) {
+		    if (!Class143.aBoolean1903 && Class128_Sub1.aClass33_4013 != null) {
 			Class220.anInt3220++;
 			Class93.aClass131_Sub15_Sub2_1226.createPacket(255);
-			System.out.println("Packet 255 Sent");//TODO: REMOVE PACKET DEBUG TEXT
+			System.out.println("Packet 255 Sent - Class79");//TODO: REMOVE PACKET DEBUG TEXT
 			try {
-			    Class128_Sub1.aClass33_4013.method454
-				(108,
-				 Class93.aClass131_Sub15_Sub2_1226.anInt4360,
-				 0,
-				 (Class93.aClass131_Sub15_Sub2_1226
-				  .aByteArray4324));
+			    Class128_Sub1.aClass33_4013.method454(108, Class93.aClass131_Sub15_Sub2_1226.anInt4360, 0, (Class93.aClass131_Sub15_Sub2_1226.aByteArray4324));
 			    Class93.aClass131_Sub15_Sub2_1226.anInt4360 = 0;
 			} catch (java.io.IOException ioexception) {
 			    Class143.aBoolean1903 = true;

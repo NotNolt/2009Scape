@@ -21,7 +21,9 @@ public class NPCHitFlag1 extends UpdateFlag<HitMark> {
 
 	@Override
 	public void write(IoBuffer buffer) {
-		buffer.putC(context.getDamage()).putS(context.getType());
+
+		buffer.putSmart(context.getDamage());
+		buffer.putC(context.getType());
 	}
 
 	@Override
