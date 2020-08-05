@@ -19,6 +19,7 @@ import core.game.system.task.TaskExecutor;
 import core.net.Constants;
 import core.net.IoSession;
 import core.net.event.LoginReadEvent;
+import core.tools.StringUtils;
 
 /**
  * Handles the registry of new accounts.
@@ -60,7 +61,8 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 		int day,month,year,country;
 		switch (opcode) {
 			case 21://username
-				final String username = ByteBufferUtils.getString(buffer).replace(" ", "_").toLowerCase().replace("|", "");
+				final String username = StringUtils.longToString(buffer.getLong()).replace(" ", "_").toLowerCase().replace("|", "");
+				System.out.println("Looking up username - AccountRegister :: " + username);
 				if (username.length() <= 0 || username.length() > 12) {
 					response(session, RegistryResponse.INVALID_USERNAME);
 					break;
@@ -70,20 +72,17 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 					response(session,RegistryResponse.INVALID_USERNAME);
 					break;
 				}
-				TaskExecutor.executeSQL(new Runnable() {
-					@Override
-					public void run() {
-						try {
-							if (PlayerSQLManager.hasSqlAccount(username, "username")) {
-								System.out.println("Non avail user");
-								response(session, RegistryResponse.NOT_AVAILBLE_USER);
-								return;
-							}
-							System.out.println("User success");
-							response(session, RegistryResponse.SUCCESS);
-						} catch (SQLException e) {
-							e.printStackTrace();
+				TaskExecutor.executeSQL(() -> {
+					try {
+						if (PlayerSQLManager.hasSqlAccount(username, "username")) {
+							System.out.println("Non avail user");
+							response(session, RegistryResponse.NOT_AVAILBLE_USER);
+							return;
 						}
+						System.out.println("User success");
+						response(session, RegistryResponse.SUCCESS);
+					} catch (SQLException e) {
+						e.printStackTrace();
 					}
 				});
 				break;
@@ -95,17 +94,19 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 				response(session, RegistryResponse.SUCCESS);
 				break;
 			case 22://Register details
-				buffer.get();
 				System.out.println("Registering details");
-				buffer = LoginReadEvent.encryptUsingRSA(buffer);
-				buffer.getShort();
+//				buffer = LoginReadEvent.encryptUsingRSA(buffer);
+				int length = buffer.getShort();
 				int revision = buffer.getShort();//revision?
+				System.out.println(revision);
 				if (revision != Constants.REVISION) {
 					System.out.println("Revision mistmatch");
 					response(session, RegistryResponse.CANNOT_CREATE);
 					break;
 				}
-				final String name = ByteBufferUtils.getString(buffer).replace(" ", "_").toLowerCase().replace("|", "");
+				buffer.get();
+				buffer.getShort();
+				final String name = StringUtils.longToString(buffer.getLong()).replace(" ", "_").toLowerCase().replace("|", "");
 				buffer.getInt();
 				String password = ByteBufferUtils.getString(buffer);
 				if (password.length() < 5 || password.length() > 20) {
@@ -128,6 +129,7 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 				year = buffer.getShort();
 				country = buffer.getShort();
 				buffer.getInt();
+				String email = ByteBufferUtils.getString(buffer);
 				@SuppressWarnings("deprecation")
 				final RegistryDetails details = new RegistryDetails(name, SystemManager.getEncryption().hashPassword(password), new Date(year, month, day), country);
 				TaskExecutor.execute(new Runnable() {

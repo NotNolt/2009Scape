@@ -51,12 +51,12 @@ public final class HSReadEvent extends IoReadEvent {
 			break;
 
 //		case 147:
-//		case 186:
-//		case 36:
-//		case 21:
-//			System.out.println("Reading Account Register...");
-//			AccountRegister.read(session, opcode, buffer);
-//			break;
+		case 22:
+		case 20:
+		case 21:
+			System.out.println("Reading Account Register...");
+			AccountRegister.read(session, opcode, buffer);
+			break;
 
 		case 23:	// World list
 			System.out.println("Updating world list information");
