@@ -48,6 +48,6 @@ public class ChatFlag extends UpdateFlag<ChatMessage> {
 	 * @return The mask data.
 	 */
 	public static int maskData() {
-		return 0x80;
+		return 0x40;
 	}
 }

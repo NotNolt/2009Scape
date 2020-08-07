@@ -234,17 +234,13 @@ public class Class131_Sub2_Sub38 extends Class131_Sub2
     public static void method1645(byte arg0) {
 	try {
 	    if (arg0 <= -50) {
-		for (Class131_Sub33 class131_sub33
-			 = ((Class131_Sub33)
-			    Class83.aClass180_1096.method2520(0));
+		for (Class131_Sub33 class131_sub33 = ((Class131_Sub33)Class83.aClass180_1096.method2520(0));
 		     class131_sub33 != null;
-		     class131_sub33 = ((Class131_Sub33)
-				       Class83.aClass180_1096.method2518(0))) {
+		     class131_sub33 = ((Class131_Sub33)Class83.aClass180_1096.method2518(0))) {
 		    int i = class131_sub33.anInt4556;
 		    if (Class126.method1108((byte) -92, i)) {
 			boolean bool = true;
-			Class173[] class173s
-			    = Class131_Sub2_Sub9.aClass173ArrayArray5684[i];
+			Class173[] class173s = Class131_Sub2_Sub9.aClass173ArrayArray5684[i];
 			for (int i_6_ = 0; (i_6_ < class173s.length); i_6_++) {
 			    if (class173s[i_6_] != null) {
 				bool = class173s[i_6_].aBoolean2355;

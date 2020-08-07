@@ -65,7 +65,7 @@ public class FaceLocationFlag extends UpdateFlag<Location> {
 
 	@Override
 	public int data() {
-		return 0x40;
+		return 0x80;
 	}
 
 	@Override

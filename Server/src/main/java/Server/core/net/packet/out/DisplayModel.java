@@ -34,12 +34,12 @@ public final class DisplayModel implements OutgoingPacket<DisplayModelContext> {
 			buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
 			buffer.putLEShortA(context.getNodeId());
 			break;
-//		case MODEL:
-//			buffer = new IoBuffer(130);
-//			buffer.putLEInt(context.getInterfaceId() << 16 | context.getChildId());
-//			buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
-//			buffer.putShortA(context.getNodeId());
-//			break;
+		case MODEL:
+			buffer = new IoBuffer(53); //Possible 188
+			buffer.putIntB(context.getInterfaceId() << 16 | context.getChildId());
+			buffer.putShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+			buffer.putLEShort(context.getNodeId());
+			break;
 		default:
 			return;
 		}

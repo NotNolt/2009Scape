@@ -60,16 +60,11 @@ public class Class52
 	    if (arg0) {
 		if (ObjectDefinition.anInt2674 != -1)
 		    RuntimeException_Sub1.method2832(ObjectDefinition.anInt2674, 0);
-		for (Class131_Sub33 class131_sub33
-			 = ((Class131_Sub33)
-			    Class83.aClass180_1096.method2520(0));
+		for (Class131_Sub33 class131_sub33 = ((Class131_Sub33) Class83.aClass180_1096.method2520(0));
 		     class131_sub33 != null;
-		     class131_sub33 = ((Class131_Sub33)
-				       Class83.aClass180_1096.method2518(0))) {
+		     class131_sub33 = ((Class131_Sub33) Class83.aClass180_1096.method2518(0))) {
 		    if (!class131_sub33.method1352(true)) {
-			class131_sub33
-			    = ((Class131_Sub33)
-			       Class83.aClass180_1096.method2520(0));
+			class131_sub33 = ((Class131_Sub33) Class83.aClass180_1096.method2520(0));
 			if (class131_sub33 == null)
 			    break;
 		    }
@@ -87,16 +82,15 @@ public class Class52
 	    Class171.method2449(1);
 	    Class23_Sub5_Sub2.anInt5048 = -1;
 	    Class37.method492(Class53.anInt708, 1);
-	    Class166.aClass23_Sub4_Sub1_Sub2_2216
-		= new Player();
+	    Class166.aClass23_Sub4_Sub1_Sub2_2216 = new Player();
 	    Class166.aClass23_Sub4_Sub1_Sub2_2216.anIntArray5328[0] = 52;
 	    Class166.aClass23_Sub4_Sub1_Sub2_2216.anInt3733 = 6656;
 	    Class166.aClass23_Sub4_Sub1_Sub2_2216.anInt3747 = 6656;
 	    Class2.anInt84 = Class57.anInt753 = 0;
 	    Class166.aClass23_Sub4_Sub1_Sub2_2216.anIntArray5331[0] = 52;
 	    if (Class131_Sub2_Sub34.anInt6035 == 2) {
-		Class2.anInt84 = Class154.anInt2046 << 677723815;
-		Class57.anInt753 = Class1_Sub3.anInt3536 << -2105738713;
+		Class2.anInt84 = Class154.anInt2046 << 7;
+		Class57.anInt753 = Class1_Sub3.anInt3536 << 7;
 	    } else
 		Class69.method737((byte) 102);
 	    Class121_Sub1.method1043(-125);
@@ -107,9 +101,7 @@ public class Class52
 		Class175.method2484(10, (byte) -123);
 	    int i = -46 % ((91 - arg1) / 32);
 	} catch (RuntimeException runtimeexception) {
-	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
-						("fa.C(" + arg0 + ',' + arg1
-						 + ')'));
+	    throw Class131_Sub2_Sub6.method1495(runtimeexception, ("fa.C(" + arg0 + ',' + arg1 + ')'));
 	}
     }
     

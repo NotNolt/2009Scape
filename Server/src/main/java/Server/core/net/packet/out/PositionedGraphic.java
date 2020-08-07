@@ -8,7 +8,7 @@ import core.net.packet.context.PositionedGraphicContext;
 
 /**
  * The positioned graphic outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class PositionedGraphic implements OutgoingPacket<PositionedGraphicContext> {
 

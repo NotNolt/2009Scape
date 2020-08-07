@@ -467,17 +467,16 @@ public class Class190
 						 + ')'));
 	}
     }
-    
+//Error 8/6/2020					  35979642,		-24
     public static Class173 method2615(int arg0, int arg1) {
 	try {
 	    anInt2793++;
-	    int i = arg0 >> -1724944720;
+	    int i = arg0 >> 16;
 	    if (arg1 >= -3)
 		method2613(42);
 	    int i_10_ = 0xffff & arg0;
-	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null
-		|| (Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_]
-		    == null)) {
+	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null || (Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_] == null)) { //Fail point
+	    System.out.println("Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null!! || Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_] == null");
 		boolean bool = Class126.method1108((byte) -92, i);
 		if (!bool)
 		    return null;
@@ -485,8 +484,7 @@ public class Class190
 	    return Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_];
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
-						("td.A(" + arg0 + ',' + arg1
-						 + ')'));
+						("td.A(" + arg0 + ',' + arg1 + ')'));
 	}
     }
     

@@ -8,14 +8,13 @@ import core.net.packet.context.GrandExchangeContext;
 
 /**
  * The outgoing packet used for updating a player's grand exchange data.
- * @author Emperor
- * @author Vexia
+ * @author Woah
  */
 public class GrandExchangePacket implements OutgoingPacket<GrandExchangeContext> {
 
 	@Override
 	public void send(GrandExchangeContext context) {
-		final IoBuffer buffer = new IoBuffer(116, PacketHeader.NORMAL);
+		final IoBuffer buffer = new IoBuffer(134, PacketHeader.NORMAL);
 		buffer.put((byte) context.getOffer().getIndex());
 		if (context.getOffer().getState() != OfferState.REMOVED) {
 			int state = context.getOffer().getState().ordinal() + 1;

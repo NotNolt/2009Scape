@@ -63,8 +63,11 @@ public class Class121_Sub2 extends Class121
     
     public static void readMapRegion(boolean arg0, boolean arg1) {
 	try {
-	    if (arg1 != true)
+	    if (!arg1)
 		method1051(43, 85, -100, 78, 104, 95, 46);
+	    if (!arg1) {
+			System.out.println("Arg 1 " + arg1);
+		}
 	    anInt3988++;
 	    Class131_Sub4.aBoolean4134 = arg0;
 	    if (Class131_Sub4.aBoolean4134) {
@@ -75,6 +78,7 @@ public class Class121_Sub2 extends Class121
 		int i_4_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShortA(false);
 		int i_5_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteC(4095);
 		int i_6_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+		System.out.println("Reading Map region || aBoolean 4134 || readMapRegion");
 		Class81.method789(4, i_2_);
 		Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1794(115);
 		for (int i_7_ = 0; i_7_ < 4; i_7_++) {
@@ -94,16 +98,12 @@ public class Class121_Sub2 extends Class121
 		    }
 		}
 		Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1788(320);
-		int i_11_ = ((Class131_Sub8_Sub1.anInt6100
-			      - (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				 .anInt4360))
-			     / 16);
+		int i_11_ = ((Class131_Sub8_Sub1.anInt6100 - (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360)) / 16);
 		Class131_Sub2_Sub14.anIntArrayArray5746 = new int[i_11_][4];
 		for (int i_12_ = 0;
              i_11_ > i_12_; i_12_++) {
 		    for (int i_13_ = 0; i_13_ < 4; i_13_++)
-			Class131_Sub2_Sub14.anIntArrayArray5746[i_12_][i_13_]
-			    = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2);
+			Class131_Sub2_Sub14.anIntArrayArray5746[i_12_][i_13_] = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2);
 		}
 		Class131_Sub2_Sub16.anIntArray5777 = new int[i_11_];
 		Class74.anIntArray1003 = new int[i_11_];
@@ -163,33 +163,21 @@ public class Class121_Sub2 extends Class121
 		Class110_Sub3.method948(false, i, bool, i_6_, i_4_, i_5_, 24,
 					i_3_);
 	    } else {
-		int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			    .readUnsignedLEShortA(-1);
-		int i_24_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readUnsignedShort(8104);
-		int i_25_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readUnsignedByte(-37);
-		boolean bool = (Class23_Sub3_Sub1
-                .aClass131_Sub15_Sub2_5231
-                .readUnsignedByteA((byte) -120) == 1);
-		int i_26_
-		    = ((-Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360
-			+ Class131_Sub8_Sub1.anInt6100)
-		       / 16);
+		int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShortA(-1);
+		int i_24_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+		int i_25_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-37);
+		boolean bool = (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteA((byte) -120) == 1);
+		int i_26_ = ((-Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360 + Class131_Sub8_Sub1.anInt6100) / 16);
+		System.out.println("Reading Map region ELSE || readMapRegion");
 		Class131_Sub2_Sub14.anIntArrayArray5746 = new int[i_26_][4];
 		for (int i_27_ = 0;
              i_26_ > i_27_; i_27_++) {
 		    for (int i_28_ = 0; i_28_ < 4; i_28_++)
-			Class131_Sub2_Sub14.anIntArrayArray5746[i_27_][i_28_]
-			    = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				  .readUnsignedInt(-2);
+			Class131_Sub2_Sub14.anIntArrayArray5746[i_27_][i_28_] = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedInt(-2);
 		}
-		int i_29_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readUnsignedByteA((byte) 35);
-		int i_30_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readUnsignedShort(8104);
-		int i_31_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readUnsignedShort(8104);
+		int i_29_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByteA((byte) 35);
+		int i_30_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
+		int i_31_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedShort(8104);
 		Class81.method789(4, i_25_);
 		Class74.anIntArray1003 = new int[i_26_];
 		Class23_Sub3.anIntArray3719 = new int[i_26_];
@@ -203,32 +191,20 @@ public class Class121_Sub2 extends Class121
 		Class23.aByteArrayArray254 = new byte[i_26_][];
 		Class88.aByteArrayArray1146 = new byte[i_26_][];
 		boolean bool_32_ = false;
-		if ((i / 8 == 48
-		     || i / 8 == 49)
-		    && i_31_ / 8 == 48)
+		if ((i / 8 == 48 || i / 8 == 49) && i_31_ / 8 == 48)
 		    bool_32_ = true;
 		i_26_ = 0;
 		if (i / 8 == 48 && i_31_ / 8 == 148)
 		    bool_32_ = true;
-		for (int i_33_ = (i - (Class131_Sub41_Sub11_Sub1.anInt6546
-				       >> -468535292)) / 8;
-		     (((Class131_Sub41_Sub11_Sub1.anInt6546 >> -538649532)
-		       + i) / 8
-		      >= i_33_);
-		     i_33_++) {
-		    for (int i_34_ = (i_31_ + -(Class131_Sub2_Sub26.anInt5931
-						>> 1265916740)) / 8;
-			 (((Class131_Sub2_Sub26.anInt5931 >> 1959665924)
-			   + i_31_) / 8
-			  >= i_34_);
-			 i_34_++) {
+		for (int i_33_ = (i - (Class131_Sub41_Sub11_Sub1.anInt6546 >> 4)) / 8;
+			 (((Class131_Sub41_Sub11_Sub1.anInt6546 >> 4) + i) / 8 >= i_33_);
+			 i_33_++) {
+		    for (int i_34_ = (i_31_ + -(Class131_Sub2_Sub26.anInt5931 >> 4)) / 8;
+				 (((Class131_Sub2_Sub26.anInt5931 >> 4) + i_31_) / 8 >= i_34_);
+				 i_34_++) {
 			int i_35_ = i_34_ + (i_33_ << -275096216);
 			if (bool_32_
-			    && (i_34_ == 49 || i_34_ == 149
-				|| i_34_ == 147
-				|| i_33_ == 50
-				|| (i_33_ == 49
-				    && i_34_ == 47))) {
+			    && (i_34_ == 49 || i_34_ == 149 || i_34_ == 147 || i_33_ == 50 || (i_33_ == 49 && i_34_ == 47))) {
 			    Class74.anIntArray1003[i_26_] = i_35_;
 			    Class166.anIntArray2218[i_26_] = -1;
 			    Class23_Sub3.anIntArray3719[i_26_] = -1;
@@ -262,8 +238,8 @@ public class Class121_Sub2 extends Class121
 			i_26_++;
 		    }
 		}
-		Class110_Sub3.method948(false, i_31_, bool, i, i_24_, i_29_,
-					24, i_30_);
+		System.out.println("Passed Map Region Creation || Class121_Sub2 FROM Packet 76");
+		Class110_Sub3.method948(false, i_31_, bool, i, i_24_, i_29_, 24, i_30_);
 	    }
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,

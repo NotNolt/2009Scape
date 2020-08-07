@@ -110,7 +110,7 @@ public final class UpdateMasks {
 	public void write(Player p, Entity e, IoBuffer buffer) {
 		int maskData = this.maskData;
 		if (maskData >= 0x100) {
-			maskData |= e instanceof Player ? 0x10 : 0x8;
+			maskData |= e instanceof Player ? 0x1 : 0x8;
 			buffer.put(maskData).put(maskData >> 8);
 		} else {
 			buffer.put(maskData);

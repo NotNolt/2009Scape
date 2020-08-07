@@ -39,7 +39,7 @@ public final class WalkPacket implements IncomingPacket {
 		boolean running = buffer.getA() == 1;
 		int x = buffer.getShort();
 		int y = buffer.getShortA();
-		int steps = (buffer.toByteBuffer().remaining() - (buffer.opcode() == 39 ? 14 : 0)) >> 1;
+		int steps = (buffer.toByteBuffer().remaining() - (buffer.opcode() == 163 ? 119 : 0)) >> 1;
 		for (int i = 0; i < steps; i++) {
 			int offsetX = buffer.getA();
 			int offsetY = buffer.getS();
@@ -61,7 +61,7 @@ public final class WalkPacket implements IncomingPacket {
 				return true;
 			}
 		}, true, "movement");
-		if (opcode == 39) {
+		if (opcode == 163) {
 			buffer.get(); // The x-coordinate of where we clicked on the
 			// minimap.
 			buffer.get(); // The y-coordinate of where we clicked on the

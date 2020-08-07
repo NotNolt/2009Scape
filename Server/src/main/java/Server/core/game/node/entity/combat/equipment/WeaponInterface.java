@@ -145,7 +145,7 @@ public final class WeaponInterface extends Component {
 	 * @param player The player.
 	 */
 	public WeaponInterface(Player player) {
-		super(92);
+		super(884);
 		this.player = player;
 		player.addExtension(WeaponInterface.class, this);
 	}
@@ -160,7 +160,7 @@ public final class WeaponInterface extends Component {
 	 * Opens the interface.
 	 */
 	private void open() {
-		ComponentDefinition definition = ComponentDefinition.forId(92);
+		ComponentDefinition definition = ComponentDefinition.forId(884);
 		boolean resizable = player.getInterfaceManager().isResizable();
 		PacketRepository.send(Interface.class, new InterfaceContext(player, definition.getWindowPaneId(resizable), definition.getChildId(resizable), id, definition.isWalkable()));
 		int slot = ensureStyleIndex(player, player.getSettings().getAttackStyleIndex());

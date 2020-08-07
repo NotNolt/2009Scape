@@ -114,15 +114,10 @@ public class Class110_Sub3 extends Class110
 	}
     }
     
-    public static void method948(boolean arg0, int arg1, boolean arg2,
-				 int arg3, int arg4, int arg5, int arg6,
-				 int arg7) {
+    public static void method948(boolean arg0, int arg1, boolean arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 	try {
 	    anInt3917++;
-	    if (arg2 || arg3 != Class131_Sub41_Sub13.anInt6326
-		|| Class173.anInt2372 != arg1
-		|| (arg5 != Class1_Sub8.anInt3600
-		    && !Class9.method182((byte) -32))) {
+	    if (arg2 || arg3 != Class131_Sub41_Sub13.anInt6326 || Class173.anInt2372 != arg1 || (arg5 != Class1_Sub8.anInt3600 && !Class9.method182((byte) -32))) {
 		Class131_Sub41_Sub13.anInt6326 = arg3;
 		Class1_Sub8.anInt3600 = arg5;
 		Class173.anInt2372 = arg1;
@@ -132,33 +127,22 @@ public class Class110_Sub3 extends Class110
 		    Class175.method2484(25, (byte) -126);
 		else
 		    Class175.method2484(28, (byte) -126);
-		Class131_Sub41_Sub5.method1957(true, arg6 ^ ~0x7485,
-					       Class14.LoadingPleaseWaitString,
-					       Class184.aClass44_2633);
+		Class131_Sub41_Sub5.method1957(true, arg6 ^ ~0x7485, Class14.LoadingPleaseWaitString, Class184.aClass44_2633);
 		int i = Class92.anInt1191;
 		int i_7_ = Class64.anInt818;
-		Class92.anInt1191 = (Class131_Sub41_Sub13.anInt6326
-				     + -(Class131_Sub41_Sub11_Sub1.anInt6546
-					 >> -1977238876)) * 8;
-		Class64.anInt818
-		    = 8 * (-(Class131_Sub2_Sub26.anInt5931 >> 787680644)
-			   + Class173.anInt2372);
-		Class131_Sub2_Sub36.aClass131_Sub41_Sub1_6051
-		    = Class127.method1127(Class131_Sub41_Sub13.anInt6326 * 8,
-					  8 * Class173.anInt2372);
+		Class92.anInt1191 = (Class131_Sub41_Sub13.anInt6326 + -(Class131_Sub41_Sub11_Sub1.anInt6546 >> 4)) * 8;
+		Class64.anInt818 = 8 * (-(Class131_Sub2_Sub26.anInt5931 >> 4) + Class173.anInt2372);
+		Class131_Sub2_Sub36.aClass131_Sub41_Sub1_6051 = Class127.method1127(Class131_Sub41_Sub13.anInt6326 * 8, 8 * Class173.anInt2372);
 		Class131_Sub8.DefaultNull = null;
 		int i_8_ = Class92.anInt1191 + -i;
 		int i_9_ = -i_7_ + Class64.anInt818;
 		if (arg0) {
 		    Class131_Sub41_Sub2.anInt6186 = 0;
-		    int i_12_
-			= Class131_Sub41_Sub11_Sub1.anInt6546 * 128 - 128;
+		    int i_12_ = Class131_Sub41_Sub11_Sub1.anInt6546 * 128 - 128;
 		    int i_13_ = Class131_Sub2_Sub26.anInt5931 * 128 + -128;
 		    for (int i_14_ = 0; i_14_ < 32768;
                  i_14_++) {
-			Class23_Sub4_Sub1_Sub1 class23_sub4_sub1_sub1
-			    = (Class23_Sub4_Sub2
-			       .aClass23_Sub4_Sub1_Sub1Array5379[i_14_]);
+			Class23_Sub4_Sub1_Sub1 class23_sub4_sub1_sub1 = (Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379[i_14_]);
 			if (class23_sub4_sub1_sub1 != null) {
 			    class23_sub4_sub1_sub1.anInt3747 -= 128 * i_9_;
 			    class23_sub4_sub1_sub1.anInt3733 -= i_8_ * 128;
@@ -243,8 +227,7 @@ public class Class110_Sub3 extends Class110
 		    }
 		}
 		ItemDefinition.anInt300 = arg5;
-		Class166.aClass23_Sub4_Sub1_Sub2_2216
-		    .method358(false, true, arg4, ItemDefinition.anInt300, arg7);
+		Class166.aClass23_Sub4_Sub1_Sub2_2216.method358(false, true, arg4, ItemDefinition.anInt300, arg7);
 		Class127_Sub1.method1136(i_9_, i_8_, 16383);
 		for (Class131_Sub3 class131_sub3
 			 = ((Class131_Sub3)

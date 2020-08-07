@@ -6,7 +6,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * Handles the graphic update flag.
- * @author Emperor
+ * @author Woah
  * 
  */
 public final class GraphicFlag extends UpdateFlag<Graphics> {

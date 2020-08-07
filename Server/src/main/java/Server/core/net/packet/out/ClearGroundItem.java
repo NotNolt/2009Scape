@@ -9,7 +9,7 @@ import core.net.packet.context.BuildItemContext;
 
 /**
  * Represents the outgoing packet of clearing ground items.
- * @author Emperor
+ * @author Woah
  */
 public final class ClearGroundItem implements OutgoingPacket<BuildItemContext> {
 
@@ -21,9 +21,8 @@ public final class ClearGroundItem implements OutgoingPacket<BuildItemContext> {
 	public static IoBuffer write(IoBuffer buffer, Item item) {
 		Location l = item.getLocation();
 		buffer.put(221);
-		buffer.putS((byte) 0);
-		buffer.putShort(item.getId());
 		buffer.putS((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7)).putShort(item.getId());
+		buffer.putShort(item.getId());
 		return buffer;
 	}
 

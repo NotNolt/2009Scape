@@ -57,15 +57,13 @@ public class ClientScriptDefinition
     
     public static void method2433(int arg0) {
 	if (arg0 != -1 && Class126.method1108((byte) -92, arg0)) {
-	    Class173[] class173s
-		= Class131_Sub2_Sub9.aClass173ArrayArray5684[arg0];
+	    Class173[] class173s = Class131_Sub2_Sub9.aClass173ArrayArray5684[arg0];
 	    for (int i = 0; i < class173s.length; i++) {
 		Class173 class173 = class173s[i];
 		if (class173.anObjectArray2426 != null) {
 		    Class131_Sub14 class131_sub14 = new Class131_Sub14();
 		    class131_sub14.aClass173_4276 = class173;
-		    class131_sub14.anObjectArray4281
-			= class173.anObjectArray2426;
+		    class131_sub14.anObjectArray4281 = class173.anObjectArray2426;
 		    method2436(class131_sub14, 2000000);
 		}
 	    }
@@ -1494,17 +1492,10 @@ public class ClientScriptDefinition
 				i -= 2;
 				int i_76_ = anIntArray2249[i];
 				int i_77_ = anIntArray2249[i + 1];
-				Class131_Sub33 class131_sub33
-				    = ((Class131_Sub33)
-				       Class83.aClass180_1096
-					   .method2521(-126, (long) i_76_));
+				Class131_Sub33 class131_sub33 = ((Class131_Sub33) Class83.aClass180_1096.method2521(-126, (long) i_76_));
 				if (class131_sub33 != null)
-				    Class204.method2730((class131_sub33
-							 .anInt4556) != i_77_,
-							25697, class131_sub33,
-							true);
-				Class131_Sub7.method1669(i_77_, 3, true, false,
-							 i_76_);
+				    Class204.method2730((class131_sub33.anInt4556) != i_77_, 25697, class131_sub33, true);
+				Class131_Sub7.method1669(i_77_, 3, true, false, i_76_);
 				break;
 			    }
 			    if (i_4_ == 3112) {
@@ -4273,9 +4264,7 @@ public class ClientScriptDefinition
 				i -= 2;
 				int i_345_ = anIntArray2249[i];
 				int i_346_ = anIntArray2249[i + 1];
-				anIntArray2249[i++]
-				    = (Class101.method886(i_345_, 4, i_346_)
-				       ? 1 : 0);
+				anIntArray2249[i++] = (Class101.method886(i_345_, 4, i_346_) ? 1 : 0);
 				break;
 			    }
 			    if (i_4_ == 5429) {

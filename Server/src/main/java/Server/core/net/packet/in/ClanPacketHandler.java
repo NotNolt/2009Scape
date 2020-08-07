@@ -44,7 +44,7 @@ public class ClanPacketHandler implements IncomingPacket {
 				player.getCommunication().setClan(clan);
 			}
 			break;
-		case 47:
+		case 77: //Leave Clan Packet
 			int rank = buffer.getA();
 			name = StringUtils.longToString(buffer.getLong());
 			if (WorldCommunicator.isEnabled()) {

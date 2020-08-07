@@ -33,7 +33,7 @@ public final class InterfaceManager {
 	/**
 	 * The default tabs.
 	 */
-	public static final int[] DEFAULT_TABS = { 92, 320, 274, 149, 387, 271, 192, 662, 550, 551, 589, 261, 464, 187, 182 };
+	public static final int[] DEFAULT_TABS = { 884, 320, 190, 259, 149, 387, 271, 430, 662, 550, 551, 589, 261, 464, 187, 34, 182 };
 
 	/**
 	 * The player.
@@ -58,7 +58,7 @@ public final class InterfaceManager {
 	/**
 	 * The tabs.
 	 */
-	private Component[] tabs = new Component[15];
+	private Component[] tabs = new Component[17];
 
 	/**
 	 * The chatbox component.
@@ -367,12 +367,12 @@ public final class InterfaceManager {
 					}
 					openTab(0, inter);
 					break;
-				case 6:
-					openTab(6, new Component(player.getSpellBookManager().getSpellBook())); // Magic
-					break;
 				case 7:
+					openTab(7, new Component(player.getSpellBookManager().getSpellBook())); // Magic
+					break;
+				case 8:
 					if (player.getFamiliarManager().hasFamiliar()) {
-						openTab(7, new Component(662));
+						openTab(8, new Component(662));
 					}
 					break;
 				default:
@@ -401,21 +401,23 @@ public final class InterfaceManager {
 		//sendTab(16, 747); // Summoning bar
 		openTab(0, inter); // Attack
 		openTab(1, new Component(320)); // Skills
-		openTab(2, new Component(274)); // Quest
-		openTab(3, new Component(149)); // inventory
-		openTab(4, new Component(387)); // Equipment
-		openTab(5, new Component(271)); // Prayer
-		openTab(6, new Component(player.getSpellBookManager().getSpellBook())); // Magic
+		openTab(2, new Component(190)); // Quest
+		openTab(3, new Component(259)); // Achievement
+		openTab(4, new Component(149)); // inventory
+		openTab(5, new Component(387)); // Equipment
+		openTab(6, new Component(271)); // Prayer
+		openTab(7, new Component(player.getSpellBookManager().getSpellBook())); // Magic
 		if (player.getFamiliarManager().hasFamiliar()) {
-			openTab(7, new Component(662)); // summoning.
+			openTab(8, new Component(662)); // summoning.
 		}
-		openTab(8, new Component(550)); // Friends
-		openTab(9, new Component(551)); // Ignores
-		openTab(10, new Component(589)); // Clan chat
-		openTab(11, new Component(261)); // Settings
-		openTab(12, new Component(464)); // Emotes
-		openTab(13, new Component(187)); // Music
-		openTab(14, new Component(182)); // Logout
+		openTab(9, new Component(550)); // Friends
+		openTab(10, new Component(551)); // Ignores
+		openTab(11, new Component(589)); // Clan chat
+		openTab(12, new Component(261)); // Settings
+		openTab(13, new Component(464)); // Emotes
+		openTab(14, new Component(187)); // Music
+		openTab(15, new Component(34)); // Notes
+		openTab(16, new Component(182)); // Logout
 		if (player.getProperties().getAutocastSpell() != null) {
 			inter.selectAutoSpell(inter.getAutospellId(player.getProperties().getAutocastSpell().getSpellId()), true);
 		}
@@ -426,13 +428,13 @@ public final class InterfaceManager {
 	 */
 	public void openInfoBars() {
 		//Hp orb
-		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 13 : 70, 748, true));
+		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 163 : 133, 748, true));
 		//Prayer orb
-		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 14 : 71, 749, true));
+		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 164 : 134, 749, true));
 		//Energy orb
-		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 15 : 72, 750, true));
+		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 165 : 135, 750, true));
 		//Summoning bar
-		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 16 : 73, 747, true));	
+		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 166 : 137, 747, true));
 		//Split PM
 		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 71 : 10, 754, true));
 	}
@@ -446,7 +448,7 @@ public final class InterfaceManager {
 			close(inter); // Attack
 		}
 		close(new Component(320)); // Skills
-		close(new Component(274)); // Quest
+		close(new Component(190)); // Quest
 		close(new Component(259)); // Diary
 		close(new Component(149)); // inventory
 		close(new Component(387)); // Equipment
@@ -459,6 +461,7 @@ public final class InterfaceManager {
 		close(new Component(261)); // Settings
 		close(new Component(464)); // Emotes
 		close(new Component(187)); // Music
+		close(new Component(34));  // Notes
 		close(new Component(182)); // Logout
 	}
 
@@ -468,7 +471,7 @@ public final class InterfaceManager {
 	 * @param component The component.
 	 */
 	public void openTab(int slot, Component component) {
-		if (component.getId() == 92 && !(component instanceof WeaponInterface)) {
+		if (component.getId() == 884 && !(component instanceof WeaponInterface)) {
 			throw new IllegalStateException("Attack tab can only be instanced as " + WeaponInterface.class.getCanonicalName() + "!");
 		}
 		if (component.getDefinition().getTabIndex() != slot) {
@@ -510,8 +513,8 @@ public final class InterfaceManager {
 	public void openChatbox(Component component) {
 		if (component.getId() == DEFAULT_CHATBOX) {
 			if (chatbox == null || (chatbox.getId() != DEFAULT_CHATBOX && chatbox.getDefinition().getType() == InterfaceType.CHATBOX)) {
-				PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 23 : 14, 751, true));
-				PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 70 : 75, 752, true));
+				PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 15 : 20, 751, true));
+				PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 18 : 140, 752, true));
 				PacketRepository.send(Interface.class, new InterfaceContext(player, InterfaceType.CHATBOX.getFixedPaneId(), InterfaceType.CHATBOX.getFixedChildId(), 137, true));
 			}
 			chatbox = component;

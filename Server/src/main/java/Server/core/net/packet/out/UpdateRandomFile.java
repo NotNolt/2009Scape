@@ -6,7 +6,7 @@ import core.net.packet.context.PlayerContext;
 
 /**
  * Updates the random.dat file for the player.
- * @author Emperor
+ * @author Woah
  */
 public final class UpdateRandomFile implements OutgoingPacket<PlayerContext> {
 

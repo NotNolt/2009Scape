@@ -67,8 +67,7 @@ public class Class41
 	    Client.method62(121);
 	    Class52.method601(true, (byte) 123);
 	    try {
-		Class30.method432(Class23_Sub4.aSignLink_3734.BrowserGameFrame,
-				  (byte) -100, "loggedout");
+		Class30.method432(Class23_Sub4.aSignLink_3734.BrowserGameFrame, (byte) -100, "loggedout");
 	    } catch (Throwable throwable) {
 		/* empty */
 	    }
@@ -88,7 +87,7 @@ public class Class41
 	    Class131_Sub23.anInt4451 = 0;
 	    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360 = 0;
 	    Class91.anInt1179 = -1;
-	    Class131_Sub35.anInt4583 = -1;
+	    Class131_Sub35.incomingOpcode = -1;
 	    Class160.anInt2129 = 0;
 	    Class89.method840(-122);
 	    Class131_Sub2_Sub26.method1597(-57);

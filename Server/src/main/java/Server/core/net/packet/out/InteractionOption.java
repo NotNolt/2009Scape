@@ -7,17 +7,17 @@ import core.net.packet.context.InteractionOptionContext;
 
 /**
  * Handles the interaction option changed outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class InteractionOption implements OutgoingPacket<InteractionOptionContext> {
 
 	@Override
 	public void send(InteractionOptionContext context) {
-		IoBuffer buffer = new IoBuffer(44, PacketHeader.BYTE);
-		buffer.putLEShortA(-1);
-		buffer.put(context.getIndex() == 0 ? 1 : 0);
-		buffer.put(context.getIndex() + 1);
+		IoBuffer buffer = new IoBuffer(73, PacketHeader.BYTE);
+		buffer.putLEShortA(65535);
 		buffer.putString(context.getName());
+		buffer.putC(context.getIndex() == 0 ? 1 : 0);
+		buffer.putS(context.getIndex() + 1);
 		context.getPlayer().getSession().write(buffer);
 	}
 

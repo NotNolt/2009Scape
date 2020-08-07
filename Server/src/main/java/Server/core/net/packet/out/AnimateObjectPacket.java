@@ -10,8 +10,7 @@ import core.net.packet.context.AnimateObjectContext;
 
 /**
  * Represents the packet used to animate an object.
- * @author Vexia
- * @date 10/11/2013
+ * @author Woah
  */
 public class AnimateObjectPacket implements OutgoingPacket<AnimateObjectContext> {
 
@@ -23,10 +22,10 @@ public class AnimateObjectPacket implements OutgoingPacket<AnimateObjectContext>
 	public static IoBuffer write(IoBuffer buffer, Animation animation) {
 		GameObject object = animation.getObject();
 		Location l = object.getLocation();
-		buffer.put(20);
-		buffer.putS((l.getChunkOffsetX() << 4) | (l.getChunkOffsetY() & 0x7));
-		buffer.putS((object.getType() << 2) + (object.getRotation() & 0x3));
-		buffer.putLEShort(animation.getId());
+		buffer.put(109);
+		buffer.putInt(animation.getId());
+		buffer.putC((object.getType() << 2) + (object.getRotation() & 0x3));
+		buffer.putLEShortA(object.getLocation().hashCode());
 		return buffer;
 	}
 

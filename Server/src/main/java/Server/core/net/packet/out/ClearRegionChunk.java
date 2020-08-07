@@ -7,7 +7,7 @@ import core.net.packet.context.ClearChunkContext;
 
 /**
  * Handles the clear region chunk outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class ClearRegionChunk implements OutgoingPacket<ClearChunkContext> {
 

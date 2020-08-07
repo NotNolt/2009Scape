@@ -9,7 +9,7 @@ import core.net.packet.context.BuildObjectContext;
 
 /**
  * The construct game object packet.
- * @author Emperor
+ * @author Woah
  */
 public final class ConstructObject implements OutgoingPacket<BuildObjectContext> {
 

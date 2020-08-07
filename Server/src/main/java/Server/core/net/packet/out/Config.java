@@ -6,7 +6,7 @@ import core.net.packet.OutgoingPacket;
 
 /**
  * The config outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public class Config implements OutgoingPacket<ConfigContext> {
 

@@ -397,14 +397,10 @@ public abstract class Class9
     public static void method185(int arg0, int arg1, int arg2) {
 	try {
 	    if (arg1 != 4095)
-		method183(-60, 77, -112, 61, -8, 7, 66, -37, -73, 36, -49,
-			  null);
+		method183(-60, 77, -112, 61, -8, 7, 66, -37, -73, 36, -49, null);
 	    anInt113++;
 	    if (Class126.method1108((byte) -92, arg0))
-		Class131_Sub41_Sub4.method1938((Class131_Sub2_Sub9
-						.aClass173ArrayArray5684
-						[arg0]),
-					       true, arg2);
+		Class131_Sub41_Sub4.method1938((Class131_Sub2_Sub9.aClass173ArrayArray5684[arg0]), true, arg2);
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
 						("ao.I(" + arg0 + ',' + arg1

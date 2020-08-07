@@ -184,12 +184,10 @@ public class Class126
 	    class131_sub7.anIntArray4170 = new int[class131_sub7.anInt4174];
 	    if (arg3 < 58)
 		CheckingForUpdatesString = null;
-	    class131_sub7.aClass139Array4179
-		= new SignlinkNode[class131_sub7.anInt4174];
+	    class131_sub7.aClass139Array4179 = new SignlinkNode[class131_sub7.anInt4174];
 	    class131_sub7.anIntArray4181 = new int[class131_sub7.anInt4174];
 	    class131_sub7.anIntArray4167 = new int[class131_sub7.anInt4174];
-	    class131_sub7.aClass139Array4177
-		= new SignlinkNode[class131_sub7.anInt4174];
+	    class131_sub7.aClass139Array4177 = new SignlinkNode[class131_sub7.anInt4174];
 	    class131_sub7.aByteArrayArrayArray4166
 		= new byte[class131_sub7.anInt4174][][];
 	    for (int i = 0; i < class131_sub7.anInt4174; i++) {
@@ -203,10 +201,7 @@ public class Class126
 			    i_18_ = arg0.readUnsignedInt(-2);
 			class131_sub7.anIntArray4167[i] = i_16_;
 			class131_sub7.anIntArray4181[i] = i_18_;
-			class131_sub7.aClass139Array4179[i]
-			    = arg1.method2708((byte) 81, string_17_,
-					      Class131_Sub41_Sub2
-						  .method1934(false, string));
+			class131_sub7.aClass139Array4179[i] = arg1.method2708((byte) 81, string_17_, Class131_Sub41_Sub2.method1934(false, string));
 		    } else if (i_16_ == 3 || i_16_ == 4) {
 			String string = arg0.readString(false);
 			String string_19_ = arg0.readString(false);

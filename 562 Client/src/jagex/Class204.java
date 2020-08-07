@@ -62,7 +62,7 @@ public class Class204
 		}
 		if (class131_sub33.anInt4555 == 3) {
 		    int i_1_ = (int) class131_sub33.aLong1791;
-		    if (i == i_1_ >>> -763547920)
+		    if (i == i_1_ >>> 16)
 			method2730(true, 25697, class131_sub33, arg3);
 		}
 	    }

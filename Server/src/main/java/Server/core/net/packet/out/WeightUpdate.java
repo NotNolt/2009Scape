@@ -6,7 +6,7 @@ import core.net.packet.context.PlayerContext;
 
 /**
  * Handles the outgoing weight update packet.
- * @author Emperor
+ * @author Woah
  */
 public final class WeightUpdate implements OutgoingPacket<PlayerContext> {
 

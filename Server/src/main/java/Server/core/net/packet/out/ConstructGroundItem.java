@@ -9,7 +9,7 @@ import core.net.packet.context.BuildItemContext;
 
 /**
  * Represents the outgoing packet of constructing a ground item.
- * @author Emperor
+ * @author Woah
  */
 public final class ConstructGroundItem implements OutgoingPacket<BuildItemContext> {
 
@@ -21,9 +21,7 @@ public final class ConstructGroundItem implements OutgoingPacket<BuildItemContex
 	public static IoBuffer write(IoBuffer buffer, Item item) {
 		Location l = item.getLocation();
 		buffer.put(22);
-		buffer.putLEShortA(item.getAmount());
-		buffer.putShort(item.getId());
-		buffer.putC(0);
+		buffer.putLEShortA(item.getAmount()).putShort(item.getId()).putC(l.getChunkX() << 4 | (l.getChunkOffsetY() & 0x7));
 		return buffer;
 	}
 

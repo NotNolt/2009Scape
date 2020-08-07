@@ -10,13 +10,13 @@ import core.tools.StringUtils;
 
 /**
  * Handles the update clan chat outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class UpdateClanChat implements OutgoingPacket<ClanContext> {
 
 	@Override
 	public void send(ClanContext context) {
-		IoBuffer buffer = new IoBuffer(55, PacketHeader.SHORT);
+		IoBuffer buffer = new IoBuffer(91, PacketHeader.SHORT);
 		ClanRepository clan = context.getClan();
 		if (context.isLeave()) {
 			buffer.putLong(0);

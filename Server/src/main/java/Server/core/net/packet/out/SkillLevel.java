@@ -13,6 +13,7 @@ public final class SkillLevel implements OutgoingPacket<SkillContext> {
 
 	@Override
 	public void send(SkillContext context) {
+		System.out.println("Sending SkillContext || Outgoing");
 		final IoBuffer buffer = new IoBuffer(38);
 		Skills skills = context.getPlayer().getSkills();
 		buffer.putA(skills.getLevel(context.getSkillId()));

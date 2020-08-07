@@ -11,7 +11,7 @@ import core.tools.StringUtils;
 
 /**
  * Handles the contact packet sending.
- * @author Emperor
+ * @author Woah
  */
 public final class ContactPackets implements OutgoingPacket<ContactContext> {
 
@@ -21,10 +21,10 @@ public final class ContactPackets implements OutgoingPacket<ContactContext> {
 		Player player = context.getPlayer();
 		switch (context.getType()) {
 		case ContactContext.UPDATE_STATE_TYPE:
-			buffer = new IoBuffer(197).put(WorldCommunicator.getState().value());
+			buffer = new IoBuffer(5).put(WorldCommunicator.getState().value());
 			break;
 		case ContactContext.IGNORE_LIST_TYPE:
-			buffer = new IoBuffer(126, PacketHeader.SHORT);
+			buffer = new IoBuffer(20, PacketHeader.SHORT);
 			for (String string : player.getCommunication().getBlocked()) {
 				if (string.length() == 0) {
 					continue;

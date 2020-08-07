@@ -12,7 +12,7 @@ import java.util.Random;
 
 /**
  * Handles communication message packet sending.
- * @author Emperor
+ * @author Woah
  */
 public final class CommunicationMessage implements OutgoingPacket<MessageContext> {
 

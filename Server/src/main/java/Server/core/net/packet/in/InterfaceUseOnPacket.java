@@ -37,7 +37,7 @@ public class InterfaceUseOnPacket implements IncomingPacket {
 		int x;
 		int y;
 		switch (buffer.opcode()) {
-		case 73: // Interface On GroundItem
+		case 54: // Interface On GroundItem
 			componentId = buffer.getShort();
 			interfaceId = buffer.getShort();
 			y = buffer.getShort();

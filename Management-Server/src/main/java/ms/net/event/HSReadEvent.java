@@ -40,7 +40,7 @@ public final class HSReadEvent extends IoReadEvent {
 			}
 			session.write(opcode);
 			break;
-		case 255: // World list
+		case 23: // World list
 			int updateStamp = buffer.getInt();
 			WorldDatabase.sendUpdate(session, updateStamp);
 			break;

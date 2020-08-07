@@ -12,11 +12,12 @@ public final class Interface implements OutgoingPacket<InterfaceContext> {
 
 	@Override
 	public void send(InterfaceContext context) {
+		System.out.println("Sending Interface || Outgoing");
 		IoBuffer buffer = new IoBuffer(56);
-		buffer.putShort(context.getComponentId());
+		buffer.putShort(context.getInterfaceId());
 		buffer.putS(context.isWalkable() ? 1 : 0);
 		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
-		buffer.putLEInt(context.getWindowId() << 16 & context.getInterfaceId());
+		buffer.putLEInt(context.getWindowId() << 16 | context.getComponentId());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 

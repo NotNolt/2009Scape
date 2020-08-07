@@ -73,7 +73,7 @@ public class ActionButtonPacket implements IncomingPacket {
 	 */
 	private Container getContainer(Player player, int componentId) {
 		switch (componentId) {
-		case 182:
+		case 149:
 			return player.getInventory();
 		}
 		return null;
@@ -296,10 +296,10 @@ public class ActionButtonPacket implements IncomingPacket {
 		}
 		int index = 0;
 		switch (opcode) {
-		case 156: // First option
+		case 234: // First option
 			index = 0;
 			break;
-		case 55: // Second option (wield/wear)
+		case 229: // Second option (wield/wear)
 			index = 1;
 			break;
 		case 153: // Third option
@@ -308,7 +308,7 @@ public class ActionButtonPacket implements IncomingPacket {
 		case 161: // Fourth option (summon)
 			index = 3;
 			break;
-		case 135: // Fifth option (drop/destroy)
+		case 248: // Fifth option (drop/destroy)
 			index = 4;
 			break;
 		}

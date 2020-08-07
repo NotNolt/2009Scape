@@ -2195,7 +2195,7 @@ public class Class131_Sub8 extends Class131
 			Class131_Sub41_Sub17.aBoolean6387 = true;
 			Class131_Sub41_Sub1.method1920(4120);
 			Class93.aClass131_Sub15_Sub2_1226.anInt4360 = 0;
-			Class131_Sub35.anInt4583 = -1;
+			Class131_Sub35.incomingOpcode = -1;
 			Class91.anInt1179 = -1;
 			Class131_Sub41_Sub19.anInt6414 = -1;
 			Class131_Sub23.anInt4451 = 0;

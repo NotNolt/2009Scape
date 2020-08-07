@@ -599,8 +599,7 @@ public class Client extends Applet_Sub1 {
 					method50(false);
 				Class110_Sub1.method941(107);
 				if (Class183_Sub1.aClass130_4960 != null)
-					Class183_Sub1.aClass130_4960.method1229((int) Class208
-							.method2749(-3913));
+					Class183_Sub1.aClass130_4960.method1229((int) Class208.method2749(-3913));
 				if (Class164.aClass34_2189 != null) {
 					int i = Class164.aClass34_2189.method460(-128);
 					Class1_Sub2.anInt3511 = i;
@@ -612,8 +611,7 @@ public class Client extends Applet_Sub1 {
 				} else if (Class133.anInt1803 == 5) {
 					method74((byte) -107);
 					Class100.method877(-1);
-				} else if (Class133.anInt1803 == 25
-						|| Class133.anInt1803 == 28)
+				} else if (Class133.anInt1803 == 25	|| Class133.anInt1803 == 28)
 					Class202.method2723(false);
 				if (Class133.anInt1803 == 10) {
 					method59((byte) 113);
@@ -1566,8 +1564,7 @@ public class Client extends Applet_Sub1 {
 								}
 								if (class173.anObjectArray2439 != null
 										&& (Class212.anInt3113 > class173.anInt2389)) {
-									if (class173.anIntArray2452 == null
-											|| (Class212.anInt3113 - class173.anInt2389) > 32) {
+									if (class173.anIntArray2452 == null	|| (Class212.anInt3113 - class173.anInt2389) > 32) {
 										Class131_Sub14 class131_sub14 = new Class131_Sub14();
 										class131_sub14.aClass173_4276 = class173;
 										class131_sub14.anObjectArray4281 = class173.anObjectArray2439;

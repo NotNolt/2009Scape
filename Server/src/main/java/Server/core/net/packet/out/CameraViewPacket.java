@@ -8,7 +8,7 @@ import core.net.packet.context.CameraContext;
 
 /**
  * Handles the outgoing camera view packets.
- * @author Emperor
+ * @author Woah
  */
 public final class CameraViewPacket implements OutgoingPacket<CameraContext> {
 

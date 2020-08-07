@@ -6,13 +6,13 @@ import core.net.packet.context.PlayerContext;
 
 /**
  * Handles the removal of the minimap flag.
- * @author Emperor
+ * @author Woah
  */
 public final class ClearMinimapFlag implements OutgoingPacket<PlayerContext> {
 
 	@Override
 	public void send(PlayerContext context) {
-		context.getPlayer().getDetails().getSession().write(new IoBuffer(5));
+		context.getPlayer().getDetails().getSession().write(new IoBuffer(250));
 	}
 
 }

@@ -13,7 +13,7 @@ public class InterfaceConfig implements OutgoingPacket<InterfaceConfigContext> {
 	@Override
 	public void send(InterfaceConfigContext context) {
 		IoBuffer buffer = new IoBuffer(3);
-		buffer.putShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putShortA(0);
 		buffer.putS(context.isHidden() ? 1 : 0);
 		buffer.putIntB(context.getInterfaceId() << 16 | context.getChildId());
 		context.getPlayer().getSession().write(buffer);

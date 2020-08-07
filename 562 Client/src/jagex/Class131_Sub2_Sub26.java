@@ -108,8 +108,7 @@ public class Class131_Sub2_Sub26 extends Class131_Sub2
 	    anInt5934++;
 	    if (Class126.method1108((byte) -92, arg1))
 		Class183_Sub1.method2546(-1, 0,
-					 (Class131_Sub2_Sub9
-					  .aClass173ArrayArray5684[arg1]));
+					 (Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1]));
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
 						("ol.F(" + arg0 + ',' + arg1

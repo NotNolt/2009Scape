@@ -15,7 +15,7 @@ public final class LoginPacket implements OutgoingPacket<PlayerContext> {
 
 	@Override
 	public void send(PlayerContext context) {
-		System.out.println("Sending Outgoing LoginPacket");
+		System.out.println("Sending LoginPacket || Outgoing");
 		Player p = context.getPlayer();
 		ByteBuffer buffer = ByteBuffer.allocate(11);
 		int right = context.getPlayer().getDetails().getRights() == Rights.PLAYER_MODERATOR ? 1: context.getPlayer().getDetails().getRights() == Rights.ADMINISTRATOR ? 2: 0;

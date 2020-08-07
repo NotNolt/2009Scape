@@ -31,9 +31,7 @@ public class Class180
 	    anInt2580++;
 	    if (aClass131_2576 == null)
 		return null;
-	    for (Class131 class131
-		     = aClass131Array2574[(int) ((long) (arg0 + anInt2586)
-						 & aLong2584)];
+	    for (Class131 class131 = aClass131Array2574[(int) ((long) (arg0 + anInt2586) & aLong2584)];
 		 aClass131_2576 != class131;
 		 aClass131_2576 = aClass131_2576.aClass131_1783) {
 		if (aLong2584 == aClass131_2576.aLong1791) {
@@ -124,13 +122,12 @@ public class Class180
 						"sf.G(" + arg0 + ')');
 	}
     }
-    
+//Part of RTE Packet 56			   -62		i_167_
     public Class131 method2521(int arg0, long arg1) {
 	try {
 	    anInt2585++;
 	    aLong2584 = arg1;
-	    Class131 class131
-		= aClass131Array2574[(int) (arg1 & (long) (-1 + anInt2586))];
+	    Class131 class131 = aClass131Array2574[(int) (arg1 & (long) (-1 + anInt2586))];
 	    aClass131_2576 = class131.aClass131_1783;
 	    int i = 87 / (arg0 / 42);
 	    for (/**/; class131 != aClass131_2576;
@@ -176,8 +173,7 @@ public class Class180
 		anInt2590++;
 		if (arg2.aClass131_1786 != null)
 		    arg2.method1355((byte) 117);
-		Class131 class131 = (aClass131Array2574
-				     [(int) ((long) (-1 + anInt2586) & arg1)]);
+		Class131 class131 = (aClass131Array2574[(int) ((long) (-1 + anInt2586) & arg1)]);
 		arg2.aClass131_1783 = class131;
 		arg2.aClass131_1786 = class131.aClass131_1786;
 		arg2.aClass131_1786.aClass131_1783 = arg2;

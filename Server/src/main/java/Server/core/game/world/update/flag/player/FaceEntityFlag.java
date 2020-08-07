@@ -26,7 +26,7 @@ public final class FaceEntityFlag extends UpdateFlag<Entity> {
 
 	@Override
 	public int data() {
-		return 0x2;
+		return 0x80;
 	}
 
 	@Override

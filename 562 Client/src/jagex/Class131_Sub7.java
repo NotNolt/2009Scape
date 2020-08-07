@@ -75,18 +75,16 @@ public class Class131_Sub7 extends Class131
 						 + ')'));
 	}
     }
-    
-    public static Class131_Sub33 method1669(int arg0, int arg1, boolean arg2,
-					    boolean arg3, int arg4) {
+//RTE 8/5/20    								2			1			false		  false		35979642
+    public static Class131_Sub33 method1669(int arg0, int arg1, boolean arg2, boolean arg3, int arg4) {
 	try {
 	    anInt4171++;
 	    Class131_Sub33 class131_sub33 = new Class131_Sub33();
 	    class131_sub33.anInt4555 = arg1;
 	    class131_sub33.anInt4556 = arg0;
-	    Class83.aClass180_1096.method2523(arg3, (long) arg4,
-					      class131_sub33);
+	    Class83.aClass180_1096.method2523(arg3, (long) arg4, class131_sub33);
 	    Class121.method1040((byte) -69, arg0);
-	    Class173 class173 = Class190.method2615(arg4, -24);
+	    Class173 class173 = Class190.method2615(arg4, -24); //RTE w/e arg4
 	    if (class173 != null)
 		Class23_Sub4_Sub4.method383(-96, class173);
 	    if (Class164.aClass173_2193 != null) {
@@ -102,10 +100,7 @@ public class Class131_Sub7 extends Class131
 		Class9.method185(ObjectDefinition.anInt2674, 4095, 1);
 	    return class131_sub33;
 	} catch (RuntimeException runtimeexception) {
-	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
-						("es.A(" + arg0 + ',' + arg1
-						 + ',' + arg2 + ',' + arg3
-						 + ',' + arg4 + ')'));
+	    throw Class131_Sub2_Sub6.method1495(runtimeexception,("es.A(" + arg0 + ',' + arg1 + ',' + arg2 + ',' + arg3 + ',' + arg4 + ')'));
 	}
     }
     

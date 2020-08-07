@@ -29,6 +29,7 @@ public final class PlayerRenderer {
 		IoBuffer buffer = new IoBuffer(107, PacketHeader.SHORT);
 		IoBuffer flags = new IoBuffer(-1, PacketHeader.NORMAL);
 		RenderInfo info = player.getRenderInfo();
+
 		updateLocalPosition(player, buffer, flags);
 		buffer.putBits(8, info.getLocalPlayers().size());
 		for (Iterator<Player> it = info.getLocalPlayers().iterator(); it.hasNext();) {
@@ -112,11 +113,11 @@ public final class PlayerRenderer {
 		}
 		boolean appearance = info.getAppearanceStamps()[other.getIndex() & 0x800] != other.getUpdateMasks().getAppearanceStamp();
 		boolean update = appearance || other.getUpdateMasks().isUpdateRequired() || other.getUpdateMasks().hasSynced();
-		buffer.putBits(1, update ? 1 : 0);
-		buffer.putBits(5, offsetX);
-		buffer.putBits(3, other.getDirection().ordinal());
-		buffer.putBits(1, other.getProperties().isTeleporting() ? 1 : 0);
 		buffer.putBits(5, offsetY);
+		buffer.putBits(5, offsetX);
+		buffer.putBits(1, other.getProperties().isTeleporting() ? 1 : 0);
+		buffer.putBits(1, update ? 1 : 0);
+		buffer.putBits(3, other.getDirection().ordinal());
 		info.getLocalPlayers().add(other);
 		if (update) {
 			if (appearance) {
@@ -136,10 +137,10 @@ public final class PlayerRenderer {
 		if (local.getPlayerFlags().isUpdateSceneGraph() || local.getProperties().isTeleporting()) {
 			buffer.putBits(1, 1); // Updating
 			buffer.putBits(2, 3); // Sub opcode
-			buffer.putBits(7, local.getLocation().getSceneY(local.getPlayerFlags().getLastSceneGraph()));
-			buffer.putBits(1, local.getProperties().isTeleporting() ? 1 : 0);
-			buffer.putBits(2, local.getLocation().getZ());
 			flagMaskUpdate(local, local, buffer, flags, false, false);
+			buffer.putBits(2, local.getLocation().getZ());
+			buffer.putBits(1, local.getProperties().isTeleporting() ? 1 : 0);
+			buffer.putBits(7, local.getLocation().getSceneY(local.getPlayerFlags().getLastSceneGraph()));
 			buffer.putBits(7, local.getLocation().getSceneX(local.getPlayerFlags().getLastSceneGraph()));
 		} else {
 			renderLocalPlayer(local, local, buffer, flags);

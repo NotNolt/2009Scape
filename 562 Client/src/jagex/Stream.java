@@ -627,9 +627,8 @@ public class Stream extends Class131 {
 			anInt4360 += 3;
 			if (arg0 != false)
 				anInt4360 = -30;
-			return ((aByteArray4324[-3 + anInt4360] << 46512016 & 0xff0000)
-					- -(0xff00 & aByteArray4324[-2 + anInt4360] << -1540663864) - -(0xff & aByteArray4324[anInt4360
-					+ -1]));
+			return ((aByteArray4324[-3 + anInt4360] << 16 & 0xff0000)
+					- -(0xff00 & aByteArray4324[-2 + anInt4360] << 8) - -(0xff & aByteArray4324[anInt4360 + -1]));
 		} catch (RuntimeException runtimeexception) {
 			throw Class131_Sub2_Sub6.method1495(runtimeexception, "il.GB("
 					+ arg0 + ')');

@@ -6,13 +6,13 @@ import core.net.packet.context.MinimapStateContext;
 
 /**
  * Handles the sending of the minimap state outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class MinimapState implements OutgoingPacket<MinimapStateContext> {
 
 	@Override
 	public void send(MinimapStateContext context) {
-		IoBuffer buffer = new IoBuffer(192).put(context.getState());
+		IoBuffer buffer = new IoBuffer(208).put(context.getState());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}
 

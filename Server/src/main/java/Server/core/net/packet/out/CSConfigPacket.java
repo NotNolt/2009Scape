@@ -11,18 +11,18 @@ import core.net.packet.context.CSConfigContext;
  */
 public class CSConfigPacket implements OutgoingPacket<CSConfigContext> {
 
+//	@Override
+//	public void send(CSConfigContext context) {
+//		IoBuffer buffer = new IoBuffer(70);
+//		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
+//		buffer.putString(context.toString());
+//		buffer.putInt(context.getId());
+//		context.getPlayer().getDetails().getSession().write(buffer);
+//	}
+
 	@Override
 	public void send(CSConfigContext context) {
 		IoBuffer buffer = new IoBuffer(70);
-		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
-		buffer.putString(context.toString());
-		buffer.putInt(context.getId());
-		context.getPlayer().getDetails().getSession().write(buffer);
-	}
-
-	/*@Override
-	public void send(CSConfigContext context) {
-		IoBuffer buffer = new IoBuffer(115);
 		buffer.putShort(context.getId());
 		buffer.putString(context.getTypes());
 
@@ -36,5 +36,5 @@ public class CSConfigPacket implements OutgoingPacket<CSConfigContext> {
 
 		buffer.putInt(context.getValue());
 		context.getPlayer().getDetails().getSession().write(buffer);
-	}*/
+	}
 }

@@ -203,20 +203,10 @@ public class PacketStream extends Stream
 		     (Class131_Sub2_Sub1.anInt5560 > i);
 		     i++) {
 		    int i_5_ = Class131_Sub35.anIntArray4589[i];
-		    if (Class125.anInt1632 != (Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379
-                    [i_5_].anInt5285)) {
-			if (Class23_Sub4_Sub2
-				.aClass23_Sub4_Sub1_Sub1Array5379[i_5_]
-				.aNPCDefinition_6474.method691(arg0 + 112))
-			    Class131_Sub35.method1873
-				(true,
-				 (Class23_Sub4_Sub2
-				  .aClass23_Sub4_Sub1_Sub1Array5379[i_5_]));
-			Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379
-			    [i_5_].method349(-126, null);
-			Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379
-			    [i_5_]
-			    = null;
+		    if (Class125.anInt1632 != (Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379[i_5_].anInt5285)) {
+			if (Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379[i_5_].aNPCDefinition_6474.method691(arg0 + 112))Class131_Sub35.method1873(true,(Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379[i_5_]));
+			Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379[i_5_].method349(-126, null);
+			Class23_Sub4_Sub2.aClass23_Sub4_Sub1_Sub1Array5379[i_5_] = null;
 		    }
 		}
 		if (Class131_Sub8_Sub1.anInt6100 != Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.anInt4360)

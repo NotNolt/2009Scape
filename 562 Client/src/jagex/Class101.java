@@ -58,20 +58,15 @@ public class Class101
 		Wave2Text = null;
 	    if (!Class131_Sub2_Sub24.aBoolean5890)
 		return false;
-	    int i = arg0 >> -1766289040;
+	    int i = arg0 >> 16;
 	    int i_2_ = 0xffff & arg0;
-	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null
-		|| Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_2_] == null)
+	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null || Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_2_] == null)
 		return false;
-	    Class173 class173
-		= Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_2_];
+	    Class173 class173 = Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_2_];
 	    if (arg2 != -1 || class173.anInt2470 != 0) {
-		for (Class131_Sub21 class131_sub21
-             = ((Class131_Sub21)
-			    NPCDefinition.aClass119_843.method1007(0));
+		for (Class131_Sub21 class131_sub21 = ((Class131_Sub21)NPCDefinition.aClass119_843.method1007(0));
              class131_sub21 != null;
-             class131_sub21 = ((Class131_Sub21)
-				       NPCDefinition.aClass119_843.method1014(0))) {
+             class131_sub21 = ((Class131_Sub21)NPCDefinition.aClass119_843.method1014(0))) {
 		    if ((arg2 == class131_sub21.anInt4444)
 			&& class131_sub21.anInt4441 == class173.anInt2455
 			&& (class131_sub21.anInt4442 == 22

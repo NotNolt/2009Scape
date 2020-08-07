@@ -175,7 +175,7 @@ public class Class131_Sub2_Sub16 extends Class131_Sub2
 		Class138.ClientDrop(true);
 		return true;
 	    } catch (Exception exception) {
-		String string = ("T2 - " + Class131_Sub35.anInt4583 + ","
+		String string = ("T2 - " + Class131_Sub35.incomingOpcode + ","
 				 + Class56.anInt738 + ","
 				 + Class131_Sub41_Sub19.anInt6414 + " - "
 				 + Class131_Sub8_Sub1.anInt6100 + ","

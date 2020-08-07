@@ -15,6 +15,7 @@ public final class UpdateSceneGraph implements OutgoingPacket<SceneGraphContext>
 
 	@Override
 	public void send(SceneGraphContext context) {
+		System.out.println("Sending UpdateSceneGraph || Outgoing");
 		IoBuffer buffer = new IoBuffer(76, PacketHeader.SHORT);
 		Player player = context.getPlayer();
 		boolean forceSend = true;

@@ -9,7 +9,7 @@ import core.net.packet.context.BuildItemContext;
 
 /**
  * Updates the ground item amount.
- * @author Emperor
+ * @author Woah
  */
 public final class UpdateGroundItemAmount implements OutgoingPacket<BuildItemContext> {
 

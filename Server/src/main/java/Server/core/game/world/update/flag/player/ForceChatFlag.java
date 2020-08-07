@@ -5,7 +5,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * The force chat update flag.
- * @author Emperor
+ * 	@author Woah
  *
  */
 public final class ForceChatFlag extends UpdateFlag<String> {

@@ -9,7 +9,7 @@ public class Class131_Sub35 extends Class131
     public Class152 aClass152_4580;
     public static int anInt4581;
     public boolean aBoolean4582;
-    public static int anInt4583 = 0;
+    public static int incomingOpcode = 0;
     public static int anInt4584;
     public static Class152[] aClass152Array4585;
     public static int anInt4586;
@@ -35,7 +35,7 @@ public class Class131_Sub35 extends Class131
 	try {
 	    anInt4579++;
 	    if (arg0 != true)
-		anInt4583 = -45;
+		incomingOpcode = -45;
 	    for (Class131_Sub19 class131_sub19
 		     = ((Class131_Sub19)
 			Class131_Sub4.aClass119_4133.method1007(0));

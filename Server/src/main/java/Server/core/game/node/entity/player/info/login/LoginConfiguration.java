@@ -75,6 +75,7 @@ public final class LoginConfiguration {
         player.updateSceneGraph(true);
         if (!player.isArtificial() && TutorialSession.getExtension(player).getStage() >= TutorialSession.MAX_STAGE && player.getAttribute("login_type", LoginType.NORMAL_LOGIN) != LoginType.RECONNECT_TYPE) {
             sendLobbyScreen(player);
+//            configureGameWorld(player);
         } else {
             configureGameWorld(player);
         }
@@ -88,20 +89,24 @@ public final class LoginConfiguration {
     public static void sendLobbyScreen(Player player) {
         System.out.println("Sending Lobby Screen");
         Repository.getLobbyPlayers().add(player);
-        player.getPacketDispatch().sendString(getLastLogin(player), 378, 116);
-        System.out.println("Sending Last Login Info with Interfaces 378, line 116");
-        player.getPacketDispatch().sendString("Welcome to " + GameWorld.getName(), 378, 115);
-        System.out.println("Sending Welcome to Game String");
-        player.getPacketDispatch().sendString(SystemManager.getSystemConfig().getConfig("weeklyMessage", "Welcome to RuneScape!"), SystemManager.getSystemConfig().getConfig("messageInterface", 18), getMessageChild(SystemManager.getSystemConfig().getConfig("messageInterface", 18)));
-        System.out.println("Sending string gain more vote credits");
-        player.getPacketDispatch().sendString("You can gain more credits by voting, reporting bugs and various other methods of contribution.", 378, 93);
-        System.out.println("Trying to open Lobby Pane...");
+
+        player.getPacketDispatch().sendString("Welcome to " + GameWorld.getName(), 378, 113);
+        player.getPacketDispatch().sendString(getLastLoginText(player), 378, 114);
+        player.getPacketDispatch().sendString(getLastLoginIp(player), 378, 115);
+        player.getPacketDispatch().sendString("2009scape 2 the 562 boogaloo", 22, 6);
         player.getInterfaceManager().openWindowsPane(LOBBY_PANE);
-        System.out.println("Trying to open Lobby Interface...");
         player.getInterfaceManager().setOpened(LOBBY_INTERFACE);
-        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, true));
+
+
+        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, false));
+
+
         System.out.println("Sending Interfaces || LoginConfiguration...");
-        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, SystemManager.getSystemConfig().getConfig("messageInterface", 18), true));//UPDATE `configs` SET `value`=FLOOR(RAND()*(25-10)+10) WHERE key_="messageInterface"
+
+
+        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, 22, true));//UPDATE `configs` SET `value`=FLOOR(RAND()*(25-10)+10) WHERE key_="messageInterface"
+
+
         System.out.println("Sending Interfaces Message Interface || LoginConfiguration...");
     }
 
@@ -193,10 +198,15 @@ public final class LoginConfiguration {
     public static void sendGameConfiguration(final Player player) {
         System.out.println("Sending Game Configuration... || LoginConfiguration");
         player.getInterfaceManager().openWindowsPane(new Component(player.getInterfaceManager().isResizable() ? 746 : 548));
+        System.out.println("Opening Windows Pane || Login Configuration");
         player.getInterfaceManager().openChatbox(137);
+        System.out.println("Opening Chatbox || LoginConfiguration");
         player.getInterfaceManager().openDefaultTabs();
+        System.out.println("Opening Default Tabs || LoginConfiguration");
         welcome(player);
+        System.out.println("Sending Welcome to player || LoginConfiguration");
         config(player);
+        System.out.println("Player configuration initialized || LoginConfiguration");
         for (Plugin<Object> plugin : LOGIN_PLUGINS) {
             try {
                 plugin.newInstance(player);
@@ -241,23 +251,41 @@ public final class LoginConfiguration {
     public static final void config(final Player player) {
         System.out.println("Configuring player for login || LoginConfiguration");
         player.getInventory().refresh();
+        System.out.println("Refreshing Inventory || LoginConfiguration");
         player.getEquipment().refresh();
+        System.out.println("Refreshing Equipment || LoginConfiguration");
         player.getSkills().refresh();
+        System.out.println("Refreshing Skills || LoginConfiguration");
         player.getSkills().configure();
+        System.out.println("Getting Skills || LoginConfiguration");
         player.getSettings().update();
+        System.out.println("Getting Settings || LoginConfiguration");
         player.getInteraction().setDefault();
+        System.out.println("Getting Interaction || LoginConfiguration");
         player.getPacketDispatch().sendRunEnergy();
+        System.out.println("Sending Run Energy || LoginConfiguration");
         player.getFamiliarManager().login();
+        System.out.println("Familiar Manager on login || LoginConfiguration");
         player.getInterfaceManager().openDefaultTabs();
+        System.out.println("Opening default tabs || LoginConfiguration");
         player.getGrandExchange().init();
+        System.out.println("Initializing Grand Exchange || LoginConfiguration");
         player.getPacketDispatch().sendString("Friends List - World " + GameWorld.getSettings().getWorldId(), 550, 3);
+        System.out.println("Sending Friends List string || LoginConfiguration");
         player.getConfigManager().init();
+        System.out.println("Initiating config manager || LoginConfiguration");
         player.getAntiMacroHandler().init();
+        System.out.println("Initiating anti macro handler || LoginConfiguration");
         player.getQuestRepository().syncronizeTab(player);
+        System.out.println("Sync quest repo to player || LoginConfiguration");
         player.getGraveManager().update();
+        System.out.println("Updating Grave Manager || LoginConfiguration");
         player.getInterfaceManager().close();
+        System.out.println("Closing Interfaces || LoginConfiguration");
         player.getEmoteManager().refresh();
+        System.out.println("Getting Emote Manager || LoginConfiguration");
         player.getInterfaceManager().openInfoBars();
+        System.out.println("Opening Info Bars || LoginConfiguration");
     }
 
     /**
@@ -294,12 +322,17 @@ public final class LoginConfiguration {
      * @param player the player.
      * @return the last login.
      */
-    public static String getLastLogin(Player player) {
+    public static String getLastLoginIp(Player player) {
         String lastIp = (String) player.getDetails().getSqlManager().getTable().getColumn("lastGameIp").getValue();
         if (lastIp == null || lastIp == "") {
             lastIp = player.getDetails().getIpAddress();
         }
-        String string = "You last logged in @timeAgo from: " + lastIp;
+        String string = lastIp;
+        return string;
+    }
+
+    public static String getLastLoginText(Player player) {
+        String string = "You last logged in @timeAgo from: ";
         long time = player.getDetails().getLastLogin();
         Date lastLogin = new Date(time);
         Date current = new Date();

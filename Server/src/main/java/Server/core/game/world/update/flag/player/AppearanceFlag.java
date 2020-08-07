@@ -31,7 +31,7 @@ public final class AppearanceFlag extends UpdateFlag<Player> {
 		if (context.size() > 1) {
 			settings |= (context.size() - 1) << 3;
 		}
-		block.put(settings); // settings hash.
+		block.put(settings); // Titles
 		block.put(appearance.getSkullIcon()); // Skull icon
 		block.put(appearance.getHeadIcon()); // Head icon
 		int npcId = appearance.getNpcId();
@@ -58,8 +58,8 @@ public final class AppearanceFlag extends UpdateFlag<Player> {
 		block.putLong(StringUtils.stringToLong(context.getUsername()));
 		block.put(context.getProperties().getCurrentCombatLevel());
 		block.putShort(0);
-		block.put(0);
-		buffer.putA(block.toByteBuffer().position());
+		block.putShort(0);
+		buffer.put(block.toByteBuffer().position());
 		buffer.put(block);
 	}
 
@@ -86,6 +86,6 @@ public final class AppearanceFlag extends UpdateFlag<Player> {
 	 * @return The mask data.
 	 */
 	public static int getData() {
-		return 0x4;
+		return 0x10;
 	}
 }

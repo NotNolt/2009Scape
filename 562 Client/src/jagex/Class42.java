@@ -314,10 +314,7 @@ public class Class42 {
 					int i_18_ = Class131_Sub35.anIntArray4589[i];
 					if (Class125.anInt1632 != (Class105.aClass23_Sub4_Sub1_Sub2Array1373[i_18_].anInt5285)) {
 						if ((Class105.aClass23_Sub4_Sub1_Sub2Array1373[i_18_].anInt6517) > 0)
-							OutputStream_Sub1
-									.method90(
-											(Class105.aClass23_Sub4_Sub1_Sub2Array1373[i_18_]),
-											4);
+							OutputStream_Sub1.method90((Class105.aClass23_Sub4_Sub1_Sub2Array1373[i_18_]), 4);
 						Class105.aClass23_Sub4_Sub1_Sub2Array1373[i_18_] = null;
 					}
 				}

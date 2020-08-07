@@ -30,7 +30,7 @@ public enum InterfaceType {
 	/**
 	 * Chatbox dialogue interface.
 	 */
-	DIALOGUE(752, 752, 12, 12),
+	DIALOGUE(752, 752, 140, 18),
 
 	/**
 	 * A window pane.
@@ -45,7 +45,7 @@ public enum InterfaceType {
 	/**
 	 * Chatbox interface.
 	 */
-	CHATBOX(752, 752, 8, 8),;
+	CHATBOX(752, 752, 140, 18),;
 
 	/**
 	 * The fixed window pane id.

@@ -9,7 +9,7 @@ import core.net.packet.context.BuildObjectContext;
 
 /**
  * The clear game object outgoing packet.
- * @author Emperor
+ * @author Woah
  */
 public final class ClearObject implements OutgoingPacket<BuildObjectContext> {
 

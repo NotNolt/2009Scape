@@ -9,7 +9,7 @@ import core.net.packet.context.LocationContext;
 /**
  * Outgoing packet used for updating a player's location solely on his own
  * client.
- * @author Emperor
+ * @author Woah
  */
 public final class InstancedLocationUpdate implements OutgoingPacket<LocationContext> {
 

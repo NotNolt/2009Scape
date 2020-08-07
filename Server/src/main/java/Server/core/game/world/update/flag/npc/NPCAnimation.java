@@ -6,7 +6,7 @@ import core.net.packet.IoBuffer;
 
 /**
  * The NPC animation update flag.
- * @author Emperor
+ * @author Woah
  *
  */
 public final class NPCAnimation extends UpdateFlag<Animation> {
