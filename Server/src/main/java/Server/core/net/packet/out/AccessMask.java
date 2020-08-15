@@ -13,11 +13,21 @@ public class AccessMask implements OutgoingPacket<AccessMaskContext> {
 	@Override
 	public void send(AccessMaskContext context) {
 		IoBuffer buffer = new IoBuffer(113);
-		buffer.putInt(context.getId());
+		buffer.putInt(context.getInterfaceId() << 16 | context.getChildId());
 		buffer.putLEShort(context.getLength());
 		buffer.putLEShort(context.getOffset());
-		buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putLEShortA(0);
 		buffer.putLEInt(context.getInterfaceId() << 16 | context.getChildId());
 		context.getPlayer().getSession().write(buffer);
+
+
+
+
+//		buffer.putInt(context.getId());
+//		buffer.putLEShort(context.getLength());
+//		buffer.putLEShort(context.getOffset());
+//		buffer.putLEShortA(context.getPlayer().getInterfaceManager().getPacketCount(1));
+//		buffer.putLEInt(context.getInterfaceId() << 16 | context.getChildId());
+//		context.getPlayer().getSession().write(buffer);
 	}
 }

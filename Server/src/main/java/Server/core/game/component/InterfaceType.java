@@ -10,27 +10,27 @@ public enum InterfaceType {
 	/**
 	 * Default interface.
 	 */
-	DEFAULT(548, 746, 11, 6),
+	DEFAULT(548, 746, 1, 1),
 
 	/**
 	 * Walkable interface.
 	 */
-	OVERLAY(548, 746, 5, 3),
+	OVERLAY(548, 746, 5, 6),
 
 	/**
 	 * A tab interface.
 	 */
-	TAB(548, 746, 83, 93),
+	TAB(548, 746, 150, 28),
 
 	/**
 	 * The only tab to be shown (when this type is opened).
 	 */
-	SINGLE_TAB(548, 746, 80, 76),
+	SINGLE_TAB(548, 746, 145, 26),
 
 	/**
 	 * Chatbox dialogue interface.
 	 */
-	DIALOGUE(752, 752, 140, 18),
+	DIALOGUE(548, 752, 140, 18),
 
 	/**
 	 * A window pane.
@@ -45,7 +45,7 @@ public enum InterfaceType {
 	/**
 	 * Chatbox interface.
 	 */
-	CHATBOX(752, 752, 140, 18),;
+	CHATBOX(548, 752, 140, 18);
 
 	/**
 	 * The fixed window pane id.

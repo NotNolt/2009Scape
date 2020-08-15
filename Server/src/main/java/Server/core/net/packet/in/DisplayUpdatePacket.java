@@ -17,7 +17,7 @@ public class DisplayUpdatePacket implements IncomingPacket {
 		int screenWidth = buffer.getShort();
 		int screenHeight = buffer.getShort();
 		int displayMode = buffer.get(); //jagex.Display mode
-		player.getInterfaceManager().switchWindowMode(windowMode);
+		player.getSession().getClientInfo().setWindowMode(windowMode);
 		player.getSession().getClientInfo().setScreenWidth(screenWidth);
 		player.getSession().getClientInfo().setScreenHeight(screenHeight);
 		player.getSession().getClientInfo().setDisplayMode(displayMode);

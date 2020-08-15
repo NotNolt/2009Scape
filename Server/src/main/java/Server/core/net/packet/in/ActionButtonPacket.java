@@ -256,6 +256,7 @@ public class ActionButtonPacket implements IncomingPacket {
 			buttonId = data & 0xffff;
 			itemId = -1;
 			break;
+
 		case 184:
 		case 95:
 			if (player.getAttribute("logging_in") != null) {
@@ -269,6 +270,7 @@ public class ActionButtonPacket implements IncomingPacket {
 					}
 				});
 			}
+
 			player.getInterfaceManager().close();
 			if (player.getAttribute("worldMap:viewing") != null) {
 				player.removeAttribute("worldMap:viewing");

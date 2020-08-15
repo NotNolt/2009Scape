@@ -157,7 +157,7 @@ public final class AnimationDefinition {
 										aBoolean2158 = true;
 									}
 									if (opcode >= 17) {
-										System.out.println("Unhandled opcode: " + opcode);
+										System.out.println("Animation Definition || unhandled opcode: " + opcode);
 									}
 									aBoolean2159 = true;
 								}

@@ -501,7 +501,7 @@ public class ItemDefinition extends Definition<Item> {
 					def.clientScriptData.put(key, value);
 				}
 			} else {
-				System.out.println("Unhandled item definition opcode - opcode: " + opcode);
+				System.out.println("Item Definition || Unhandled item definition opcode - opcode: " + opcode);
 				break;
 			}
 		}

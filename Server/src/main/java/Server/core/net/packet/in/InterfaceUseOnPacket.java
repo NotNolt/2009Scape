@@ -89,7 +89,7 @@ public class InterfaceUseOnPacket implements IncomingPacket {
 			//System.out.println("magic on player component = "+componentId+"!");
 			final Player target = Repository.getPlayers().get(targetIndex);
 			if (target == null || !player.getLocation().withinDistance(target.getLocation())) {
-				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 				break;
 			}
 			switch (interfaceId) {
@@ -141,7 +141,7 @@ public class InterfaceUseOnPacket implements IncomingPacket {
 				object = object.getChild(player);
 			}
 			if (object == null || (object.getId() != objectId && object.getWrapper().getId() != objectId) || !player.getLocation().withinDistance(object.getLocation())) {
-				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 				break;
 			}
 			switch (interfaceId) {
@@ -167,13 +167,13 @@ public class InterfaceUseOnPacket implements IncomingPacket {
 			int unknown = buffer.getShortA();
 		    int index = buffer.getLEShortA();
 			if (index < 1 || index > ServerConstants.MAX_NPCS) {
-				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 				break;
 			}
 
 			NPC npc = Repository.getNpcs().get(index);
 			if (npc == null || !player.getLocation().withinDistance(npc.getLocation())) {
-				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 				break;
 			}
 			if (player.getAttribute("magic:delay", -1) > GameWorld.getTicks()) {

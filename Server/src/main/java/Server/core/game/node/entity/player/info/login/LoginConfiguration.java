@@ -10,6 +10,9 @@ import core.game.component.Component;
 import core.game.node.entity.player.link.HintIconManager;
 import core.game.node.item.Item;
 import core.game.world.map.Location;
+import core.net.packet.context.SkillContext;
+import core.net.packet.out.SkillLevel;
+import plugin.skill.Skills;
 import plugin.tutorial.TutorialSession;
 import plugin.tutorial.TutorialStage;
 import core.game.node.entity.player.Player;
@@ -73,10 +76,12 @@ public final class LoginConfiguration {
      */
     public static void configureLobby(Player player) {
         player.updateSceneGraph(true);
-        if (!player.isArtificial() && TutorialSession.getExtension(player).getStage() >= TutorialSession.MAX_STAGE && player.getAttribute("login_type", LoginType.NORMAL_LOGIN) != LoginType.RECONNECT_TYPE) {
+        if (!player.isArtificial() && player.getAttribute("login_type", LoginType.NORMAL_LOGIN) != LoginType.RECONNECT_TYPE) {
+            System.out.println("Going to lobby screen");
             sendLobbyScreen(player);
 //            configureGameWorld(player);
         } else {
+            System.out.println("Configuring Gameworld...");
             configureGameWorld(player);
         }
     }
@@ -87,27 +92,15 @@ public final class LoginConfiguration {
      * @param player The player.
      */
     public static void sendLobbyScreen(Player player) {
-        System.out.println("Sending Lobby Screen");
         Repository.getLobbyPlayers().add(player);
-
+        player.getInterfaceManager().openWindowsPane(LOBBY_PANE);
+        player.getInterfaceManager().open(LOBBY_INTERFACE);
+        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, false));
+        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, 22, true));
         player.getPacketDispatch().sendString("Welcome to " + GameWorld.getName(), 378, 113);
         player.getPacketDispatch().sendString(getLastLoginText(player), 378, 114);
         player.getPacketDispatch().sendString(getLastLoginIp(player), 378, 115);
         player.getPacketDispatch().sendString("2009scape 2 the 562 boogaloo", 22, 6);
-        player.getInterfaceManager().openWindowsPane(LOBBY_PANE);
-        player.getInterfaceManager().setOpened(LOBBY_INTERFACE);
-
-
-        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, false));
-
-
-        System.out.println("Sending Interfaces || LoginConfiguration...");
-
-
-        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, 22, true));//UPDATE `configs` SET `value`=FLOOR(RAND()*(25-10)+10) WHERE key_="messageInterface"
-
-
-        System.out.println("Sending Interfaces Message Interface || LoginConfiguration...");
     }
 
     /**
@@ -116,6 +109,7 @@ public final class LoginConfiguration {
      * @param player The player.
      */
     public static void configureGameWorld(final Player player) {
+        player.getInterfaceManager().openWindowsPane(new Component(548));
         System.out.println("Configuring Game World...");
         player.getConfigManager().reset();
         sendGameConfiguration(player);

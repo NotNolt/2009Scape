@@ -13,7 +13,7 @@ public final class CloseInterface implements OutgoingPacket<InterfaceContext> {
 	@Override
 	public void send(InterfaceContext context) {
 		IoBuffer buffer = new IoBuffer(203);
-		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
+		buffer.putShort(0);
 		buffer.putInt(context.getWindowId() << 16 | context.getComponentId());
 		context.getPlayer().getSession().write(buffer);
 	}

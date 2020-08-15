@@ -366,6 +366,7 @@ public class Player extends Entity {
 
 	@Override
 	public void init() {
+		System.out.println("Initiating Player || Player.java");
 		antiMacroHandler.isDisabled = savedData.getGlobalData().getMacroDisabled();
 		if (!artificial) {
 			getProperties().setSpawnLocation(ServerConstants.HOME_LOCATION);
@@ -374,7 +375,9 @@ public class Player extends Entity {
 			antiMacroHandler.init();
 		}
 		super.init();
+		System.out.println("Initiating and sending to lobby configuration || Player.java");
 		LoginConfiguration.configureLobby(this);
+//		TODO: REMOVE REVISION LOGIN
 	}
 
 	@Override
@@ -504,12 +507,6 @@ public class Player extends Entity {
 		}
 		if (style == CombatStyle.RANGE && equipment.getNew(3).getId() == 10034) {
 			return ChinchompaSwingHandler.getInstance();
-		}
-		if (equipment.getNew(3).getId() == 14981 || equipment.getNew(3).getId() == 15024) {
-			return TridentOfSwampHandler.INSTANCE;
-		}
-		if (equipment.getNew(3).getId() == 14666 || equipment.getNew(3).getId() == 14664) {
-			return TridentOfSeasHandler.INSTANCE;
 		}
 		if (equipment.getNew(3).getId() == 10149 || equipment.getNew(3).getId() == 10146 || equipment.getNew(3).getId() == 10147 || equipment.getNew(3).getId() == 10148) {
 			return SalamanderSwingHandler.INSTANCE;
@@ -693,6 +690,7 @@ public class Player extends Entity {
 	 * Initializes the player for reconnection.
 	 */
 	public void initReconnect() {
+		System.out.println("Player " + asPlayer().name + " is reconnecting to the world");
 		getInterfaceManager().setChatbox(null);
 		getPulseManager().clear();
 		getZoneMonitor().getZones().clear();
@@ -715,8 +713,10 @@ public class Player extends Entity {
 	public void updateSceneGraph(boolean login) {
 		Region region = getViewport().getRegion();
 		if (region instanceof DynamicRegion || (region == null && (region = RegionManager.getRegionCache().get(location.getRegionId())) instanceof DynamicRegion || region == null)) {
+			System.out.println("Building Dynamic Scene");
 			PacketRepository.send(BuildDynamicScene.class, new DynamicSceneContext(this, login));
 		} else {
+			System.out.println("Updating Scene Graph");
 			PacketRepository.send(UpdateSceneGraph.class, new SceneGraphContext(this, login));
 		}
 	}

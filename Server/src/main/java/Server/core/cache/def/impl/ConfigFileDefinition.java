@@ -74,7 +74,7 @@ public final class ConfigFileDefinition {
 			return def;
 		}
 		def = new ConfigFileDefinition(id);
-		byte[] bs = Cache.getIndexes()[22].getFileData(id >>> 1416501898, id & 0x3ff);
+		byte[] bs = Cache.getIndexes()[22].getFileData(id >>> 10, id & 0x3ff);
 		if (bs != null) {
 			ByteBuffer buffer = ByteBuffer.wrap(bs);
 			int opcode = 0;

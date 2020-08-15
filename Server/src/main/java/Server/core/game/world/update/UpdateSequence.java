@@ -54,7 +54,7 @@ public final class UpdateSequence {
 		playersList = getRenderablePlayers();
 		npcList = Repository.getRenderableNpcs();
 
-		lobbyList.forEach(player -> PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player)));
+//		lobbyList.forEach(player -> PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player)));
 		playersList.forEach(player -> {
 			try{
 				player.tick();

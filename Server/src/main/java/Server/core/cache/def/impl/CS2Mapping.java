@@ -114,7 +114,7 @@ public final class CS2Mapping {
 
 	/**
 	 * Loads the mapping data.
-	 * @param stream The buffer to read the data from.
+	 * @param buffer The buffer to read the data from.
 	 */
 	private void load(ByteBuffer buffer) {
 		int opcode;
@@ -135,14 +135,14 @@ public final class CS2Mapping {
 			case 5:
 			case 6:
 				int size = buffer.getShort() & 0xFFFF;
+				int loop = opcode == 7 || opcode == 8 ? buffer.getShort() : size;
 				String string = null;
 				int val = 0;
 				map = new HashMap<>(size);
 				array = new Object[size];
-				
-				for (int i = 0; i < size; i++) {
+				for (int i = 0; i < loop; i++) {
 					int key = buffer.getInt();
-					if (opcode == 5) {
+					if (opcode == 5 || opcode == 7) {
 						string = ByteBufferUtils.getString(buffer);
 						array[i] = string;
 						map.put(key, string);

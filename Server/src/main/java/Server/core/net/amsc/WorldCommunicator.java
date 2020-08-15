@@ -73,7 +73,7 @@ public final class WorldCommunicator {
 		System.out.println("Registering Login Attempt...");
 		LoginParser p = loginAttempts.get(parser.getDetails().getUsername());
 		System.out.println("Received username");
-		if (p != null && p.getDetails().getRights() == Rights.REGULAR_PLAYER) {
+		if (p != null && GameWorld.getTicks() - p.getTimeStamp() < 50 && p.getDetails().getRights() == Rights.REGULAR_PLAYER) {
 			System.out.println("Already online!");
 			parser.getDetails().getSession().write(Response.ALREADY_ONLINE, true);
 			return;

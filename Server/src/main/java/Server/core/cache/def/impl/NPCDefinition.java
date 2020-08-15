@@ -521,7 +521,7 @@ public final class NPCDefinition extends Definition<NPC> {
 			}
 			break;
 		default:
-			System.err.println("Unhandled NPC definition opcode: " + opcode);
+			System.err.println("NPC definition || Unhandled opcode: " + opcode);
 		}
 		if (id == 3074) {
 			setName("Monk");

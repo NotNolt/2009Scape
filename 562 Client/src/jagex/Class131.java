@@ -74,7 +74,7 @@ public class Class131
 	    anInt1790++;
 	    if (Class131_Sub2_Sub29.aClass147ArrayArrayArray5972 != null) {
 		long l
-		    = (long) (arg0 << 165731982 | arg2 << -1853036452 | arg3);
+		    = (long) (arg0 << 14 | arg2 << 28 | arg3);
 		Class131_Sub10 class131_sub10
 		    = ((Class131_Sub10)
 		       Class131_Sub24.aClass180_4468.method2521(-95, l));

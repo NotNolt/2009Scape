@@ -154,12 +154,12 @@ public final class InteractionPacket implements IncomingPacket {
 	 */
 	public static void handleNPCInteraction(Player player, int optionIndex, final int index) {
 		if (index < 1 || index > ServerConstants.MAX_NPCS) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			return;
 		}
 		final NPC npc = Repository.getNpcs().get(index);
 		if (npc == null) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			return;
 		}
 		if (player.getAttribute("removenpc", false)) {
@@ -170,7 +170,7 @@ public final class InteractionPacket implements IncomingPacket {
 		NPC shown = npc.getShownNPC(player);
 		final Option option = shown.getInteraction().get(optionIndex);
 		if (option == null) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			Interaction.handleInvalidInteraction(player, npc, Option.NULL);
 			return;
 		}
@@ -233,12 +233,12 @@ public final class InteractionPacket implements IncomingPacket {
 		}
 		if (object == null || object.getId() != objectId) {
 			player.debug("GameObject("  + objectId + ") interaction was " + object + " at location " + x + ", " + y + ".");
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			Interaction.handleInvalidInteraction(player, object, Option.NULL);
 			return;
 		}
 		if (!object.isActive()) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			Interaction.handleInvalidInteraction(player, object, Option.NULL);
 			return;
 		}
@@ -246,7 +246,7 @@ public final class InteractionPacket implements IncomingPacket {
 		Option option = object.getInteraction().get(optionIndex);
 		if (option == null) {
 			player.debug("Invalid option" + object + ", original: " + objectId + ".");
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			Interaction.handleInvalidInteraction(player, object, Option.NULL);
 			return;
 		}
@@ -270,17 +270,17 @@ public final class InteractionPacket implements IncomingPacket {
 	 */
 	private static void handlePlayerInteraction(Player player, int optionIndex, int index) {
 		if (index < 1 || index > ServerConstants.MAX_PLAYERS) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			return;
 		}
 		final Player target = Repository.getPlayers().get(index);
 		if (target == null || !target.isActive()) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			return;
 		}
 		final Option option = player.getInteraction().get(optionIndex);
 		if (option == null) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			return;
 		}
 		handleAIPLegion(player, 2, optionIndex, index);
@@ -305,12 +305,12 @@ public final class InteractionPacket implements IncomingPacket {
 			}
 		}
 		if (item == null) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			return;
 		}
 		final Option option = item.getInteraction().get(index);
 		if (option == null) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			Interaction.handleInvalidInteraction(player, item, Option.NULL);
 			return;
 		}

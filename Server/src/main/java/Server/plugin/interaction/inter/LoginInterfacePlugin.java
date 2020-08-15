@@ -26,7 +26,7 @@ public final class LoginInterfacePlugin extends ComponentPlugin {
 	@Override
 	public boolean handle(final Player player, Component component, int opcode, int button, int slot, int itemId) {
 		switch (button) {
-		case 140:
+		case 45:
 			if (player.getLocks().isLocked("login")) {
 				return true;
 			}
@@ -40,9 +40,9 @@ public final class LoginInterfacePlugin extends ComponentPlugin {
 				}
 			});
 			break;
-		case 145://credits
+		case 120://credits
 			break;
-		case 204://message centre
+		case 117://message centre
 			break;
 		}
 		return true;

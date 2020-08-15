@@ -869,7 +869,7 @@ public class ObjectDefinition extends Definition<GameObject> {
 				}
 			} else {
 				if (opcode != 0) {
-					System.err.println("Unhandled object definition opcode: " + opcode);
+					System.err.println("Object definition || Unhandled opcode: " + opcode);
 				}
 				break;
 			}

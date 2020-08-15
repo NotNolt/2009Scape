@@ -29,7 +29,7 @@ public final class WalkPacket implements IncomingPacket {
 			return;
 		}
 		if (player.getLocks().isMovementLocked() || !player.getInterfaceManager().close() || !player.getInterfaceManager().closeSingleTab() || !player.getDialogueInterpreter().close()) {
-			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//			PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 			player.debug("[WalkPacket] did not handle - [locked=" + player.getLocks().isMovementLocked() + "]!");
 			return;
 		}

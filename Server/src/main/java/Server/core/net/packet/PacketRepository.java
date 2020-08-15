@@ -40,6 +40,7 @@ public final class PacketRepository {
 		OUTGOING_PACKETS.put(LoginPacket.class, new LoginPacket());//Up to date 562
 		OUTGOING_PACKETS.put(UpdateSceneGraph.class, new UpdateSceneGraph());//Up to date 562		76										LESA,S,P,PA,PA,S,S
 		OUTGOING_PACKETS.put(WindowsPane.class, new WindowsPane());//Up to date 562					50										SA,S,PS,
+//		OUTGOING_PACKETS.put(WindowsPaneSwitch.class, new WindowsPane());//Up to date 562			206										SA,S,PS,
 		OUTGOING_PACKETS.put(Interface.class, new Interface());//Up to date 562						56										S,PS,S,LEI
 		OUTGOING_PACKETS.put(SkillLevel.class, new SkillLevel());//Up to date 562					38										PA,IA,PC
 		OUTGOING_PACKETS.put(Config.class, new Config());//Up to date 562							151, 186								LEI,S |128 >| PS,LESA
@@ -59,7 +60,7 @@ public final class PacketRepository {
 		OUTGOING_PACKETS.put(ConstructObject.class, new ConstructObject());//						115
 		OUTGOING_PACKETS.put(ClearObject.class, new ClearObject());//								27
 		OUTGOING_PACKETS.put(HintIcon.class, new HintIcon());//										122	Recheck Needed
-		OUTGOING_PACKETS.put(ClearMinimapFlag.class, new ClearMinimapFlag());//						5	Recheck Needed Try: 169
+//		OUTGOING_PACKETS.put(ClearMinimapFlag.class, new ClearMinimapFlag());//						5	Recheck Needed Try: 169
 		OUTGOING_PACKETS.put(InteractionOption.class, new InteractionOption());//					73
 		OUTGOING_PACKETS.put(SetWalkOption.class, new SetWalkOption());//							246
 		OUTGOING_PACKETS.put(MinimapState.class, new MinimapState());//								208
@@ -74,14 +75,14 @@ public final class PacketRepository {
 		OUTGOING_PACKETS.put(GrandExchangePacket.class, new GrandExchangePacket());//				134
 		OUTGOING_PACKETS.put(BuildDynamicScene.class, new BuildDynamicScene());//					146
 		OUTGOING_PACKETS.put(AnimateObjectPacket.class, new AnimateObjectPacket());//				109
-//		OUTGOING_PACKETS.put(ClearRegionChunk.class, new ClearRegionChunk());
+		OUTGOING_PACKETS.put(ClearRegionChunk.class, new ClearRegionChunk());
 		OUTGOING_PACKETS.put(ContactPackets.class, new ContactPackets());//							5	Recheck Needed || 20, 62
-//		OUTGOING_PACKETS.put(CommunicationMessage.class, new CommunicationMessage());
+		OUTGOING_PACKETS.put(CommunicationMessage.class, new CommunicationMessage());
 		OUTGOING_PACKETS.put(UpdateClanChat.class, new UpdateClanChat());//							91  Recheck Needed
-//		OUTGOING_PACKETS.put(UpdateGroundItemAmount.class, new UpdateGroundItemAmount());
-//		OUTGOING_PACKETS.put(WeightUpdate.class, new WeightUpdate());
-//		OUTGOING_PACKETS.put(UpdateRandomFile.class, new UpdateRandomFile());
-//		OUTGOING_PACKETS.put(InstancedLocationUpdate.class, new InstancedLocationUpdate());
+		OUTGOING_PACKETS.put(UpdateGroundItemAmount.class, new UpdateGroundItemAmount());
+		OUTGOING_PACKETS.put(WeightUpdate.class, new WeightUpdate());
+		OUTGOING_PACKETS.put(UpdateRandomFile.class, new UpdateRandomFile());
+		OUTGOING_PACKETS.put(InstancedLocationUpdate.class, new InstancedLocationUpdate());
 		OUTGOING_PACKETS.put(CSConfigPacket.class, new CSConfigPacket());//							70
 
 		/**

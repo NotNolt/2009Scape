@@ -1735,7 +1735,6 @@ public class PacketParser extends Class131_Sub2 {
 					if (class131_sub33 != null)
 						Class204.method2730(i_164_ != class131_sub33.anInt4556,	25697, class131_sub33, false);
 					Class131_Sub7.method1669(i_164_, i_165_, false, false, i_167_);//RTE
-					System.out.println("class131_sub33 is null!");
 				}
 				Class131_Sub35.incomingOpcode = -1;
 				return true;

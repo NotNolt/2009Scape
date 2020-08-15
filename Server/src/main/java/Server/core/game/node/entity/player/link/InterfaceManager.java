@@ -427,7 +427,7 @@ public final class InterfaceManager {
 	 * Opens the information bars (orbs).
 	 */
 	public void openInfoBars() {
-		//Hp orb
+		//Health orb
 		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 163 : 133, 748, true));
 		//Prayer orb
 		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 164 : 134, 749, true));
@@ -436,7 +436,7 @@ public final class InterfaceManager {
 		//Summoning bar
 		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 166 : 137, 747, true));
 		//Split PM
-		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 71 : 10, 754, true));
+		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 19 : 14, 754, true));
 	}
 
 	/**
@@ -542,7 +542,7 @@ public final class InterfaceManager {
 			openWindowsPane(new Component(isResizable() ? 746 : 548));
 			openDefaultTabs();
 			openInfoBars();
-			PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 23 : 14, 751, true));
+			PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 15 : 20, 751, true));
 			PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 70 : 75, 752, true));
 		}
 	}
@@ -761,7 +761,7 @@ public final class InterfaceManager {
 	 * @return The default child id.
 	 */
 	public int getDefaultChildId() {
-		return isResizable() ? 6 : 11;
+		return isResizable() ? 8 : 16;
 	}
 
 	/**

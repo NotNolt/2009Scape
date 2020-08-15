@@ -114,12 +114,12 @@ public class ItemActionPacket implements IncomingPacket {
 			int z = player.getLocation().getZ();
 			GameObject object = RegionManager.getObject(z, x, y);
 			if (object == null || object.getId() != objectId) {
-				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 				return;
 			}
 			object = object.getChild(player);
 			if (object == null) {
-				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
+//				PacketRepository.send(ClearMinimapFlag.class, new PlayerContext(player));
 				break;
 			}
 			used = player.getInventory().get(slot);
