@@ -21,7 +21,7 @@ public final class UpdateSceneGraph implements OutgoingPacket<SceneGraphContext>
 		boolean forceSend = true;
 		player.getPlayerFlags().setLastSceneGraph(player.getLocation());
 		buffer.putLEShortA(player.getLocation().getRegionX());
-		buffer.putShort(player.getLocation().getSceneY());
+		buffer.putShort(player.getLocation().getLocalY());
 		buffer.put((byte) 0);
 		buffer.putA(0);
 		if (((player.getLocation().getRegionX() / 8) == 48) || ((player.getLocation().getRegionX() / 8) == 49) && ((player.getLocation().getRegionY() / 8) == 48)) {
@@ -43,7 +43,7 @@ public final class UpdateSceneGraph implements OutgoingPacket<SceneGraphContext>
 		}
 
 		buffer.putA(player.getLocation().getZ());
-		buffer.putShort(player.getLocation().getSceneX());
+		buffer.putShort(player.getLocation().getLocalX());
 		buffer.putShort(player.getLocation().getRegionY());
 		player.getDetails().getSession().write(buffer);
 	}

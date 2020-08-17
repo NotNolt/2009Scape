@@ -113,43 +113,72 @@
 //    }
 //
 //    public void sendFullScreenInterfaces() {
-//        player.getActionSender().setInterface(1, 548, 150, 884).setInterface(1,
-//                548, 151, 320).setInterface(1, 548, 152, 190).setInterface(1,
-//                548, 153, 259).setInterface(1, 548, 154, 149).setInterface(1,
-//                548, 155, 387).setInterface(1, 548, 156, 271).setInterface(1,
-//                548, 157, player.magicType).setInterface(1, 548, 159, 550).setInterface(1,
-//                548, 160, 551).setInterface(1, 548, 161, 589).setInterface(1,
-//                548, 162, 261).setInterface(1, 548, 163, 464).setInterface(1,
-//                548, 164, 187).setInterface(1, 548, 165, 34).setInterface(1,
-//                548, 168, 182).setInterface(1, 548, 150, 884).setInterface(1,
-//                746, 15, 751).setInterface(1, 746, 18, 752).setInterface(1,
-//                746, 19, 754).setInterface(1, 746, 163, 748).setInterface(1,
-//                746, 164, 749).setInterface(1, 746, 165, 750).setInterface(1,
-//                746, 166, 747).setInterface(1, 746, 11, 745).setInterface(1,
-//                752, 8, 137).setInterface(1, 746, 29, 884).setInterface(1,
-//                746, 30, 320).setInterface(1, 746, 31, 190).setInterface(1,
-//                746, 32, 259).setInterface(1, 746, 33, 149).setInterface(1,
-//                746, 34, 387).setInterface(1, 746, 35, 271).setInterface(1,
-//                746, 36, player.magicType).setInterface(1, 746, 38, 550).setInterface(1,
-//                746, 39, 551).setInterface(1, 746, 40, 589).setInterface(1,
-//                746, 41, 261).setInterface(1, 746, 42, 464).setInterface(1,
-//                746, 43, 187).setInterface(1, 746, 44, 34).setInterface(1,
-//                746, 47, 182).setAccessMask(-1, -1, 746, 120, 0, 2)
-//                .setAccessMask(-1, -1, 884, 11, 0, 2).setAccessMask(-1, -1,
-//                884, 12, 0, 2).setAccessMask(-1, -1, 884, 13, 0, 2)
-//                .setAccessMask(-1, -1, 746, 121, 0, 2).setAccessMask(-1, -1,
-//                746, 122, 0, 2).setAccessMask(0, 300, 190, 18, 0, 14)
-//                .setAccessMask(0, 11, 190, 15, 0, 2).setAccessMask(-1, -1,
-//                746, 123, 0, 2).setAccessMask(-1, -1, 746, 124, 0, 2)
-//                .setAccessMask(-1, -1, 746, 125, 0, 2).setAccessMask(-1, -1,
-//                746, 126, 0, 2).setAccessMask(0, 27, 271, 6, 0, 2)
-//                .setAccessMask(-1, -1, 746, 127, 0, 2).setAccessMask(-1, -1,
-//                746, 129, 0, 2).setAccessMask(-1, -1, 746, 130, 0, 2)
-//                .setAccessMask(-1, -1, 746, 131, 0, 2).setAccessMask(-1, -1,
-//                746, 132, 0, 2).setAccessMask(-1, -1, 746, 133, 0, 2)
-//                .setAccessMask(-1, -1, 746, 134, 0, 2).setAccessMask(0, 717,
-//                187, 1, 0, 2).setAccessMask(-1, -1, 746, 135, 0, 2)
-//                .setAccessMask(0, 29, 34, 9, 40, 30).setWindow(746, 0);
+//        player.getActionSender().setInterface(1, 548, 150, 884)
+//        .setInterface(1,548, 151, 320)
+//                .setInterface(1, 548, 152, 190)
+//                .setInterface(1,548, 153, 259)
+//                .setInterface(1, 548, 154, 149)
+//                .setInterface(1,548, 155, 387)
+//                .setInterface(1, 548, 156, 271)
+//                .setInterface(1,548, 157, player.magicType)
+//                .setInterface(1, 548, 159, 550)
+//                .setInterface(1,548, 160, 551)
+//                .setInterface(1, 548, 161, 589)
+//                .setInterface(1,548, 162, 261)
+//                .setInterface(1, 548, 163, 464)
+//                .setInterface(1,548, 164, 187)
+//                .setInterface(1, 548, 165, 34)
+//                .setInterface(1,548, 168, 182)
+//                .setInterface(1, 548, 150, 884)
+//                .setInterface(1,746, 15, 751)
+//                .setInterface(1, 746, 18, 752)
+//                .setInterface(1,746, 19, 754)
+//                .setInterface(1, 746, 163, 748)
+//                .setInterface(1,746, 164, 749)
+//                .setInterface(1, 746, 165, 750)
+//                .setInterface(1,746, 166, 747)
+//                .setInterface(1, 746, 11, 745)
+//                .setInterface(1,752, 8, 137)
+//                .setInterface(1, 746, 29, 884)
+//                .setInterface(1,746, 30, 320)
+//                .setInterface(1, 746, 31, 190)
+//                .setInterface(1,746, 32, 259)
+//                .setInterface(1, 746, 33, 149)
+//                .setInterface(1,746, 34, 387)
+//                .setInterface(1, 746, 35, 271)
+//                .setInterface(1,746, 36, player.magicType)
+//                .setInterface(1, 746, 38, 550)
+//                .setInterface(1,746, 39, 551)
+//                .setInterface(1, 746, 40, 589)
+//                .setInterface(1,746, 41, 261)
+//                .setInterface(1, 746, 42, 464)
+//                .setInterface(1,746, 43, 187)
+//                .setInterface(1, 746, 44, 34)
+//                .setInterface(1,746, 47, 182)
+//                .setAccessMask(-1, -1, 746, 120, 0, 2)
+//                .setAccessMask(-1, -1, 884, 11, 0, 2)
+//                .setAccessMask(-1, -1,884, 12, 0, 2)
+//                .setAccessMask(-1, -1, 884, 13, 0, 2)
+//                .setAccessMask(-1, -1, 746, 121, 0, 2)
+//                .setAccessMask(-1, -1,746, 122, 0, 2)
+//                .setAccessMask(0, 300, 190, 18, 0, 14)
+//                .setAccessMask(0, 11, 190, 15, 0, 2)
+//                .setAccessMask(-1, -1,746, 123, 0, 2)
+//                .setAccessMask(-1, -1, 746, 124, 0, 2)
+//                .setAccessMask(-1, -1, 746, 125, 0, 2)
+//                .setAccessMask(-1, -1,746, 126, 0, 2)
+//                .setAccessMask(0, 27, 271, 6, 0, 2)
+//                .setAccessMask(-1, -1, 746, 127, 0, 2)
+//                .setAccessMask(-1, -1,746, 129, 0, 2)
+//                .setAccessMask(-1, -1, 746, 130, 0, 2)
+//                .setAccessMask(-1, -1, 746, 131, 0, 2)
+//                .setAccessMask(-1, -1,746, 132, 0, 2)
+//                .setAccessMask(-1, -1, 746, 133, 0, 2)
+//                .setAccessMask(-1, -1, 746, 134, 0, 2)
+//                .setAccessMask(0, 717,187, 1, 0, 2)
+//                .setAccessMask(-1, -1, 746, 135, 0, 2)
+//                .setAccessMask(0, 29, 34, 9, 40, 30)
+//                .setWindow(746, 0);
 //    }
 //
 //    public void switchToFSFromNormal() {

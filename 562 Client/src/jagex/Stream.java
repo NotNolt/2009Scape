@@ -637,13 +637,13 @@ public class Stream extends Class131 {
 
 	public void writeInt2(int arg0, int arg1) {
 		try {
-			aByteArray4324[anInt4360++] = (byte) (arg1 >> -1867560368);
+			aByteArray4324[anInt4360++] = (byte) (arg1 >> 16);
 			anInt4339++;
 			if (arg0 != 113414280)
 				anInt4350 = 68;
-			aByteArray4324[anInt4360++] = (byte) (arg1 >> -950119176);
+			aByteArray4324[anInt4360++] = (byte) (arg1 >> 24);
 			aByteArray4324[anInt4360++] = (byte) arg1;
-			aByteArray4324[anInt4360++] = (byte) (arg1 >> -330524760);
+			aByteArray4324[anInt4360++] = (byte) (arg1 >> 8);
 		} catch (RuntimeException runtimeexception) {
 			throw Class131_Sub2_Sub6.method1495(runtimeexception, ("il.BC("
 					+ arg0 + ',' + arg1 + ')'));

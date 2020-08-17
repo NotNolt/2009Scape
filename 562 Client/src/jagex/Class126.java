@@ -261,7 +261,7 @@ public class Class126
 						 + ')'));
 	}
     }
-    
+//RTE									  -92        17 (Null lobby screen interface)
     public static boolean method1108(byte arg0, int arg1) {
 	try {
 	    anInt1697++;
@@ -275,25 +275,18 @@ public class Class126
 		return true;
 	    }
 	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1] == null)
-		Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1]
-		    = new Class173[i];
+		Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1] = new Class173[i];
 	    if (arg0 != -92)
 		CloseString = null;
 	    for (int i_25_ = 0; i > i_25_;
              i_25_++) {
-		if (Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1][i_25_]
-		    == null) {
-		    byte[] is
-			= Class150.aClass158_1994.method2364(i_25_, arg1, 0);
+		if (Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1][i_25_] == null) {
+		    byte[] is = Class150.aClass158_1994.method2364(i_25_, arg1, 0);
 		    if (is != null) {
-			Class173 class173
-			    = (Class131_Sub2_Sub9.aClass173ArrayArray5684
-				   [arg1][i_25_]
-			       = new Class173());
-			class173.anInt2455 = i_25_ + (arg1 << 1597590704);
+			Class173 class173 = (Class131_Sub2_Sub9.aClass173ArrayArray5684[arg1][i_25_] = new Class173());
+			class173.anInt2455 = i_25_ + (arg1 << 16);
 			if (is[0] != -1)
-			    class173.method2453(new Stream(is),
-						arg0 + -9688);
+			    class173.method2453(new Stream(is), arg0 + -9688);
 			else
 			    class173.method2459(new Stream(is), 65535);
 		    }

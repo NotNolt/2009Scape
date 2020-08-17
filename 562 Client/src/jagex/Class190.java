@@ -475,9 +475,10 @@ public class Class190
 	    if (arg1 >= -3)
 		method2613(42);
 	    int i_10_ = 0xffff & arg0;
-	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null || (Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_] == null)) { //Fail point
-	    System.out.println("Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null!! || Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_] == null");
+	    if (Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null || (Class131_Sub2_Sub9.aClass173ArrayArray5684[i][i_10_] == null)) { //cause is this first on 5684[i]
+	    System.out.println("Class131_Sub2_Sub9.aClass173ArrayArray5684[i] == null!!");
 		boolean bool = Class126.method1108((byte) -92, i);
+		System.out.println("i = " + i);
 		if (!bool)
 		    return null;
 	    }

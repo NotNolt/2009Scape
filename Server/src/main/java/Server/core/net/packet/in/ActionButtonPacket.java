@@ -36,7 +36,7 @@ public class ActionButtonPacket implements IncomingPacket {
 		int buttonId = args[1];
 		int slot = args[2];
 		int itemId = args[3];
-		player.debug("Component=" + componentId + ", button=" + buttonId + ", slot=" + slot + ", item=" + itemId + ", opcode=" + buffer.opcode());
+		System.out.println("Component=" + componentId + ", button=" + buttonId + ", slot=" + slot + ", item=" + itemId + ", opcode=" + buffer.opcode());
 		if (player.getDialogueInterpreter().getDialogue() != null && buffer.opcode() != 132 && componentId != 64) {
 			player.getDialogueInterpreter().close();
 		}
@@ -79,9 +79,11 @@ public class ActionButtonPacket implements IncomingPacket {
 		return null;
 	}
 
+	//216 interface
+
 	/**
 	 * Gets the arguments for the reward button.
-	 * @param playerThe player.
+	 * @param player The player.
 	 * @param buffer The buffer.
 	 * @return The arguments [component, button, slot, item]
 	 */
@@ -133,22 +135,22 @@ public class ActionButtonPacket implements IncomingPacket {
 			componentId = (data >> 16) & 0xFFFF;
 			buttonId = data & 0xFFFF;
 			break;
-		case 155: //Interface options
-		case 196:
-		case 124:
-		case 199:
-		case 234:
-		case 168:
-		case 166:
-		case 64:
-		case 53:
-		case 9:
+		case 221: //AB 9
+		case 216: //AB 1
+		case 205: //AB 2
+		case 193: //AB 5
+		case 173: //AB 7
+		case 89:  //AB 8
+		case 76:  //AB 6
+		case 19:  //AB 4
+		case 3:	  //AB 3
+//		case 9:
 			data = buffer.getInt();
 			slot = buffer.getShort();
 			componentId = (data >> 16) & 0xFFFF;
 			buttonId = data & 0xFFFF;
 			break;
-		case 132: //Dialogue options
+		case 147: //Dialogue options
 			data = buffer.getIntA();
 			slot = buffer.getLEShort();
 			componentId = data >> 16;
@@ -247,7 +249,7 @@ public class ActionButtonPacket implements IncomingPacket {
 			break;
 		case 127:// 3rd option on send item.
 		case 203:// 5th option on send item.
-		case 205:// 2 option
+//		case 205:// 2 option
 		case 211:// 4rth option on send item.
 		case 187: // 6th
 			data = buffer.getInt();
@@ -257,8 +259,8 @@ public class ActionButtonPacket implements IncomingPacket {
 			itemId = -1;
 			break;
 
-		case 184:
-		case 95:
+//		case 184:
+		case 91:
 			if (player.getAttribute("logging_in") != null) {
 				player.getInterfaceManager().close();
 				GameWorld.Pulser.submit(new Pulse(1, player) {
@@ -284,9 +286,9 @@ public class ActionButtonPacket implements IncomingPacket {
 
 	/**
 	 * Handles an item interaction.
-	 * @param playerThe player.
-	 * @param opcodeThe opcode.
-	 * @param item The item.
+	 * @param player The player.
+	 * @param opcode The opcode.
+	 * @param itemId The item.
 	 */
 	private static void handleItemInteraction(Player player, int opcode, int itemId, int slot, Container container) {
 		if (slot < 0 || slot >= container.capacity()) {

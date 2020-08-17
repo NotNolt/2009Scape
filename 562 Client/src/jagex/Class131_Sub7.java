@@ -56,9 +56,7 @@ public class Class131_Sub7 extends Class131
 	    if (Class31.aClass139_442.status == 1)
 		Class31.aClass139_442 = null;
 	    else if (Class31.aClass139_442.status == 2) {
-		Class131_Sub2_Sub2.method1481(Class131_Sub41_Sub19.aString6408,
-					      Class91.aSignLink_1178,
-					      (byte) -124, 2);
+		Class131_Sub2_Sub2.method1481(Class131_Sub41_Sub19.aString6408, Class91.aSignLink_1178, (byte) -124, 2);
 		Class31.aClass139_442 = null;
 	    }
 	}
@@ -75,7 +73,8 @@ public class Class131_Sub7 extends Class131
 						 + ')'));
 	}
     }
-//RTE 8/5/20    								2			1			false		  false		35979642
+//RTE 8/5/20									2			1			false		  false		35979642
+//RTE 8/15/20									378			0			false		  false		35913745
     public static Class131_Sub33 method1669(int arg0, int arg1, boolean arg2, boolean arg3, int arg4) {
 	try {
 	    anInt4171++;

@@ -71,26 +71,35 @@ public final class PlayerRenderer {
 	 * @param buffer The buffer.
 	 * @param flags The update flags buffer.
 	 */
+//	private static void renderLocalPlayer(Player player, Player other, IoBuffer buffer, IoBuffer flags) {
+//		if (other.getWalkingQueue().getRunDir() != -1) {
+//			buffer.putBits(1, 1); // Updating
+//			buffer.putBits(2, 2); // Sub opcode
+//			buffer.putBits(1, 1);
+//			buffer.putBits(3, other.getWalkingQueue().getWalkDir());
+//			buffer.putBits(3, other.getWalkingQueue().getRunDir());
+//			flagMaskUpdate(player, other, buffer, flags, false, false);
+//		} else if (other.getWalkingQueue().getWalkDir() != -1) {
+//			buffer.putBits(1, 1); // Updating
+//			buffer.putBits(2, 1); // Sub opcode
+//			buffer.putBits(3, other.getWalkingQueue().getWalkDir());
+//			flagMaskUpdate(player, other, buffer, flags, false, false);
+//		} else if (other.getUpdateMasks().isUpdateRequired()) {
+//			buffer.putBits(1, 1);
+//			buffer.putBits(2, 0);
+//			writeMaskUpdates(player, other, flags, false, false);
+//		} else {
+//			buffer.putBits(1, 0);
+//		}
+//	}
 	private static void renderLocalPlayer(Player player, Player other, IoBuffer buffer, IoBuffer flags) {
-		if (other.getWalkingQueue().getRunDir() != -1) {
-			buffer.putBits(1, 1); // Updating
-			buffer.putBits(2, 2); // Sub opcode
-			buffer.putBits(1, 1);
-			buffer.putBits(3, other.getWalkingQueue().getWalkDir());
-			buffer.putBits(3, other.getWalkingQueue().getRunDir());
-			flagMaskUpdate(player, other, buffer, flags, false, false);
-		} else if (other.getWalkingQueue().getWalkDir() != -1) {
-			buffer.putBits(1, 1); // Updating
-			buffer.putBits(2, 1); // Sub opcode
-			buffer.putBits(3, other.getWalkingQueue().getWalkDir());
-			flagMaskUpdate(player, other, buffer, flags, false, false);
-		} else if (other.getUpdateMasks().isUpdateRequired()) {
+		if (other.getUpdateMasks().isUpdateRequired()) {
 			buffer.putBits(1, 1);
 			buffer.putBits(2, 0);
 			writeMaskUpdates(player, other, flags, false, false);
-		} else {
-			buffer.putBits(1, 0);
 		}
+		else
+			buffer.putBits(1,0);
 	}
 
 	/**

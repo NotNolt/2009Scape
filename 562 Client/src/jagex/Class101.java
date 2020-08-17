@@ -114,13 +114,13 @@ public class Class101
 	try {
 	    arg1--;
 	    anInt1327++;
-	    arg1 |= arg1 >>> -1810941663;
+	    arg1 |= arg1 >>> 1;
 	    if (arg0 != 1388313616)
 		method887(101, -30);
-	    arg1 |= arg1 >>> 2010624802;
-	    arg1 |= arg1 >>> 10996420;
-	    arg1 |= arg1 >>> 491045480;
-	    arg1 |= arg1 >>> 1388313616;
+	    arg1 |= arg1 >>> 2;
+	    arg1 |= arg1 >>> 4;
+	    arg1 |= arg1 >>> 8;
+	    arg1 |= arg1 >>> 16;
 	    return 1 + arg1;
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,

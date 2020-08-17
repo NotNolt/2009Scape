@@ -10,7 +10,7 @@ public enum InterfaceType {
 	/**
 	 * Default interface.
 	 */
-	DEFAULT(548, 746, 1, 1),
+	DEFAULT(548, 746, 16, 8),
 
 	/**
 	 * Walkable interface.
@@ -30,12 +30,12 @@ public enum InterfaceType {
 	/**
 	 * Chatbox dialogue interface.
 	 */
-	DIALOGUE(548, 752, 140, 18),
+	DIALOGUE(752, 752, 140, 18),
 
 	/**
 	 * A window pane.
 	 */
-	WINDOW_PANE(548, 746, 0, 0), 
+	WINDOW_PANE(548, 746, 0, 0),
 
 	/**
 	 * jagex.Client script chatbox interface.
@@ -45,7 +45,7 @@ public enum InterfaceType {
 	/**
 	 * Chatbox interface.
 	 */
-	CHATBOX(548, 752, 140, 18);
+	CHATBOX(752, 752, 8, 8);
 
 	/**
 	 * The fixed window pane id.

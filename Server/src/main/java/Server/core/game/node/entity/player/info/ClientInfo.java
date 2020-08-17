@@ -54,6 +54,8 @@ public final class ClientInfo {
 	 */
 	public boolean isResizable() {
 		return windowMode > 1;
+		//Fixed = 1 = false
+		//Resize = 2 = true
 	}
 
 	/**

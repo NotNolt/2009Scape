@@ -9,9 +9,12 @@ import core.game.component.CloseEvent;
 import core.game.component.Component;
 import core.game.node.entity.player.link.HintIconManager;
 import core.game.node.item.Item;
+import core.game.system.task.Pulse;
 import core.game.world.map.Location;
 import core.net.packet.context.SkillContext;
+import core.net.packet.context.WindowsPaneContext;
 import core.net.packet.out.SkillLevel;
+import core.net.packet.out.WindowsPane;
 import plugin.skill.Skills;
 import plugin.tutorial.TutorialSession;
 import plugin.tutorial.TutorialStage;
@@ -78,12 +81,25 @@ public final class LoginConfiguration {
         player.updateSceneGraph(true);
         if (!player.isArtificial() && player.getAttribute("login_type", LoginType.NORMAL_LOGIN) != LoginType.RECONNECT_TYPE) {
             System.out.println("Going to lobby screen");
-            sendLobbyScreen(player);
+//            sendLobbyScreen(player);
 //            configureGameWorld(player);
+            yeetMeInScotty(player);
         } else {
             System.out.println("Configuring Gameworld...");
             configureGameWorld(player);
         }
+    }
+
+    public static void yeetMeInScotty(Player player) {
+        Repository.getLobbyPlayers().add(player);
+        GameWorld.Pulser.submit(new Pulse(1, player) {
+            @Override
+            public boolean pulse() {
+                player.removeAttribute("logging_in");
+                LoginConfiguration.configureGameWorld(player);
+                return true;
+            }
+        });
     }
 
     /**
@@ -93,14 +109,15 @@ public final class LoginConfiguration {
      */
     public static void sendLobbyScreen(Player player) {
         Repository.getLobbyPlayers().add(player);
-        player.getInterfaceManager().openWindowsPane(LOBBY_PANE);
-        player.getInterfaceManager().open(LOBBY_INTERFACE);
-        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, false));
-        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, 22, true));
         player.getPacketDispatch().sendString("Welcome to " + GameWorld.getName(), 378, 113);
         player.getPacketDispatch().sendString(getLastLoginText(player), 378, 114);
         player.getPacketDispatch().sendString(getLastLoginIp(player), 378, 115);
         player.getPacketDispatch().sendString("2009scape 2 the 562 boogaloo", 22, 6);
+        player.getInterfaceManager().openWindowsPane(LOBBY_PANE);
+        player.getInterfaceManager().setOpened(LOBBY_INTERFACE);
+        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 2, 378, true));
+        PacketRepository.send(Interface.class, new InterfaceContext(player, 549, 3, 22, true));
+        System.out.println("Finished Displaying Lobby... || sendLobbyScreen LoginConfiguration.java 104");
     }
 
     /**
@@ -109,20 +126,19 @@ public final class LoginConfiguration {
      * @param player The player.
      */
     public static void configureGameWorld(final Player player) {
-        player.getInterfaceManager().openWindowsPane(new Component(548));
         System.out.println("Configuring Game World...");
         player.getConfigManager().reset();
         sendGameConfiguration(player);
         System.out.println("Sending game Configuration to player...");
         Repository.getLobbyPlayers().remove(player);
         System.out.println("Removing Player From Lobby");
-        Repository.getPlayerNames().putIfAbsent(player.getUsername().toLowerCase(),player);
+//        Repository.getPlayerNames().putIfAbsent(player.getUsername().toLowerCase(),player);
         System.out.println("Getting player names, setting to lowercase");
         player.setPlaying(true);
         System.out.println("Setting player playing to true");
-        UpdateSequence.getRenderablePlayers().add(player);
+//        UpdateSequence.getRenderablePlayers().add(player);
         System.out.println("Getting Renderable players");
-        RegionManager.move(player);
+//        RegionManager.move(player);
         System.out.println("Passed Region Manager, Move player");
         player.getMusicPlayer().init();
         System.out.println("Initiating Music Player || LoginConfiguration");
@@ -132,7 +148,7 @@ public final class LoginConfiguration {
         System.out.println("Initiating Setting Update Scene Graph || LoginConfiguration");
         player.getStateManager().init();
         System.out.println("Initiating State Manager || LoginConfiguration");
-        player.getPacketDispatch().sendInterfaceConfig(226, 1, true);
+//        player.getPacketDispatch().sendInterfaceConfig(226, 1, true);
         System.out.println("Sending Interface Configuration to Player || LoginConfiguration");
 		/*if (GameWorld.getSettings().isPvp()) {
 			player.getPacketDispatch().sendString("", 226, 1);
@@ -191,7 +207,9 @@ public final class LoginConfiguration {
      */
     public static void sendGameConfiguration(final Player player) {
         System.out.println("Sending Game Configuration... || LoginConfiguration");
-        player.getInterfaceManager().openWindowsPane(new Component(player.getInterfaceManager().isResizable() ? 746 : 548));
+//        PacketRepository.send(WindowsPane.class, new WindowsPaneContext(player, 746, 5));
+//        player.getInterfaceManager().openWindowsPane(new Component(player.getInterfaceManager().isResizable() ? 746 : 548));
+        PacketRepository.send(WindowsPane.class, new WindowsPaneContext(player, 548, 5));
         System.out.println("Opening Windows Pane || Login Configuration");
         player.getInterfaceManager().openChatbox(137);
         System.out.println("Opening Chatbox || LoginConfiguration");
@@ -246,40 +264,40 @@ public final class LoginConfiguration {
         System.out.println("Configuring player for login || LoginConfiguration");
         player.getInventory().refresh();
         System.out.println("Refreshing Inventory || LoginConfiguration");
-        player.getEquipment().refresh();
-        System.out.println("Refreshing Equipment || LoginConfiguration");
+//        player.getEquipment().refresh();
+//        System.out.println("Refreshing Equipment || LoginConfiguration");
         player.getSkills().refresh();
-        System.out.println("Refreshing Skills || LoginConfiguration");
+//        System.out.println("Refreshing Skills || LoginConfiguration");
         player.getSkills().configure();
-        System.out.println("Getting Skills || LoginConfiguration");
-        player.getSettings().update();
-        System.out.println("Getting Settings || LoginConfiguration");
+//        System.out.println("Getting Skills || LoginConfiguration");
+//        player.getSettings().update();
+//        System.out.println("Getting Settings || LoginConfiguration");
         player.getInteraction().setDefault();
-        System.out.println("Getting Interaction || LoginConfiguration");
+//        System.out.println("Getting Interaction || LoginConfiguration");
         player.getPacketDispatch().sendRunEnergy();
-        System.out.println("Sending Run Energy || LoginConfiguration");
+//        System.out.println("Sending Run Energy || LoginConfiguration");
         player.getFamiliarManager().login();
-        System.out.println("Familiar Manager on login || LoginConfiguration");
+//        System.out.println("Familiar Manager on login || LoginConfiguration");
         player.getInterfaceManager().openDefaultTabs();
-        System.out.println("Opening default tabs || LoginConfiguration");
+//        System.out.println("Opening default tabs || LoginConfiguration");
         player.getGrandExchange().init();
-        System.out.println("Initializing Grand Exchange || LoginConfiguration");
+//        System.out.println("Initializing Grand Exchange || LoginConfiguration");
         player.getPacketDispatch().sendString("Friends List - World " + GameWorld.getSettings().getWorldId(), 550, 3);
-        System.out.println("Sending Friends List string || LoginConfiguration");
+//        System.out.println("Sending Friends List string || LoginConfiguration");
         player.getConfigManager().init();
-        System.out.println("Initiating config manager || LoginConfiguration");
+//        System.out.println("Initiating config manager || LoginConfiguration");
         player.getAntiMacroHandler().init();
-        System.out.println("Initiating anti macro handler || LoginConfiguration");
+//        System.out.println("Initiating anti macro handler || LoginConfiguration");
         player.getQuestRepository().syncronizeTab(player);
-        System.out.println("Sync quest repo to player || LoginConfiguration");
+//        System.out.println("Sync quest repo to player || LoginConfiguration");
         player.getGraveManager().update();
-        System.out.println("Updating Grave Manager || LoginConfiguration");
+//        System.out.println("Updating Grave Manager || LoginConfiguration");
         player.getInterfaceManager().close();
-        System.out.println("Closing Interfaces || LoginConfiguration");
+//        System.out.println("Closing Interfaces || LoginConfiguration");
         player.getEmoteManager().refresh();
-        System.out.println("Getting Emote Manager || LoginConfiguration");
+//        System.out.println("Getting Emote Manager || LoginConfiguration");
         player.getInterfaceManager().openInfoBars();
-        System.out.println("Opening Info Bars || LoginConfiguration");
+//        System.out.println("Opening Info Bars || LoginConfiguration");
     }
 
     /**

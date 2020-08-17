@@ -331,6 +331,7 @@ public final class MSPacketRepository {
 					System.out.println("Player Connection Successful");
 					if (!details.getSession().isActive()) {
 						sendPlayerRemoval(username);
+						System.out.println("Sending player removal!");
 						break;
 					}
 					if (player == null) {

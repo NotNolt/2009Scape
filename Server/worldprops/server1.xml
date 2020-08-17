@@ -2,7 +2,7 @@
     <GameSettings
     name="2009scape"
     beta="false"
-    dev="false"
+    dev="true"
     startGui="false"
     worldID="1"
     countryID="0"

@@ -12,7 +12,8 @@ public final class MouseClickPacket implements IncomingPacket {
 
 	@Override
 	public void decode(Player player, int opcode, IoBuffer buffer) {
-		int data = buffer.getLEShortA();
+		System.out.println("Incoming Mouse Click");
+		int data = buffer.getLEShort();
 		int positioning = buffer.getIntB();
 		boolean rightClick = ((data >> 15) & 0x1) == 1;
 		int delay = data & 0x7FF;
@@ -22,6 +23,7 @@ public final class MouseClickPacket implements IncomingPacket {
 			return;
 		}
 		player.getMonitor().handleMouseClick(x, y, delay, rightClick);
+		return;
 	}
 
 }

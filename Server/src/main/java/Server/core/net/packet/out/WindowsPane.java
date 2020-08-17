@@ -15,7 +15,7 @@ public final class WindowsPane implements OutgoingPacket<WindowsPaneContext> {
 		System.out.println("Sending WindowPane || Outgoing");
 		IoBuffer buffer = new IoBuffer(50);
 		buffer.putShortA(context.getWindowId());
-		buffer.putShort(0);
+		buffer.putShort(context.getPlayer().getInterfaceManager().getPacketCount(1));
 		buffer.putS(context.getType());
 		context.getPlayer().getDetails().getSession().write(buffer);
 	}

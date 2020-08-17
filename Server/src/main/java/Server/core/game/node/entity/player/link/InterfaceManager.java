@@ -175,6 +175,7 @@ public final class InterfaceManager {
 	public boolean close() {
 		if (player.getAttribute("runscript", null) != null) {
 			player.removeAttribute("runscript");
+			System.out.println("Trying to close interface w/ runscript....");
 			player.getPacketDispatch().sendRunScript(101, "");
 		}
 		if (opened != null && opened.close(player)) {
@@ -436,7 +437,7 @@ public final class InterfaceManager {
 		//Summoning bar
 		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 166 : 137, 747, true));
 		//Split PM
-		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 19 : 14, 754, true));
+//		PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 19 : 14, 754, true));
 	}
 
 	/**
@@ -540,8 +541,11 @@ public final class InterfaceManager {
 		if (windowMode != player.getSession().getClientInfo().getWindowMode()) {
 			player.getSession().getClientInfo().setWindowMode(windowMode);
 			openWindowsPane(new Component(isResizable() ? 746 : 548));
+			System.out.println("Switching Window Mode");
 			openDefaultTabs();
+			System.out.println("Opening Default Tabs");
 			openInfoBars();
+			System.out.println("opening info bars");
 			PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 15 : 20, 751, true));
 			PacketRepository.send(Interface.class, new InterfaceContext(player, getWindowPaneId(), isResizable() ? 70 : 75, 752, true));
 		}
@@ -554,18 +558,23 @@ public final class InterfaceManager {
 	 */
 	public Component getComponent(int componentId) {
 		if (opened != null && opened.getId() == componentId) {
+			System.out.println("opened ID: " + opened.getId());
 			return opened;
 		}
 		if (chatbox != null && chatbox.getId() == componentId) {
+			System.out.println("chatbox ID: " + chatbox.getId());
 			return chatbox;
 		}
 		if (singleTab != null && singleTab.getId() == componentId) {
+			System.out.println("singleTab ID: " + singleTab.getId());
 			return singleTab;
 		}
 		if (overlay != null && overlay.getId() == componentId) {
+			System.out.println("overlay ID: " + overlay.getId());
 			return overlay;
 		}
 		if (windowsPane.getId() == componentId) {
+			System.out.println("windowsPane ID: " + windowsPane.getId());
 			return windowsPane;
 		}
 		for (Component c : tabs) {
@@ -629,6 +638,7 @@ public final class InterfaceManager {
 			overlay.getDefinition().setType(InterfaceType.OVERLAY);
 			overlay.getDefinition().setWalkable(true);
 		}
+		System.out.println("Opening overlay");
 		overlay.open(player);
 	}
 
