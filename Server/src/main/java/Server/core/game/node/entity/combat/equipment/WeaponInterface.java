@@ -162,8 +162,8 @@ public final class WeaponInterface extends Component {
 	private void open() {
 		ComponentDefinition definition = ComponentDefinition.forId(884);
 		boolean resizable = player.getInterfaceManager().isResizable();
-//		PacketRepository.send(Interface.class, new InterfaceContext(player, definition.getWindowPaneId(resizable), definition.getChildId(resizable), id, definition.isWalkable()));
-		PacketRepository.send(Interface.class, new InterfaceContext(player, 548, 150, id, definition.isWalkable()));
+		PacketRepository.send(Interface.class, new InterfaceContext(player, definition.getWindowPaneId(resizable), definition.getChildId(resizable), id, definition.isWalkable()));
+//		PacketRepository.send(Interface.class, new InterfaceContext(player, 548, 150, id, definition.isWalkable()));
 		int slot = ensureStyleIndex(player, player.getSettings().getAttackStyleIndex());
 		if (slot != player.getSettings().getAttackStyleIndex()) {
 			player.getSettings().toggleAttackStyleIndex(slot);
@@ -437,7 +437,6 @@ public final class WeaponInterface extends Component {
 
 	/**
 	 * Opens the autocast select.
-	 * @param p The player.
 	 */
 	public void openAutocastSelect() {
 		if (current != WeaponInterfaces.STAFF) {

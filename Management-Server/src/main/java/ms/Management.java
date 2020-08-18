@@ -126,7 +126,7 @@ public final class Management {
 		if (!isLocallyHosted(ServerConstants.HOST_ADDRESS)) {
 			System.err.println("WARNING: Configure host address in server constants!");
 		}
-		System.out.println("-------- 530 Management server --------");
+		System.out.println("-------- 562 Management server --------");
 		System.out.println("Starting up...");
 		SQLManager.init();
 		//NioReactor.configure(ServerConstants.PORT).start();

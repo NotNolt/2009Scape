@@ -129,27 +129,15 @@ public final class LoginConfiguration {
         System.out.println("Configuring Game World...");
         player.getConfigManager().reset();
         sendGameConfiguration(player);
-        System.out.println("Sending game Configuration to player...");
         Repository.getLobbyPlayers().remove(player);
-        System.out.println("Removing Player From Lobby");
 //        Repository.getPlayerNames().putIfAbsent(player.getUsername().toLowerCase(),player);
-        System.out.println("Getting player names, setting to lowercase");
         player.setPlaying(true);
-        System.out.println("Setting player playing to true");
 //        UpdateSequence.getRenderablePlayers().add(player);
-        System.out.println("Getting Renderable players");
 //        RegionManager.move(player);
-        System.out.println("Passed Region Manager, Move player");
         player.getMusicPlayer().init();
-        System.out.println("Initiating Music Player || LoginConfiguration");
         player.getUpdateMasks().register(new AppearanceFlag(player));
-        System.out.println("Initiating Appearance Update Mask for Player || LoginConfiguration");
         player.getPlayerFlags().setUpdateSceneGraph(true);
-        System.out.println("Initiating Setting Update Scene Graph || LoginConfiguration");
         player.getStateManager().init();
-        System.out.println("Initiating State Manager || LoginConfiguration");
-//        player.getPacketDispatch().sendInterfaceConfig(226, 1, true);
-        System.out.println("Sending Interface Configuration to Player || LoginConfiguration");
 		/*if (GameWorld.getSettings().isPvp()) {
 			player.getPacketDispatch().sendString("", 226, 1);
 		}*/
