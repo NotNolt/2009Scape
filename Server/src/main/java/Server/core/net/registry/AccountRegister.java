@@ -129,7 +129,7 @@ public class AccountRegister extends SQLEntryHandler<RegistryDetails> {
 				year = buffer.getShort();
 				country = buffer.getShort();
 				buffer.getInt();
-				String email = ByteBufferUtils.getString(buffer);
+//				String email = ByteBufferUtils.getString(buffer);
 				@SuppressWarnings("deprecation")
 				final RegistryDetails details = new RegistryDetails(name, SystemManager.getEncryption().hashPassword(password), new Date(year, month, day), country);
 				TaskExecutor.execute(new Runnable() {

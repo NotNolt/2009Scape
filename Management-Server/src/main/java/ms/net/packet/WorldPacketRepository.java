@@ -29,7 +29,7 @@ public final class WorldPacketRepository {
 	 * @param response The registry response.
 	 */
 	public static void sendRegistryResponse(GameServer server, PlayerSession player, Response response) {
-		System.out.println("Sending Registry Response");
+		System.out.println("Sending Registry Response for " + player.getUsername());
 		IoBuffer buffer = new IoBuffer(0, PacketHeader.BYTE);
 		buffer.putString(player.getUsername());
 		buffer.put((byte) response.opcode());
@@ -309,10 +309,11 @@ public final class WorldPacketRepository {
 	 * @param buffer the buffer.
 	 */
 	private static void handleInfoUpdate(GameServer server, IoBuffer buffer) {
-		System.out.println("INCOMING HANDLE PLAYER UPDATE");
 		String username = buffer.getString();
+		System.out.println("INCOMING HANDLE PLAYER UPDATE FOR " + username);
 		PlayerSession player = server.getPlayers().get(username);
 		if (player != null) {
+			System.out.println("Setting chat Icon for player");
 			player.setChatIcon((int) buffer.get()); 
 		}
 	}

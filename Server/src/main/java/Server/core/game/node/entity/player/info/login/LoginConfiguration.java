@@ -91,6 +91,7 @@ public final class LoginConfiguration {
     }
 
     public static void yeetMeInScotty(Player player) {
+        player.setAttribute("logging_in", true);
         Repository.getLobbyPlayers().add(player);
         GameWorld.Pulser.submit(new Pulse(1, player) {
             @Override
