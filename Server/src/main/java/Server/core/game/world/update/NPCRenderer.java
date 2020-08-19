@@ -23,30 +23,42 @@ public final class NPCRenderer {
 	 * @param player The player.
 	 */
 	public static void render(Player player) {
-		IoBuffer buffer = new IoBuffer(32, PacketHeader.SHORT);
+		IoBuffer buffer = new IoBuffer(250, PacketHeader.SHORT);
 		RenderInfo info = player.getRenderInfo();
 		List<NPC> localNPCs = info.getLocalNpcs();
 		IoBuffer maskBuffer = new IoBuffer(-1, PacketHeader.NORMAL, ByteBuffer.allocate(1 << 16));
+
 		buffer.setBitAccess();
 		buffer.putBits(8, localNPCs.size());
+
 		for (Iterator<NPC> it = localNPCs.iterator(); it.hasNext();) {
 			NPC npc = it.next();
 			boolean withinDistance = player.getLocation().withinDistance(npc.getLocation());
 			if (npc.isHidden(player) || !withinDistance || npc.getProperties().isTeleporting()) {
 				buffer.putBits(1, 1).putBits(2, 3);
 				it.remove();
+
+
 				if (!withinDistance && npc.getAggressiveHandler() != null) {
 					npc.getAggressiveHandler().removeTolerance(player.getIndex());
 				}
+
+
 			} else if (npc.getWalkingQueue().getRunDir() != -1) {
 				buffer.putBits(1, 1).putBits(2, 2).putBits(3, npc.getWalkingQueue().getWalkDir()).putBits(3, npc.getWalkingQueue().getRunDir());
 				flagMaskUpdate(player, buffer, maskBuffer, npc, false);
+
+
 			} else if (npc.getWalkingQueue().getWalkDir() != -1) {
 				buffer.putBits(1, 1).putBits(2, 1).putBits(3, npc.getWalkingQueue().getWalkDir());
 				flagMaskUpdate(player, buffer, maskBuffer, npc, false);
+
+
 			} else if (npc.getUpdateMasks().isUpdateRequired()) {
 				buffer.putBits(1, 1).putBits(2, 0);
 				writeMaskUpdates(player, maskBuffer, npc, false);
+
+
 			} else {
 				buffer.putBits(1, 0);
 			}
@@ -62,14 +74,11 @@ public final class NPCRenderer {
 			flagMaskUpdate(player, buffer, maskBuffer, npc, true);
 			int offsetX = npc.getLocation().getX() - player.getLocation().getX();
 			int offsetY = npc.getLocation().getY() - player.getLocation().getY();
-			if (offsetX < 0) {
-				offsetX += 32;
-			}
-			if (offsetY < 0) {
-				offsetY += 32;
-			}
+			buffer.putBits(1,1);
+			buffer.putBits(1, npc.getUpdateMasks().isUpdateRequired() ? 1 : 0);
 			buffer.putBits(5, offsetY);
 			buffer.putBits(14, npc.getId());
+			buffer.putBits(3, npc.getDirection().toInteger());
 			buffer.putBits(5, offsetX);
 			if (npc.getAggressiveHandler() != null) {
 				npc.getAggressiveHandler().getPlayerTolerance()[player.getIndex()] = GameWorld.getTicks();

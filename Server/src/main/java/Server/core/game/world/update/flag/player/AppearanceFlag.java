@@ -9,7 +9,7 @@ import core.tools.StringUtils;
 
 /**
  * Handles the appearance update flag.
- * @author Emperor
+ * @author Woahscam
  *
  */
 public final class AppearanceFlag extends UpdateFlag<Player> {
@@ -24,6 +24,7 @@ public final class AppearanceFlag extends UpdateFlag<Player> {
 
 	@Override
 	public void write(IoBuffer buffer) {
+		int mask = 0x0;
 		Appearance appearance = context.getAppearance();
 		appearance.prepareBodyData(context);
 		IoBuffer block = new IoBuffer();
@@ -31,30 +32,25 @@ public final class AppearanceFlag extends UpdateFlag<Player> {
 		if (context.size() > 1) {
 			settings |= (context.size() - 1) << 3;
 		}
+		block.put(mask);
 		block.put(settings); // Titles
 		block.put(appearance.getSkullIcon()); // Skull icon
 		block.put(appearance.getHeadIcon()); // Head icon
-		int npcId = appearance.getNpcId();
-		if (npcId == -1) {
-			int[] parts = appearance.getBodyParts();
-			for (int i = 0; i < 12; i++) {
-				int value = parts[i];
-				if (value == 0) {
-					block.put(0);
-				} else {
-					block.putShort(value);
-				}
-			}
-		} else {
-			block.putShort(-1);
-			block.putShort(npcId);
-			block.put(255);
+		for (int index = 0; index < 4; index++) {
+			block.put((byte) 0);
 		}
-		final BodyPart[] colors = new BodyPart[] { appearance.getHair(), appearance.getTorso(), appearance.getLegs(), appearance.getFeet(), appearance.getSkin() };
-		for (int i = 0; i < colors.length; i++) {// colours
-			block.put(colors[i].getColor());
+		block.putShort(0x100 + appearance.getBodyParts()[2]);
+		block.put(0);
+		block.putShort(0x100 + appearance.getBodyParts()[3]);
+		block.putShort(0x100 + appearance.getBodyParts()[5]);
+		block.putShort(0x100 + appearance.getBodyParts()[0]);
+		block.putShort(0x100 + appearance.getBodyParts()[4]);
+		block.putShort(0x100 + appearance.getBodyParts()[6]);
+		block.putShort(0x100 + appearance.getBodyParts()[1]);
+		for (int color : appearance.getColors()) {// colours
+			block.put(color);
 		}
-		block.putShort(appearance.getRenderAnimation());
+		block.put(1426);
 		block.putLong(StringUtils.stringToLong(context.getUsername()));
 		block.put(context.getProperties().getCurrentCombatLevel());
 		block.putShort(0);
@@ -62,6 +58,34 @@ public final class AppearanceFlag extends UpdateFlag<Player> {
 		buffer.put(block.toByteBuffer().position());
 		buffer.put(block);
 	}
+//		int npcId = appearance.getNpcId();
+//		if (npcId == -1) {
+//			int[] parts = appearance.getBodyParts();
+//			for (int i = 0; i < 12; i++) {
+//				int value = parts[i];
+//				if (value == 0) {
+//					block.put(0);
+//				} else {
+//					block.putShort(value);
+//				}
+//			}
+//		} else {
+//			block.putShort(-1);
+//			block.putShort(npcId);
+//			block.put(255);
+//		}
+//		final BodyPart[] colors = new BodyPart[] { appearance.getHair(), appearance.getTorso(), appearance.getLegs(), appearance.getFeet(), appearance.getSkin() };
+//		for (int i = 0; i < colors.length; i++) {// colours
+//			block.put(colors[i].getColor());
+//		}
+//		block.putShort(appearance.getRenderAnimation());
+//		block.putLong(StringUtils.stringToLong(context.getUsername()));
+//		block.put(context.getProperties().getCurrentCombatLevel());
+//		block.putShort(0);
+//		block.putShort(0);
+//		buffer.put(block.toByteBuffer().position());
+//		buffer.put(block);
+//	}
 
 	@Override
 	public int data() {

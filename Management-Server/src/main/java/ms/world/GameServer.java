@@ -69,13 +69,21 @@ public final class GameServer {
 	 * @param player The player.
 	 */
 	public void register(PlayerSession player) {
+		System.out.println("Registering player to ms");
 		players.put(player.getUsername(), player);
+		System.out.println("Setting player username");
 		player.setWorld(this);
+		System.out.println("Setting world");
 		player.setActive(true);
+		System.out.println("Setting player to active");
 		player.setWorldId(info.getWorldId());
+		System.out.println("Setting World ID");
 		player.configure();
+		System.out.println("Configuring player");
 		WorldPacketRepository.sendRegistryResponse(this, player, Response.SUCCESSFUL);
+		System.out.println("Sending registry response");
 		player.getCommunication().sync();
+		System.out.println("Syncing Communication");
 	}
 
 	/**

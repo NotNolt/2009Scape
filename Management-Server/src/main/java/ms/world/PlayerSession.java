@@ -110,6 +110,7 @@ public final class PlayerSession {
 	public boolean parse() {
 		Connection connection = SQLManager.getConnection();
 		if (connection == null) {
+			System.out.println("PlayerSession = null");
 			return false;
 		}
 		ResultSet result = null;
@@ -118,6 +119,7 @@ public final class PlayerSession {
 			statement = connection.prepareStatement("SELECT * FROM " + "members" + " WHERE " + "" + "username" + "='" + username.toLowerCase() + "' LIMIT 1");
 			result = statement.executeQuery();
 			if (result == null || !result.next()) {
+				System.out.println("Closing SQL conn");
 				SQLManager.close(connection);
 				return false;
 			}

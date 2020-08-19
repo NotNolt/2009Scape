@@ -31,11 +31,12 @@ public final class PacketRepository {
 		/**Unknown Packet Pool - Outgoing -
 		 * 0, 2, 6, 7, 15, 21, 25, 26, 39, 41, 54, 58, 65, 66, 72, 74, 78, 81, 82, 92, 104, 112,
 		 * 118, 124, 127, 128, 130, 131, 137, 139, 140, 141, 155, 159, 160, 163, 170, 183, 189, 192,
-		 * 195, 198, 200, 202, 206, 212, 223, 226, 228, 229, 235, 243, 244, 248, 250, 249, 254
+		 * 195, 198, 200, 202, 206, 212, 223, 226, 228, 229, 235, 243, 244, 248, 249, 254
 		 */
 
 		/**Not Listed in this repo
 		 * 107 - PlayerRenderer.java
+		 * 250 - NPCRenderer.java
 		 */
 
 		/**
@@ -184,10 +185,8 @@ public final class PacketRepository {
 
 		INCOMING_PACKETS.put(148, packet); //WORLD_MAP_CLICKING_PACKET 562
 		INCOMING_PACKETS.put(197, packet); //ENTER_LONGSTRING_PACKET 562
-		INCOMING_PACKETS.put(4, packet);//IN_OUT_SCREEN_PACKET
 		INCOMING_PACKETS.put(155, packet);//SWITCH_DETAIL
 		INCOMING_PACKETS.put(116, packet);//DONE_LOADING_REGION
-		INCOMING_PACKETS.put(182, packet);//PUBLIC_CHAT_PACKET
 		INCOMING_PACKETS.put(226, packet);//ADD_FRIEND_PACKET
 		INCOMING_PACKETS.put(92, packet);//REMOVE_FRIEND_PACKET
 		INCOMING_PACKETS.put(123, packet);//SEND_FRIEND_MESSAGE_PACKET

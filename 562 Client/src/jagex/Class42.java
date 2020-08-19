@@ -269,7 +269,7 @@ public class Class42 {
 			Class202.anInt2943 = 0;
 			Class131_Sub2_Sub1.anInt5560 = 0;
 			Class68.method718(3943);
-			Class23_Sub1_Sub2.method301(5816);
+			Class23_Sub1_Sub2.updateLocalPlayer(5816); //RTE 8/19/20 || Player Rendering
 			Class137.method2113(5784);
 			Class23.method292(-1);
 			if (arg0 > 107) {

@@ -117,80 +117,43 @@ public abstract class Class68
     public static void method718(int arg0) {
 	try {
 	    anInt925++;
-	    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-		.method1794(arg0 + -3828);
-	    int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			.readBits(1, false);
+	    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1794(arg0 + -3828);
+	    int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
 	    if (i != 0) {
-		int i_26_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readBits(2, false);
+		int i_26_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(2, false);
 		if (i_26_ == 0)
 		    Class128_Sub1.anIntArray4019[Class202.anInt2943++] = 2047;
 		else if (i_26_ == 1) {
-		    int i_27_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				    .readBits(3, false);
-		    Class166.aClass23_Sub4_Sub1_Sub2_2216.method339(i_27_,
-								    true, 1);
-		    int i_28_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				    .readBits(1, false);
+		    int i_27_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(3, false);
+		    Class166.aClass23_Sub4_Sub1_Sub2_2216.method339(i_27_, true, 1);
+		    int i_28_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
 		    if (i_28_ == 1)
-			Class128_Sub1.anIntArray4019[Class202.anInt2943++]
-			    = 2047;
+			Class128_Sub1.anIntArray4019[Class202.anInt2943++] = 2047;
 		} else {
 		    if (arg0 != 3943)
 			method722(-70, -116, -14, -120, null, null, -30);
 		    if (i_26_ == 2) {
-			if (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readBits(1, false)
-			    == 1) {
-			    int i_29_
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readBits(3, false);
-			    Class166.aClass23_Sub4_Sub1_Sub2_2216
-				.method339(i_29_, true, 2);
-			    int i_30_
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readBits(3, false);
-			    Class166.aClass23_Sub4_Sub1_Sub2_2216
-				.method339(i_30_, true, 2);
+			if (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false) == 1) {
+			    int i_29_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(3, false);
+			    Class166.aClass23_Sub4_Sub1_Sub2_2216.method339(i_29_, true, 2);
+			    int i_30_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(3, false);
+			    Class166.aClass23_Sub4_Sub1_Sub2_2216.method339(i_30_, true, 2);
 			} else {
-			    int i_31_
-				= Class23_Sub3_Sub1
-				      .aClass131_Sub15_Sub2_5231
-				      .readBits(3, false);
-			    Class166.aClass23_Sub4_Sub1_Sub2_2216
-				.method339(i_31_, true, 0);
+			    int i_31_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(3, false);
+			    Class166.aClass23_Sub4_Sub1_Sub2_2216.method339(i_31_, true, 0);
 			}
-			int i_32_ = Class23_Sub3_Sub1
-					.aClass131_Sub15_Sub2_5231
-					.readBits(1, false);
+			int i_32_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
 			if (i_32_ == 1)
-			    Class128_Sub1.anIntArray4019[Class202.anInt2943++]
-				= 2047;
+			    Class128_Sub1.anIntArray4019[Class202.anInt2943++] = 2047;
 		    } else if (i_26_ == 3) {
-			int i_33_ = Class23_Sub3_Sub1
-					.aClass131_Sub15_Sub2_5231
-					.readBits(1, false);
+			int i_33_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
 			if (i_33_ == 1)
-			    Class128_Sub1.anIntArray4019[Class202.anInt2943++]
-				= 2047;
-			ItemDefinition.anInt300
-			    = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				  .readBits(2, false);
-			int i_34_ = Class23_Sub3_Sub1
-					.aClass131_Sub15_Sub2_5231
-					.readBits(1, false);
-			int i_35_ = Class23_Sub3_Sub1
-					.aClass131_Sub15_Sub2_5231
-					.readBits(7, false);
-			int i_36_ = Class23_Sub3_Sub1
-					.aClass131_Sub15_Sub2_5231
-					.readBits(7, false);
-			Class166.aClass23_Sub4_Sub1_Sub2_2216.method358
-			    (i_34_ == 1, true, i_36_,
-			     ItemDefinition.anInt300, i_35_);
+			    Class128_Sub1.anIntArray4019[Class202.anInt2943++] = 2047;
+			ItemDefinition.anInt300 = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(2, false);
+			int i_34_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
+			int i_35_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(7, false);
+			int i_36_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(7, false);
+			Class166.aClass23_Sub4_Sub1_Sub2_2216.method358(i_34_ == 1, true, i_36_, ItemDefinition.anInt300, i_35_);
 		    }
 		}
 	    }

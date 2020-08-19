@@ -1356,7 +1356,7 @@ public class PacketParser extends Class131_Sub2 {
 				Class131_Sub35.incomingOpcode = -1;
 				return true;
 			}
-			if (Class131_Sub35.incomingOpcode == 250) { //Unknown
+			if (Class131_Sub35.incomingOpcode == 250) { //NPC Updating
 				PacketStream.updateNPC((byte) -112);
 				Class131_Sub35.incomingOpcode = -1;
 				return true;
@@ -1917,7 +1917,7 @@ public class PacketParser extends Class131_Sub2 {
 				Class131_Sub35.incomingOpcode = -1;
 				return true;
 			}
-			if (Class131_Sub35.incomingOpcode == 107) { //Unknown
+			if (Class131_Sub35.incomingOpcode == 107) { //Player Updating
 				Class42.updatePlayer(124);
 				Class131_Sub35.incomingOpcode = -1;
 				return true;
@@ -2407,7 +2407,7 @@ public class PacketParser extends Class131_Sub2 {
 				Class131_Sub35.incomingOpcode = -1;
 				return true;
 			}
-			if (Class131_Sub35.incomingOpcode == 160) { //Unknown Possible Preosition Child
+			if (Class131_Sub35.incomingOpcode == 160) { //Unknown Possible Reposition Child
 				int i_300_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEShortA(-1);
 				int i_301_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedLEInt(-16777216);
 				int i_302_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readSignedLEShort(-112);

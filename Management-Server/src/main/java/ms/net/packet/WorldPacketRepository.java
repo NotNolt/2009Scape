@@ -332,7 +332,9 @@ public final class WorldPacketRepository {
 //		String compName = buffer.getString();
 //		String serial = buffer.getString();
 		int rights = server.getInfo().getRevision() == 498 ? 0 : buffer.getInt();
+		System.out.println("WPR || Setting rights: " + rights);
 		int chatIcon = server.getInfo().getRevision() == 498 ? 0 : buffer.get();
+		System.out.println("WPR || chat icon: " + chatIcon);
 		UIDInfo uid = new UIDInfo(ipAddress);
 		PlayerSession player = new PlayerSession(username, password, new UIDInfo(ipAddress));
 		if (WorldDatabase.isActivePlayer(username)) {

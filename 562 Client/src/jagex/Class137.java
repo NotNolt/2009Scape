@@ -82,58 +82,42 @@ public class Class137
     public static void method2113(int arg0) {
 	try {
 	    anInt1840++;
-	    while (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-                .method1785(Class131_Sub8_Sub1.anInt6100, (byte) 106) >= 11) {
-		int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			    .readBits(11, false);
+	    while (Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1785(Class131_Sub8_Sub1.anInt6100, (byte) 106) >= 11) {
+		int i = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(11, false);
 		if (i == 2047)
 		    break;
 		boolean bool = false;
 		if (Class105.aClass23_Sub4_Sub1_Sub2Array1373[i] == null) {
-		    Class105.aClass23_Sub4_Sub1_Sub2Array1373[i]
-			= new Player();
+		    Class105.aClass23_Sub4_Sub1_Sub2Array1373[i] = new Player();
 		    Class105.aClass23_Sub4_Sub1_Sub2Array1373[i].anInt5274 = i;
 		    if (Class55.aStreamArray726[i] != null)
-			Class105.aClass23_Sub4_Sub1_Sub2Array1373[i].parseAppearence
-			    (Class55.aStreamArray726[i],
-			     arg0 ^ ~0x16f2);
+			Class105.aClass23_Sub4_Sub1_Sub2Array1373[i].parseAppearence(Class55.aStreamArray726[i], arg0 ^ ~0x16f2);
 		    bool = true;
 		}
 		Class148.anIntArray1983[Class131_Sub38.anInt4618++] = i;
-		Player class23_sub4_sub1_sub2
-		    = Class105.aClass23_Sub4_Sub1_Sub2Array1373[i];
+		Player class23_sub4_sub1_sub2 = Class105.aClass23_Sub4_Sub1_Sub2Array1373[i];
 		class23_sub4_sub1_sub2.anInt5285 = Class125.anInt1632;
-		int i_0_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			       .readBits(5, false);
+		int i_0_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(5, false);
 		if (i_0_ > 15)
 		    i_0_ -= 32;
-		int i_1_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			       .readBits(5, false);
+		int i_1_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(5, false);
 		if (i_1_ > 15)
 		    i_1_ -= 32;
-		int i_2_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			       .readBits(1, false);
-		int i_3_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			       .readBits(1, false);
+		int i_2_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
+		int i_3_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(1, false);
 		if (i_3_ == 1)
 		    Class128_Sub1.anIntArray4019[Class202.anInt2943++] = i;
 		int i_4_ = (Class138.anIntArray1857
-			    [Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				 .readBits(3, false)]);
+			    [Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readBits(3, false)]);
 		if (bool)
 		    class23_sub4_sub1_sub2.method338(arg0 + -5886, i_4_);
 		class23_sub4_sub1_sub2.method358
 		    (i_2_ == 1, true,
-		     i_0_ + (Class166.aClass23_Sub4_Sub1_Sub2_2216
-			     .anIntArray5331[0]),
-		     ItemDefinition.anInt300,
-		     (Class166.aClass23_Sub4_Sub1_Sub2_2216.anIntArray5328[0]
-		      - -i_1_));
+		     i_0_ + (Class166.aClass23_Sub4_Sub1_Sub2_2216.anIntArray5331[0]),ItemDefinition.anInt300,(Class166.aClass23_Sub4_Sub1_Sub2_2216.anIntArray5328[0]- -i_1_));
 	    }
 	    if (arg0 != 5784)
 		method2116(-103, 49, 39, 26, true, 82, -113);
-	    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-		.method1788(arg0 ^ 0x17d8);
+	    Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.method1788(arg0 ^ 0x17d8);
 	} catch (RuntimeException runtimeexception) {
 	    throw Class131_Sub2_Sub6.method1495(runtimeexception,
 						"op.E(" + arg0 + ')');

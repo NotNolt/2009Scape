@@ -60,13 +60,10 @@ public abstract class Class23
 		int i_2_ = Class128_Sub1.anIntArray4019[i];
 		Player class23_sub4_sub1_sub2
 		    = Class105.aClass23_Sub4_Sub1_Sub2Array1373[i_2_];
-		int i_3_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-			       .readUnsignedByte(117);
+		int i_3_ = Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(117);
 		if ((i_3_ & 0x1) != 0)
-		    i_3_ += Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231
-				.readUnsignedByte(-63) << -1492307448;
-		Class42.parsePlayerUpdateFlags((byte) 77, i_3_, class23_sub4_sub1_sub2,
-				  i_2_);
+		    i_3_ += Class23_Sub3_Sub1.aClass131_Sub15_Sub2_5231.readUnsignedByte(-63) << 8;
+		Class42.parsePlayerUpdateFlags((byte) 77, i_3_, class23_sub4_sub1_sub2,i_2_);
 	    }
 	    if (arg0 != -1)
 		anIntArray249 = null;

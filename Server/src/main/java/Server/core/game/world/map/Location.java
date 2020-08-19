@@ -15,6 +15,11 @@ import java.nio.ByteBuffer;
 public final class Location extends Node {
 
 	/**
+	 * Represents the possible region sizes on the <b>Runescape</b> map.
+	 */
+	public static final int[] REGION_SIZES = new int[] { 104, 120, 136, 168 };
+
+	/**
 	 * The x-coordinate.
 	 */
 	private int x;
@@ -38,12 +43,9 @@ public final class Location extends Node {
 	public Location(int x, int y, int z) {
 		super(null, null);
 		super.destinationFlag = DestinationFlag.LOCATION;
-		this.x = x;
-		this.y = y;
-		if (z < 0) {
-			z += 4;
-		}
-		this.z = z;
+		this.x = (short) x;
+		this.y = (short) y;
+		this.z = (byte) z;
 	}
 
 	/**
@@ -218,7 +220,13 @@ public final class Location extends Node {
 	 * @param other The other location.
 	 * @return If you're within the other distance.
 	 */
+//	public boolean withinDistance(Location other) {
+//		return withinDistance(other, MapDistance.RENDERING.getDistance());
+//	}
 	public boolean withinDistance(Location other) {
+		if (other.z != z) {
+			return false;
+		}
 		return withinDistance(other, MapDistance.RENDERING.getDistance());
 	}
 
@@ -290,7 +298,7 @@ public final class Location extends Node {
 	 * @return The region x-coordinate.
 	 */
 	public int getRegionX() {
-		return x >> 3;
+		return (x >> 3);
 	}
 
 	/**
@@ -298,7 +306,7 @@ public final class Location extends Node {
 	 * @return The region y-coordinate.
 	 */
 	public int getRegionY() {
-		return y >> 3;
+		return (y >> 3);
 	}
 
 	/**
@@ -306,7 +314,7 @@ public final class Location extends Node {
 	 * @return The local x-coordinate.
 	 */
 	public int getLocalX() {
-		return x - ((x >> 6) << 6);
+		return x- 8 * (getRegionX() - 6);
 	}
 
 	/**
@@ -314,7 +322,7 @@ public final class Location extends Node {
 	 * @return The local y-coordinate.
 	 */
 	public int getLocalY() {
-		return y - ((y >> 6) << 6);
+		return y - 8 * (getRegionY() - 6);
 	}
 
 	/**
@@ -329,9 +337,7 @@ public final class Location extends Node {
 	 * Gets the local y-coordinate.
 	 * @return The local y-coordinate.
 	 */
-	public int getSceneY() {
-		return y - ((getRegionY() - 6) << 3);
-	}
+	public int getSceneY() { return y - ((getRegionY() - 6) * 8); }
 
 	/**
 	 * Gets the local x-coordinate.
@@ -356,7 +362,7 @@ public final class Location extends Node {
 	 * @return The x in the (8x8) region.
 	 */
 	public int getChunkX() {
-		return getLocalX() >> 3;
+		return (x >> 3);
 	}
 
 	/**
@@ -364,7 +370,7 @@ public final class Location extends Node {
 	 * @return The y in the (8x8) region.
 	 */
 	public int getChunkY() {
-		return getLocalY() >> 3;
+		return (y >> 3);
 	}
 
 	@Override
@@ -434,7 +440,10 @@ public final class Location extends Node {
 	 * @return The z.
 	 */
 	public int getZ() {
-		return z % 4;
+		if (z > 3) {
+			return 3;
+		}
+		return z;
 	}
 
 	/**

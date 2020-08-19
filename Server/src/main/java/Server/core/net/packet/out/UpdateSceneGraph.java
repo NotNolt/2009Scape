@@ -46,6 +46,7 @@ public final class UpdateSceneGraph implements OutgoingPacket<SceneGraphContext>
 		buffer.putShort(player.getLocation().getLocalX());
 		buffer.putShort(player.getLocation().getRegionY());
 		player.getDetails().getSession().write(buffer);
+		player.getPlayerFlags().setLastSceneGraph(player.getLocation());
 	}
 
 }

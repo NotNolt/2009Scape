@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 /**
  * Handles the player rendering.
- * @author Emperor
+ * @author Woahscam
  */
 public final class PlayerRenderer {
 
@@ -24,17 +24,18 @@ public final class PlayerRenderer {
 	 * Handles the player rendering for a player.
 	 * @param player The player.
 	 */
-	public static void
-	render(Player player) {
+	public static void render(Player player) {
 		IoBuffer buffer = new IoBuffer(107, PacketHeader.SHORT);
 		IoBuffer flags = new IoBuffer(-1, PacketHeader.NORMAL);
 		RenderInfo info = player.getRenderInfo();
 
+
+		buffer.setBitAccess();
 		updateLocalPosition(player, buffer, flags);
 		buffer.putBits(8, info.getLocalPlayers().size());
 		for (Iterator<Player> it = info.getLocalPlayers().iterator(); it.hasNext();) {
 			Player other = it.next();
-			if (!other.isActive() || !other.getLocation().withinDistance(player.getLocation()) || other.getProperties().isTeleporting() || other.isInvisible()) {
+			if (!other.isActive() || !other.getLocation().withinDistance(player.getLocation())) { // || other.getProperties().isTeleporting() || other.isInvisible()) {
 				buffer.putBits(1, 1);
 				buffer.putBits(2, 3);
 				it.remove();
@@ -52,6 +53,7 @@ public final class PlayerRenderer {
 			}
 			addLocalPlayer(player, other, info, buffer, flags);
 		}
+
 		ByteBuffer masks = flags.toByteBuffer();
 		masks.flip();
 		if (masks.hasRemaining()) {
@@ -112,29 +114,53 @@ public final class PlayerRenderer {
 	 */
 	private static void addLocalPlayer(Player player, Player other, RenderInfo info, IoBuffer buffer, IoBuffer flags) {
 		buffer.putBits(11, other.getIndex());
-		int offsetX = (other.getLocation().getX() - player.getLocation().getX());
 		int offsetY = (other.getLocation().getY() - player.getLocation().getY());
-		if (offsetY < 0) {
+		if (offsetY < 15) {
 			offsetY += 32;
 		}
-		if (offsetX < 0) {
+		int offsetX = (other.getLocation().getX() - player.getLocation().getX());
+		if (offsetX < 15) {
 			offsetX += 32;
 		}
-		boolean appearance = info.getAppearanceStamps()[other.getIndex() & 0x800] != other.getUpdateMasks().getAppearanceStamp();
-		boolean update = appearance || other.getUpdateMasks().isUpdateRequired() || other.getUpdateMasks().hasSynced();
+		boolean update = other.getUpdateMasks().isUpdateRequired();
 		buffer.putBits(5, offsetY);
 		buffer.putBits(5, offsetX);
-		buffer.putBits(1, other.getProperties().isTeleporting() ? 1 : 0);
+		buffer.putBits(1,0);
 		buffer.putBits(1, update ? 1 : 0);
-		buffer.putBits(3, other.getDirection().ordinal());
+		buffer.putBits(3, 1);
 		info.getLocalPlayers().add(other);
 		if (update) {
-			if (appearance) {
-				info.getAppearanceStamps()[other.getIndex() & 0x800] = other.getUpdateMasks().getAppearanceStamp();
-			}
-			writeMaskUpdates(player, other, flags, appearance, true);
+			writeMaskUpdates(player,other,flags,other.getRenderInfo().preparedAppearance(),true);
 		}
+
+
 	}
+
+//	private static void addLocalPlayer(Player player, Player other, RenderInfo info, IoBuffer buffer, IoBuffer flags) {
+//		buffer.putBits(11, other.getIndex());
+//		int offsetX = (other.getLocation().getX() - player.getLocation().getX());
+//		int offsetY = (other.getLocation().getY() - player.getLocation().getY());
+//		if (offsetY < 0) {
+//			offsetY += 32;
+//		}
+//		if (offsetX < 0) {
+//			offsetX += 32;
+//		}
+//		boolean appearance = info.getAppearanceStamps()[other.getIndex() & 0x800] != other.getUpdateMasks().getAppearanceStamp();
+//		boolean update = appearance || other.getUpdateMasks().isUpdateRequired() || other.getUpdateMasks().hasSynced();
+//		buffer.putBits(5, offsetY);
+//		buffer.putBits(5, offsetX);
+//		buffer.putBits(1, other.getProperties().isTeleporting() ? 1 : 0);
+//		buffer.putBits(1, update ? 1 : 0);
+//		buffer.putBits(3, other.getDirection().ordinal());
+//		info.getLocalPlayers().add(other);
+//		if (update) {
+//			if (appearance) {
+//				info.getAppearanceStamps()[other.getIndex() & 0x800] = other.getUpdateMasks().getAppearanceStamp();
+//			}
+//			writeMaskUpdates(player, other, flags, appearance, true);
+//		}
+//	}
 
 	/**
 	 * Updates the local player's client position.
@@ -143,14 +169,14 @@ public final class PlayerRenderer {
 	 * @param flags The update flags buffer.
 	 */
 	private static void updateLocalPosition(Player local, IoBuffer buffer, IoBuffer flags) {
-		if (local.getPlayerFlags().isUpdateSceneGraph() || local.getProperties().isTeleporting()) {
+		if (local.getPlayerFlags().isUpdateSceneGraph()) { // || local.getProperties().isTeleporting()) {
 			buffer.putBits(1, 1); // Updating
 			buffer.putBits(2, 3); // Sub opcode
 			flagMaskUpdate(local, local, buffer, flags, false, false);
 			buffer.putBits(2, local.getLocation().getZ());
-			buffer.putBits(1, local.getProperties().isTeleporting() ? 1 : 0);
-			buffer.putBits(7, local.getLocation().getSceneY(local.getPlayerFlags().getLastSceneGraph()));
-			buffer.putBits(7, local.getLocation().getSceneX(local.getPlayerFlags().getLastSceneGraph()));
+			buffer.putBits(1, 0);//local.getProperties().isTeleporting() ? 1 : 0
+			buffer.putBits(7, local.getLocation().getLocalX());
+			buffer.putBits(7,local.getLocation().getLocalY());
 		} else {
 			renderLocalPlayer(local, local, buffer, flags);
 		}
@@ -169,6 +195,7 @@ public final class PlayerRenderer {
 	private static void flagMaskUpdate(Player local, Player player, IoBuffer buffer, IoBuffer maskBuffer, boolean sync, boolean appearance) {
 		if (player.getUpdateMasks().isUpdateRequired()) {
 			buffer.putBits(1, 1);
+			buffer.putBits(2,0);
 			writeMaskUpdates(local, player, maskBuffer, appearance, sync);
 		} else {
 			buffer.putBits(1, 0);

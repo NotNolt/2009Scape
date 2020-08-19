@@ -69,8 +69,11 @@ public class WorldDatabase {
 		for (GameServer server : DATABASE) {
 			if (server != null) {
 				WorldInfo w = server.getInfo();
+				System.out.println("Putting player info to world || WorldDatabase");
 				buffer.putSmart(w.getWorldId());
+				System.out.println("Gettting world ID");
 				buffer.putShort(server.isActive() ? server.getPlayerAmount() : -1);
+				System.out.println("finishing putting player info");
 			}
 		}
 	}

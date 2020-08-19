@@ -168,7 +168,7 @@ public final class EquipmentContainer extends Container {
 		@Override
 		public void update(Container c, ContainerEvent event) {
 			int[] slots = event.getSlots();
-			PacketRepository.send(ContainerPacket.class, new ContainerContext(player, 387, 155, 94, event.getItems(), false, slots));
+			PacketRepository.send(ContainerPacket.class, new ContainerContext(player, 387, 29, 94, event.getItems(), false, slots));
 			update(c);
 			boolean updateDefenceAnimation = false;
 			for (int slot : slots) {
@@ -196,7 +196,7 @@ public final class EquipmentContainer extends Container {
 			if (inter != null) {
 				inter.updateInterface();
 			}
-			PacketRepository.send(ContainerPacket.class, new ContainerContext(player, 387, 155, 94, c.toArray(), 14, false));
+			PacketRepository.send(ContainerPacket.class, new ContainerContext(player, 387, 29, 94, c.toArray(), 14, false));
 			update(c);
 			player.getProperties().updateDefenceAnimation();
 		}
@@ -206,17 +206,23 @@ public final class EquipmentContainer extends Container {
 		 * @param c The container.
 		 */
 		public void update(Container c) {
+			System.out.println("Updates the bonuses, weight, animations");
 			if (c.getNew(SLOT_SHIELD).getId() != 11283 && player.getAttribute("dfs_spec", false)) {
 				player.removeAttribute("dfs_spec");
 				player.getProperties().getCombatPulse().setHandler(null);
+				System.out.println("dfs combat pulse null");
 				if (!player.getSettings().isSpecialToggled()) {
 					player.getConfigManager().set(301, 0);
 				}
 			}
 			player.getAppearance().setAnimations();
+			System.out.println("Getting player appearance and animations");
 			player.getUpdateMasks().register(new AppearanceFlag(player));
+			System.out.println("Registering player appearance flag");
 			player.getSettings().updateWeight();
+			System.out.println("Updating weight");
 			updateBonuses(player);
+			System.out.println("Updating bonuses");
 		}
 	}
 
@@ -260,7 +266,7 @@ public final class EquipmentContainer extends Container {
 		PacketRepository.send(WeightUpdate.class, player.getPacketDispatch().getContext());
 		int index = 0;
 		int[] bonuses = player.getProperties().getBonuses();
-		for (int i = 36; i < 51; i++) {
+		for (int i = 36; i < 52; i++) {
 			if (i == 47) {
 				continue;
 			}

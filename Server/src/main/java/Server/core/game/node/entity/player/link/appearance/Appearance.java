@@ -16,8 +16,7 @@ import java.nio.ByteBuffer;
 
 /**
  * Represents an appearance managing class of a player.
- * @author Emperor
- * @author Vexia
+ * @author Woahscam
  */
 public final class Appearance implements SavingModule {
 
@@ -40,6 +39,11 @@ public final class Appearance implements SavingModule {
 	 * Represents the shown body parts.
 	 */
 	private final int[] bodyParts = new int[14];
+
+	/**
+	 * Represents the appearance colors.
+	 */
+	private int[] colors;
 
 	/**
 	 * Represents the cached body parts (default male).
@@ -680,6 +684,22 @@ public final class Appearance implements SavingModule {
 	 */
 	public void setRidingMinecart(boolean ridingMinecart) {
 		this.ridingMinecart = ridingMinecart;
+	}
+
+	/**
+	 * Gets the colors.
+	 * @return the colors
+	 */
+	public int[] getColors() {
+		return colors;
+	}
+
+	/**
+	 * Sets the colors.
+	 * @param colors the colors to set
+	 */
+	public void setColors(int[] colors) {
+		this.colors = colors;
 	}
 
 	/**

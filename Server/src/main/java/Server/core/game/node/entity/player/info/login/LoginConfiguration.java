@@ -91,7 +91,6 @@ public final class LoginConfiguration {
     }
 
     public static void yeetMeInScotty(Player player) {
-        player.setAttribute("logging_in", true);
         Repository.getLobbyPlayers().add(player);
         GameWorld.Pulser.submit(new Pulse(1, player) {
             @Override
@@ -133,8 +132,8 @@ public final class LoginConfiguration {
         Repository.getLobbyPlayers().remove(player);
 //        Repository.getPlayerNames().putIfAbsent(player.getUsername().toLowerCase(),player);
         player.setPlaying(true);
-//        UpdateSequence.getRenderablePlayers().add(player);
-//        RegionManager.move(player);
+        UpdateSequence.getRenderablePlayers().add(player);
+        RegionManager.move(player);
         player.getMusicPlayer().init();
         player.getUpdateMasks().register(new AppearanceFlag(player));
         player.getPlayerFlags().setUpdateSceneGraph(true);
@@ -253,13 +252,13 @@ public final class LoginConfiguration {
         System.out.println("Configuring player for login || LoginConfiguration");
         player.getInventory().refresh();
         System.out.println("Refreshing Inventory || LoginConfiguration");
-//        player.getEquipment().refresh();
+        player.getEquipment().refresh();
 //        System.out.println("Refreshing Equipment || LoginConfiguration");
         player.getSkills().refresh();
 //        System.out.println("Refreshing Skills || LoginConfiguration");
         player.getSkills().configure();
 //        System.out.println("Getting Skills || LoginConfiguration");
-//        player.getSettings().update();
+        player.getSettings().update();
 //        System.out.println("Getting Settings || LoginConfiguration");
         player.getInteraction().setDefault();
 //        System.out.println("Getting Interaction || LoginConfiguration");

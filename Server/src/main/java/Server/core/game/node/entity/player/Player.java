@@ -94,8 +94,7 @@ import plugin.interaction.item.brawling_gloves.BrawlingGlovesManager;
 
 /**
  * Represents a player entity.
- * @author Emperor
- * @author Vexia
+ * @author Woahscam
  */
 public class Player extends Entity {
 
@@ -443,9 +442,9 @@ public class Player extends Entity {
 		if (playerFlags.isUpdateSceneGraph()) {
 			updateSceneGraph(false);
 		}
+		MapChunkRenderer.render(this);
 		PlayerRenderer.render(this);
 		NPCRenderer.render(this);
-		MapChunkRenderer.render(this);
 	}
 
 	@Override

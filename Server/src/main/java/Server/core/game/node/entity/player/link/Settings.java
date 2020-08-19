@@ -144,7 +144,9 @@ public final class Settings {
 		player.getConfigManager().set(300, specialEnergy * 10);
 		player.getConfigManager().set(43, attackStyleIndex);
 		player.getPacketDispatch().sendRunEnergy();
+
 		updateChatSettings();
+
 		Pulse pulse = player.getAttribute("energy-restore", null);
 		if (pulse == null || !pulse.isRunning()) {
 			pulse = new Pulse(50, player) {
@@ -175,8 +177,8 @@ public final class Settings {
 	/**
 	 * Updates the chat settings.
 	 */
-	public void updateChatSettings() {
-		player.getSession().write(new IoBuffer(232).put(publicChatSetting).put(privateChatSetting).put(tradeSetting));
+	public void updateChatSettings() { //TODO: Find update chat settings
+		player.getSession().write(new IoBuffer(-1).put(publicChatSetting).put(privateChatSetting).put(tradeSetting));
 	}
 
 	/**

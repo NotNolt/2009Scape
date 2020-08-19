@@ -179,7 +179,7 @@ public abstract class MovementPulse extends Pulse {
 					if (near) {
 						((Player) mover).getPacketDispatch().sendMessage("I can't reach that.");
 					}
-					PacketRepository.send(ClearMinimapFlag.class, new PlayerContext((Player) mover));
+//					PacketRepository.send(ClearMinimapFlag.class, new PlayerContext((Player) mover));
 				}
 				stop();
 				return true;
