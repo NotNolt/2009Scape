@@ -113,7 +113,7 @@ public final class GameWorld {
             TaskExecutor.execute(() -> {
                 NodeList<Player> player = Repository.getPlayers();
                 try {
-                    player.stream().filter(Objects::nonNull).filter(p -> !p.isArtificial() && p.isPlaying()).forEach(p -> DisconnectionQueue.save(p,false));
+                    player.stream().filter(Objects::nonNull).filter(p -> !p.isArtificial() && p.isPlaying()).forEach(p -> Repository.getDisconnectionQueue().save(p,false));
                 } catch (Throwable t) {
                     t.printStackTrace();
                 }
@@ -168,7 +168,7 @@ public final class GameWorld {
         PluginManager.init();
         configParser.postPlugin();
         RareDropTable.init();
-        SystemLogger.log("Initialized Rare Drop Table from " + RareDropTable.RDT_LOCATION);
+        SystemLogger.log("Initialized Rare Drop Table from " + ServerConstants.RDT_DATA_PATH);
         //ResourceAIPManager.get().init(); Commented out as we do not use Skilling Tasks, which is what this is for
         if(settings.getEnable_bots()) {
             ImmerseWorld.init();

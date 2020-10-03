@@ -3,7 +3,7 @@ import java.awt.Component;
 
 final class Class155_Sub1 extends Class155 {
 
-   private int anInt2969;
+   private final int anInt2969;
    private static Interface1 anInterface1_2970;
 
 
@@ -15,12 +15,8 @@ final class Class155_Sub1 extends Class155 {
       anInterface1_2970.method6(this.anInt2969, this.anIntArray1975);
    }
 
-   public static void method2166() {
-      anInterface1_2970 = null;
-   }
-
    final void method2164(Component var1) throws Exception {
-      anInterface1_2970.method5(Class21.anInt443, (byte)-39, var1, RSString.aBoolean2150);
+      anInterface1_2970.method5(Class21.anInt443, (byte)-39, var1, Unsorted.aBoolean2150);
    }
 
    final void method2151() {

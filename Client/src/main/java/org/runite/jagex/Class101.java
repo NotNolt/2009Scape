@@ -11,11 +11,10 @@ final class Class101 {
    static int anInt1425 = 0;
    static int[] anIntArray1426;
    static int anInt1427;
-   static CacheIndex aClass153_1428;
    static short[][] aShortArrayArray1429;
 
 
-   static final void method1607(int var0, int var1, boolean var2, int[] var3, int[] var4) {
+   static void method1607(int var0, int var1, boolean var2, int[] var3, int[] var4) {
       try {
          if(var2) {
             method1608((byte)106);
@@ -51,13 +50,13 @@ final class Class101 {
          }
 
       } catch (RuntimeException var12) {
-         throw Class44.method1067(var12, "nj.C(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null?"{...}":"null") + ',' + (var4 != null?"{...}":"null") + ')');
+         throw Class44.clientError(var12, "nj.C(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null?"{...}":"null") + ',' + (var4 != null?"{...}":"null") + ')');
       }
    }
 
    public static void method1608(byte var0) {
       try {
-         aClass153_1428 = null;
+         CacheIndex.npcConfigIndex = null;
          aClass61_1424 = null;
          aShortArrayArray1429 = (short[][])null;
          anIntArray1426 = null;
@@ -70,20 +69,17 @@ final class Class101 {
 
          aClass153_1420 = null;
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "nj.A(" + var0 + ')');
+         throw Class44.clientError(var2, "nj.A(" + var0 + ')');
       }
    }
 
-   static final void method1609(int var0) {
+   static void method1609() {
       try {
-         Class2.anInterface5Array70 = null;
-         if(var0 <= 49) {
-            method1608((byte)96);
-         }
+         Unsorted.anInterface5Array70 = null;
 
-         Class88.method1455();
+          Class88.method1455();
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "nj.B(" + var0 + ')');
+         throw Class44.clientError(var2, "nj.B(" + 90 + ')');
       }
    }
 

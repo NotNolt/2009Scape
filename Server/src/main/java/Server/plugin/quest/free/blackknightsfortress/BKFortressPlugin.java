@@ -51,16 +51,16 @@ public final class BKFortressPlugin extends OptionHandler {
 
 	@Override
 	public Plugin<Object> newInstance(Object arg) throws Throwable {
-		ItemDefinition.forId(9589).getConfigurations().put("option:read", this);
-		ObjectDefinition.forId(74).getConfigurations().put("option:open", this);
-		ObjectDefinition.forId(73).getConfigurations().put("option:open", this);
-		ObjectDefinition.forId(2337).getConfigurations().put("option:open", this);
-		ObjectDefinition.forId(2338).getConfigurations().put("option:open", this);
-		ObjectDefinition.forId(2341).getConfigurations().put("option:push", this);
-		ObjectDefinition.forId(17148).getConfigurations().put("option:climb-up", this);
-		ObjectDefinition.forId(17149).getConfigurations().put("option:climb-down", this);
-		ObjectDefinition.forId(17160).getConfigurations().put("option:climb-down", this);
-		ObjectDefinition.forId(2342).getConfigurations().put("option:listen-at", this);
+		ItemDefinition.forId(9589).getHandlers().put("option:read", this);
+		ObjectDefinition.forId(74).getHandlers().put("option:open", this);
+		ObjectDefinition.forId(73).getHandlers().put("option:open", this);
+		ObjectDefinition.forId(2337).getHandlers().put("option:open", this);
+		ObjectDefinition.forId(2338).getHandlers().put("option:open", this);
+		ObjectDefinition.forId(2341).getHandlers().put("option:push", this);
+		ObjectDefinition.forId(17148).getHandlers().put("option:climb-up", this);
+		ObjectDefinition.forId(17149).getHandlers().put("option:climb-down", this);
+		ObjectDefinition.forId(17160).getHandlers().put("option:climb-down", this);
+		ObjectDefinition.forId(2342).getHandlers().put("option:listen-at", this);
 		return this;
 	}
 
@@ -135,6 +135,10 @@ public final class BKFortressPlugin extends OptionHandler {
 			player.getDialogueInterpreter().open(4605, Repository.findNPC(4605), true, true);
 			break;
 		case 2337:
+			if (player.getLocation().getY() > 3514) { // Player is inside the fortress
+				DoorActionHandler.handleAutowalkDoor(player, (GameObject) node);
+				return true;
+			}
 			if (!player.getEquipment().containsOneItem(1139) || !player.getEquipment().containsOneItem(1101)) {
 				player.getDialogueInterpreter().open(4605, Repository.findNPC(4604), true);
 			} else {

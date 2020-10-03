@@ -1,6 +1,8 @@
 package org.runite.jagex;
 
-final class Class3_Sub14 extends Class3 {
+import org.rs09.client.Linkable;
+
+final class Class3_Sub14 extends Linkable {
 
    private static float[] aFloatArray2387;
    private static float[] aFloatArray2388;
@@ -38,7 +40,7 @@ final class Class3_Sub14 extends Class3 {
    private static int[] anIntArray2420;
 
 
-   static final float method358(int var0) {
+   static float method358(int var0) {
       int var1 = var0 & 2097151;
       int var2 = var0 & Integer.MIN_VALUE;
       int var3 = (var0 & 2145386496) >> 21;
@@ -98,18 +100,18 @@ final class Class3_Sub14 extends Class3 {
       }
    }
 
-   private final void method360(byte[] var1) {
-      RSByteBuffer var2 = new RSByteBuffer(var1);
-      this.anInt2408 = var2.getInt();
-      this.anInt2390 = var2.getInt();
-      this.anInt2397 = var2.getInt();
-      this.anInt2401 = var2.getInt();
+   private void method360(byte[] var1) {
+      DataBuffer var2 = new DataBuffer(var1);
+      this.anInt2408 = var2.readInt();
+      this.anInt2390 = var2.readInt();
+      this.anInt2397 = var2.readInt();
+      this.anInt2401 = var2.readInt();
       if(this.anInt2401 < 0) {
          this.anInt2401 = ~this.anInt2401;
          this.aBoolean2395 = true;
       }
 
-      int var3 = var2.getInt();
+      int var3 = var2.readInt();
       this.aByteArrayArray2410 = new byte[var3][];
 
       for(int var4 = 0; var4 < var3; ++var4) {
@@ -117,39 +119,20 @@ final class Class3_Sub14 extends Class3 {
 
          int var6;
          do {
-            var6 = var2.getByte((byte)-48);
+            var6 = var2.readUnsignedByte();
             var5 += var6;
          } while(var6 >= 255);
 
          byte[] var7 = new byte[var5];
-         var2.method764(0, var5, var7, (byte)93);
+         var2.readBytes(var7, var5);
          this.aByteArrayArray2410[var4] = var7;
       }
 
    }
 
-   public static void method361() {
-      aByteArray2417 = null;
-      aClass71Array2406 = null;
-      aClass59Array2407 = null;
-      aClass152Array2392 = null;
-      aClass150Array2398 = null;
-      aBooleanArray2393 = null;
-      anIntArray2420 = null;
-      aFloatArray2403 = null;
-      aFloatArray2400 = null;
-      aFloatArray2413 = null;
-      aFloatArray2416 = null;
-      aFloatArray2399 = null;
-      aFloatArray2387 = null;
-      aFloatArray2388 = null;
-      anIntArray2391 = null;
-      anIntArray2409 = null;
-   }
-
-   private static final boolean method362(CacheIndex var0) {
+   private static boolean method362(CacheIndex var0) {
       if(!aBoolean2405) {
-         byte[] var1 = var0.getFile(0, (byte)-122, 0);
+         byte[] var1 = var0.getFile(0, 0);
          if(var1 == null) {
             return false;
          }
@@ -161,9 +144,9 @@ final class Class3_Sub14 extends Class3 {
       return true;
    }
 
-   static final Class3_Sub14 method363(CacheIndex var0, int var1, int var2) {
+   static Class3_Sub14 method363(CacheIndex var0, int var1, int var2) {
       if(method362(var0)) {
-         byte[] var3 = var0.getFile(var1, (byte)-122, var2);
+         byte[] var3 = var0.getFile(var1, var2);
          return var3 == null?null:new Class3_Sub14(var3);
       } else {
          var0.method2129((byte)95, var2, var1);
@@ -171,7 +154,7 @@ final class Class3_Sub14 extends Class3 {
       }
    }
 
-   static final int method364() {
+   static int method364() {
       int var0 = aByteArray2417[anInt2404] >> anInt2414 & 1;
       ++anInt2414;
       anInt2404 += anInt2414 >> 3;
@@ -179,16 +162,16 @@ final class Class3_Sub14 extends Class3 {
       return var0;
    }
 
-   private static final void method365(byte[] var0, int var1) {
+   private static void method365(byte[] var0) {
       aByteArray2417 = var0;
-      anInt2404 = var1;
+      anInt2404 = 0;
       anInt2414 = 0;
    }
 
-   private final float[] method366(int var1) {
-      method365(this.aByteArrayArray2410[var1], 0);
+   private float[] method366(int var1) {
+      method365(this.aByteArrayArray2410[var1]);
       method364();
-      int var2 = method368(Class3_Sub26.method513(anIntArray2420.length - 1, 4));
+      int var2 = method368(Class3_Sub26.method513(anIntArray2420.length - 1));
       boolean var3 = aBooleanArray2393[var2];
       int var4 = var3?anInt2396:anInt2402;
       boolean var5 = false;
@@ -229,12 +212,11 @@ final class Class3_Sub14 extends Class3 {
       int var16 = var14.anInt1928;
       int var17 = var14.anIntArray1929[var16];
       boolean var15 = !aClass59Array2407[var17].method1205();
-      boolean var40 = var15;
 
       for(var17 = 0; var17 < var14.anInt1931; ++var17) {
          Class152 var18 = aClass152Array2392[var14.anIntArray1930[var17]];
          float[] var19 = aFloatArray2403;
-         var18.method2112(var19, var4 >> 1, var40);
+         var18.method2112(var19, var4 >> 1, var15);
       }
 
       int var44;
@@ -298,7 +280,7 @@ final class Class3_Sub14 extends Class3 {
             var20[4 * var25 + 1] = (var27 - var29) * var30 + (var26 - var28) * var31;
          }
 
-         var25 = Class3_Sub26.method513(var4 - 1, 4);
+         var25 = Class3_Sub26.method513(var4 - 1);
 
          int var47;
          int var49;
@@ -435,8 +417,8 @@ final class Class3_Sub14 extends Class3 {
       return var42;
    }
 
-   private static final void method367(byte[] var0) {
-      method365(var0, 0);
+   private static void method367(byte[] var0) {
+      method365(var0);
       anInt2402 = 1 << method368(4);
       anInt2396 = 1 << method368(4);
       aFloatArray2403 = new float[anInt2396];
@@ -473,10 +455,10 @@ final class Class3_Sub14 extends Class3 {
          }
 
          int[] var15 = new int[var5];
-         int var10 = Class3_Sub26.method513(var5 - 1, 4);
+         int var10 = Class3_Sub26.method513(var5 - 1);
 
          for(int var11 = 0; var11 < var5; ++var11) {
-            var15[var11] = Class3_Sub28_Sub3.method540(var10, -14314, var11);
+            var15[var11] = Class3_Sub28_Sub3.method540(var10, var11);
          }
 
          if(var1 == 0) {
@@ -539,7 +521,7 @@ final class Class3_Sub14 extends Class3 {
 
    }
 
-   static final int method368(int var0) {
+   static int method368(int var0) {
       int var1 = 0;
 
       int var2;

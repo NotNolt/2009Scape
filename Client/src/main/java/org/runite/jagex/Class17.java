@@ -5,22 +5,16 @@ final class Class17 {
    static Interface2 anInterface2_408;
    static Thread aThread409;
    static int anInt410;
-   static int anInt411;
    static Class64 aClass64_413;
 
-
-   public Class17() {
-      new Class127();
-   }
-
-   static final void method904(int var0, Class140_Sub4 var1) {
+   static void method904(int var0, Class140_Sub4 var1) {
       try {
          if(var1.anInt2779 != 0) {
-            RenderAnimationDefinition var2 = var1.method1965(false);
+            RenderAnimationDefinition var2 = var1.method1965();
             int var4;
             int var5;
             if(var1.anInt2772 != -1 && '\u8000' > var1.anInt2772) {
-               NPC var3 = Class3_Sub13_Sub24.npcs[var1.anInt2772];
+               NPC var3 = NPC.npcs[var1.anInt2772];
                if(var3 != null) {
                   var5 = -var3.anInt2829 + var1.anInt2829;
                   var4 = -var3.anInt2819 + var1.anInt2819;
@@ -213,21 +207,7 @@ final class Class17 {
 
          }
       } catch (RuntimeException var8) {
-         throw Class44.method1067(var8, "cm.A(" + var0 + ',' + (var1 != null?"{...}":"null") + ')');
-      }
-   }
-
-   public static void method905(int var0) {
-      try {
-         anInterface2_408 = null;
-         aClass64_413 = null;
-         if(var0 != -24912) {
-            aClass64_413 = (Class64)null;
-         }
-
-         aThread409 = null;
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "cm.B(" + var0 + ')');
+         throw Class44.clientError(var8, "cm.A(" + var0 + ',' + (var1 != null?"{...}":"null") + ')');
       }
    }
 

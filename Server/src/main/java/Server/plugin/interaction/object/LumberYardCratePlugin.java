@@ -26,7 +26,7 @@ public final class LumberYardCratePlugin extends OptionHandler {
 	/**
 	 * Represents the kittem item.
 	 */
-	private static final Item KITTEN = new Item(1555);
+	private static final Item KITTEN = new Item(13236);
 
 	@Override
 	public boolean handle(Player player, Node node, String option) {
@@ -75,9 +75,9 @@ public final class LumberYardCratePlugin extends OptionHandler {
 
 	@Override
 	public Plugin<Object> newInstance(Object arg) throws Throwable {
-		NPCDefinition.forId(767).getConfigurations().put("option:search", this);
-		ObjectDefinition.forId(2620).getConfigurations().put("option:search", this);
-		ObjectDefinition.forId(31149).getConfigurations().put("option:squeeze-under", this);
+		NPCDefinition.forId(767).getHandlers().put("option:search", this);
+		ObjectDefinition.forId(2620).getHandlers().put("option:search", this);
+		ObjectDefinition.forId(31149).getHandlers().put("option:squeeze-under", this);
 		return null;
 	}
 

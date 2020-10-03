@@ -62,12 +62,12 @@ public final class MerlinCrystalPlugin extends OptionHandler {
 	public Plugin<Object> newInstance(Object arg) throws Throwable {
 		PluginManager.definePlugin(new MerlinCrystalDialogue());
 		PluginManager.definePlugin(new MerlinCrystalItemHandler());
-		ObjectDefinition.forId(63).getConfigurations().put("option:hide-in", this);
-		ObjectDefinition.forId(40026).getConfigurations().put("option:climb-up", this);
-		ObjectDefinition.forId(72).getConfigurations().put("option:open", this);
-		ObjectDefinition.forId(71).getConfigurations().put("option:open", this);
-		ItemDefinition.forId(530).getConfigurations().put("option:drop", this);
-		ObjectDefinition.forId(62).getConfigurations().put("option:smash", this);
+		ObjectDefinition.forId(63).getHandlers().put("option:hide-in", this);
+		ObjectDefinition.forId(40026).getHandlers().put("option:climb-up", this);
+		ObjectDefinition.forId(72).getHandlers().put("option:open", this);
+		ObjectDefinition.forId(71).getHandlers().put("option:open", this);
+		ItemDefinition.forId(530).getHandlers().put("option:drop", this);
+		ObjectDefinition.forId(62).getHandlers().put("option:smash", this);
 		return this;
 	}
 
@@ -583,7 +583,7 @@ public final class MerlinCrystalPlugin extends OptionHandler {
 				player.getDialogueInterpreter().sendDialogue("You have already cleared the hive of its bees.", "You can now safely collect wax from the hive.");
 			}
 			if (useditem.getId() == REPELLENT.getId() && object.getId() == 68 && player.getAttribute("cleared_beehives") == null) {
-				player.getDialogueInterpreter().sendDialogue("You pour insect repellant on the beehive. You see the bees leaving the", "hive.");
+				player.getDialogueInterpreter().sendDialogue("You pour insect repellent on the beehive. You see the bees leaving the", "hive.");
 				player.getPacketDispatch().sendMessage("Suddenly the bees fly out of the hive and sting you.");
 				player.getImpactHandler().manualHit(player, 2, HitsplatType.NORMAL);
 				player.setAttribute("cleared_beehives", 1);

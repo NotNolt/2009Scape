@@ -1,11 +1,11 @@
 package org.runite.jagex;
 
+import org.rs09.client.data.ReferenceCache;
+
 final class Class159 {
 
-   static Class93 aClass93_2016 = new Class93(100);
+   static ReferenceCache aReferenceCache_2016 = new ReferenceCache(100);
    static int[] anIntArray2017 = new int[]{1, 2, 4, 8};
-   static RSString aClass94_2018 = RSString.createRSString("Cabbage");
-   static CacheIndex aClass153_2019;
    static int anInt2020 = 0;
    static int[] anIntArray2021 = new int[2];
    static int localPlayerCount = 0;
@@ -13,7 +13,7 @@ final class Class159 {
    static int anInt2024 = 0;
 
 
-   static final Class12 method2193(int var0, int var1, int var2) {
+   static Class12 method2193(int var0, int var1, int var2) {
       Class3_Sub2 var3 = Class75_Sub2.aClass3_Sub2ArrayArrayArray2638[var0][var1][var2];
       if(var3 == null) {
          return null;
@@ -24,23 +24,22 @@ final class Class159 {
       }
    }
 
-   static final boolean method2194(int var0) {
+   static boolean method2194() {
       try {
-         if(Class3_Sub28_Sub11.aBoolean3641) {
+         if(Unsorted.aBoolean3641) {
             try {
-               return !((Boolean)Class3_Sub13_Sub17.aClass94_3209.method1577(var0 + -2112, Class38.aClass87_665.anApplet1219)).booleanValue();
+               return !((Boolean) TextCore.aClass94_3209.method1577(Class38.aClass87_665.applet)).booleanValue();
             } catch (Throwable var2) {
-               ;
             }
          }
 
-         return var0 != 255?true:true;
+         return true;
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "vl.B(" + var0 + ')');
+         throw Class44.clientError(var3, "vl.B(" + 255 + ')');
       }
    }
 
-   static final void method2195(int var0, int var1) {
+   static void method2195(int var0) {
       try {
          short var2 = 256;
          if(var0 > var2) {
@@ -59,7 +58,7 @@ final class Class159 {
             Class3_Sub13_Sub10.method215((byte)-119, Class163_Sub2_Sub1.aClass109_Sub1Array4027[var3]);
          }
 
-         var3 = var1;
+         var3 = 0;
          int var5 = (var2 + -var0) * 128;
          int var4 = 128 * var0;
 
@@ -150,34 +149,17 @@ final class Class159 {
          }
 
       } catch (RuntimeException var11) {
-         throw Class44.method1067(var11, "vl.E(" + var0 + ',' + var1 + ')');
+         throw Class44.clientError(var11, "vl.E(" + var0 + ',' + 0 + ')');
       }
    }
 
-   static final void method2196(int var0) {
+   static void method2196() {
       try {
-         Class3_Sub13_Sub34.aClass93_3412.method1523((byte)-107);
-         if(var0 != 128) {
-            anInt2024 = 111;
-         }
+         Class3_Sub13_Sub34.aReferenceCache_3412.clearSoftReferences();
 
-         Class3_Sub13_Sub31.aClass93_3369.method1523((byte)-110);
+         Class3_Sub13_Sub31.aReferenceCache_3369.clearSoftReferences();
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "vl.D(" + var0 + ')');
-      }
-   }
-
-   public static void method2197(boolean var0) {
-      try {
-         if(var0) {
-            anIntArray2021 = null;
-            aClass94_2018 = null;
-            anIntArray2017 = null;
-            aClass153_2019 = null;
-            aClass93_2016 = null;
-         }
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "vl.C(" + var0 + ')');
+         throw Class44.clientError(var2, "vl.D(" + 128 + ')');
       }
    }
 

@@ -1,33 +1,18 @@
 package org.runite.jagex;
 
+import org.rs09.client.data.ReferenceCache;
+
 final class Class3_Sub13_Sub31 extends Class3_Sub13 {
 
-   static Class93 aClass93_3369 = new Class93(64);
+   static ReferenceCache aReferenceCache_3369 = new ReferenceCache(64);
    static Class3_Sub28_Sub16[] aClass3_Sub28_Sub16Array3373;
    static int anInt3375 = 0;
-   static int anInt3377 = 7759444;
-   static RSString aClass94_3382 = RSString.createRSString("(U0a )2 in: ");
-
-   public static void method317(int var0) {
-      try {
-         aClass94_3382 = null;
-         if(var0 != 7759444) {
-            method317(72);
-         }
-
-         aClass93_3369 = null;
-         aClass3_Sub28_Sub16Array3373 = null;
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "rl.C(" + var0 + ')');
-      }
-   }
 
    final int[] method154(int var1, byte var2) {
       try {
-         int var3 = -96 / ((var2 - 30) / 36);
          return Class102.anIntArray2125;
       } catch (RuntimeException var4) {
-         throw Class44.method1067(var4, "rl.D(" + var1 + ',' + var2 + ')');
+         throw Class44.clientError(var4, "rl.D(" + var1 + ',' + var2 + ')');
       }
    }
 
@@ -35,7 +20,7 @@ final class Class3_Sub13_Sub31 extends Class3_Sub13 {
       super(0, true);
    }
 
-   static final void method318(int var0) {
+   static void method318() {
       try {
          Class3_Sub4 var1 = (Class3_Sub4)Class3_Sub13_Sub6.aClass61_3075.method1222();
 
@@ -44,12 +29,12 @@ final class Class3_Sub13_Sub31 extends Class3_Sub13 {
                var1.anInt2261 = 0;
                Class132.method1798(56, var1);
             } else {
-               var1.method86(-1024);
+               var1.unlink();
             }
          }
 
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "rl.B(" + var0 + ')');
+         throw Class44.clientError(var2, "rl.B(" + 7759444 + ')');
       }
    }
 

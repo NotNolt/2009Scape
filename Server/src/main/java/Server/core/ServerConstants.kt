@@ -5,6 +5,7 @@ import core.game.world.map.Location
 import core.tools.mysql.Database
 import org.json.simple.JSONObject
 import java.io.File
+import java.math.BigInteger
 
 /**
  * A class holding various variables for the server.
@@ -12,6 +13,9 @@ import java.io.File
  */
 class ServerConstants {
 	companion object {
+        @JvmField
+		var DATA_PATH: String? = null
+
 		//path to the cache
 		@JvmField
 		var CACHE_PATH: String? = null
@@ -29,6 +33,27 @@ class ServerConstants {
 
 		//path to the various config files, such as npc_spawns.json
 		var CONFIG_PATH: String? = null
+
+		@JvmField
+		var GRAND_EXCHANGE_DATA_PATH: String? = null
+
+		@JvmField
+		var RDT_DATA_PATH: String? = null
+
+		@JvmField
+		var OBJECT_PARSER_PATH: String? = null
+
+		@JvmField
+		var SCRIPTS_PATH: String? = null
+
+		@JvmField
+		var DIALOGUE_SCRIPTS_PATH: String? = null
+
+		@JvmField
+		var LOGS_PATH: String? = null
+
+		@JvmField
+		var BOT_DATA_PATH: String? = null
 
 		//the max number of players.
 		@JvmField
@@ -76,7 +101,7 @@ class ServerConstants {
 				arrayOf(Location.create(3019, 3244, 0), "port sarim", "sarim"),
 				arrayOf(Location.create(2956, 3209, 0), "rimmington"),
 				arrayOf(Location.create(2965, 3380, 0), "fally", "falador"),
-				arrayOf(Location.create(2895, 3436, 0), "taverly"),
+				arrayOf(Location.create(2895, 3436, 0), "taverley"),
 				arrayOf(Location.create(3080, 3423, 0), "barbarian village", "barb"),
 				arrayOf(Location.create(3213, 3428, 0), "varrock"),
 				arrayOf(Location.create(3164, 3485, 0), "grand exchange", "ge"),
@@ -108,7 +133,9 @@ class ServerConstants {
 				arrayOf(Location.create(2898, 3544, 0), "burthorpe", "burthorp"),
 				arrayOf(Location.create(3088, 3491, 0), "edge", "edgeville"),
 				arrayOf(Location.create(3169, 3034, 0), "bedabin"),
-				arrayOf(Location.create(3565, 3289, 0), "barrows")
+				arrayOf(Location.create(3565, 3289, 0), "barrows"),
+				arrayOf(Location.create(3016, 3513, 0), "bkf", "black knights fortress"),
+				arrayOf(Location.create(3052, 3481, 0), "monastery")
 		)
 
 		@JvmField
@@ -122,6 +149,13 @@ class ServerConstants {
 		@JvmField
 		var SERVER_NAME: String = ""
 
+		//The RSA_KEY for the server.
+		@JvmField
+		var RSA_KEY = BigInteger("63836541338254930133129004074732382929998437615009296959260995188633082779361618777286690536401412536788693103949475863420785422077437411678826531544580956203799783573564225075359462174640338384017065666188771184000361929010560260535244941334940115723150494202345239634306833859051437359114435513508472366353")
+
+		//The MODULUS for the server.
+		@JvmField
+		var MODULUS = BigInteger("119365899446067315932975991898363325061579719991294025359328021960040125142258621067848949689980866028232491082585431814345859060363748342297790362002830405818586025541018815563000741957417375211440504983329981059065255756529758598479962175681326119784430342275130902058984323109363665114655494006708620299283")
 
 		/**
 		 * Parses a JSONObject and retrieves the values for all settings in this file.
@@ -135,11 +169,18 @@ class ServerConstants {
 			START_LOCATION = JSONUtils.parseLocation(data["new_player_location"].toString())
 			HOME_LOCATION = JSONUtils.parseLocation(data["home_location"].toString())
 
+			DATA_PATH = JSONUtils.parsePath(data["data_path"].toString())
 			CACHE_PATH = JSONUtils.parsePath(data["cache_path"].toString())
 			STORE_PATH = JSONUtils.parsePath(data["store_path"].toString())
 			PLAYER_SAVE_PATH = JSONUtils.parsePath(data["save_path"].toString())
 			CONFIG_PATH = JSONUtils.parsePath(data["configs_path"].toString())
 			PLAYER_ATTRIBUTE_PATH = PLAYER_SAVE_PATH + "attributes" + File.separator
+			GRAND_EXCHANGE_DATA_PATH = JSONUtils.parsePath(data["grand_exchange_data_path"].toString())
+			BOT_DATA_PATH = JSONUtils.parsePath(data["bot_data_path"].toString())
+			RDT_DATA_PATH = JSONUtils.parsePath(data["rare_drop_table_path"].toString())
+			OBJECT_PARSER_PATH = JSONUtils.parsePath(data["object_parser_path"].toString())
+			SCRIPTS_PATH = JSONUtils.parsePath(data["scripts_path"].toString())
+			DIALOGUE_SCRIPTS_PATH = JSONUtils.parsePath(data["dialogue_scripts_path"].toString())
 
 			DATABASE_NAME = data["database_name"].toString()
 			DATABASE_USER = data["database_username"].toString()
@@ -147,10 +188,6 @@ class ServerConstants {
 			DATABASE_ADDRESS = data["database_address"].toString()
 			DATABASE_PORT = data["database_port"].toString()
 
-			SQLManager.SQL_SERVER_ADDRESS = DATABASE_ADDRESS
-			SQLManager.USERNAME = DATABASE_USER
-			SQLManager.PASSWORD = DATABASE_PASS
-			SQLManager.PORT = DATABASE_PORT
 			DATABASE = Database(DATABASE_ADDRESS, DATABASE_NAME, DATABASE_USER, DATABASE_PASS)
 		}
 	}

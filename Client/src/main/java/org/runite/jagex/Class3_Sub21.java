@@ -1,6 +1,8 @@
 package org.runite.jagex;
 
-final class Class3_Sub21 extends Class3 {
+import org.rs09.client.Linkable;
+
+final class Class3_Sub21 extends Linkable {
 
    static Class155 aClass155_2491;
    int anInt2492;
@@ -8,36 +10,32 @@ final class Class3_Sub21 extends Class3 {
    int anInt2494;
    int anInt2495;
    int anInt2497;
-   static RSString aClass94_2498 = RSString.createRSString("(U (X");
 
 
-   final boolean method393(byte var1, int var2, int var3) {
+   final boolean method393(int var2, int var3) {
       try {
-         if(var1 != -45) {
-            method394(6, -105);
-         }
 
-         return var3 >= this.anInt2492 && var3 <= this.anInt2495 && this.anInt2494 <= var2 && var2 <= this.anInt2497;
+          return var3 >= this.anInt2492 && var3 <= this.anInt2495 && this.anInt2494 <= var2 && var2 <= this.anInt2497;
       } catch (RuntimeException var5) {
-         throw Class44.method1067(var5, "lh.D(" + var1 + ',' + var2 + ',' + var3 + ')');
+         throw Class44.clientError(var5, "lh.D(" + (byte) -45 + ',' + var2 + ',' + var3 + ')');
       }
    }
 
-   static final void method394(int var0, int var1) {
+   static void method394(int var0, int var1) {
       try {
          Class3_Sub13_Sub23.anInt3285 = var0;
-         Class3_Sub18.method383(-32584, 3);
-         Class3_Sub18.method383(-32584, 4);
+         Unsorted.method383(-32584, 3);
+         Unsorted.method383(-32584, 4);
          if(var1 <= 83) {
             method395((Class35)null, -43, -61, -51, 101, -106, -58, true);
          }
 
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "lh.E(" + var0 + ',' + var1 + ')');
+         throw Class44.clientError(var3, "lh.E(" + var0 + ',' + var1 + ')');
       }
    }
 
-   static final void method395(Class35 var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+   static void method395(Class35 var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
       int var8 = var0.anIntArray627.length;
 
       int var9;
@@ -47,7 +45,7 @@ final class Class3_Sub21 extends Class3 {
       int var13;
       for(var9 = 0; var9 < var8; ++var9) {
          var10 = var0.anIntArray627[var9] - Class129_Sub1.anInt2697;
-         var11 = var0.anIntArray615[var9] - Class3_Sub28_Sub13.anInt3657;
+         var11 = var0.anIntArray615[var9] - Unsorted.anInt3657;
          var12 = var0.anIntArray618[var9] - Class3_Sub13_Sub30.anInt3363;
          var13 = var12 * var3 + var10 * var4 >> 16;
          var12 = var12 * var4 - var10 * var3 >> 16;
@@ -84,14 +82,11 @@ final class Class3_Sub21 extends Class3 {
          if((var13 - var14) * (var18 - var17) - (var16 - var17) * (var15 - var14) > 0) {
             if(Class3_Sub13_Sub21.aBoolean3261 && Class3_Sub13_Sub4.method185(Class49.anInt819 + Class51.anInt846, Class3_Sub13_Sub23_Sub1.anInt4039 + Class51.anInt835, var16, var17, var18, var13, var14, var15)) {
                Class27.anInt515 = var5;
-               Class66.anInt999 = var6;
+               Unsorted.anInt999 = var6;
             }
 
             if(!HDToolKit.highDetail && !var7) {
-               Class51.aBoolean849 = false;
-               if(var13 < 0 || var14 < 0 || var15 < 0 || var13 > Class51.anInt847 || var14 > Class51.anInt847 || var15 > Class51.anInt847) {
-                  Class51.aBoolean849 = true;
-               }
+               Class51.aBoolean849 = var13 < 0 || var14 < 0 || var15 < 0 || var13 > Class51.anInt847 || var14 > Class51.anInt847 || var15 > Class51.anInt847;
 
                if(var0.anIntArray616 != null && var0.anIntArray616[var9] != -1) {
                   if(Class3_Sub13_Sub22.aBoolean3275) {
@@ -113,30 +108,17 @@ final class Class3_Sub21 extends Class3 {
 
    }
 
-   public static void method396(int var0) {
+   static void method397(byte var0) {
       try {
-         if(var0 != 0) {
-            method397((byte)35);
-         }
-
-         aClass155_2491 = null;
-         aClass94_2498 = null;
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "lh.B(" + var0 + ')');
-      }
-   }
-
-   static final void method397(byte var0) {
-      try {
-         Class114.aClass93_1569.method1524(3);
-         Class3_Sub15.aClass93_2428.method1524(3);
+         Class114.aReferenceCache_1569.clear();
+         Class3_Sub15.aReferenceCache_2428.clear();
          if(var0 != -41) {
             method394(14, 52);
          }
 
-         Class47.aClass93_743.method1524(3);
+         Unsorted.aReferenceCache_743.clear();
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "lh.C(" + var0 + ')');
+         throw Class44.clientError(var2, "lh.C(" + var0 + ')');
       }
    }
 
@@ -147,7 +129,7 @@ final class Class3_Sub21 extends Class3 {
          this.anInt2495 = var3;
          this.anInt2492 = var1;
       } catch (RuntimeException var6) {
-         throw Class44.method1067(var6, "lh.<init>(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+         throw Class44.clientError(var6, "lh.<init>(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
       }
    }
 

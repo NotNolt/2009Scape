@@ -1,4 +1,6 @@
 package org.runite.jagex;
+import org.rs09.client.Node;
+
 import java.awt.*;
 import java.awt.image.ImageObserver;
 
@@ -16,7 +18,7 @@ final class Class3_Sub28_Sub1 extends Node {
    int[] anIntArray3540;
 
 
-   final void method525(int var1) {
+   final void method525() {
       try {
          int var2;
          if(null != this.anIntArray3540) {
@@ -31,166 +33,135 @@ final class Class3_Sub28_Sub1 extends Node {
             }
          }
 
-         var2 = 46 / ((var1 - -27) / 38);
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "bc.O(" + var1 + ')');
+         throw Class44.clientError(var3, "bc.O(" + -85 + ')');
       }
    }
 
-   final int method526(int var1, int var2) {
+   final int method526(int var1) {
       try {
-         if(this.anIntArray3540 == null) {
-            return -1;
-         } else {
-            for(int var3 = var2; this.anIntArray3540.length > var3; ++var3) {
-               if(var1 == this.anIntArray3533[var3]) {
+         if (this.anIntArray3540 != null) {
+            for (int var3 = 0; this.anIntArray3540.length > var3; ++var3) {
+               if (var1 == this.anIntArray3533[var3]) {
                   return this.anIntArray3540[var3];
                }
             }
 
-            return -1;
          }
+         return -1;
       } catch (RuntimeException var4) {
-         throw Class44.method1067(var4, "bc.Q(" + var1 + ',' + var2 + ')');
+         throw Class44.clientError(var4, "bc.Q(" + var1 + ',' + 0 + ')');
       }
    }
 
-   private final void method527(RSByteBuffer var1, int var2, int var3) {
+   private void method527(DataBuffer var1, int var3) {
       try {
-         if(var2 != 0) {
-            this.method526(-91, -3);
-         }
 
          if(var3 == 1) {
-            this.quickChatMenu = var1.getString();
+            this.quickChatMenu = var1.readString();
          } else {
             int var4;
             int var5;
             if(var3 == 2) {
-               var4 = var1.getByte((byte)-38);
+               var4 = var1.readUnsignedByte();
                this.anIntArray3534 = new int[var4];
                this.anIntArray3535 = new int[var4];
 
                for(var5 = 0; var5 < var4; ++var5) {
-                  this.anIntArray3534[var5] = var1.getShort(1);
-                  this.anIntArray3535[var5] = Class3_Sub13_Sub33.method322(true, var1.getByte());
+                  this.anIntArray3534[var5] = var1.readUnsignedShort();
+                  this.anIntArray3535[var5] = Class3_Sub13_Sub33.method322(var1.readSignedByte());
                }
-            } else {
-               if(var3 == 3) {
-                  var4 = var1.getByte((byte)-114);
-                  this.anIntArray3540 = new int[var4];
-                  this.anIntArray3533 = new int[var4];
+            } else if (var3 == 3) {
+               var4 = var1.readUnsignedByte();
+               this.anIntArray3540 = new int[var4];
+               this.anIntArray3533 = new int[var4];
 
-                  for(var5 = 0; var5 < var4; ++var5) {
-                     this.anIntArray3540[var5] = var1.getShort(var2 + 1);
-                     this.anIntArray3533[var5] = Class3_Sub13_Sub33.method322(true, var1.getByte());
-                  }
-               } else if(var3 == 4) {
-                  ;
+               for (var5 = 0; var5 < var4; ++var5) {
+                  this.anIntArray3540[var5] = var1.readUnsignedShort();
+                  this.anIntArray3533[var5] = Class3_Sub13_Sub33.method322(var1.readSignedByte());
                }
             }
          }
 
       } catch (RuntimeException var6) {
-         throw Class44.method1067(var6, "bc.E(" + (var1 != null?"{...}":"null") + ',' + var2 + ',' + var3 + ')');
+         throw Class44.clientError(var6, "bc.E(" + (var1 != null?"{...}":"null") + ',' + 0 + ',' + var3 + ')');
       }
    }
 
-   public static void method528(int var0) {
+   final int method529(int var2) {
       try {
-         aClass3_Sub20_3532 = null;
-         if(var0 != -1667) {
-            anInt3539 = 101;
-         }
-
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "bc.B(" + var0 + ')');
-      }
-   }
-
-   final int method529(byte var1, int var2) {
-      try {
-         int var3 = 45 / ((var1 - -30) / 49);
-         if(null == this.anIntArray3534) {
-            return -1;
-         } else {
-            for(int var4 = 0; this.anIntArray3534.length > var4; ++var4) {
-               if(var2 == this.anIntArray3535[var4]) {
+         if (null != this.anIntArray3534) {
+            for (int var4 = 0; this.anIntArray3534.length > var4; ++var4) {
+               if (var2 == this.anIntArray3535[var4]) {
                   return this.anIntArray3534[var4];
                }
             }
 
-            return -1;
          }
+         return -1;
       } catch (RuntimeException var5) {
-         throw Class44.method1067(var5, "bc.P(" + var1 + ',' + var2 + ')');
+         throw Class44.clientError(var5, "bc.P(" + (byte) 50 + ',' + var2 + ')');
       }
    }
 
-   final void method530(RSByteBuffer var1, byte var2) {
+   final void method530(DataBuffer var1) {
       try {
-         if(var2 <= 104) {
-            this.anIntArray3534 = (int[])null;
-         }
 
          while(true) {
-            int var3 = var1.getByte((byte)-62);
+            int var3 = var1.readUnsignedByte();
             if(var3 == 0) {
                return;
             }
 
-            this.method527(var1, 0, var3);
+            this.method527(var1, var3);
          }
       } catch (RuntimeException var4) {
-         throw Class44.method1067(var4, "bc.D(" + (var1 != null?"{...}":"null") + ',' + var2 + ')');
+         throw Class44.clientError(var4, "bc.D(" + (var1 != null?"{...}":"null") + ',' + (byte) 116 + ')');
       }
    }
 
-   static final RSString method531(byte var0) {
+   static RSString method531() {
       try {
          RSString var1;
          if(Class164_Sub1.anInt3012 == 1 && Class3_Sub13_Sub34.anInt3415 < 2) {
-            var1 = RenderAnimationDefinition.method903(new RSString[]{TextCore.HasUse, TextCore.Spacer, RenderAnimationDefinition.aClass94_378, Class131.aClass94_1724}, (byte)-105);
+            var1 = RenderAnimationDefinition.method903(new RSString[]{TextCore.HasUse, TextCore.Spacer, RenderAnimationDefinition.aClass94_378, TextCore.aClass94_1724});
          } else if(GameObject.aBoolean1837 && 2 > Class3_Sub13_Sub34.anInt3415) {
-            var1 = RenderAnimationDefinition.method903(new RSString[]{Class3_Sub28_Sub9.aClass94_3621, TextCore.Spacer, Class40.aClass94_676, Class131.aClass94_1724}, (byte)-95);
+            var1 = RenderAnimationDefinition.method903(new RSString[]{Class3_Sub28_Sub9.aClass94_3621, TextCore.Spacer, TextCore.aClass94_676, TextCore.aClass94_1724});
          } else if(Class101.aBoolean1419 && ObjectDefinition.aBooleanArray1490[81] && Class3_Sub13_Sub34.anInt3415 > 2) {
-            var1 = RSByteBuffer.method802(Class3_Sub13_Sub34.anInt3415 + -2, true);
+            var1 = Unsorted.method802(Class3_Sub13_Sub34.anInt3415 + -2);
          } else {
-            var1 = RSByteBuffer.method802(Class3_Sub13_Sub34.anInt3415 - 1, true);
+            var1 = Unsorted.method802(Class3_Sub13_Sub34.anInt3415 - 1);
          }
 
          if(Class3_Sub13_Sub34.anInt3415 > 2) {
             var1 = RenderAnimationDefinition.method903(new RSString[] {
                     var1, Class1.aClass94_58, Class72.method1298((byte) 9, Class3_Sub13_Sub34.anInt3415 - 2), TextCore.HasMoreOptions
-            }, (byte)-62);
+            });
 //            System.out.println(var1.toString());
          }
 
-         int var2 = -97 % ((var0 - 55) / 32);
          return var1;
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "bc.F(" + var0 + ')');
+         throw Class44.clientError(var3, "bc.F(" + (byte) 94 + ')');
       }
    }
 
-   static final void method532(int var0, int var1) {
+   static void method532(int var0) {
       try {
-         if(var1 == -28236) {
-            Class3_Sub25 var2 = (Class3_Sub25)Class3_Sub2.aClass130_2220.method1780((long)var0, 0);
-            if(null != var2) {
-               var2.method86(-1024);
-            }
+         Class3_Sub25 var2 = (Class3_Sub25)Class3_Sub2.aHashTable_2220.get((long)var0);
+         if(null != var2) {
+            var2.unlink();
          }
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "bc.A(" + var0 + ',' + var1 + ')');
+         throw Class44.clientError(var3, "bc.A(" + var0 + ',' + -28236 + ')');
       }
    }
 
-   static final void updateLoadingBar(Color var0, boolean var1, boolean var2, RSString var3, int var4) {
+   static void updateLoadingBar(Color var0, boolean var2, RSString var3, int var4) {
       try {
          try {
-            Graphics var5 = Class3_Sub28_Sub12.aCanvas3648.getGraphics();
-            Class139.aFontMetrics1822 = Class3_Sub28_Sub12.aCanvas3648.getFontMetrics(TextCore.Helvetica);
+            Graphics var5 = Class3_Sub28_Sub12.canvas.getGraphics();
+            Class139.aFontMetrics1822 = Class3_Sub28_Sub12.canvas.getFontMetrics(TextCore.Helvetica);
             if(var2) {
                var5.setColor(Color.black);
                var5.fillRect(0, 0, Class23.anInt454, Class140_Sub7.anInt2934);
@@ -200,13 +171,9 @@ final class Class3_Sub28_Sub1 extends Node {
                var0 = ColorCore.loadingbarcolor;
             }
 
-            if(var1) {
-               return;
-            }
-
             try {
                if(null == Class129_Sub1.anImage2695) {
-                  Class129_Sub1.anImage2695 = Class3_Sub28_Sub12.aCanvas3648.createImage(304, 34);
+                  Class129_Sub1.anImage2695 = Class3_Sub28_Sub12.canvas.createImage(304, 34);
                }
 
                Graphics var6 = Class129_Sub1.anImage2695.getGraphics();
@@ -218,7 +185,7 @@ final class Class3_Sub28_Sub1 extends Node {
                var6.fillRect(3 * var4 + 2, 2, -(3 * var4) + 300, 30);
                var6.setFont(TextCore.Helvetica);
                var6.setColor(Color.white);
-               var3.drawString((-var3.method1575(-21018, Class139.aFontMetrics1822) + 304) / 2, 22, var6, (byte)-90);
+               var3.drawString(var6, 22, (-var3.method1575(Class139.aFontMetrics1822) + 304) / 2);
                var5.drawImage(Class129_Sub1.anImage2695, Class23.anInt454 / 2 - 152, -18 + Class140_Sub7.anInt2934 / 2, (ImageObserver)null);
             } catch (Exception var9) {
                int var7 = -152 + Class23.anInt454 / 2;
@@ -231,20 +198,20 @@ final class Class3_Sub28_Sub1 extends Node {
                var5.fillRect(3 * var4 + (var7 - -2), 2 + var8, 300 - var4 * 3, 30);
                var5.setFont(TextCore.Helvetica);
                var5.setColor(Color.white);
-               var3.drawString(var7 + (-var3.method1575(-21018, Class139.aFontMetrics1822) + 304) / 2, 22 + var8, var5, (byte)-125);
+               var3.drawString(var5, 22 + var8, var7 + (-var3.method1575(Class139.aFontMetrics1822) + 304) / 2);
             }
 
             if(Class167.aClass94_2083 != null) {
                var5.setFont(TextCore.Helvetica);
                var5.setColor(Color.white);
-               Class167.aClass94_2083.drawString(Class23.anInt454 / 2 - Class167.aClass94_2083.method1575(-21018, Class139.aFontMetrics1822) / 2, Class140_Sub7.anInt2934 / 2 - 26, var5, (byte)-116);
+               Class167.aClass94_2083.drawString(var5, Class140_Sub7.anInt2934 / 2 - 26, Class23.anInt454 / 2 - Class167.aClass94_2083.method1575(Class139.aFontMetrics1822) / 2);
             }
          } catch (Exception var10) {
-            Class3_Sub28_Sub12.aCanvas3648.repaint();
+            Class3_Sub28_Sub12.canvas.repaint();
          }
 
       } catch (RuntimeException var11) {
-         throw Class44.method1067(var11, "bc.C(" + (var0 != null?"{...}":"null") + ',' + var1 + ',' + var2 + ',' + (var3 != null?"{...}":"null") + ',' + var4 + ')');
+         throw Class44.clientError(var11, "bc.C(" + (var0 != null?"{...}":"null") + ',' + false + ',' + var2 + ',' + (var3 != null?"{...}":"null") + ',' + var4 + ')');
       }
    }
 

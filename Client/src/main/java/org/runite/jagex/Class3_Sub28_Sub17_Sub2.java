@@ -3,7 +3,7 @@ package org.runite.jagex;
 import javax.media.opengl.GL;
 import java.nio.ByteBuffer;
 
-final class Class3_Sub28_Sub17_Sub2 extends Class3_Sub28_Sub17 {
+public final class Class3_Sub28_Sub17_Sub2 extends Class3_Sub28_Sub17 {
 
    private int anInt4083 = 0;
    private int anInt4084 = -1;
@@ -30,21 +30,20 @@ final class Class3_Sub28_Sub17_Sub2 extends Class3_Sub28_Sub17 {
       super.finalize();
    }
 
-   final void method678(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+   final void method678(int var1, int var2, int var3, int var4, int var5, int var6) {
       GL var8;
       if(Class22.aClass3_Sub28_Sub16_Sub1_447 == null) {
          HDToolKit.method1824();
          var8 = HDToolKit.gl;
          HDToolKit.bindTexture2D(this.anInt4084);
          var8.glColor3ub((byte)(var6 >> 16), (byte)(var6 >> 8), (byte)var6);
-         var8.glTranslatef((float)var2, (float)(HDToolKit.anInt1811 - var3), 0.0F);
+         var8.glTranslatef((float)var2, (float)(HDToolKit.height - var3), 0.0F);
          var8.glCallList(this.anIntArray4085[var1]);
-         var8.glLoadIdentity();
       } else {
          HDToolKit.method1824();
          var8 = HDToolKit.gl;
          var8.glColor3ub((byte)(var6 >> 16), (byte)(var6 >> 8), (byte)var6);
-         var8.glTranslatef((float)var2, (float)(HDToolKit.anInt1811 - var3), 0.0F);
+         var8.glTranslatef((float)var2, (float)(HDToolKit.height - var3), 0.0F);
          float var9 = (float)(var1 % 16) / 16.0F;
          float var10 = (float)(var1 / 16) / 16.0F;
          float var11 = var9 + (float)this.anIntArray3709[var1] / (float)this.anInt4087;
@@ -78,22 +77,22 @@ final class Class3_Sub28_Sub17_Sub2 extends Class3_Sub28_Sub17 {
          var8.glTexEnvi(8960, '\u8580', 5890);
          var8.glDisable(3553);
          var8.glActiveTexture('\u84c0');
-         var8.glLoadIdentity();
       }
+       var8.glLoadIdentity();
 
    }
 
-   final void method679(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
+   final void method679(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       HDToolKit.method1824();
       javax.media.opengl.GL var9 = HDToolKit.gl;
       HDToolKit.bindTexture2D(this.anInt4084);
       var9.glColor4ub((byte)(var6 >> 16), (byte)(var6 >> 8), (byte)var6, var7 > 255?-1:(byte)var7);
-      var9.glTranslatef((float)var2, (float)(HDToolKit.anInt1811 - var3), 0.0F);
+      var9.glTranslatef((float)var2, (float)(HDToolKit.height - var3), 0.0F);
       var9.glCallList(this.anIntArray4085[var1]);
       var9.glLoadIdentity();
    }
 
-   private final void method707() {
+   private void method707() {
       if(this.anIntArray4085 == null) {
          this.anIntArray4085 = new int[256];
          javax.media.opengl.GL var1 = HDToolKit.gl;
@@ -128,7 +127,7 @@ final class Class3_Sub28_Sub17_Sub2 extends Class3_Sub28_Sub17 {
       this.method707();
    }
 
-   private final void method708(byte[][] var1) {
+   private void method708(byte[][] var1) {
       if(this.anInt4084 == -1) {
          this.anInt4087 = 0;
 

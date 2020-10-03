@@ -11,26 +11,26 @@ final class Class141 {
    private static int anInt1844;
 
 
-   private static final void method2034(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3) {
+   private static void method2034(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3) {
       var2 += var0.anInt1470;
       var3 += var0.anInt1464;
-      int var4 = var2 + var3 * var1.anInt1461;
+      int var4 = var2 + var3 * var1.width;
       int var5 = 0;
-      int var6 = var0.anInt1468;
-      int var7 = var0.anInt1461;
-      int var8 = var1.anInt1461 - var7;
+      int var6 = var0.height;
+      int var7 = var0.width;
+      int var8 = var1.width - var7;
       int var9 = 0;
       int var10;
       if(var3 <= 0) {
          var10 = 1 - var3;
          var6 -= var10;
          var5 += var10 * var7;
-         var4 += var10 * var1.anInt1461;
+         var4 += var10 * var1.width;
          var3 = 1;
       }
 
-      if(var3 + var6 >= var1.anInt1468) {
-         var10 = var3 + var6 + 1 - var1.anInt1468;
+      if(var3 + var6 >= var1.height) {
+         var10 = var3 + var6 + 1 - var1.height;
          var6 -= var10;
       }
 
@@ -44,20 +44,20 @@ final class Class141 {
          var2 = 1;
       }
 
-      if(var2 + var7 >= var1.anInt1461) {
-         var10 = var2 + var7 + 1 - var1.anInt1461;
+      if(var2 + var7 >= var1.width) {
+         var10 = var2 + var7 + 1 - var1.width;
          var7 -= var10;
          var9 += var10;
          var8 += var10;
       }
 
       if(var7 > 0 && var6 > 0) {
-         method2044(var1.aByteArray2674, var0.aByteArray2674, var5, var4, var7, var6, var8, var9);
+         method2044(var1.raster, var0.raster, var5, var4, var7, var6, var8, var9);
          method2036(var2, var3, var7, var6);
       }
    }
 
-   private static final void method2035(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private static void method2035(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       int var8 = -(var4 >> 2);
       var4 = -(var4 & 3);
 
@@ -86,7 +86,7 @@ final class Class141 {
 
    }
 
-   private static final void method2036(int var0, int var1, int var2, int var3) {
+   private static void method2036(int var0, int var1, int var2, int var3) {
       int var4 = var0 - 1 >> 7;
       int var5 = var0 - 1 + var2 - 1 >> 7;
       int var6 = var1 - 1 >> 7;
@@ -100,7 +100,7 @@ final class Class141 {
 
    }
 
-   static final void method2037(int var0, int var1, boolean var2, boolean var3, int var4, int var5, int var6, int var7, int var8, int var9) {
+   static void method2037(int var0, int var1, boolean var2, boolean var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       if(!var2 || !var3) {
          if(!var2 || var0 != 1) {
             if(!var3 || var0 != 0) {
@@ -119,13 +119,13 @@ final class Class141 {
       }
    }
 
-   static final void method2038(int var0, int var1, int var2, int var3, boolean[][] var4, int[][] var5) {
+   static void method2038(int var0, int var1, int var2, boolean[][] var4) {
       GL var6 = HDToolKit.gl;
       HDToolKit.method1856(1);
       HDToolKit.method1847(1);
       HDToolKit.method1823();
       HDToolKit.method1837(false);
-      Class3_Sub28_Sub4.method551(0, 0, 0);
+      Class3_Sub28_Sub4.method551(0, 0);
       var6.glDepthMask(false);
 
       for(int var7 = 0; var7 < anInt1844; ++var7) {
@@ -171,7 +171,7 @@ final class Class141 {
       HDToolKit.method1846();
    }
 
-   private static final boolean method2039(byte[] var0, int var1, int var2, int var3, int var4, int var5) {
+   private static boolean method2039(byte[] var0, int var1, int var2, int var3, int var4, int var5) {
       int var6 = var2 % var5;
       int var7;
       if(var6 == 0) {
@@ -203,23 +203,23 @@ final class Class141 {
       return false;
    }
 
-   private static final boolean method2040(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3) {
+   private static boolean method2040(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3) {
       var2 += var0.anInt1470;
       var3 += var0.anInt1464;
-      int var4 = var2 + var3 * var1.anInt1461;
-      int var5 = var0.anInt1468;
-      int var6 = var0.anInt1461;
-      int var7 = var1.anInt1461 - var6;
+      int var4 = var2 + var3 * var1.width;
+      int var5 = var0.height;
+      int var6 = var0.width;
+      int var7 = var1.width - var6;
       int var8;
       if(var3 <= 0) {
          var8 = 1 - var3;
          var5 -= var8;
-         var4 += var8 * var1.anInt1461;
+         var4 += var8 * var1.width;
          var3 = 1;
       }
 
-      if(var3 + var5 >= var1.anInt1468) {
-         var8 = var3 + var5 + 1 - var1.anInt1468;
+      if(var3 + var5 >= var1.height) {
+         var8 = var3 + var5 + 1 - var1.height;
          var5 -= var8;
       }
 
@@ -231,26 +231,26 @@ final class Class141 {
          var2 = 1;
       }
 
-      if(var2 + var6 >= var1.anInt1461) {
-         var8 = var2 + var6 + 1 - var1.anInt1461;
+      if(var2 + var6 >= var1.width) {
+         var8 = var2 + var6 + 1 - var1.width;
          var6 -= var8;
          var7 += var8;
       }
 
       if(var6 > 0 && var5 > 0) {
          byte var9 = 8;
-         var7 += (var9 - 1) * var1.anInt1461;
+         var7 += (var9 - 1) * var1.width;
          method2036(var2, var3, var6, var5);
-         return method2039(var1.aByteArray2674, var4, var6, var5, var7, var9);
+         return method2039(var1.raster, var4, var6, var5, var7, var9);
       } else {
          return false;
       }
    }
 
-   static final void method2041(int var0, int var1) {
-      anInt1844 = var0 + 7 >> 3;
-      anInt1842 = var1 + 7 >> 3;
-      aClass109_Sub1_1840 = new LDIndexedSprite(anInt1844 * 128 + 2, anInt1842 * 128 + 2, 0);
+   static void method2041() {
+      anInt1844 = 104 + 7 >> 3;
+      anInt1842 = 104 + 7 >> 3;
+      aClass109_Sub1_1840 = new LDIndexedSprite(anInt1844 * 128 + 2, anInt1842 * 128 + 2);
       aClass169ArrayArray1841 = new Class169[anInt1844][anInt1842];
 
       for(int var2 = 0; var2 < anInt1844; ++var2) {
@@ -261,26 +261,26 @@ final class Class141 {
 
    }
 
-   private static final void method2042(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3) {
+   private static void method2042(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3) {
       var2 += var0.anInt1470;
       var3 += var0.anInt1464;
-      int var4 = var2 + var3 * var1.anInt1461;
+      int var4 = var2 + var3 * var1.width;
       int var5 = 0;
-      int var6 = var0.anInt1468;
-      int var7 = var0.anInt1461;
-      int var8 = var1.anInt1461 - var7;
+      int var6 = var0.height;
+      int var7 = var0.width;
+      int var8 = var1.width - var7;
       int var9 = 0;
       int var10;
       if(var3 <= 0) {
          var10 = 1 - var3;
          var6 -= var10;
          var5 += var10 * var7;
-         var4 += var10 * var1.anInt1461;
+         var4 += var10 * var1.width;
          var3 = 1;
       }
 
-      if(var3 + var6 >= var1.anInt1468) {
-         var10 = var3 + var6 + 1 - var1.anInt1468;
+      if(var3 + var6 >= var1.height) {
+         var10 = var3 + var6 + 1 - var1.height;
          var6 -= var10;
       }
 
@@ -294,26 +294,26 @@ final class Class141 {
          var2 = 1;
       }
 
-      if(var2 + var7 >= var1.anInt1461) {
-         var10 = var2 + var7 + 1 - var1.anInt1461;
+      if(var2 + var7 >= var1.width) {
+         var10 = var2 + var7 + 1 - var1.width;
          var7 -= var10;
          var9 += var10;
          var8 += var10;
       }
 
       if(var7 > 0 && var6 > 0) {
-         method2035(var1.aByteArray2674, var0.aByteArray2674, var5, var4, var7, var6, var8, var9);
+         method2035(var1.raster, var0.raster, var5, var4, var7, var6, var8, var9);
          method2036(var2, var3, var7, var6);
       }
    }
 
-   static final void method2043() {
+   static void method2043() {
       aClass109_Sub1_1840 = null;
       aClass109_Sub1Array1843 = null;
       aClass169ArrayArray1841 = (Class169[][])null;
    }
 
-   private static final void method2044(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private static void method2044(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       int var8 = -(var4 >> 2);
       var4 = -(var4 & 3);
 
@@ -342,13 +342,7 @@ final class Class141 {
 
    }
 
-   public static void method2045() {
-      aClass109_Sub1_1840 = null;
-      aClass109_Sub1Array1843 = null;
-      aClass169ArrayArray1841 = (Class169[][])null;
-   }
-
-   private static final void method2046(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6) {
+   private static void method2046(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6) {
       for(int var7 = -16; var7 < 0; ++var7) {
          for(int var8 = -4; var8 < 0; ++var8) {
             int var10001 = var3++;
@@ -371,7 +365,7 @@ final class Class141 {
 
    }
 
-   static final void method2047(LDIndexedSprite var0, int var1, int var2, int var3) {
+   static void method2047(LDIndexedSprite var0, int var1, int var2, int var3) {
       if(var0 != null) {
          int var4 = var1 - (var2 * Class92.lightX >> 8) >> 3;
          int var5 = var3 - (var2 * Class92.lightY >> 8) >> 3;
@@ -379,7 +373,7 @@ final class Class141 {
       }
    }
 
-   private static final void method2048(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6) {
+   private static void method2048(byte[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6) {
       for(int var7 = -16; var7 < 0; ++var7) {
          for(int var8 = -4; var8 < 0; ++var8) {
             int var10001 = var3++;
@@ -402,7 +396,7 @@ final class Class141 {
 
    }
 
-   static final boolean method2049(LDIndexedSprite var0, int var1, int var2, int var3) {
+   static boolean method2049(LDIndexedSprite var0, int var1, int var2, int var3) {
       if(var0 == null) {
          return false;
       } else {
@@ -412,10 +406,10 @@ final class Class141 {
       }
    }
 
-   private static final void method2050(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3, int var4, boolean var5) {
-      if(var2 > 0 && var3 > 0 && var2 + 16 < var1.anInt1461 && var3 + 16 < var1.anInt1468) {
-         int var6 = var2 + var3 * var1.anInt1461;
-         int var7 = var1.anInt1461 - 16;
+   private static void method2050(LDIndexedSprite var0, LDIndexedSprite var1, int var2, int var3, int var4, boolean var5) {
+      if(var2 > 0 && var3 > 0 && var2 + 16 < var1.width && var3 + 16 < var1.height) {
+         int var6 = var2 + var3 * var1.width;
+         int var7 = var1.width - 16;
          short var8;
          byte var9;
          int var10;
@@ -438,16 +432,16 @@ final class Class141 {
          }
 
          if(var5) {
-            method2046(var1.aByteArray2674, var0.aByteArray2674, var8, var6, var7, var9, var10);
+            method2046(var1.raster, var0.raster, var8, var6, var7, var9, var10);
          } else {
-            method2048(var1.aByteArray2674, var0.aByteArray2674, var8, var6, var7, var9, var10);
+            method2048(var1.raster, var0.raster, var8, var6, var7, var9, var10);
          }
 
          method2036(var2, var3, 16, 16);
       }
    }
 
-   static final void method2051(LDIndexedSprite var0, int var1, int var2, int var3) {
+   static void method2051(LDIndexedSprite var0, int var1, int var2, int var3) {
       if(var0 != null) {
          int var4 = var1 - (var2 * Class92.lightX >> 8) >> 3;
          int var5 = var3 - (var2 * Class92.lightY >> 8) >> 3;

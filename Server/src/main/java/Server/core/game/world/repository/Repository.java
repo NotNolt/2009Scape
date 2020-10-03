@@ -29,6 +29,13 @@ public final class Repository {
 	private static final NodeList<NPC> NPCS = new NodeList<>(ServerConstants.MAX_NPCS);
 
 	/**
+	 * List of player names who have logged in, quick and dirty work-around for the double-logging issue.
+	 * This list needs to have values added to it before any sort of parsing is done for the login process due
+	 * to the time it takes for the parsing to occur, which is the root of this issue to begin with.
+	 */
+	public static final List<String> LOGGED_IN_PLAYERS = new ArrayList<String>(ServerConstants.MAX_PLAYERS);
+
+	/**
 	 * The renderable NPCs.
 	 */
 	private static final List<NPC> RENDERABLE_NPCS = new CopyOnWriteArrayList<>();
@@ -56,6 +63,31 @@ public final class Repository {
 		 * empty.
 		 */
 	}
+
+	/**
+	 * Sends a news message to all players.
+	 * @param string the string.
+	 * @param icon The icon id.
+	 * @param color The color of the text.
+	 */
+	public static void sendMarketUpdate(String string, int icon, String color) {
+		Object[] players = PLAYER_NAMES.values().toArray();
+		int size = players.length;
+		for (int i = 0; i < size; i++) {
+			Player player = (Player) players[i];
+			if (player == null) {
+				continue;
+			}
+			player.sendMessage("<img=" + icon + ">" + color + "Market Update: " + string);
+		}
+	}
+
+	/**
+	 * Sends a news message to all players.
+	 * @param string The string.
+	 * @param color The color.
+	 */
+	public static void sendMarketUpdate(String string) { sendMarketUpdate(string, 12, "<col=CC6600>");}
 
 	/**
 	 * Sends a news message to all players.

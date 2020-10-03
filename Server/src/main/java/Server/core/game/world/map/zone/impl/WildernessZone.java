@@ -159,6 +159,9 @@ public final class WildernessZone extends MapZone {
 			Player p = (Player) e;
 			if(!p.isArtificial()) {
 				show(p);
+			} else {
+				p.getSkullManager().setWilderness(true);
+				p.getSkullManager().setLevel(getWilderness(p));
 			}
 			p.getAntiMacroHandler().isDisabled = true;
 			for (int i = 0; i < 7; i++) {
@@ -192,7 +195,7 @@ public final class WildernessZone extends MapZone {
 		if (!logout && e instanceof Player) {
 			Player p = (Player) e;
 			leave(p);
-			p.getAntiMacroHandler().isDisabled = false;
+			p.getAntiMacroHandler().isDisabled = p.getAttribute("randoms:disabled",false);
 			if (p.getFamiliarManager().hasFamiliar() && !p.getFamiliarManager().hasPet()) {
 				Familiar familiar = p.getFamiliarManager().getFamiliar();
 				if (familiar.isCombatFamiliar()) {

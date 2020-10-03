@@ -1,11 +1,14 @@
 package org.runite.jagex;
 
-final class Class3_Sub2 extends Class3 {
+import org.rs09.client.Linkable;
+import org.rs09.client.data.HashTable;
+
+final class Class3_Sub2 extends Linkable {
 
    static int anInt2217 = 2;
    static int anInt2218 = -1;
    static short[] aShortArray2219 = new short[]{(short)-4160, (short)-4163, (short)-8256, (short)-8259, (short)22461};
-   static Class130 aClass130_2220 = new Class130(32);
+   static HashTable aHashTable_2220 = new HashTable(32);
    Class25[] aClass25Array2221 = new Class25[5];
    boolean aBoolean2222;
    int anInt2223;
@@ -26,7 +29,6 @@ final class Class3_Sub2 extends Class3 {
    int anInt2239;
    Class126 aClass126_2240;
    int anInt2241;
-   static int anInt2243 = 3353893;
    int anInt2244;
    Class72 aClass72_2245;
    static int anInt2246 = 0;
@@ -37,30 +39,21 @@ final class Class3_Sub2 extends Class3 {
          this.anInt2238 = this.anInt2244 = var1;
          this.anInt2239 = var2;
       } catch (RuntimeException var5) {
-         throw Class44.method1067(var5, "bj.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
+         throw Class44.clientError(var5, "bj.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
       }
    }
 
-   public static void method102(int var0) {
+   static void method103() {
       try {
-         aClass130_2220 = null;
-         aShortArray2219 = null;
+         Client.aHashTable_2194.clear();
+         Class81.aClass13_1139.clear();
+         Class126.aClass13_1666.clear();
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "bj.A(" + var0 + ')');
+         throw Class44.clientError(var2, "bj.B(" + (byte) 24 + ')');
       }
    }
 
-   static final void method103(byte var0) {
-      try {
-         Client.aClass130_2194.method1773(122);
-         Class81.aClass13_1139.method883(17126);
-         Class126.aClass13_1666.method883(17126);
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "bj.B(" + var0 + ')');
-      }
-   }
-
-   static final long method104(int var0, int var1, int var2) {
+   static long method104(int var0, int var1, int var2) {
       Class3_Sub2 var3 = Class75_Sub2.aClass3_Sub2ArrayArrayArray2638[var0][var1][var2];
       return var3 != null && var3.aClass12_2230 != null?var3.aClass12_2230.aLong328:0L;
    }

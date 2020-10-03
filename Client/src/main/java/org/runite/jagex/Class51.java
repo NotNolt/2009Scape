@@ -1,5 +1,7 @@
 package org.runite.jagex;
 
+import org.rs09.client.rendering.Toolkit;
+
 final class Class51 {
 
    static int[] anIntArray834 = new int[65536];
@@ -22,11 +24,11 @@ final class Class51 {
    static int[] anIntArray851 = new int[2048];
 
 
-   static final void method1134() {
-      method1151(Class74.anInt1093, Class74.anInt1095, Class74.anInt1096, Class74.anInt1099);
+   static void method1134() {
+      method1151(Toolkit.JAVA_TOOLKIT.clipLeft, Toolkit.JAVA_TOOLKIT.clipTop, Toolkit.JAVA_TOOLKIT.clipRight, Toolkit.JAVA_TOOLKIT.clipBottom);
    }
 
-   static final void method1135(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18) {
+   static void method1135(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18) {
       int[] var19 = anInterface2_838.method13(var18, true, aFloat848);
       int var20;
       if(var19 == null) {
@@ -120,22 +122,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var0, var4 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var4 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var28;
                                  var4 += var27;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -154,22 +156,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var0, var5 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var5 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var28;
                                  var4 += var27;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -208,22 +210,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var27;
                                  var3 += var26;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var0, var3 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var3 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var4 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -242,22 +244,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var27;
                                  var3 += var26;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var0, var4 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var4 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var4 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -309,22 +311,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var1, var5 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var5 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var26;
                                  var5 += var28;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var3 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -343,22 +345,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var1, var3 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var3 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var26;
                                  var5 += var28;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var3 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -397,22 +399,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var28;
                                  var4 += var27;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var1, var5 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var5 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -431,22 +433,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1143(Class74.anIntArray1100, var19, 0, 0, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var28;
                                  var4 += var27;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1143(Class74.anIntArray1100, var19, 0, 0, var1, var4 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var4 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -497,22 +499,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1143(Class74.anIntArray1100, var19, 0, 0, var2, var4 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var4 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var27;
                               var3 += var26;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1143(Class74.anIntArray1100, var19, 0, 0, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var4 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -531,22 +533,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1143(Class74.anIntArray1100, var19, 0, 0, var2, var3 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var3 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var27;
                               var3 += var26;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1143(Class74.anIntArray1100, var19, 0, 0, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var4 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -585,22 +587,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1143(Class74.anIntArray1100, var19, 0, 0, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var26;
                               var5 += var28;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1143(Class74.anIntArray1100, var19, 0, 0, var2, var3 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var3 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var3 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -619,22 +621,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1143(Class74.anIntArray1100, var19, 0, 0, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var26;
                               var5 += var28;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1143(Class74.anIntArray1100, var19, 0, 0, var2, var5 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1143(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var5 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var3 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -646,7 +648,7 @@ final class Class51 {
       }
    }
 
-   private static final int method1136(int var0, int var1) {
+   private static int method1136(int var0, int var1) {
       var1 = var1 * (var0 & 127) >> 7;
       if(var1 < 2) {
          var1 = 2;
@@ -657,12 +659,12 @@ final class Class51 {
       return (var0 & '\uff80') + var1;
    }
 
-   static final void method1137(float var0) {
+   static void method1137(float var0) {
       method1152(var0);
-      method1150(0, 512);
+      method1150();
    }
 
-   static final void method1138(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18) {
+   static void method1138(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18) {
       int[] var19 = anInterface2_838.method13(var18, true, aFloat848);
       int var20;
       if(var19 != null && anInt850 <= 10) {
@@ -753,22 +755,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var0, var4 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var4 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var28;
                                  var4 += var27;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -787,22 +789,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var0, var5 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var5 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var28;
                                  var4 += var27;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -841,22 +843,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var3 >> 16, var5 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var27;
                                  var3 += var26;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var0, var3 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var3 >> 16, var4 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var4 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -875,22 +877,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var5 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                                  var5 += var27;
                                  var3 += var26;
                                  var6 += var31;
-                                 var0 += Class74.anInt1092;
+                                 var0 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var0, var4 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var0, var4 >> 16, var3 >> 16, var6, var30, var32, var35, var38, var33, var36, var39);
                            var4 += var28;
                            var3 += var26;
                            var6 += var31;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -942,22 +944,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var1, var5 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var5 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var26;
                                  var5 += var28;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var3 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -976,22 +978,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var1, var3 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var3 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var26;
                                  var5 += var28;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var3 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -1030,22 +1032,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var3 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var28;
                                  var4 += var27;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var1, var5 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var5 >> 16, var4 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -1064,22 +1066,22 @@ final class Class51 {
                                     return;
                                  }
 
-                                 method1142(Class74.anIntArray1100, var19, 0, 0, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                                 method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var4 >> 16, var3 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                                  var3 += var28;
                                  var4 += var27;
                                  var7 += var31;
-                                 var1 += Class74.anInt1092;
+                                 var1 += Toolkit.JAVA_TOOLKIT.width;
                                  var32 += var34;
                                  var35 += var37;
                                  var38 += var40;
                               }
                            }
 
-                           method1142(Class74.anIntArray1100, var19, 0, 0, var1, var4 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
+                           method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var1, var4 >> 16, var5 >> 16, var7, var30, var32, var35, var38, var33, var36, var39);
                            var5 += var26;
                            var4 += var27;
                            var7 += var31;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                            var32 += var34;
                            var35 += var37;
                            var38 += var40;
@@ -1130,22 +1132,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1142(Class74.anIntArray1100, var19, 0, 0, var2, var4 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var4 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var27;
                               var3 += var26;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1142(Class74.anIntArray1100, var19, 0, 0, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var4 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -1164,22 +1166,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1142(Class74.anIntArray1100, var19, 0, 0, var2, var3 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var3 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var27;
                               var3 += var26;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1142(Class74.anIntArray1100, var19, 0, 0, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var4 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -1218,22 +1220,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1142(Class74.anIntArray1100, var19, 0, 0, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var4 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var26;
                               var5 += var28;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1142(Class74.anIntArray1100, var19, 0, 0, var2, var3 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var3 >> 16, var5 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var3 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -1252,22 +1254,22 @@ final class Class51 {
                                  return;
                               }
 
-                              method1142(Class74.anIntArray1100, var19, 0, 0, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                              method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var5 >> 16, var4 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                               var4 += var26;
                               var5 += var28;
                               var8 += var31;
-                              var2 += Class74.anInt1092;
+                              var2 += Toolkit.JAVA_TOOLKIT.width;
                               var32 += var34;
                               var35 += var37;
                               var38 += var40;
                            }
                         }
 
-                        method1142(Class74.anIntArray1100, var19, 0, 0, var2, var5 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
+                        method1142(Toolkit.JAVA_TOOLKIT.getBuffer(), var19, var2, var5 >> 16, var3 >> 16, var8, var30, var32, var35, var38, var33, var36, var39);
                         var3 += var27;
                         var5 += var28;
                         var8 += var31;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                         var32 += var34;
                         var35 += var37;
                         var38 += var40;
@@ -1283,15 +1285,15 @@ final class Class51 {
       }
    }
 
-   static final int method1139() {
-      return anIntArray836[0] % Class74.anInt1092;
+   static int method1139() {
+      return anIntArray836[0] % Toolkit.JAVA_TOOLKIT.width;
    }
 
-   static final void method1140(Interface2 var0) {
+   static void method1140(Interface2 var0) {
       anInterface2_838 = var0;
    }
 
-   static final void method1141() {
+   static void method1141() {
       anInt846 = anInt847 / 2;
       anInt835 = anInt844 / 2;
       Class139.anInt1824 = -anInt846;
@@ -1300,7 +1302,7 @@ final class Class51 {
       Class86.anInt1195 = anInt844 - anInt835;
    }
 
-   private static final void method1142(int[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14) {
+   private static void method1142(int[] var0, int[] var1, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14) {
       if(aBoolean849) {
          if(var6 > anInt847) {
             var6 = anInt847;
@@ -1323,7 +1325,8 @@ final class Class51 {
          int var20;
          int var23;
          int var22;
-         int var10000;
+         int var3;
+         int var2;
          if(aBoolean845) {
             var23 = var5 - anInt846;
             var9 += (var12 >> 3) * var23;
@@ -1381,8 +1384,7 @@ final class Class51 {
                      var2 += var16;
                      var3 = var1[(var2 & 4032) + (var2 >>> 26)];
                      var0[var4++] = ((var3 & 16711935) * var15 & -16711936) + ((var3 & '\uff00') * var15 & 16711680) >> 8;
-                     var10000 = var2 + var16;
-                     var18 = var20;
+                      var18 = var20;
                      var19 = var21;
                      var9 += var12;
                      var10 += var13;
@@ -1463,8 +1465,7 @@ final class Class51 {
                      }
 
                      ++var4;
-                     var10000 = var2 + var16;
-                     var18 = var20;
+                      var18 = var20;
                      var19 = var21;
                      var9 += var12;
                      var10 += var13;
@@ -1556,8 +1557,7 @@ final class Class51 {
                      var2 += var16;
                      var3 = var1[(var2 & 16256) + (var2 >>> 25)];
                      var0[var4++] = ((var3 & 16711935) * var15 & -16711936) + ((var3 & '\uff00') * var15 & 16711680) >> 8;
-                     var10000 = var2 + var16;
-                     var18 = var20;
+                      var18 = var20;
                      var19 = var21;
                      var9 += var12;
                      var10 += var13;
@@ -1638,8 +1638,7 @@ final class Class51 {
                      }
 
                      ++var4;
-                     var10000 = var2 + var16;
-                     var18 = var20;
+                      var18 = var20;
                      var19 = var21;
                      var9 += var12;
                      var10 += var13;
@@ -1679,7 +1678,7 @@ final class Class51 {
       }
    }
 
-   private static final void method1143(int[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14) {
+   private static void method1143(int[] var0, int[] var1, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14) {
       if(aBoolean849) {
          if(var6 > anInt847) {
             var6 = anInt847;
@@ -1702,6 +1701,8 @@ final class Class51 {
          int var20;
          int var23;
          int var22;
+         int var3;
+         int var2;
          if(aBoolean845) {
             var23 = var5 - anInt846;
             var9 += var12 * var23;
@@ -1993,7 +1994,7 @@ final class Class51 {
       }
    }
 
-   static final void method1144(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+   static void method1144(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
       int var7 = 0;
       if(var1 != var0) {
          var7 = (var4 - var3 << 16) / (var1 - var0);
@@ -2047,17 +2048,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var0, var6, 0, var4 >> 16, var5 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var4 >> 16, var5 >> 16);
                            var5 += var9;
                            var4 += var8;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var0, var6, 0, var3 >> 16, var5 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var3 >> 16, var5 >> 16);
                      var5 += var9;
                      var3 += var7;
-                     var0 += Class74.anInt1092;
+                     var0 += Toolkit.JAVA_TOOLKIT.width;
                   }
                } else {
                   var2 -= var1;
@@ -2073,17 +2074,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var0, var6, 0, var5 >> 16, var4 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var5 >> 16, var4 >> 16);
                            var5 += var9;
                            var4 += var8;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var0, var6, 0, var5 >> 16, var3 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var5 >> 16, var3 >> 16);
                      var5 += var9;
                      var3 += var7;
-                     var0 += Class74.anInt1092;
+                     var0 += Toolkit.JAVA_TOOLKIT.width;
                   }
                }
             } else {
@@ -2114,17 +2115,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var0, var6, 0, var3 >> 16, var5 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var3 >> 16, var5 >> 16);
                            var5 += var8;
                            var3 += var7;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var0, var6, 0, var3 >> 16, var4 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var3 >> 16, var4 >> 16);
                      var4 += var9;
                      var3 += var7;
-                     var0 += Class74.anInt1092;
+                     var0 += Toolkit.JAVA_TOOLKIT.width;
                   }
                } else {
                   var1 -= var2;
@@ -2140,17 +2141,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var0, var6, 0, var5 >> 16, var3 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var5 >> 16, var3 >> 16);
                            var5 += var8;
                            var3 += var7;
-                           var0 += Class74.anInt1092;
+                           var0 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var0, var6, 0, var4 >> 16, var3 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var6, var4 >> 16, var3 >> 16);
                      var4 += var9;
                      var3 += var7;
-                     var0 += Class74.anInt1092;
+                     var0 += Toolkit.JAVA_TOOLKIT.width;
                   }
                }
             }
@@ -2193,17 +2194,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var1, var6, 0, var5 >> 16, var3 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var5 >> 16, var3 >> 16);
                            var3 += var7;
                            var5 += var9;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var1, var6, 0, var4 >> 16, var3 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var4 >> 16, var3 >> 16);
                      var3 += var7;
                      var4 += var8;
-                     var1 += Class74.anInt1092;
+                     var1 += Toolkit.JAVA_TOOLKIT.width;
                   }
                } else {
                   var0 -= var2;
@@ -2219,17 +2220,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var1, var6, 0, var3 >> 16, var5 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var3 >> 16, var5 >> 16);
                            var3 += var7;
                            var5 += var9;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var1, var6, 0, var3 >> 16, var4 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var3 >> 16, var4 >> 16);
                      var3 += var7;
                      var4 += var8;
-                     var1 += Class74.anInt1092;
+                     var1 += Toolkit.JAVA_TOOLKIT.width;
                   }
                }
             } else {
@@ -2260,17 +2261,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var1, var6, 0, var3 >> 16, var4 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var3 >> 16, var4 >> 16);
                            var3 += var9;
                            var4 += var8;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var1, var6, 0, var5 >> 16, var4 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var5 >> 16, var4 >> 16);
                      var5 += var7;
                      var4 += var8;
-                     var1 += Class74.anInt1092;
+                     var1 += Toolkit.JAVA_TOOLKIT.width;
                   }
                } else {
                   var2 -= var0;
@@ -2286,17 +2287,17 @@ final class Class51 {
                               return;
                            }
 
-                           method1149(Class74.anIntArray1100, var1, var6, 0, var4 >> 16, var3 >> 16);
+                           method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var4 >> 16, var3 >> 16);
                            var3 += var9;
                            var4 += var8;
-                           var1 += Class74.anInt1092;
+                           var1 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1149(Class74.anIntArray1100, var1, var6, 0, var4 >> 16, var5 >> 16);
+                     method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var6, var4 >> 16, var5 >> 16);
                      var5 += var7;
                      var4 += var8;
-                     var1 += Class74.anInt1092;
+                     var1 += Toolkit.JAVA_TOOLKIT.width;
                   }
                }
             }
@@ -2338,17 +2339,17 @@ final class Class51 {
                            return;
                         }
 
-                        method1149(Class74.anIntArray1100, var2, var6, 0, var4 >> 16, var3 >> 16);
+                        method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var4 >> 16, var3 >> 16);
                         var4 += var8;
                         var3 += var7;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
 
-                  method1149(Class74.anIntArray1100, var2, var6, 0, var4 >> 16, var5 >> 16);
+                  method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var4 >> 16, var5 >> 16);
                   var4 += var8;
                   var5 += var9;
-                  var2 += Class74.anInt1092;
+                  var2 += Toolkit.JAVA_TOOLKIT.width;
                }
             } else {
                var1 -= var0;
@@ -2364,17 +2365,17 @@ final class Class51 {
                            return;
                         }
 
-                        method1149(Class74.anIntArray1100, var2, var6, 0, var3 >> 16, var4 >> 16);
+                        method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var3 >> 16, var4 >> 16);
                         var4 += var8;
                         var3 += var7;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
 
-                  method1149(Class74.anIntArray1100, var2, var6, 0, var5 >> 16, var4 >> 16);
+                  method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var5 >> 16, var4 >> 16);
                   var4 += var8;
                   var5 += var9;
-                  var2 += Class74.anInt1092;
+                  var2 += Toolkit.JAVA_TOOLKIT.width;
                }
             }
          } else {
@@ -2405,17 +2406,17 @@ final class Class51 {
                            return;
                         }
 
-                        method1149(Class74.anIntArray1100, var2, var6, 0, var4 >> 16, var5 >> 16);
+                        method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var4 >> 16, var5 >> 16);
                         var4 += var7;
                         var5 += var9;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
 
-                  method1149(Class74.anIntArray1100, var2, var6, 0, var3 >> 16, var5 >> 16);
+                  method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var3 >> 16, var5 >> 16);
                   var3 += var8;
                   var5 += var9;
-                  var2 += Class74.anInt1092;
+                  var2 += Toolkit.JAVA_TOOLKIT.width;
                }
             } else {
                var0 -= var1;
@@ -2431,27 +2432,27 @@ final class Class51 {
                            return;
                         }
 
-                        method1149(Class74.anIntArray1100, var2, var6, 0, var5 >> 16, var4 >> 16);
+                        method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var5 >> 16, var4 >> 16);
                         var4 += var7;
                         var5 += var9;
-                        var2 += Class74.anInt1092;
+                        var2 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
 
-                  method1149(Class74.anIntArray1100, var2, var6, 0, var5 >> 16, var3 >> 16);
+                  method1149(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var6, var5 >> 16, var3 >> 16);
                   var3 += var8;
                   var5 += var9;
-                  var2 += Class74.anInt1092;
+                  var2 += Toolkit.JAVA_TOOLKIT.width;
                }
             }
          }
       }
    }
 
-   static final void method1145(int var0, int var1) {
+   static void method1145(int var0, int var1) {
       int var2 = anIntArray836[0];
-      int var3 = var2 / Class74.anInt1092;
-      int var4 = var2 - var3 * Class74.anInt1092;
+      int var3 = var2 / Toolkit.JAVA_TOOLKIT.width;
+      int var4 = var2 - var3 * Toolkit.JAVA_TOOLKIT.width;
       anInt846 = var0 - var4;
       anInt835 = var1 - var3;
       Class139.anInt1824 = -anInt846;
@@ -2460,7 +2461,7 @@ final class Class51 {
       Class86.anInt1195 = anInt844 - anInt835;
    }
 
-   private static final void method1146(int[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private static void method1146(int[] var0, int var1, int var4, int var5, int var6, int var7) {
       if(aBoolean849) {
          if(var5 > anInt847) {
             var5 = anInt847;
@@ -2477,6 +2478,8 @@ final class Class51 {
          int var8;
          int var9;
          int var10;
+         int var3;
+         int var2;
          if(aBoolean843) {
             var3 = var5 - var4 >> 2;
             var7 <<= 2;
@@ -2561,7 +2564,7 @@ final class Class51 {
       }
    }
 
-   static final void method1147(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   static void method1147(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       int var8 = 0;
       if(var2 != var1) {
          var8 = (var5 - var4 << 16) / (var2 - var1);
@@ -2606,14 +2609,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var1, 0, var5 >> 16, var6 >> 16);
+                        method1156(var0, var1, var5 >> 16, var6 >> 16);
                         var6 += var10;
                         var5 += var9;
                         var1 += var7;
                      }
                   }
 
-                  method1156(var0, var1, 0, var4 >> 16, var6 >> 16);
+                  method1156(var0, var1, var4 >> 16, var6 >> 16);
                   var6 += var10;
                   var4 += var8;
                   var1 += var7;
@@ -2632,14 +2635,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var1, 0, var6 >> 16, var5 >> 16);
+                        method1156(var0, var1, var6 >> 16, var5 >> 16);
                         var6 += var10;
                         var5 += var9;
                         var1 += var7;
                      }
                   }
 
-                  method1156(var0, var1, 0, var6 >> 16, var4 >> 16);
+                  method1156(var0, var1, var6 >> 16, var4 >> 16);
                   var6 += var10;
                   var4 += var8;
                   var1 += var7;
@@ -2673,14 +2676,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var1, 0, var4 >> 16, var6 >> 16);
+                        method1156(var0, var1, var4 >> 16, var6 >> 16);
                         var6 += var9;
                         var4 += var8;
                         var1 += var7;
                      }
                   }
 
-                  method1156(var0, var1, 0, var4 >> 16, var5 >> 16);
+                  method1156(var0, var1, var4 >> 16, var5 >> 16);
                   var5 += var10;
                   var4 += var8;
                   var1 += var7;
@@ -2699,14 +2702,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var1, 0, var6 >> 16, var4 >> 16);
+                        method1156(var0, var1, var6 >> 16, var4 >> 16);
                         var6 += var9;
                         var4 += var8;
                         var1 += var7;
                      }
                   }
 
-                  method1156(var0, var1, 0, var5 >> 16, var4 >> 16);
+                  method1156(var0, var1, var5 >> 16, var4 >> 16);
                   var5 += var10;
                   var4 += var8;
                   var1 += var7;
@@ -2742,14 +2745,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var2, 0, var6 >> 16, var4 >> 16);
+                        method1156(var0, var2, var6 >> 16, var4 >> 16);
                         var4 += var8;
                         var6 += var10;
                         var2 += var7;
                      }
                   }
 
-                  method1156(var0, var2, 0, var5 >> 16, var4 >> 16);
+                  method1156(var0, var2, var5 >> 16, var4 >> 16);
                   var4 += var8;
                   var5 += var9;
                   var2 += var7;
@@ -2768,14 +2771,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var2, 0, var4 >> 16, var6 >> 16);
+                        method1156(var0, var2, var4 >> 16, var6 >> 16);
                         var4 += var8;
                         var6 += var10;
                         var2 += var7;
                      }
                   }
 
-                  method1156(var0, var2, 0, var4 >> 16, var5 >> 16);
+                  method1156(var0, var2, var4 >> 16, var5 >> 16);
                   var4 += var8;
                   var5 += var9;
                   var2 += var7;
@@ -2809,14 +2812,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var2, 0, var4 >> 16, var5 >> 16);
+                        method1156(var0, var2, var4 >> 16, var5 >> 16);
                         var4 += var10;
                         var5 += var9;
                         var2 += var7;
                      }
                   }
 
-                  method1156(var0, var2, 0, var6 >> 16, var5 >> 16);
+                  method1156(var0, var2, var6 >> 16, var5 >> 16);
                   var6 += var8;
                   var5 += var9;
                   var2 += var7;
@@ -2835,14 +2838,14 @@ final class Class51 {
                            return;
                         }
 
-                        method1156(var0, var2, 0, var5 >> 16, var4 >> 16);
+                        method1156(var0, var2, var5 >> 16, var4 >> 16);
                         var4 += var10;
                         var5 += var9;
                         var2 += var7;
                      }
                   }
 
-                  method1156(var0, var2, 0, var5 >> 16, var6 >> 16);
+                  method1156(var0, var2, var5 >> 16, var6 >> 16);
                   var6 += var8;
                   var5 += var9;
                   var2 += var7;
@@ -2877,14 +2880,14 @@ final class Class51 {
                         return;
                      }
 
-                     method1156(var0, var3, 0, var5 >> 16, var4 >> 16);
+                     method1156(var0, var3, var5 >> 16, var4 >> 16);
                      var5 += var9;
                      var4 += var8;
                      var3 += var7;
                   }
                }
 
-               method1156(var0, var3, 0, var5 >> 16, var6 >> 16);
+               method1156(var0, var3, var5 >> 16, var6 >> 16);
                var5 += var9;
                var6 += var10;
                var3 += var7;
@@ -2903,14 +2906,14 @@ final class Class51 {
                         return;
                      }
 
-                     method1156(var0, var3, 0, var4 >> 16, var5 >> 16);
+                     method1156(var0, var3, var4 >> 16, var5 >> 16);
                      var5 += var9;
                      var4 += var8;
                      var3 += var7;
                   }
                }
 
-               method1156(var0, var3, 0, var6 >> 16, var5 >> 16);
+               method1156(var0, var3, var6 >> 16, var5 >> 16);
                var5 += var9;
                var6 += var10;
                var3 += var7;
@@ -2944,14 +2947,14 @@ final class Class51 {
                         return;
                      }
 
-                     method1156(var0, var3, 0, var5 >> 16, var6 >> 16);
+                     method1156(var0, var3, var5 >> 16, var6 >> 16);
                      var5 += var8;
                      var6 += var10;
                      var3 += var7;
                   }
                }
 
-               method1156(var0, var3, 0, var4 >> 16, var6 >> 16);
+               method1156(var0, var3, var4 >> 16, var6 >> 16);
                var4 += var9;
                var6 += var10;
                var3 += var7;
@@ -2970,14 +2973,14 @@ final class Class51 {
                         return;
                      }
 
-                     method1156(var0, var3, 0, var6 >> 16, var5 >> 16);
+                     method1156(var0, var3, var6 >> 16, var5 >> 16);
                      var5 += var8;
                      var6 += var10;
                      var3 += var7;
                   }
                }
 
-               method1156(var0, var3, 0, var6 >> 16, var4 >> 16);
+               method1156(var0, var3, var6 >> 16, var4 >> 16);
                var4 += var9;
                var6 += var10;
                var3 += var7;
@@ -2986,11 +2989,11 @@ final class Class51 {
       }
    }
 
-   static final void method1148(int var0, int var1, int var2) {
+   static void method1148(int var0, int var1, int var2) {
       aBoolean849 = var0 < 0 || var0 > anInt847 || var1 < 0 || var1 > anInt847 || var2 < 0 || var2 > anInt847;
    }
 
-   private static final void method1149(int[] var0, int var1, int var2, int var3, int var4, int var5) {
+   private static void method1149(int[] var0, int var1, int var2, int var4, int var5) {
       if(aBoolean849) {
          if(var5 > anInt847) {
             var5 = anInt847;
@@ -3003,7 +3006,7 @@ final class Class51 {
 
       if(var4 < var5) {
          var1 += var4;
-         var3 = var5 - var4 >> 2;
+         int var3 = var5 - var4 >> 2;
          if(anInt850 == 0) {
             while(true) {
                --var3;
@@ -3081,10 +3084,10 @@ final class Class51 {
       }
    }
 
-   private static final void method1150(int var0, int var1) {
-      int var2 = var0 * 128;
+   private static void method1150() {
+      int var2 = 0;
 
-      for(int var3 = var0; var3 < var1; ++var3) {
+      for(int var3 = 0; var3 < 512; ++var3) {
          double var4 = (double)(var3 >> 3) / 64.0D + 0.0078125D;
          double var6 = (double)(var3 & 7) / 8.0D + 0.0625D;
 
@@ -3160,7 +3163,7 @@ final class Class51 {
 
    }
 
-   private static final void method1151(int var0, int var1, int var2, int var3) {
+   private static void method1151(int var0, int var1, int var2, int var3) {
       anInt847 = var2 - var0;
       anInt844 = var3 - var1;
       method1141();
@@ -3168,25 +3171,25 @@ final class Class51 {
          anIntArray836 = new int[Class95.method1585((byte)95, anInt844)];
       }
 
-      int var4 = var1 * Class74.anInt1092 + var0;
+      int var4 = var1 * Toolkit.JAVA_TOOLKIT.width + var0;
 
       for(int var5 = 0; var5 < anInt844; ++var5) {
          anIntArray836[var5] = var4;
-         var4 += Class74.anInt1092;
+         var4 += Toolkit.JAVA_TOOLKIT.width;
       }
 
    }
 
-   private static final void method1152(float var0) {
+   private static void method1152(float var0) {
       aFloat848 = var0;
       aFloat848 = (float)((double)aFloat848 + (Math.random() * 0.03D - 0.015D));
    }
 
-   static final int method1153() {
-      return anIntArray836[0] / Class74.anInt1092;
+   static int method1153() {
+      return anIntArray836[0] / Toolkit.JAVA_TOOLKIT.width;
    }
 
-   static final void method1154(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   static void method1154(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       int var9 = var4 - var3;
       int var10 = var1 - var0;
       int var11 = var5 - var3;
@@ -3258,19 +3261,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var0, 0, 0, var4 >> 16, var5 >> 16, var6, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var4 >> 16, var5 >> 16, var6, var19);
                               var5 += var17;
                               var4 += var15;
                               var6 += var20;
-                              var0 += Class74.anInt1092;
+                              var0 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var0, 0, 0, var3 >> 16, var5 >> 16, var6, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var3 >> 16, var5 >> 16, var6, var19);
                         var5 += var17;
                         var3 += var16;
                         var6 += var20;
-                        var0 += Class74.anInt1092;
+                        var0 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   } else {
                      var2 -= var1;
@@ -3286,19 +3289,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var0, 0, 0, var5 >> 16, var4 >> 16, var6, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var5 >> 16, var4 >> 16, var6, var19);
                               var5 += var17;
                               var4 += var15;
                               var6 += var20;
-                              var0 += Class74.anInt1092;
+                              var0 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var0, 0, 0, var5 >> 16, var3 >> 16, var6, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var5 >> 16, var3 >> 16, var6, var19);
                         var5 += var17;
                         var3 += var16;
                         var6 += var20;
-                        var0 += Class74.anInt1092;
+                        var0 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
                } else {
@@ -3330,19 +3333,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var0, 0, 0, var3 >> 16, var5 >> 16, var6, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var3 >> 16, var5 >> 16, var6, var19);
                               var5 += var15;
                               var3 += var16;
                               var6 += var20;
-                              var0 += Class74.anInt1092;
+                              var0 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var0, 0, 0, var3 >> 16, var4 >> 16, var6, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var3 >> 16, var4 >> 16, var6, var19);
                         var4 += var17;
                         var3 += var16;
                         var6 += var20;
-                        var0 += Class74.anInt1092;
+                        var0 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   } else {
                      var1 -= var2;
@@ -3358,19 +3361,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var0, 0, 0, var5 >> 16, var3 >> 16, var6, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var5 >> 16, var3 >> 16, var6, var19);
                               var5 += var15;
                               var3 += var16;
                               var6 += var20;
-                              var0 += Class74.anInt1092;
+                              var0 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var0, 0, 0, var4 >> 16, var3 >> 16, var6, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var0, var4 >> 16, var3 >> 16, var6, var19);
                         var4 += var17;
                         var3 += var16;
                         var6 += var20;
-                        var0 += Class74.anInt1092;
+                        var0 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
                }
@@ -3415,19 +3418,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var1, 0, 0, var5 >> 16, var3 >> 16, var7, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var5 >> 16, var3 >> 16, var7, var19);
                               var3 += var16;
                               var5 += var17;
                               var7 += var20;
-                              var1 += Class74.anInt1092;
+                              var1 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var1, 0, 0, var4 >> 16, var3 >> 16, var7, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var4 >> 16, var3 >> 16, var7, var19);
                         var3 += var16;
                         var4 += var15;
                         var7 += var20;
-                        var1 += Class74.anInt1092;
+                        var1 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   } else {
                      var0 -= var2;
@@ -3443,19 +3446,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var1, 0, 0, var3 >> 16, var5 >> 16, var7, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var3 >> 16, var5 >> 16, var7, var19);
                               var3 += var16;
                               var5 += var17;
                               var7 += var20;
-                              var1 += Class74.anInt1092;
+                              var1 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var1, 0, 0, var3 >> 16, var4 >> 16, var7, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var3 >> 16, var4 >> 16, var7, var19);
                         var3 += var16;
                         var4 += var15;
                         var7 += var20;
-                        var1 += Class74.anInt1092;
+                        var1 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
                } else {
@@ -3487,19 +3490,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var1, 0, 0, var3 >> 16, var4 >> 16, var7, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var3 >> 16, var4 >> 16, var7, var19);
                               var3 += var17;
                               var4 += var15;
                               var7 += var20;
-                              var1 += Class74.anInt1092;
+                              var1 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var1, 0, 0, var5 >> 16, var4 >> 16, var7, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var5 >> 16, var4 >> 16, var7, var19);
                         var5 += var16;
                         var4 += var15;
                         var7 += var20;
-                        var1 += Class74.anInt1092;
+                        var1 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   } else {
                      var2 -= var0;
@@ -3515,19 +3518,19 @@ final class Class51 {
                                  return;
                               }
 
-                              method1146(Class74.anIntArray1100, var1, 0, 0, var4 >> 16, var3 >> 16, var7, var19);
+                              method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var4 >> 16, var3 >> 16, var7, var19);
                               var3 += var17;
                               var4 += var15;
                               var7 += var20;
-                              var1 += Class74.anInt1092;
+                              var1 += Toolkit.JAVA_TOOLKIT.width;
                            }
                         }
 
-                        method1146(Class74.anIntArray1100, var1, 0, 0, var4 >> 16, var5 >> 16, var7, var19);
+                        method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var1, var4 >> 16, var5 >> 16, var7, var19);
                         var5 += var16;
                         var4 += var15;
                         var7 += var20;
-                        var1 += Class74.anInt1092;
+                        var1 += Toolkit.JAVA_TOOLKIT.width;
                      }
                   }
                }
@@ -3571,19 +3574,19 @@ final class Class51 {
                               return;
                            }
 
-                           method1146(Class74.anIntArray1100, var2, 0, 0, var4 >> 16, var3 >> 16, var8, var19);
+                           method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var4 >> 16, var3 >> 16, var8, var19);
                            var4 += var15;
                            var3 += var16;
                            var8 += var20;
-                           var2 += Class74.anInt1092;
+                           var2 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1146(Class74.anIntArray1100, var2, 0, 0, var4 >> 16, var5 >> 16, var8, var19);
+                     method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var4 >> 16, var5 >> 16, var8, var19);
                      var4 += var15;
                      var5 += var17;
                      var8 += var20;
-                     var2 += Class74.anInt1092;
+                     var2 += Toolkit.JAVA_TOOLKIT.width;
                   }
                } else {
                   var1 -= var0;
@@ -3599,19 +3602,19 @@ final class Class51 {
                               return;
                            }
 
-                           method1146(Class74.anIntArray1100, var2, 0, 0, var3 >> 16, var4 >> 16, var8, var19);
+                           method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var3 >> 16, var4 >> 16, var8, var19);
                            var4 += var15;
                            var3 += var16;
                            var8 += var20;
-                           var2 += Class74.anInt1092;
+                           var2 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1146(Class74.anIntArray1100, var2, 0, 0, var5 >> 16, var4 >> 16, var8, var19);
+                     method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var5 >> 16, var4 >> 16, var8, var19);
                      var4 += var15;
                      var5 += var17;
                      var8 += var20;
-                     var2 += Class74.anInt1092;
+                     var2 += Toolkit.JAVA_TOOLKIT.width;
                   }
                }
             } else {
@@ -3643,19 +3646,19 @@ final class Class51 {
                               return;
                            }
 
-                           method1146(Class74.anIntArray1100, var2, 0, 0, var4 >> 16, var5 >> 16, var8, var19);
+                           method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var4 >> 16, var5 >> 16, var8, var19);
                            var4 += var16;
                            var5 += var17;
                            var8 += var20;
-                           var2 += Class74.anInt1092;
+                           var2 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1146(Class74.anIntArray1100, var2, 0, 0, var3 >> 16, var5 >> 16, var8, var19);
+                     method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var3 >> 16, var5 >> 16, var8, var19);
                      var3 += var15;
                      var5 += var17;
                      var8 += var20;
-                     var2 += Class74.anInt1092;
+                     var2 += Toolkit.JAVA_TOOLKIT.width;
                   }
                } else {
                   var0 -= var1;
@@ -3671,19 +3674,19 @@ final class Class51 {
                               return;
                            }
 
-                           method1146(Class74.anIntArray1100, var2, 0, 0, var5 >> 16, var4 >> 16, var8, var19);
+                           method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var5 >> 16, var4 >> 16, var8, var19);
                            var4 += var16;
                            var5 += var17;
                            var8 += var20;
-                           var2 += Class74.anInt1092;
+                           var2 += Toolkit.JAVA_TOOLKIT.width;
                         }
                      }
 
-                     method1146(Class74.anIntArray1100, var2, 0, 0, var5 >> 16, var3 >> 16, var8, var19);
+                     method1146(Toolkit.JAVA_TOOLKIT.getBuffer(), var2, var5 >> 16, var3 >> 16, var8, var19);
                      var3 += var15;
                      var5 += var17;
                      var8 += var20;
-                     var2 += Class74.anInt1092;
+                     var2 += Toolkit.JAVA_TOOLKIT.width;
                   }
                }
             }
@@ -3691,20 +3694,10 @@ final class Class51 {
       }
    }
 
-   public static void method1155() {
-      anIntArray836 = null;
-      anIntArray834 = null;
-      anInterface2_838 = null;
-      anIntArray839 = null;
-      anIntArray841 = null;
-      anIntArray840 = null;
-      anIntArray851 = null;
-   }
-
-   private static final void method1156(byte[] var0, int var1, int var2, int var3, int var4) {
+   private static void method1156(byte[] var0, int var1, int var3, int var4) {
       if(var3 < var4) {
          var1 += var3;
-         var2 = var4 - var3 >> 2;
+         int var2 = var4 - var3 >> 2;
 
          while(true) {
             --var2;

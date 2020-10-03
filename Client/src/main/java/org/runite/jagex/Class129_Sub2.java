@@ -5,8 +5,7 @@ final class Class129_Sub2 extends Class129 {
    private long aLong2698 = System.nanoTime();
 
 
-   final void method1770(int var1) {
-      int var2 = 37 / ((-82 - var1) / 42);
+   final void method1770() {
       this.aLong2698 = System.nanoTime();
    }
 
@@ -18,7 +17,7 @@ final class Class129_Sub2 extends Class129 {
             var6 = var4;
          }
 
-         Class3_Sub13_Sub34.method331(var6 / 1000000L, 64);
+         TimeUtils.sleep(var6 / 1000000L);
          int var10 = 0;
 
          long var8;

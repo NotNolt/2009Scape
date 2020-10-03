@@ -1,6 +1,8 @@
 package org.runite;
 
+import org.rs09.client.config.GameConfig;
 import org.runite.jagex.GameShell;
+import org.runite.jagex.RSString;
 
 /**
  * Handles the launching of our Game Client.
@@ -15,14 +17,14 @@ NOTICE: THIS IS THE LIVESERVER CLIENT. For development purposes, use GameLaunch.
  */
 public class Client {
 
-	public static final String CONF_FILE="client.conf";
+	public static final String CONF_FILE="config.json";
 
 	public static String PUBLIC_IP_ADDRESS;
 
 	/**
 	 * The game settings.
 	 */
-	public static GameSetting SETTINGS = new GameSetting("2009Scape", "127.0.0.1", 3, "live", false);
+	public static GameSetting SETTINGS = new GameSetting("2009Scape", "play.2009scape.org", 3, "live", false);
 	
 	/**
 	 * The main method.
@@ -32,15 +34,17 @@ public class Client {
 	 */
 	public static void main(String[]args) {
 		try {
-			PUBLIC_IP_ADDRESS = "127.0.0.1";
+			GameConfig.parse(CONF_FILE);
+			PUBLIC_IP_ADDRESS = GameConfig.IP_ADDRESS;
 		} catch (Exception e){
 			System.out.println("Can't find config file " + CONF_FILE + " defaulting to IP 127.0.0.1");
-			PUBLIC_IP_ADDRESS = "127.0.0.1";
+			e.printStackTrace();
+			PUBLIC_IP_ADDRESS = "play.2009scape.org";
 		}
 		System.out.println("Running liveserver client");
 		Configurations.LOCAL_SERVER = false;
 		Configurations.LOCAL_MS = false;
-		Configurations.MS_IP = Configurations.LOCAL_MS ? "127.0.0.1" : PUBLIC_IP_ADDRESS; //Needs to be done because of order it's otherwise set
+		Configurations.MS_IP = PUBLIC_IP_ADDRESS; //Needs to be done because of order it's otherwise set
 
 		for (int i = 0; i < args.length; i++) {
 			String[] cmd = args[i].split("=");

@@ -1,64 +1,53 @@
 package org.runite.jagex;
 
+import org.rs09.client.Linkable;
+import org.rs09.client.data.Queue;
+
 abstract class AbstractIndexedSprite {
 
-   int anInt1461;
+   int width;
    static int anInt1462;
    static int anInt1463 = -16 + (int)(Math.random() * 33.0D);
    int anInt1464;
    static long aLong1465 = 0L;
    int anInt1467;
-   int anInt1468;
+   int height;
    int anInt1469;
    int anInt1470;
 
 
-   static final void method1662(Class3 var0, Class3 var1, int var2) {
+   static void method1662(Linkable var0, Linkable var1) {
       try {
-         if(null != var0.aClass3_76) {
-            var0.method86(-1024);
+         if(null != var0.previous) {
+            var0.unlink();
          }
 
-         var0.aClass3_74 = var1;
-         var0.aClass3_76 = var1.aClass3_76;
-         if(var2 == -16) {
-            var0.aClass3_76.aClass3_74 = var0;
-            var0.aClass3_74.aClass3_76 = var0;
-         }
+         var0.next = var1;
+         var0.previous = var1.previous;
+         var0.previous.next = var0;
+         var0.next.previous = var0;
       } catch (RuntimeException var4) {
-         throw Class44.method1067(var4, "ok.C(" + (var0 != null?"{...}":"null") + ',' + (var1 != null?"{...}":"null") + ',' + var2 + ')');
+         throw Class44.clientError(var4, "ok.C(" + (var0 != null?"{...}":"null") + ',' + (var1 != null?"{...}":"null") + ',' + -16 + ')');
       }
    }
 
-   public static void method1663(int var0) {
+   static Queue method1664(int var0, int var1) {
       try {
-         if(var0 != 33) {
-            anInt1463 = 15;
-         }
-
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "ok.D(" + var0 + ')');
-      }
-   }
-
-   static final NodeList method1664(int var0, int var1, byte var2) {
-      try {
-         NodeList var3 = new NodeList();
+         Queue var3 = new Queue();
 
          for(Class3_Sub28_Sub3 var4 = (Class3_Sub28_Sub3)Class134.aClass61_1758.method1222(); var4 != null; var4 = (Class3_Sub28_Sub3)Class134.aClass61_1758.method1221()) {
-            if(var4.aBoolean3553 && var4.method537(var1, (byte)97, var0)) {
-               var3.method879(var4, (byte)-127);
+            if(var4.aBoolean3553 && var4.method537(var1, var0)) {
+               var3.offer(var4);
             }
          }
 
-         int var6 = 30 % ((64 - var2) / 54);
          return var3;
       } catch (RuntimeException var5) {
-         throw Class44.method1067(var5, "ok.B(" + var0 + ',' + var1 + ',' + var2 + ')');
+         throw Class44.clientError(var5, "ok.B(" + var0 + ',' + var1 + ',' + (byte) -118 + ')');
       }
    }
 
-   static final void method1665(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+   static void method1665(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
       try {
          int var7 = var5 + var2;
          int var8 = -var5 + var4;
@@ -86,7 +75,7 @@ abstract class AbstractIndexedSprite {
          }
 
       } catch (RuntimeException var13) {
-         throw Class44.method1067(var13, "ok.A(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ')');
+         throw Class44.clientError(var13, "ok.A(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ')');
       }
    }
 

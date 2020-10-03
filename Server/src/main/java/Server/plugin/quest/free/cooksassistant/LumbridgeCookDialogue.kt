@@ -86,7 +86,7 @@ class LumbridgeCookDialogue (player: Player? = null) : DialoguePlugin(player){
             34 -> player(FacialExpression.ASKING,"Well maybe you need to take a holiday...").also { stage++ }
             35 -> npc(FacialExpression.SAD,"That would be nice, but the Duke doesn't allow holidays","for core staff").also { stage++ }
             36 -> player(FacialExpression.SUSPICIOUS,"Hmm, why not run away to the sea and start a new","life as a Pirate?").also { stage++ }
-            37 -> npc(FacialExpression.SAD,"My wife gets sea sick, and I have an irational fear of","eyepatches. I don't see it working myself.").also { stage++ }
+            37 -> npc(FacialExpression.SAD,"My wife gets sea sick, and I have an irrational fear of","eyepatches. I don't see it working myself.").also { stage++ }
             38 -> player(FacialExpression.NEUTRAL,"I'm afraid I've run out of ideas.").also { stage++ }
             39 -> npc(FacialExpression.SAD,"I know I'm doomed.").also { stage = 21 }
 
@@ -137,22 +137,22 @@ class LumbridgeCookDialogue (player: Player? = null) : DialoguePlugin(player){
             100 ->
                 if (!player.getAttribute("cooks_assistant:milk_submitted", false) && player.inventory.contains(MILK, 1)) {
                     player.setAttribute("/save:cooks_assistant:milk_submitted", true).also {
-                        player(FacialExpression.HAPPY, "Here's a bucket of milk.");
-                        player.inventory.remove(Item(MILK));
+                        player(FacialExpression.HAPPY, "Here's a bucket of milk.")
+                        player.inventory.remove(Item(MILK))
                         gave = true
                         stage = 100
                     }
                 } else if (!player.getAttribute("cooks_assistant:flour_submitted", false) && player.inventory.contains(FLOUR, 1)) {
                     player.setAttribute("/save:cooks_assistant:flour_submitted", true).also {
-                        player(FacialExpression.HAPPY, "Here's a pot of flour.");
-                        player.inventory.remove(Item(FLOUR));
+                        player(FacialExpression.HAPPY, "Here's a pot of flour.")
+                        player.inventory.remove(Item(FLOUR))
                         gave = true
                         stage = 100
                     }
                 } else if (!player.getAttribute("cooks_assistant:egg_submitted", false) && player.inventory.contains(EGG, 1)) {
                     player.setAttribute("/save:cooks_assistant:egg_submitted", true).also {
-                        player(FacialExpression.HAPPY, "Here's a fresh egg.");
-                        player.inventory.remove(Item(EGG));
+                        player(FacialExpression.HAPPY, "Here's a fresh egg.")
+                        player.inventory.remove(Item(EGG))
                         gave = true
                         stage = 100
                     }
@@ -188,13 +188,13 @@ class LumbridgeCookDialogue (player: Player? = null) : DialoguePlugin(player){
             //Checking what the player has left over
             151 -> leftoverItems = "".also{
                 if (!player.getAttribute("cooks_assistant:milk_submitted", false)){
-                    leftoverItems += "A bucket of milk. ";
+                    leftoverItems += "A bucket of milk. "
                 }
                 if (!player.getAttribute("cooks_assistant:flour_submitted", false)){
-                    leftoverItems += "A pot of flour. ";
+                    leftoverItems += "A pot of flour. "
                 }
                 if (!player.getAttribute("cooks_assistant:egg_submitted", false)){
-                    leftoverItems += "An egg.";
+                    leftoverItems += "An egg."
                 }
                 if (leftoverItems != ""){
                     sendDialogue("You still need to get:",leftoverItems).also {stage = 160}

@@ -1,6 +1,10 @@
 package org.runite.jagex;
 
-final class Class3_Sub15 extends Class3 {
+import org.rs09.client.Linkable;
+import org.rs09.client.net.Connection;
+import org.rs09.client.data.ReferenceCache;
+
+public final class Class3_Sub15 extends Linkable {
 
    static int anInt2421 = -1;
    byte[] aByteArray2422;
@@ -9,117 +13,92 @@ final class Class3_Sub15 extends Class3 {
    byte[] aByteArray2425;
    static int anInt2426;
    static boolean aBoolean2427 = false;
-   static Class93 aClass93_2428 = new Class93(50);
-   static IOHandler aClass89_2429;
+   static ReferenceCache aReferenceCache_2428 = new ReferenceCache(50);
+   public static Connection activeConnection;
    byte[] aByteArray2430;
    Class3_Sub12_Sub1[] aClass3_Sub12_Sub1Array2431;
-   static RSString COMMAND_TWEENING = RSString.createRSString("::tween");
    static boolean aBoolean2433 = false;
    short[] aShortArray2434;
    Class166[] aClass166Array2435;
-   static int anInt2436;
 
 
-   final void method369(byte var1) {
+   final void method369() {
       try {
-         int var2 = 127 % ((-70 - var1) / 42);
          this.anIntArray2423 = null;
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "jk.A(" + var1 + ')');
+         throw Class44.clientError(var3, "jk.A(" + (byte) -124 + ')');
       }
    }
 
-   static final void method370(byte var0) {
+   static void method370() {
       try {
          //int var1 = -125 / ((0 - var0) / 59);
-         Class154.aClass93_1955.method1524(3);
+         Class154.aReferenceCache_1955.clear();
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "jk.B(" + var0 + ')');
+         throw Class44.clientError(var2, "jk.B(" + (byte) -73 + ')');
       }
    }
 
-   static final Class3_Sub28_Sub3 method371(int var0, RSString var1) {
+   static Class3_Sub28_Sub3 method371(RSString var1) {
       try {
-         if(var0 != 2) {
-            method372(false);
-         }
 
          for(Class3_Sub28_Sub3 var2 = (Class3_Sub28_Sub3)Class134.aClass61_1758.method1222(); var2 != null; var2 = (Class3_Sub28_Sub3)Class134.aClass61_1758.method1221()) {
-            if(var2.aClass94_3561.method1528((byte)-42, var1)) {
+            if(var2.aClass94_3561.equalsString(var1)) {
                return var2;
             }
          }
 
          return null;
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "jk.C(" + var0 + ',' + (var1 != null?"{...}":"null") + ')');
+         throw Class44.clientError(var3, "jk.C(" + 2 + ',' + (var1 != null?"{...}":"null") + ')');
       }
    }
 
-   public static void method372(boolean var0) {
+   final boolean method373(int[] var2, Class83 var3, byte[] var4) {
       try {
-         COMMAND_TWEENING = null;
-         if(var0) {
-            aClass93_2428 = null;
-            aClass89_2429 = null;
-         }
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "jk.D(" + var0 + ')');
-      }
-   }
+         int var6 = 0;
+         Class3_Sub12_Sub1 var7 = null;
+         boolean var5 = true;
 
-   final boolean method373(int var1, int[] var2, Class83 var3, byte[] var4) {
-      try {
-         if(var1 == 17904) {
-            int var6 = 0;
-            Class3_Sub12_Sub1 var7 = null;
-            boolean var5 = true;
-
-            for(int var8 = 0; var8 < 128; ++var8) {
-               if(null == var4 || var4[var8] != 0) {
-                  int var9 = this.anIntArray2423[var8];
-                  if(var9 != 0) {
-                     if(var6 != var9) {
-                        var6 = var9--;
-                        if((var9 & 1) == 0) {
-                           var7 = var3.method1413(var9 >> 2, 33, var2);
-                        } else {
-                           var7 = var3.method1416(10089, var9 >> 2, var2);
-                        }
-
-                        if(var7 == null) {
-                           var5 = false;
-                        }
+         for(int var8 = 0; var8 < 128; ++var8) {
+            if(null == var4 || var4[var8] != 0) {
+               int var9 = this.anIntArray2423[var8];
+               if(var9 != 0) {
+                  if(var6 != var9) {
+                     var6 = var9--;
+                     if((var9 & 1) == 0) {
+                        var7 = var3.method1413(var9 >> 2, var2);
+                     } else {
+                        var7 = var3.method1416(var9 >> 2, var2);
                      }
 
-                     if(null != var7) {
-                        this.aClass3_Sub12_Sub1Array2431[var8] = var7;
-                        this.anIntArray2423[var8] = 0;
+                     if(var7 == null) {
+                        var5 = false;
                      }
+                  }
+
+                  if(null != var7) {
+                     this.aClass3_Sub12_Sub1Array2431[var8] = var7;
+                     this.anIntArray2423[var8] = 0;
                   }
                }
             }
-
-            return var5;
-         } else {
-            return false;
          }
+
+         return var5;
       } catch (RuntimeException var10) {
-         throw Class44.method1067(var10, "jk.E(" + var1 + ',' + (var2 != null?"{...}":"null") + ',' + (var3 != null?"{...}":"null") + ',' + (var4 != null?"{...}":"null") + ')');
+         throw Class44.clientError(var10, "jk.E(" + 17904 + ',' + (var2 != null?"{...}":"null") + ',' + (var3 != null?"{...}":"null") + ',' + (var4 != null?"{...}":"null") + ')');
       }
    }
 
-   static final void method374(int var0, boolean var1, byte[] var2, int var3, int var4, Class91[] var5) {
+   static void method374(int var0, boolean var1, byte[] var2, int var3, Class91[] var5) {
       try {
-         RSByteBuffer var6 = new RSByteBuffer(var2);
+         DataBuffer var6 = new DataBuffer(var2);
          int objectId = -1;
 
          while(var6.buffer.length > 0) {
-            int var8 = var6.method773((byte)-126);
+            int var8 = var6.method773();
             if(0 == var8) {
-               if(var4 != 0) {
-                  method372(true);
-               }
 
                return;
             }
@@ -128,7 +107,7 @@ final class Class3_Sub15 extends Class3 {
             int data = 0;
 
             while(true) {
-               int var10 = var6.getSmart(true);
+               int var10 = var6.getSmart();
                if(var10 == 0) {
                   break;
                }
@@ -137,7 +116,7 @@ final class Class3_Sub15 extends Class3 {
                int var11 = data & 63;
                int var13 = data >> 12;
                int var12 = data >> 6 & 63;
-               int var14 = var6.getByte((byte)-48);
+               int var14 = var6.readUnsignedByte();
                int var15 = var14 >> 2;
                int var16 = var14 & 3;
                int var17 = var0 + var12;
@@ -146,7 +125,7 @@ final class Class3_Sub15 extends Class3 {
                   Class91 var19 = null;
                   if(!var1) {
                      int var20 = var13;
-                     if((2 & Class9.aByteArrayArrayArray113[1][var17][var18]) == 2) {
+                     if((2 & Unsorted.aByteArrayArrayArray113[1][var17][var18]) == 2) {
                         var20 = var13 - 1;
                      }
 
@@ -155,12 +134,12 @@ final class Class3_Sub15 extends Class3 {
                      }
                   }
 
-                  Class110.method1683(var13 % 4, !var1, var13, var1, var19, objectId, var15, var17, (byte)50, var18, var16);
+                  Class110.method1683(var13 % 4, !var1, var13, var1, var19, objectId, var15, var17, var18, var16);
                }
             }
          }
       } catch (RuntimeException var21) {
-         throw Class44.method1067(var21, "jk.F(" + var0 + ',' + var1 + ',' + (var2 != null?"{...}":"null") + ',' + var3 + ',' + var4 + ',' + (var5 != null?"{...}":"null") + ')');
+         throw Class44.clientError(var21, "jk.F(" + var0 + ',' + var1 + ',' + (var2 != null?"{...}":"null") + ',' + var3 + ',' + 0 + ',' + (var5 != null?"{...}":"null") + ')');
       }
    }
 
@@ -177,16 +156,15 @@ final class Class3_Sub15 extends Class3 {
          int var3 = 0;
          this.aByteArray2425 = new byte[128];
 
-         RSByteBuffer var2;
-         for(var2 = new RSByteBuffer(var1); var2.buffer[var3 + var2.index] != 0; ++var3) {
-            ;
+         DataBuffer var2;
+         for(var2 = new DataBuffer(var1); var2.buffer[var3 + var2.index] != 0; ++var3) {
          }
 
          byte[] var4 = new byte[var3];
 
          int var5;
          for(var5 = 0; var3 > var5; ++var5) {
-            var4[var5] = var2.getByte();
+            var4[var5] = var2.readSignedByte();
          }
 
          ++var2.index;
@@ -196,14 +174,13 @@ final class Class3_Sub15 extends Class3 {
 
          int var6;
          for(var6 = 0; 0 != var2.buffer[var2.index + var6]; ++var6) {
-            ;
          }
 
          byte[] var7 = new byte[var6];
 
          int var8;
          for(var8 = 0; var6 > var8; ++var8) {
-            var7[var8] = var2.getByte();
+            var7[var8] = var2.readSignedByte();
          }
 
          ++var2.index;
@@ -212,13 +189,12 @@ final class Class3_Sub15 extends Class3 {
          var8 = var2.index;
 
          for(var2.index += var6; var2.buffer[var9 + var2.index] != 0; ++var9) {
-            ;
          }
 
          byte[] var10 = new byte[var9];
 
          for(int var11 = 0; var9 > var11; ++var11) {
-            var10[var11] = var2.getByte();
+            var10[var11] = var2.readSignedByte();
          }
 
          ++var2.index;
@@ -234,7 +210,7 @@ final class Class3_Sub15 extends Class3 {
             int var13 = 1;
 
             for(var14 = 2; var14 < var9; ++var14) {
-               int var15 = var2.getByte((byte)-87);
+               int var15 = var2.readUnsignedByte();
                if(0 == var15) {
                   var13 = var12++;
                } else {
@@ -254,33 +230,32 @@ final class Class3_Sub15 extends Class3 {
          Class166 var41;
          for(var14 = 0; var14 < var38.length; ++var14) {
             var41 = var38[var14] = new Class166();
-            int var16 = var2.getByte((byte)-121);
+            int var16 = var2.readUnsignedByte();
             if(0 < var16) {
                var41.aByteArray2064 = new byte[2 * var16];
             }
 
-            var16 = var2.getByte((byte)-47);
+            var16 = var2.readUnsignedByte();
             if(var16 > 0) {
                var41.aByteArray2076 = new byte[var16 * 2 + 2];
                var41.aByteArray2076[1] = 64;
             }
          }
 
-         var14 = var2.getByte((byte)-81);
+         var14 = var2.readUnsignedByte();
          byte[] var40 = var14 > 0 ?new byte[var14 * 2]:null;
-         var14 = var2.getByte((byte)-84);
+         var14 = var2.readUnsignedByte();
          byte[] var39 = var14 > 0 ?new byte[var14 * 2]:null;
 
          int var17;
          for(var17 = 0; var2.buffer[var17 + var2.index] != 0; ++var17) {
-            ;
          }
 
          byte[] var18 = new byte[var17];
 
          int var19;
          for(var19 = 0; var19 < var17; ++var19) {
-            var18[var19] = var2.getByte();
+            var18[var19] = var2.readSignedByte();
          }
 
          ++var2.index;
@@ -289,14 +264,14 @@ final class Class3_Sub15 extends Class3 {
 
          int var20;
          for(var20 = 0; var20 < 128; ++var20) {
-            var19 += var2.getByte((byte)-101);
+            var19 += var2.readUnsignedByte();
             this.aShortArray2434[var20] = (short)var19;
          }
 
          var19 = 0;
 
          for(var20 = 0; var20 < 128; ++var20) {
-            var19 += var2.getByte((byte)-115);
+            var19 += var2.readUnsignedByte();
             this.aShortArray2434[var20] = (short)(this.aShortArray2434[var20] + (var19 << 8));
          }
 
@@ -313,10 +288,10 @@ final class Class3_Sub15 extends Class3 {
                   var20 = -1;
                }
 
-               var22 = var2.method741((byte)122);
+               var22 = var2.method741();
             }
 
-            this.aShortArray2434[var23] = (short)(this.aShortArray2434[var23] + Class3_Sub28_Sub15.method633('\u8000', -1 + var22 << 14));
+            this.aShortArray2434[var23] = (short)(this.aShortArray2434[var23] + Unsorted.bitwiseAnd('\u8000', -1 + var22 << 14));
             this.anIntArray2423[var23] = var22;
             --var20;
          }
@@ -397,7 +372,7 @@ final class Class3_Sub15 extends Class3 {
                }
 
                if(this.anIntArray2423[var27] > 0) {
-                  var26 = var2.getByte((byte)-61) + 1;
+                  var26 = var2.readUnsignedByte() + 1;
                }
             }
 
@@ -405,7 +380,7 @@ final class Class3_Sub15 extends Class3 {
             this.aByteArray2430[var27] = (byte)var26;
          }
 
-         this.anInt2424 = var2.getByte((byte)-26) + 1;
+         this.anInt2424 = var2.readUnsignedByte() + 1;
 
          int var29;
          Class166 var28;
@@ -413,26 +388,26 @@ final class Class3_Sub15 extends Class3 {
             var28 = var38[var27];
             if(var28.aByteArray2064 != null) {
                for(var29 = 1; var29 < var28.aByteArray2064.length; var29 += 2) {
-                  var28.aByteArray2064[var29] = var2.getByte();
+                  var28.aByteArray2064[var29] = var2.readSignedByte();
                }
             }
 
             if(var28.aByteArray2076 != null) {
                for(var29 = 3; var29 < var28.aByteArray2076.length + -2; var29 += 2) {
-                  var28.aByteArray2076[var29] = var2.getByte();
+                  var28.aByteArray2076[var29] = var2.readSignedByte();
                }
             }
          }
 
          if(null != var40) {
             for(var27 = 1; var40.length > var27; var27 += 2) {
-               var40[var27] = var2.getByte();
+               var40[var27] = var2.readSignedByte();
             }
          }
 
          if(null != var39) {
             for(var27 = 1; var27 < var39.length; var27 += 2) {
-               var39[var27] = var2.getByte();
+               var39[var27] = var2.readSignedByte();
             }
          }
 
@@ -442,7 +417,7 @@ final class Class3_Sub15 extends Class3 {
                var19 = 0;
 
                for(var29 = 2; var28.aByteArray2076.length > var29; var29 += 2) {
-                  var19 -= -1 + -var2.getByte((byte)-114);
+                  var19 -= -1 + -var2.readUnsignedByte();
                   var28.aByteArray2076[var29] = (byte)var19;
                }
             }
@@ -454,7 +429,7 @@ final class Class3_Sub15 extends Class3 {
                var19 = 0;
 
                for(var29 = 2; var28.aByteArray2064.length > var29; var29 += 2) {
-                  var19 = var19 - -1 - -var2.getByte((byte)-29);
+                  var19 = var19 - -1 - -var2.readUnsignedByte();
                   var28.aByteArray2064[var29] = (byte)var19;
                }
             }
@@ -467,11 +442,11 @@ final class Class3_Sub15 extends Class3 {
          int var44;
          byte var48;
          if(null != var40) {
-            var19 = var2.getByte((byte)-32);
+            var19 = var2.readUnsignedByte();
             var40[0] = (byte)var19;
 
             for(var27 = 2; var40.length > var27; var27 += 2) {
-               var19 = 1 + (var19 - -var2.getByte((byte)-29));
+               var19 = 1 + (var19 - -var2.readUnsignedByte());
                var40[var27] = (byte)var19;
             }
 
@@ -497,19 +472,17 @@ final class Class3_Sub15 extends Class3 {
                var46 = var31;
             }
 
-            var41 = null;
-
-            for(var44 = var48; var44 < 128; ++var44) {
+             for(var44 = var48; var44 < 128; ++var44) {
                this.aByteArray2430[var44] = (byte)(32 + this.aByteArray2430[var44] * var46 >> 6);
             }
          }
 
          if(null != var39) {
-            var19 = var2.getByte((byte)-118);
+            var19 = var2.readUnsignedByte();
             var39[0] = (byte)var19;
 
             for(var27 = 2; var27 < var39.length; var27 += 2) {
-               var19 = 1 + (var19 - -var2.getByte((byte)-75));
+               var19 = 1 + (var19 - -var2.readUnsignedByte());
                var39[var27] = (byte)var19;
             }
 
@@ -566,49 +539,47 @@ final class Class3_Sub15 extends Class3 {
 
                this.aByteArray2422[var44] = (byte)var45;
             }
-
-            Object var42 = null;
          }
 
          for(var27 = 0; var12 > var27; ++var27) {
-            var38[var27].anInt2078 = var2.getByte((byte)-60);
+            var38[var27].anInt2078 = var2.readUnsignedByte();
          }
 
          for(var27 = 0; var27 < var12; ++var27) {
             var28 = var38[var27];
             if(null != var28.aByteArray2064) {
-               var28.anInt2067 = var2.getByte((byte)-23);
+               var28.anInt2067 = var2.readUnsignedByte();
             }
 
             if(null != var28.aByteArray2076) {
-               var28.anInt2071 = var2.getByte((byte)-104);
+               var28.anInt2071 = var2.readUnsignedByte();
             }
 
             if(var28.anInt2078 > 0) {
-               var28.anInt2063 = var2.getByte((byte)-124);
+               var28.anInt2063 = var2.readUnsignedByte();
             }
          }
 
          for(var27 = 0; var12 > var27; ++var27) {
-            var38[var27].anInt2077 = var2.getByte((byte)-102);
+            var38[var27].anInt2077 = var2.readUnsignedByte();
          }
 
          for(var27 = 0; var12 > var27; ++var27) {
             var28 = var38[var27];
             if(var28.anInt2077 > 0) {
-               var28.anInt2066 = var2.getByte((byte)-80);
+               var28.anInt2066 = var2.readUnsignedByte();
             }
          }
 
          for(var27 = 0; var27 < var12; ++var27) {
             var28 = var38[var27];
             if(var28.anInt2066 > 0) {
-               var28.anInt2069 = var2.getByte((byte)-84);
+               var28.anInt2069 = var2.readUnsignedByte();
             }
          }
 
       } catch (RuntimeException var36) {
-         throw Class44.method1067(var36, "jk.<init>(" + (var1 != null?"{...}":"null") + ')');
+         throw Class44.clientError(var36, "jk.<init>(" + (var1 != null?"{...}":"null") + ')');
       }
    }
 

@@ -1,6 +1,8 @@
 package org.runite.jagex;
 
-final class Class3_Sub26 extends Class3 {
+import org.rs09.client.Linkable;
+
+final class Class3_Sub26 extends Linkable {
 
    int anInt2553;
    static int anInt2554 = 0;
@@ -14,33 +16,18 @@ final class Class3_Sub26 extends Class3 {
    static Class3_Sub24_Sub2 aClass3_Sub24_Sub2_2563;
 
 
-   public static void method511(byte var0) {
+   static void method512() {
       try {
-         int var1 = -59 / ((var0 - 67) / 36);
-         aClass3_Sub28_Sub16_2560 = null;
-         anIntArray2559 = null;
-         aClass61_2557 = null;
-         aClass3_Sub24_Sub2_2563 = null;
+         Unsorted.aReferenceCache_4043.clear();
+         CS2Script.aReferenceCache_2442.clear();
+         Class154.aReferenceCache_1964.clear();
+
       } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "qi.A(" + var0 + ')');
+         throw Class44.clientError(var2, "qi.D(" + (byte) -108 + ')');
       }
    }
 
-   static final void method512(byte var0) {
-      try {
-         Class3_Sub28_Sub7_Sub1.aClass93_4043.method1524(3);
-         CS2Script.aClass93_2442.method1524(3);
-         Class154.aClass93_1964.method1524(3);
-         if(var0 != -108) {
-            aClass3_Sub24_Sub2_2563 = (Class3_Sub24_Sub2)null;
-         }
-
-      } catch (RuntimeException var2) {
-         throw Class44.method1067(var2, "qi.D(" + var0 + ')');
-      }
-   }
-
-   static final int method513(int var0, int var1) {
+   static int method513(int var0) {
       try {
          int var2 = 0;
          if(var0 < 0 || var0 >= 65536) {
@@ -58,7 +45,7 @@ final class Class3_Sub26 extends Class3 {
             var0 >>>= 4;
          }
 
-         if(var1 <= var0) {
+         if(4 <= var0) {
             var0 >>>= 2;
             var2 += 2;
          }
@@ -70,7 +57,7 @@ final class Class3_Sub26 extends Class3 {
 
          return var0 + var2;
       } catch (RuntimeException var3) {
-         throw Class44.method1067(var3, "qi.B(" + var0 + ',' + var1 + ')');
+         throw Class44.clientError(var3, "qi.B(" + var0 + ',' + 4 + ')');
       }
    }
 
@@ -79,20 +66,17 @@ final class Class3_Sub26 extends Class3 {
          this.anInt2555 = var2;
          this.anInt2553 = var1;
       } catch (RuntimeException var4) {
-         throw Class44.method1067(var4, "qi.<init>(" + var1 + ',' + var2 + ')');
+         throw Class44.clientError(var4, "qi.<init>(" + var1 + ',' + var2 + ')');
       }
    }
 
-   static final int method514(int var0, int var1, byte var2, int var3) {
+   static int method514(int var0, int var1, int var3) {
       try {
          var0 &= 3;
-         if(var2 >= -66) {
-            method513(-92, 76);
-         }
 
-         return var0 == 0 ?var1:(1 == var0?var3:(2 != var0?-var3 + 1023:1023 + -var1));
+          return var0 == 0 ?var1:(1 == var0?var3:(2 != var0?-var3 + 1023:1023 + -var1));
       } catch (RuntimeException var5) {
-         throw Class44.method1067(var5, "qi.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+         throw Class44.clientError(var5, "qi.C(" + var0 + ',' + var1 + ',' + (byte) -83 + ',' + var3 + ')');
       }
    }
 

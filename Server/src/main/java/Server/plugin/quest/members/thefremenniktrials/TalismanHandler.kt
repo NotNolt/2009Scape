@@ -27,8 +27,8 @@ class TalismanHandler : OptionHandler() {
     fun Location.getDirection(entity: Entity): String{
         val loc: Location = this
         val difX: Double = (loc.x - entity.location.x).toDouble()
-        val dify: Double = (loc.y - entity.location.y).toDouble()
-        val angle = Math.toDegrees(atan2(difX,dify))
+        val difY: Double = (loc.y - entity.location.y).toDouble()
+        val angle = Math.toDegrees(atan2(difX,difY))
         val NORTH  = 0.toDouble()
         val SOUTH = 180.toDouble()
         val EAST = (-90).toDouble()
@@ -113,7 +113,7 @@ class TalismanHandler : OptionHandler() {
     }
 
     override fun newInstance(arg: Any?): Plugin<Any> {
-        ItemDefinition.forId(3696).configurations["option:locate"] = this
+        ItemDefinition.forId(3696).handlers["option:locate"] = this
         return this
     }
 

@@ -15,7 +15,7 @@ import core.plugin.InitializablePlugin;
 import core.plugin.Plugin;
 
 /**
- * Represents the plugin used to handle prince ali rescure quest interaction nodes.
+ * Represents the plugin used to handle prince ali rescue quest interaction nodes.
  * @author Vexia
  * 
  */
@@ -24,12 +24,12 @@ public class PrinceAliRescuePlugin extends OptionHandler {
 
 	@Override
 	public Plugin<Object> newInstance(Object arg) throws Throwable {
-		ObjectDefinition.forId(2881).getConfigurations().put("option:open", this);// prison
+		ObjectDefinition.forId(2881).getHandlers().put("option:open", this);// prison
 		// door.
-		ObjectDefinition.forId(4639).getConfigurations().put("option:open", this);// door
+		ObjectDefinition.forId(4639).getHandlers().put("option:open", this);// door
 		// to
 		// jail
-		NPCDefinition.forId(925).getConfigurations().put("option:talk-to", this);
+		NPCDefinition.forId(925).getHandlers().put("option:talk-to", this);
 		return this;
 	}
 

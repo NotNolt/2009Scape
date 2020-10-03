@@ -1,18 +1,21 @@
 package org.runite.jagex;
 
-final class Class3_Sub27 extends Class3 {
+import org.rs09.client.Linkable;
+import org.rs09.client.data.HashTable;
 
-   Class130 aClass130_2564;
+final class Class3_Sub27 extends Linkable {
+
+   HashTable aHashTable_2564;
    byte[] aByteArray2565;
 
 
    final void method515() {
-      this.aClass130_2564 = null;
+      this.aHashTable_2564 = null;
    }
 
    final void method516() {
-      if(this.aClass130_2564 == null) {
-         this.aClass130_2564 = new Class130(16);
+      if(this.aHashTable_2564 == null) {
+         this.aHashTable_2564 = new HashTable(16);
          int[] var1 = new int[16];
          int[] var2 = new int[16];
          var1[9] = var2[9] = 128;
@@ -71,10 +74,10 @@ final class Class3_Sub27 extends Class3 {
                   var11 = var7 >> 16 & 127;
                   if(var11 > 0) {
                      int var12 = var2[var9];
-                     Class3_Sub6 var13 = (Class3_Sub6)this.aClass130_2564.method1780((long)var12, 0);
+                     Class3_Sub6 var13 = (Class3_Sub6)this.aHashTable_2564.get((long)var12);
                      if(var13 == null) {
                         var13 = new Class3_Sub6(new byte[128]);
-                        this.aClass130_2564.method1779(1, var13, (long)var12);
+                        this.aHashTable_2564.put((long)var12, var13);
                      }
 
                      var13.aByteArray2289[var10] = 1;
@@ -88,15 +91,15 @@ final class Class3_Sub27 extends Class3 {
       }
    }
 
-   static final Class3_Sub27 method517(CacheIndex var0, int var1, int var2) {
-      byte[] var3 = var0.getFile(var1, (byte)-122, var2);
-      return var3 == null?null:new Class3_Sub27(new RSByteBuffer(var3));
+   static Class3_Sub27 method517(CacheIndex var0, int var1, int var2) {
+      byte[] var3 = var0.getFile(var1, var2);
+      return var3 == null?null:new Class3_Sub27(new DataBuffer(var3));
    }
 
-   private Class3_Sub27(RSByteBuffer var1) {
+   private Class3_Sub27(DataBuffer var1) {
       var1.index = var1.buffer.length - 3;
-      int var2 = var1.getByte((byte)-34);
-      int var3 = var1.getShort(1);
+      int var2 = var1.readUnsignedByte();
+      int var3 = var1.readUnsignedShort();
       int var4 = 14 + var2 * 10;
       var1.index = 0;
       int var5 = 0;
@@ -115,7 +118,7 @@ final class Class3_Sub27 extends Class3 {
          var14 = -1;
 
          while(true) {
-            var15 = var1.getByte((byte)-118);
+            var15 = var1.readUnsignedByte();
             if(var15 != var14) {
                ++var4;
             }
@@ -157,7 +160,7 @@ final class Class3_Sub27 extends Class3 {
       var14 = var2 + var5 + var6 + var7 + var8 + var9 + var10 + var11 + var12;
 
       for(var15 = 0; var15 < var14; ++var15) {
-         var1.method741((byte)127);
+         var1.method741();
       }
 
       var4 += var1.index - var13;
@@ -178,35 +181,33 @@ final class Class3_Sub27 extends Class3 {
 
       int var29;
       for(var29 = 0; var29 < var6; ++var29) {
-         var28 = var28 + var1.getByte((byte)-80) & 127;
+         var28 = var28 + var1.readUnsignedByte() & 127;
          if(var28 == 0 || var28 == 32) {
             ++var12;
+         } else if (var28 == 1) {
+            ++var16;
+         } else if (var28 == 33) {
+            ++var17;
+         } else if (var28 == 7) {
+            ++var18;
+         } else if (var28 == 39) {
+            ++var19;
+         } else if (var28 == 10) {
+            ++var20;
+         } else if (var28 == 42) {
+            ++var21;
+         } else if (var28 == 99) {
+            ++var22;
+         } else if (var28 == 98) {
+            ++var23;
+         } else if (var28 == 101) {
+            ++var24;
+         } else if (var28 == 100) {
+            ++var25;
+         } else if (var28 != 64 && var28 != 65 && var28 != 120 && var28 != 121 && var28 != 123) {
+            ++var27;
          } else {
-            if(var28 == 1) {
-               ++var16;
-            } else if(var28 == 33) {
-               ++var17;
-            } else if(var28 == 7) {
-               ++var18;
-            } else if(var28 == 39) {
-               ++var19;
-            } else if(var28 == 10) {
-               ++var20;
-            } else if(var28 == 42) {
-               ++var21;
-            } else if(var28 == 99) {
-               ++var22;
-            } else if(var28 == 98) {
-               ++var23;
-            } else if(var28 == 101) {
-               ++var24;
-            } else if(var28 == 100) {
-               ++var25;
-            } else if(var28 != 64 && var28 != 65 && var28 != 120 && var28 != 121 && var28 != 123) {
-               ++var27;
-            } else {
-               ++var26;
-            }
+            ++var26;
          }
       }
 
@@ -254,12 +255,12 @@ final class Class3_Sub27 extends Class3 {
       int var50 = var1.index;
       var1.index += var5 * 3;
       this.aByteArray2565 = new byte[var4];
-      RSByteBuffer var51 = new RSByteBuffer(this.aByteArray2565);
-      var51.putInt(-121, 1297377380);
-      var51.putInt(-128, 6);
-      var51.putShort(var2 > 1?1:0);
-      var51.putShort(var2);
-      var51.putShort(var3);
+      DataBuffer var51 = new DataBuffer(this.aByteArray2565);
+      var51.writeInt(1297377380);
+      var51.writeInt(6);
+      var51.writeShort(var2 > 1?1:0);
+      var51.writeShort(var2);
+      var51.writeShort(var3);
       var1.index = var13;
       int var52 = 0;
       int var53 = 0;
@@ -273,135 +274,133 @@ final class Class3_Sub27 extends Class3 {
       int var60 = 0;
 
       while(var60 < var2) {
-         var51.putInt(-125, 1297379947);
+         var51.writeInt(1297379947);
          var51.index += 4;
          int var61 = var51.index;
          int var62 = -1;
 
          while(true) {
-            int var63 = var1.method741((byte)113);
-            var51.method771(17038, var63);
+            int var63 = var1.method741();
+            var51.method771(var63);
             int var64 = var1.buffer[var29++] & 255;
             boolean var65 = var64 != var62;
             var62 = var64 & 15;
             if(var64 == 7) {
                if(var65) {
-                  var51.putByte((byte)-121, 255);
+                  var51.writeByte(255);
                }
 
-               var51.putByte((byte)-45, 47);
-               var51.putByte((byte)-72, 0);
-               var51.method742(83, var51.index - var61);
+               var51.writeByte(47);
+               var51.writeByte(0);
+               var51.method742(var51.index - var61);
                ++var60;
                break;
             }
 
             if(var64 == 23) {
                if(var65) {
-                  var51.putByte((byte)-49, 255);
+                  var51.writeByte(255);
                }
 
-               var51.putByte((byte)-54, 81);
-               var51.putByte((byte)-16, 3);
-               var51.putByte((byte)-126, var1.buffer[var50++]);
-               var51.putByte((byte)-99, var1.buffer[var50++]);
-               var51.putByte((byte)-76, var1.buffer[var50++]);
+               var51.writeByte(81);
+               var51.writeByte(3);
+               var51.writeByte(var1.buffer[var50++]);
+               var51.writeByte(var1.buffer[var50++]);
+               var51.writeByte(var1.buffer[var50++]);
             } else {
                var52 ^= var64 >> 4;
                if(var62 == 0) {
                   if(var65) {
-                     var51.putByte((byte)-60, 144 + var52);
+                     var51.writeByte(144 + var52);
                   }
 
                   var53 += var1.buffer[var37++];
                   var54 += var1.buffer[var38++];
-                  var51.putByte((byte)-98, var53 & 127);
-                  var51.putByte((byte)-112, var54 & 127);
+                  var51.writeByte(var53 & 127);
+                  var51.writeByte(var54 & 127);
                } else if(var62 == 1) {
                   if(var65) {
-                     var51.putByte((byte)-55, 128 + var52);
+                     var51.writeByte(128 + var52);
                   }
 
                   var53 += var1.buffer[var37++];
                   var55 += var1.buffer[var40++];
-                  var51.putByte((byte)-76, var53 & 127);
-                  var51.putByte((byte)-57, var55 & 127);
+                  var51.writeByte(var53 & 127);
+                  var51.writeByte(var55 & 127);
                } else if(var62 == 2) {
                   if(var65) {
-                     var51.putByte((byte)-81, 176 + var52);
+                     var51.writeByte(176 + var52);
                   }
 
                   var28 = var28 + var1.buffer[var15++] & 127;
-                  var51.putByte((byte)-17, var28);
+                  var51.writeByte(var28);
                   byte var66;
                   if(var28 == 0 || var28 == 32) {
                      var66 = var1.buffer[var44++];
+                  } else if (var28 == 1) {
+                     var66 = var1.buffer[var34++];
+                  } else if (var28 == 33) {
+                     var66 = var1.buffer[var41++];
+                  } else if (var28 == 7) {
+                     var66 = var1.buffer[var35++];
+                  } else if (var28 == 39) {
+                     var66 = var1.buffer[var42++];
+                  } else if (var28 == 10) {
+                     var66 = var1.buffer[var36++];
+                  } else if (var28 == 42) {
+                     var66 = var1.buffer[var43++];
+                  } else if (var28 == 99) {
+                     var66 = var1.buffer[var46++];
+                  } else if (var28 == 98) {
+                     var66 = var1.buffer[var47++];
+                  } else if (var28 == 101) {
+                     var66 = var1.buffer[var48++];
+                  } else if (var28 == 100) {
+                     var66 = var1.buffer[var49++];
+                  } else if (var28 != 64 && var28 != 65 && var28 != 120 && var28 != 121 && var28 != 123) {
+                     var66 = var1.buffer[var39++];
                   } else {
-                     if(var28 == 1) {
-                        var66 = var1.buffer[var34++];
-                     } else if(var28 == 33) {
-                        var66 = var1.buffer[var41++];
-                     } else if(var28 == 7) {
-                        var66 = var1.buffer[var35++];
-                     } else if(var28 == 39) {
-                        var66 = var1.buffer[var42++];
-                     } else if(var28 == 10) {
-                        var66 = var1.buffer[var36++];
-                     } else if(var28 == 42) {
-                        var66 = var1.buffer[var43++];
-                     } else if(var28 == 99) {
-                        var66 = var1.buffer[var46++];
-                     } else if(var28 == 98) {
-                        var66 = var1.buffer[var47++];
-                     } else if(var28 == 101) {
-                        var66 = var1.buffer[var48++];
-                     } else if(var28 == 100) {
-                        var66 = var1.buffer[var49++];
-                     } else if(var28 != 64 && var28 != 65 && var28 != 120 && var28 != 121 && var28 != 123) {
-                        var66 = var1.buffer[var39++];
-                     } else {
-                        var66 = var1.buffer[var30++];
-                     }
+                     var66 = var1.buffer[var30++];
                   }
 
                    int var67 = var66 + var59[var28];
                   var59[var28] = var67;
-                  var51.putByte((byte)-13, var67 & 127);
+                  var51.writeByte(var67 & 127);
                } else if(var62 == 3) {
                   if(var65) {
-                     var51.putByte((byte)-59, 224 + var52);
+                     var51.writeByte(224 + var52);
                   }
 
                   var56 += var1.buffer[var45++];
                   var56 += var1.buffer[var33++] << 7;
-                  var51.putByte((byte)-48, var56 & 127);
-                  var51.putByte((byte)-33, var56 >> 7 & 127);
+                  var51.writeByte(var56 & 127);
+                  var51.writeByte(var56 >> 7 & 127);
                } else if(var62 == 4) {
                   if(var65) {
-                     var51.putByte((byte)-33, 208 + var52);
+                     var51.writeByte(208 + var52);
                   }
 
                   var57 += var1.buffer[var32++];
-                  var51.putByte((byte)-35, var57 & 127);
+                  var51.writeByte(var57 & 127);
                } else if(var62 == 5) {
                   if(var65) {
-                     var51.putByte((byte)-24, 160 + var52);
+                     var51.writeByte(160 + var52);
                   }
 
                   var53 += var1.buffer[var37++];
                   var58 += var1.buffer[var31++];
-                  var51.putByte((byte)-106, var53 & 127);
-                  var51.putByte((byte)-83, var58 & 127);
+                  var51.writeByte(var53 & 127);
+                  var51.writeByte(var58 & 127);
                } else {
                   if(var62 != 6) {
                      throw new RuntimeException();
                   }
 
                   if(var65) {
-                     var51.putByte((byte)-45, 192 + var52);
+                     var51.writeByte(192 + var52);
                   }
 
-                  var51.putByte((byte)-89, var1.buffer[var44++]);
+                  var51.writeByte(var1.buffer[var44++]);
                }
             }
          }

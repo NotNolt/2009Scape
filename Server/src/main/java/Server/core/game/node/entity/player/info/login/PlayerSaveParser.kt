@@ -11,13 +11,14 @@ import core.game.node.entity.player.link.grave.GraveType
 import core.game.node.entity.player.link.music.MusicEntry
 import core.game.node.entity.state.EntityState
 import core.game.system.SystemLogger
-import core.game.world.map.Location
+import core.game.world.GameWorld
 import org.json.simple.JSONArray
 import org.json.simple.JSONObject
 import org.json.simple.parser.JSONParser
 import plugin.ame.AntiMacroHandler
 import plugin.interaction.item.brawling_gloves.BrawlingGloves
 import java.io.FileReader
+import java.util.*
 
 /**
  * Class used for parsing JSON player saves.
@@ -67,6 +68,36 @@ class PlayerSaveParser(val player: Player) {
             parseEmoteManager()
             parseStatistics()
             parseBrawlingGloves()
+            parseAttributes()
+            parsePouches()
+        }
+    }
+
+    fun parsePouches() {
+        if(saveFile!!.containsKey("pouches"))
+        player.pouchManager.parse(saveFile!!["pouches"] as JSONArray)
+    }
+
+    fun parseAttributes() {
+        if(saveFile!!.containsKey("attributes")){
+            val attrData = saveFile!!["attributes"] as JSONArray
+            for(a in attrData){
+                val attr = a as JSONObject
+                val key = attr["key"].toString()
+                val type = attr["type"].toString()
+                player.gameAttributes.savedAttributes.add(key)
+                player.gameAttributes.attributes.put(key,when(type){
+                    "int" -> attr["value"].toString().toInt()
+                    "str" -> attr["value"].toString()
+                    "short" -> attr["value"].toString().toShort()
+                    "long" -> attr["value"].toString().toLong()
+                    "bool" -> attr["value"] as Boolean
+                    "byte" -> Base64.getDecoder().decode(attr["value"].toString())[0]
+                    else -> null.also{SystemLogger.log("Invalid data type for key: $key")}
+                })
+            }
+        } else {
+            player.gameAttributes.parse(player.name + ".xml")
         }
     }
 
@@ -75,7 +106,7 @@ class PlayerSaveParser(val player: Player) {
             val bgData: JSONArray = saveFile!!["brawlingGloves"] as JSONArray
             for(bg in bgData){
                 val glove = bg as JSONObject
-                player.brawlingGlovesManager.registerGlove(BrawlingGloves.forIndicator(glove.get("gloveId") as Byte).id, glove.get("charges") as Int)
+                player.brawlingGlovesManager.registerGlove(BrawlingGloves.forIndicator(glove.get("gloveId").toString().toInt()).id, glove.get("charges").toString().toInt())
             }
         }
     }
@@ -274,6 +305,17 @@ class PlayerSaveParser(val player: Player) {
         val bank = coreData["bank"] as JSONArray
         val equipment = coreData["equipment"] as JSONArray
         val location = coreData["location"] as String
+        val bankTabData = coreData["bankTabs"]
+        if(bankTabData != null){
+            val tabData = bankTabData as JSONArray
+            for(i in tabData){
+                i ?: continue
+                val tab = i as JSONObject
+                val index = tab["index"].toString().toInt()
+                val startSlot = tab["startSlot"].toString().toInt()
+                player.bank.tabStartSlot[index] = startSlot
+            }
+        }
         player.inventory.parse(inventory)
         player.bank.parse(bank)
         player.equipment.parse(equipment)
@@ -286,6 +328,9 @@ class PlayerSaveParser(val player: Player) {
         player.skills.parse(skillData)
         player.skills.experienceGained = saveFile!!["totalEXP"].toString().toDouble()
         player.skills.experienceMutiplier = saveFile!!["exp_multiplier"].toString().toDouble()
+        if(GameWorld.getSettings().default_xp_rate != 5.0){
+            player.skills.experienceMutiplier = GameWorld.getSettings().default_xp_rate
+        }
         if(saveFile!!.containsKey("milestone")){
             val milestone: JSONObject = saveFile!!["milestone"] as JSONObject
             player.skills.combatMilestone = (milestone.get("combatMilestone")).toString().toInt()
