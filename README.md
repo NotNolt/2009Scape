@@ -32,9 +32,6 @@
   * [Github Setup](#github-setup)
   * [Prerequisites](#prerequisites)
   * [Prereq Installation](#prereq-installation)
-  * [Windows](#windows)
-  * [MacOS](#macos)
-  * [Linux](#linux)  
 * [Project Setup](#project-setup)
 * [Running the project](#running-the-project)
 * [License](#license)
@@ -99,8 +96,9 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 
 ## Prereq Installation
 
-### Windows
-
+<details>
+<summary><h3>Windows</h3></summary>
+<br>
 1. Install <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">JDK version 1.8</a>
     * Scroll down until you see Windows x86 and Windows x64
     * If you are running a 64bit verison of Windows (standard), select Windows x64
@@ -124,10 +122,11 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     * Click on "Xampp for Windows"
     * Download
     * Install as Administrator
+</details>  
     
-    
-### MacOs
-
+<details>
+<summary><h3>MacOs</h3></summary>
+<br>
 1. Install <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">JDK version 1.8</a>
     * Scroll down until you see macOS x64
     * select macOS x64
@@ -151,9 +150,11 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     * Click on "Xampp for OS X"
     * Download
     * Install as Administrator
-    
-### Linux
+</details>
 
+<details>
+<summary><h3>Linux</h3></summary>
+<br>
 1. Install JDK version 1.8 through <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">Oracle</a> or through <a href="https://openjdk.java.net/install/">command line</a>
     * Debian, Ubuntu, etc.
     ```sh
@@ -181,6 +182,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 4. Install <a href="https://www.apachefriends.org/index.html">Xampp</a>
     * Click install "XAMPP for Linux"
     * Install like any normal Linux program
+</details>
 
 
 ### Project Setup
