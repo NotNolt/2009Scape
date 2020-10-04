@@ -43,7 +43,7 @@
 
 ## Live Server Information
 
-Did you know that the 2009Scape Development Team hosts the main branch of this repo that you can connect to and play? Come join a growing community of people that love to grind out skills, quest, and hangout together. A download link for the launcher can be found <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar"><strong>here.</strong></a> Connecting to the live server is also one of the easiest ways to identify bugs/typos/missing features that we are currently missing. Identifying these issues help developers, whether already on the project, or are even brand new to the project, fix bugs and issues in an expedited rate.
+Did you know that the 2009Scape Development Team hosts the main branch of this repo that you can connect to and play? Come join a growing community of people that love to grind out skills, quest, and hangout together. A download link for the launcher can be found <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar"><strong>here.</strong></a> Connecting to the live server is also one of the easiest ways to identify bugs/typos/missing features. Identifying these issues help developers, whether already on the project, or are even brand new to the project, fix bugs and issues in an expedited rate.
 
 ## About The Project
 
