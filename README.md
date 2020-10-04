@@ -9,7 +9,7 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href=" "><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar">Community Hosted Server</a>
