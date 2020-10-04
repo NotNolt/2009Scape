@@ -96,8 +96,9 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 
 ## Prereq Installation
 
+<h3>Windows</h3>
 <details>
-<summary><h3>Windows</h3></summary>
+<summary> </summary>
 <br>
 1. Install <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">JDK version 1.8</a>
     * Scroll down until you see Windows x86 and Windows x64
@@ -124,8 +125,9 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     * Install as Administrator
 </details>  
     
+<h3>MacOS</h3>
 <details>
-<summary><h3>MacOs</h3></summary>
+<summary> </summary>
 <br>
 1. Install <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">JDK version 1.8</a>
     * Scroll down until you see macOS x64
@@ -152,8 +154,9 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     * Install as Administrator
 </details>
 
+<h3>Linux</h3>
 <details>
-<summary><h3>Linux</h3></summary>
+<summary> </summary>
 <br>
 1. Install JDK version 1.8 through <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">Oracle</a> or through <a href="https://openjdk.java.net/install/">command line</a>
     * Debian, Ubuntu, etc.
