@@ -247,7 +247,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 
 ### License
 
-We use the AGPL 3.0 which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a> We **WILL NOT** change the license to fit your needs.
+We use the AGPL 3.0 license, which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a> Please read and understand the license. Failure to follow the guidelines outlined in the license will result in legal action. If you know or hear of anyone breaking this license, please send a report, with proof, to RedBracket, Ceikry, or Woahscam#8535 on discord or email woahscam@hotmail.com. **We WILL NOT change the license to fit your needs.**
 
 ### Contact
 
