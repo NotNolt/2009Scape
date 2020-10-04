@@ -55,8 +55,7 @@ This project was started out of love for the 530 revision. A small group of deve
 ## Contributing
 
 <h4>Note: A live server that the 2009Scape development team runs is the best way to find and report bugs! Any changes made should be pushed to the Development Branch, Any changes that are pushed to the main branch will be denied, and you will have to submit another PR request. We are currently in the process of rewriting the codebase in Kotlin. Any new commits should be written in Kotlin Only.</h4>
-<br>
-**More information on Kotlin can be found here: 
+**More information on Kotlin can be found <a href="https://kotlinlang.org/">here.</a>**
 
 We are always looking for fellow helpers and developers to help preserve history and contribute towards making the most complete emulation server! The beautiful part is you don't even have to download and build the project in order to contribute! Want to make simple edits to NPCs, Items, Music, Shops, Typos? Follow the [Contributing-without-Building](#contributing-without-building) guide below!
 
