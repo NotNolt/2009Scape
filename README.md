@@ -7,9 +7,8 @@
   </a>
   <h3 align="center">An open source MMORPG emulation server</h3>
 
+  <h1 align="center"><a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar"><strong>Play the live server »</strong></a></h1>
   <p align="center">
-    <br />
-    <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar"><strong>Play the live server »</strong></a>
     <br />
     <br />
     <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar">Community Hosted Server</a>
@@ -55,7 +54,7 @@ This project was started out of love for the 530 revision. A small group of deve
 ## Contributing
 
 <h4>Note: A live server that the 2009Scape development team runs is the best way to find and report bugs! Any changes made should be pushed to the Development Branch, Any changes that are pushed to the main branch will be denied, and you will have to submit another PR request. We are currently in the process of rewriting the codebase in Kotlin. Any new commits should be written in Kotlin Only.</h4>
-**More information on Kotlin can be found <a href="https://kotlinlang.org/">here.</a>**
+<h4>More information on Kotlin can be found <a href="https://kotlinlang.org/">here.</a></h4>
 
 We are always looking for fellow helpers and developers to help preserve history and contribute towards making the most complete emulation server! The beautiful part is you don't even have to download and build the project in order to contribute! Want to make simple edits to NPCs, Items, Music, Shops, Typos? Follow the [Contributing-without-Building](#contributing-without-building) guide below!
 
@@ -67,6 +66,7 @@ First create a Github account if you do not have one already. Editing the reposi
 <br>
 <br>
 **Editing files that are too large for Github in-browser editing**
+<br>
 First follow the [Github-Setup](#github-setup). After you have forked over your copy of the repo, swap over to the **Development branch**, and then download the file that you wish to edit. JSON format can be edited in any notepad program, however it is recommended to use either <a href="https://atom.io/">Atom</a> or <a href="https://notepad-plus-plus.org/">Notepad++</a>. After you are finished editing your file, navigate back to the file you wish to replace on your **Development Branch**. Select it and delete it off your branch. Then go back and on the right hand side click on "Add files" and then "Upload new files". Upload the file you are done editing and then submit a Pull request (PR). To submit a PR navigate to "Pull requests" and then click on "New pull request". On the top of the page you should see "Comparing changes". The left set of options is what you will be pushing to and the right side is where you are pushing from. On the right side, put your repo and compare to **Development**, On the left hand side put the repo as 2009scape/2009scape base: **Development**. If at anytime it tries to pull/push into its own repository, click "Compare across forks" and you should be able to select where you want to push to and from. 
 <br>
 **More information about submitting PR's can be found <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests">here.</a>**
