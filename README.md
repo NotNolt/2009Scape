@@ -191,7 +191,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 
 ### Project Setup
 
-<h4>Note: If you still have issues during the Project-Setup stage let us know by posting in discord under #help-me-pls!</h4>
+<h4>Note: If you still have issues during the Project setup stage let us know by posting in discord under #help-me-pls! A fellow members of the community may be able to help!</h4>
 
 1. Open Xampp
     * On Windows make sure you run Xampp as administrator
