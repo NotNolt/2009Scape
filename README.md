@@ -251,8 +251,9 @@ We use the AGPL 3.0 which can be found <a href="https://www.gnu.org/licenses/agp
 
 ### Contact
 
-Questions or concerns that are project specific? Join our <a href="https://discord.gg/43YPGND">Discord</a> and either message me directly, @ woahscam#8535 on Discord, or ask in the #help-me-pls section for community help. 
 <h4>Reminder: Support for setting up your own server ended October 5th, 2020. If you can't figure it out feel free to ask in #help-me-pls and another user may be able to help you.</h4>
+Questions or concerns that are project specific? Join our <a href="https://discord.gg/43YPGND">Discord</a> and either message me directly, @ woahscam#8535 on Discord, or ask in the #help-me-pls section for community help. 
+
 
 
 [license-shield]: https://img.shields.io/badge/license-AGPL--3.0-informational
