@@ -19,7 +19,7 @@
     ·
     <a href="https://github.com/2009scape/2009Scape/projects">Bug Board</a>
   </p>
-<h3>ATTENTION: Starting October 5th, 2020 the development team will no longer be providing support for setting up your own server, however this in-depth guide will be continually updated if the building process changes. We are focusing all of our efforts on development of features and bugfixes for the live server.</h3>
+<h3>ATTENTION: Starting October 5th, 2020 the development team will no longer be providing support for setting up your own server. Do not ping or private message Developers asking how to build the project. This in-depth guide will be continually updated if the building process changes. We are focusing all of our efforts on the development of features and bugfixes for the live server.</h3>
 </p>
 
 
@@ -244,14 +244,14 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     * If Gradle run still does not work, launch the Client by navigating to Client/src/main/java/org.runite/jagex/Client
     * Right click on the client and select Run 'Client.main()'
     * Client debugging options can be found inside of config.json
-    
+
 ### License
 
 We use the AGPL 3.0 which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a> We **WILL NOT** change the license to fit your needs.
 
 ### Contact
 
-<h4>Reminder: Support for setting up your own server ended October 5th, 2020. If you can't figure it out feel free to ask in #help-me-pls and another user may be able to help you.</h4>
+<h4>Reminder: Developer support for setting up your own server ended October 5th, 2020. Do not ping/dm developers about setting up your server. If you can not figure out how to build the project feel free to ask inside of #help-me-pls and another community member may be able to help you out.</h4>
 Questions or concerns that are project specific? Join our <a href="https://discord.gg/43YPGND">Discord</a> and either message me directly, @ woahscam#8535 on Discord, or ask in the #help-me-pls section for community help. 
 
 
