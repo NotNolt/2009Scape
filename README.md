@@ -9,7 +9,7 @@
 
   <p align="center">
     <br />
-    <a href=" "><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar"><strong>Play the live server »</strong></a>
     <br />
     <br />
     <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar">Community Hosted Server</a>
@@ -25,6 +25,7 @@
 
 ## Table of Contents
 
+* [Live Server Information](#live-server-information)
 * [About the Project](#about-the-project)
 * [Contributing](#contributing)
 * [Contributing-without-Building](#contributing-without-building)
@@ -41,6 +42,10 @@
 * [Contact](#contact)
 
 
+## Live Server Information
+
+Did you know that the 2009Scape Development Team hosts the main branch of this repo that you can connect to and play? Come join a growing community of people that love to grind out skills, quest, and hangout together. A download link for the launcher can be found <a href="https://github.com/2009scape/2009Scape/releases/latest/download/2009Scape.jar"><strong>here.</strong></a> Connecting to the live server is also one of the easiest ways to identify bugs/typos/missing features that we are currently missing. Identifying these issues help developers, whether already on the project, or are even brand new to the project, fix bugs and issues in an expedited rate.
+
 ## About The Project
 
 The 2009Scape you see today has gone through a magnitude of changes. Originally starting its life as Arios498, this server saw a lot of people playing it daily, unfortunately, it was for profit and closed source. It was later upgraded to Arios530, targeting the build 530 of runescape with content in and around January 1st, 2009. Development came to a halt when a developer of the closed source project released the source code. The original developers of this server went on to create Kratos 530 back in 2015.
@@ -49,7 +54,9 @@ This project was started out of love for the 530 revision. A small group of deve
 
 ## Contributing
 
-<h4>Note: Any changes made should be pushed to the Development Branch, Any changes that are pushed to the main branch will be denied, and you will have to submit another PR request.</h4>
+<h4>Note: A live server that the 2009Scape development team runs is the best way to find and report bugs! Any changes made should be pushed to the Development Branch, Any changes that are pushed to the main branch will be denied, and you will have to submit another PR request. We are currently in the process of rewriting the codebase in Kotlin. Any new commits should be written in Kotlin Only.</h4>
+<br>
+**More information on Kotlin can be found here: 
 
 We are always looking for fellow helpers and developers to help preserve history and contribute towards making the most complete emulation server! The beautiful part is you don't even have to download and build the project in order to contribute! Want to make simple edits to NPCs, Items, Music, Shops, Typos? Follow the [Contributing-without-Building](#contributing-without-building) guide below!
 
@@ -235,7 +242,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     
 ### License
 
-We currently use AGPL 3.0 which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a>
+We use the AGPL 3.0 which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a> We **WILL NOT** change the license to fit your needs.
 
 ### Contact
 
