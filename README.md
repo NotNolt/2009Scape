@@ -19,7 +19,7 @@
     ·
     <a href="https://github.com/2009scape/2009Scape/projects">Bug Board</a>
   </p>
-<h3>ATTENTION: Starting October 5th, 2020 we will no longer be providing support for setting up your own server. We are focusing all of our efforts on development of features and bugfixes for the live server.</h3>
+<h3>ATTENTION: Starting October 5th, 2020 the development team will no longer be providing support for setting up your own server. We are focusing all of our efforts on development of features and bugfixes for the live server.</h3>
 </p>
 
 
