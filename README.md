@@ -27,15 +27,15 @@
 * [Live Server Information](#live-server-information)
 * [About the Project](#about-the-project)
 * [Contributing](#contributing)
-* [Contributing-without-Building](#contributing-without-building)
+* [Contributing without Building](#contributing-without-building)
 * [Getting Started](#getting-started)
-  * [Github-Setup](#github-setup)
+  * [Github Setup](#github-setup)
   * [Prerequisites](#prerequisites)
   * [Prereq Installation](#prereq-installation)
   * [Windows](#windows)
   * [MacOS](#macos)
   * [Linux](#linux)  
-* [Project-Setup](#project-setup)
+* [Project Setup](#project-setup)
 * [Running the project](#running-the-project)
 * [License](#license)
 * [Contact](#contact)
@@ -183,7 +183,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
     * Install like any normal Linux program
 
 
-### Project-Setup
+### Project Setup
 
 <h4>Note: If you still have issues during the Project-Setup stage let us know by posting in discord under #help-me-pls!</h4>
 
