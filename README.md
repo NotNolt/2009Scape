@@ -83,12 +83,12 @@ First follow the [Github-Setup](#github-setup). After you have forked over your 
 
 3. Click "Fork" in the top right hand side of Github
 
-If at anytime you have an issue with Github please refer to the <a href="https://docs.github.com/en/free-pro-team@latest/github">Github help center.</a>
+**If at anytime you have an issue with Github please refer to the** <a href="https://docs.github.com/en/free-pro-team@latest/github">Github help center.</a>
 
 
 ### Prerequisites
 
-<h4>Note: It is imperative to use Intellij IDEA as your integrated development environment.</h4>
+<h4>Note: It is required for a developer submitting a PR to use Intellij IDEA as your integrated development environment.</h4>
 
 * Intellij IDEA
 * Java SE Development Kit Version 1.8
@@ -191,7 +191,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 
 ### Project Setup
 
-<h4>Note: If you still have issues during the Project setup stage let us know by posting in discord under #help-me-pls! A fellow members of the community may be able to help!</h4>
+<h4>Note: If you still have issues during the Project setup stage post your issue to discord under the section #help-me-pls! A fellow member of the community may be able to help!</h4>
 
 1. Open Xampp
     * On Windows make sure you run Xampp as administrator
@@ -247,7 +247,7 @@ If at anytime you have an issue with Github please refer to the <a href="https:/
 
 ### License
 
-We use the AGPL 3.0 license, which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a> Please read and understand the license. Failure to follow the guidelines outlined in the license will result in legal action. If you know or hear of anyone breaking this license, please send a report, with proof, to RedBracket, Ceikry, or Woahscam#8535 on discord or email woahscam@hotmail.com. **We WILL NOT change the license to fit your needs.**
+We use the AGPL 3.0 license, which can be found <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">here.</a> Please read and understand the license. Failure to follow the guidelines outlined in the license will result in legal action. If you know or hear of anyone breaking this license, please send a report, with proof, to Red Bracket#8151, ceikry#2724, or woahscam#8535 on discord or email woahscam@hotmail.com. **We WILL NOT change the license to fit your needs.**
 
 ### Contact
 
