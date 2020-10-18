@@ -90,7 +90,7 @@ public class RenderAnimationDefinition {
 	private void parseOpcode(ByteBuffer buffer, int opcode) {
 		if (opcode == 54) {
 			@SuppressWarnings("unused")
-			int anInt1260 = (buffer.get() & 0xFF) << 6;
+			int NPCCombatLevel = (buffer.get() & 0xFF) << 6;
 			@SuppressWarnings("unused")
 			int anInt1227 = (buffer.get() & 0xFF) << 6;
 		} else if (opcode == 55) {
