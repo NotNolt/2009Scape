@@ -14,6 +14,9 @@ public final class AnimationDefinition {
     */
     int[] duration;
     int[] frames;
+    int[] soundMinDelay;
+    int[] soundMaxDelay;
+    int[] anIntArray1362;
     int anInt1865 = -1;
     boolean[] aBooleanArray1855;
     boolean aBoolean1859 = false;
@@ -29,6 +32,7 @@ public final class AnimationDefinition {
     boolean aBoolean1848 = false;
     boolean aBoolean1846 = false;
     boolean aBoolean1872 = false;
+    boolean effect2Sound;
 	/*
 		End Opcode Values
 	 */
@@ -162,6 +166,34 @@ public final class AnimationDefinition {
                     break;
                 case 16:
                     this.aBoolean1872 = true;
+                    break;
+                case 17:
+                    buffer.readSignedByte();
+                    break;
+                case 18:
+                    this.effect2Sound = true;
+                    break;
+                case 19:
+                    if (anIntArray1362 == null) {
+                        anIntArray1362 = new int[anIntArrayArray1867.length];
+                        for (int index = 0; index < anIntArrayArray1867.length; index++) {
+                            anIntArray1362[index] = 255;
+                        }
+                    }
+                    anIntArray1362[buffer.readUnsignedByte()] = buffer.readUnsignedByte();
+                    break;
+                case 20:
+                    if ((soundMaxDelay == null) || (soundMinDelay == null)) {
+                        soundMaxDelay = (new int[anIntArrayArray1867.length]);
+                        soundMinDelay = (new int[anIntArrayArray1867.length]);
+                        for (int i_34_ = 0; (i_34_ < anIntArrayArray1867.length); i_34_++) {
+                            soundMaxDelay[i_34_] = 256;
+                            soundMinDelay[i_34_] = 256;
+                        }
+                    }
+                    int index = buffer.readUnsignedByte();
+                    soundMaxDelay[index] = buffer.readSignedShort();
+                    soundMinDelay[index] = buffer.readSignedShort();
                     break;
             }
         } catch (RuntimeException var8) {

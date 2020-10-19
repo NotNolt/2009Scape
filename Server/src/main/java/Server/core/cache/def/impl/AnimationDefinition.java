@@ -15,7 +15,7 @@ public final class AnimationDefinition {
 
 	public int anInt2136;
 	public int anInt2137;
-	public int[] anIntArray2139;
+	public int[] frames;
 	public int anInt2140;
 	public boolean aBoolean2141 = false;
 	public int anInt2142;
@@ -104,12 +104,12 @@ public final class AnimationDefinition {
 			for (int i = 0; i < length; i++) {
 				durations[i] = buffer.getShort() & 0xFFFF;
 			}
-			anIntArray2139 = new int[length];
+			frames = new int[length];
 			for (int i = 0; i < length; i++) {
-				anIntArray2139[i] = buffer.getShort() & 0xFFFF;
+				frames[i] = buffer.getShort() & 0xFFFF;
 			}
 			for (int i = 0; i < length; i++) {
-				anIntArray2139[i] = ((buffer.getShort() & 0xFFFF << 16) + anIntArray2139[i]);
+				frames[i] = ((buffer.getShort() & 0xFFFF << 16) + frames[i]);
 			}
 		} else if (opcode != 2) {
 			if (opcode != 3) {
@@ -148,6 +148,35 @@ public final class AnimationDefinition {
 									}
 								} else if (opcode == 14) {
 									aBoolean2141 = true;
+								} else if (opcode == 15) {
+									aBoolean2159 = true;
+								} else if (opcode == 16) {
+									aBoolean2158 = true;
+								} else if (opcode == 17) {
+									buffer.get();
+								} else if (opcode == 18) {
+									effect2Sound = true;
+								} else if (opcode == 19) {
+									if (anIntArray1362 == null) {
+										anIntArray1362 = new int[handledSounds.length];
+										for (int index = 0; index < handledSounds.length; index++) {
+											anIntArray1362[index] = 255;
+										}
+									}
+									anIntArray1362[buffer.get() & 0xFF] = buffer.get() & 0xFF;
+									// added opcode
+								} else if (opcode == 20) {
+									if ((soundMaxDelay == null) || (soundMinDelay == null)) {
+										soundMaxDelay = (new int[handledSounds.length]);
+										soundMinDelay = (new int[handledSounds.length]);
+										for (int i_34_ = 0; (i_34_ < handledSounds.length); i_34_++) {
+											soundMaxDelay[i_34_] = 256;
+											soundMinDelay[i_34_] = 256;
+										}
+									}
+									int index = buffer.get() & 0xFF;
+									soundMaxDelay[index] = buffer.getShort() & 0xFFFF;
+									soundMinDelay[index] = buffer.getShort() & 0xFFFF;
 								} else {
 									System.out.println("Unhandled animation opcode " + opcode);
 								}
@@ -166,8 +195,9 @@ public final class AnimationDefinition {
 					aBooleanArray2149[buffer.get() & 0xFF] = true;
 				}
 			}
-		} else
+		} else {
 			anInt2163 = buffer.getShort() & 0xFFFF;
+		}
 	}
 
 	public void method2394() {
